@@ -1,53 +1,126 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:royal/generated/l10n.dart';
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
-import '../core/constants/app_dimensions.dart';
-import '../core/constants/app_strings.dart';
 import '../core/constants/app_text_styles.dart';
 import '../core/constants/drawer_menu_items.dart';
 import '../core/models/drawer_menu_item.dart';
+import '../core/providers/locale_provider.dart';
 
-class CustomDrawer extends StatelessWidget {
-  final String userName;
-  final String userNameAr;
-  final bool isArabic;
+class CustomDrawer extends ConsumerWidget {
   final Function(String) onMenuItemTap;
 
   const CustomDrawer({
     super.key,
-    required this.userName,
-    required this.userNameAr,
-    required this.isArabic,
     required this.onMenuItemTap,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(localeProvider);
+    final isArabic = locale.languageCode == 'ar';
+
     return Drawer(
       width: MediaQuery.of(context).size.width,
       backgroundColor: AppColors.primary,
       child: SafeArea(
         child: Stack(
           children: [
-            // Background pattern
+            // Background pattern at the bottom
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
-              child: SvgPicture.asset(
-                AppAssets.drawerPattern,
-                fit: BoxFit.fitWidth,
+              child: Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.rotationY(isArabic ? 0 : pi),
+                child: SvgPicture.asset(
+                  AppAssets.drawerPattern,
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
-            // Content
+            // Main content
             Column(
               children: [
-                _buildHeader(),
-                Expanded(
-                  child: _buildMenuItems(),
+                // Search and Language Toggle
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SvgPicture.asset(
+                        AppAssets.search,
+                        width: 24,
+                        height: 24,
+                        color: AppColors.white,
+                      ),
+                      _buildLanguageToggle(context, ref),
+                    ],
+                  ),
                 ),
-                _buildSocialLinks(),
+                // Welcome Text
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Align(
+                    alignment: isArabic ? Alignment.centerRight : Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          S.of(context).welcomeLabel,
+                          style: AppTextStyles.welcomeText,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          S.of(context).nameLabel,
+                          style: AppTextStyles.userName,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                // Menu Items
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                      children: DrawerMenuItems.getItems().map((item) => _buildMenuItem(context, item)).toList(),
+                    ),
+                  ),
+                ),
+                // Social Media Links
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        S.of(context).followUsLabel,
+                        style: AppTextStyles.sectionTitle,
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: isArabic ? MainAxisAlignment.end : MainAxisAlignment.start,
+                        children: [
+                          _buildSocialIcon(AppAssets.facebook, 'Facebook'),
+                          const SizedBox(width: 16),
+                          _buildSocialIcon(AppAssets.instagram, 'Instagram'),
+                          const SizedBox(width: 16),
+                          _buildSocialIcon(AppAssets.youtube, 'YouTube'),
+                          const SizedBox(width: 16),
+                          _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
+                        ],
+                      ),
+                      const SizedBox(height: 32),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
@@ -56,108 +129,70 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppDimensions.drawerPaddingH,
-        vertical: AppDimensions.drawerPaddingV,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Language Switch
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  // ignore: deprecated_member_use
-                  color: AppColors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(AppDimensions.drawerLanguageButtonRadius),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _buildLanguageButton(AppStrings.languageAr, isArabic),
-                    _buildLanguageButton(AppStrings.languageEn, !isArabic),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: AppDimensions.drawerItemSpacing),
-          // Welcome Text
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    isArabic ? AppStrings.welcomeAr : AppStrings.welcomeEn,
-                    style: AppTextStyles.drawerHeaderTitle,
-                  ),
-                  const SizedBox(height: AppDimensions.padding4),
-                  Text(
-                    isArabic ? userNameAr : userName,
-                    style: AppTextStyles.drawerHeaderName,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+  Widget _buildLanguageToggle(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(localeProvider);
+    final isArabic = locale.languageCode == 'ar';
 
-  Widget _buildLanguageButton(String text, bool isSelected) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppDimensions.drawerLanguageButtonPaddingH,
-        vertical: AppDimensions.drawerLanguageButtonPaddingV,
-      ),
-      decoration: BoxDecoration(
-        color: isSelected ? AppColors.white : Colors.transparent,
-        borderRadius: BorderRadius.circular(AppDimensions.drawerLanguageButtonRadius),
-      ),
-      child: Text(
-        text,
-        style: AppTextStyles.drawerLanguageButton.copyWith(
-          color: isSelected ? AppColors.primary : AppColors.white,
+    return GestureDetector(
+      onTap: () {
+        ref.read(localeProvider.notifier).setLocale(
+          isArabic ? const Locale('en') : const Locale('ar'),
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppColors.white),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Ar',
+              style: TextStyle(
+                color: isArabic ? AppColors.white : Colors.white60,
+                fontSize: 14,
+                fontWeight: isArabic ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 8),
+              height: 16,
+              width: 1,
+              color: AppColors.white,
+            ),
+            Text(
+              'En',
+              style: TextStyle(
+                color: !isArabic ? AppColors.white : Colors.white60,
+                fontSize: 14,
+                fontWeight: !isArabic ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildMenuItems() {
-    return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.drawerPaddingH),
-      itemCount: DrawerMenuItems.items.length,
-      itemBuilder: (context, index) {
-        final item = DrawerMenuItems.items[index];
-        return _buildMenuItem(item);
-      },
-    );
-  }
-
-  Widget _buildMenuItem(DrawerMenuItem item) {
+  Widget _buildMenuItem(BuildContext context, DrawerMenuItem item) {
     return InkWell(
       onTap: () => onMenuItemTap(item.route),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppDimensions.drawerItemSpacing),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: Row(
-          textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
           children: [
             SvgPicture.asset(
               item.icon,
-              width: AppDimensions.drawerIconSize,
-              height: AppDimensions.drawerIconSize,
-              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              width: 24,
+              height: 24,
+              color: AppColors.white,
             ),
-            const SizedBox(width: AppDimensions.drawerItemSpacing),
+            const SizedBox(width: 12),
             Text(
-              isArabic ? item.titleAr : item.title,
+              item.getLocalizedTitle(context),
               style: AppTextStyles.drawerMenuItem,
             ),
           ],
@@ -166,34 +201,26 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialLinks() {
-    return Container(
-      padding: const EdgeInsets.all(AppDimensions.drawerPaddingH),
-      child: Column(
-        children: [
-          Text(
-            isArabic ? AppStrings.connectWithUsAr : AppStrings.connectWithUsEn,
-            style: AppTextStyles.drawerSocialTitle,
+  Widget _buildSocialIcon(String icon, String label) {
+    return GestureDetector(
+      onTap: () {
+        // Handle social media tap
+      },
+      child: Container(
+        width: 36,
+        height: 36,
+        decoration: BoxDecoration(
+          color: Colors.white24,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: Center(
+          child: SvgPicture.asset(
+            icon,
+            width: 20,
+            height: 20,
+            color: AppColors.white,
           ),
-          const SizedBox(height: AppDimensions.drawerItemSpacing),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: DrawerMenuItems.socialLinks.map((iconPath) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimensions.drawerSocialIconSpacing,
-                ),
-                child: SvgPicture.asset(
-                  iconPath,
-                  width: AppDimensions.drawerIconSize,
-                  height: AppDimensions.drawerIconSize,
-                  colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                ),
-              );
-            }).toList(),
-          ),
-          const SizedBox(height: AppDimensions.drawerItemSpacing),
-        ],
+        ),
       ),
     );
   }

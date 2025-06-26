@@ -26,17 +26,37 @@ class AppTextStyles {
     letterSpacing: -0.3,
   );
 
-  // Drawer Text Styles
-  static const TextStyle drawerHeaderTitle = TextStyle(
-    color: Colors.white,
-    fontSize: 24,
+  // Home Screen Text Styles
+  static const TextStyle categoryTitle = TextStyle(
+    color: AppColors.primary,
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     height: 1.2,
   );
 
-  static const TextStyle drawerHeaderName = TextStyle(
-    color: Colors.white,
+  static const TextStyle greetingPrimary = TextStyle(
+    color: AppColors.primary,
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle greetingSecondary = TextStyle(
+    color: AppColors.primary,
     fontSize: 28,
+    fontWeight: FontWeight.w600,
+  );
+
+  // Drawer Text Styles
+  static const TextStyle welcomeText = TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    height: 1.2,
+  );
+
+  static const TextStyle userName = TextStyle(
+    color: Colors.white,
+    fontSize: 24,
     fontWeight: FontWeight.w600,
     height: 1.2,
   );
@@ -44,58 +64,18 @@ class AppTextStyles {
   static const TextStyle drawerMenuItem = TextStyle(
     color: Colors.white,
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle drawerLanguageButton = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-  );
-
-  static const TextStyle drawerSocialTitle = TextStyle(
+  static const TextStyle sectionTitle = TextStyle(
     color: Colors.white,
     fontSize: 18,
     fontWeight: FontWeight.w500,
-    letterSpacing: 1.2,
   );
 
-  // Home Screen Text Styles
-  static const TextStyle greeting = TextStyle(
-    color: AppColors.primaryText,
-    fontSize: 24,
-    fontWeight: FontWeight.w600,
-    height: 1.2,
-  );
-
-  static const TextStyle categoryTitle = TextStyle(
-    color: AppColors.primaryText,
-    fontSize: 16,
+  static const TextStyle languageToggle = TextStyle(
+    color: Colors.white,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
-    height: 1.2,
-  );
-
-  // Greeting Text Styles
-  static const TextStyle greetingPrimary = TextStyle(
-    fontSize: 35,
-    fontWeight: FontWeight.w400,
-    color: AppColors.blueText,
-    height: 1,
-    letterSpacing: 0,
-  );
-
-  static const TextStyle greetingSecondary = TextStyle(
-    fontSize: 35,
-    fontWeight: FontWeight.w400,
-    color: AppColors.greyText,
-    height: 1,
-    letterSpacing: 0,
-    fontFamily: 'Inter',
-  );
-
-  // Badge Text Style
-  static const TextStyle badgeText = TextStyle(
-    color: AppColors.white,
-    fontSize: 9,
-    fontWeight: FontWeight.bold,
   );
 }

@@ -1,0 +1,119 @@
+{
+    "@@locale": "en",
+    "appName": "Royal",
+    "@appName": {
+        "description": "The name of the application"
+    },
+    "welcomeLabel": "Welcome",
+    "@welcomeLabel": {
+        "description": "Welcome text in drawer"
+    },
+    "ordersLabel": "Orders",
+    "@ordersLabel": {
+        "description": "Orders menu item"
+    },
+    "newItemsLabel": "New Items",
+    "@newItemsLabel": {
+        "description": "New Items menu item"
+    },
+    "browsingArchiveLabel": "Browsing Archive",
+    "@browsingArchiveLabel": {
+        "description": "Browsing Archive menu item"
+    },
+    "monthlyOffersLabel": "Monthly Offers",
+    "@monthlyOffersLabel": {
+        "description": "Monthly Offers menu item"
+    },
+    "newsLabel": "News",
+    "@newsLabel": {
+        "description": "News menu item"
+    },
+    "certificatesLabel": "Certificates",
+    "@certificatesLabel": {
+        "description": "Certificates menu item"
+    },
+    "appInfoLabel": "App Info",
+    "@appInfoLabel": {
+        "description": "App Info menu item"
+    },
+    "searchHint": "Search",
+    "@searchHint": {
+        "description": "Hint text for search field"
+    },
+    "promotionText": "Get your business identity free for a limited time",
+    "@promotionText": {
+        "description": "Promotion text shown in app bar"
+    },
+    "cartLabel": "Cart",
+    "@cartLabel": {
+        "description": "Label for shopping cart"
+    },
+    "notificationsLabel": "Notifications",
+    "@notificationsLabel": {
+        "description": "Label for notifications"
+    },
+    "menuLabel": "Menu",
+    "@menuLabel": {
+        "description": "Label for menu button"
+    },
+    "languageEnglish": "English",
+    "@languageEnglish": {
+        "description": "English language option"
+    },
+    "languageArabic": "العربية",
+    "@languageArabic": {
+        "description": "Arabic language option"
+    },
+    "homeLabel": "Home",
+    "@homeLabel": {
+        "description": "Label for home navigation item"
+    },
+    "favoritesLabel": "Favorites",
+    "@favoritesLabel": {
+        "description": "Label for favorites navigation item"
+    },
+    "downloadsLabel": "Downloads",
+    "@downloadsLabel": {
+        "description": "Label for downloads navigation item"
+    },
+    "informationLabel": "Information",
+    "@informationLabel": {
+        "description": "Label for information navigation item"
+    },
+    "profileLabel": "Profile",
+    "@profileLabel": {
+        "description": "Label for profile navigation item"
+    },
+    "followUsLabel": "Follow Us",
+    "@followUsLabel": {
+        "description": "Label for social media section"
+    },
+    "nameLabel": "Bashar",
+    "@nameLabel": {
+        "description": "User's name"
+    },
+    "goodMorningLabel": "Good Morning",
+    "@goodMorningLabel": {
+        "description": "Morning greeting"
+    },
+    "goodEveningLabel": "Good Evening",
+    "@goodEveningLabel": {
+        "description": "Evening greeting"
+    },
+    "furnitureLabel": "Furniture",
+    "@furnitureLabel": {
+        "description": "Label for furniture category"
+    },
+    "sanitaryLabel": "Sanitary Ware",
+    "@sanitaryLabel": {
+        "description": "Label for sanitary ware category"
+    },
+    "smartEnergyLabel": "Smart Energy",
+    "@smartEnergyLabel": {
+        "description": "Label for smart energy category"
+    },
+    "electricalLabel": "Electrical Devices",
+    "@electricalLabel": {
+        "description": "Label for electrical devices category"
+    }
+}
