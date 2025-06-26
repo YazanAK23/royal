@@ -1,0 +1,16 @@
+{
+  "greeting": "صباح الخير {name}",
+  "categories": {
+    "furniture": "الأثاث المنزلي",
+    "sanitary": "الأدوات الصحية",
+    "electrical": "الأجهزة الكهربائية",
+    "energy": "الطاقة الذكية"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "favorites": "المفضلة",
+    "profile": "الملف الشخصي",
+    "downloads": "التحميلات",
+    "info": "المعلومات"
+  }
+}
