@@ -85,6 +85,7 @@
         "description": "Label for profile navigation item"
     },
     "followUsLabel": "Follow Us",
+    "contactUsLabel": "Contact Us",
     "@followUsLabel": {
         "description": "Label for social media section"
     },
@@ -115,5 +116,61 @@
     "electricalLabel": "Electrical Devices",
     "@electricalLabel": {
         "description": "Label for electrical devices category"
+    },
+    "loginWelcome": "Welcome Back",
+    "@loginWelcome": {
+        "description": "Welcome text on login page"
+    },
+    "emailIdLabel": "Email / ID",
+    "@emailIdLabel": {
+        "description": "Label for email/ID field"
+    },
+    "emailIdHint": "Enter your email or ID",
+    "@emailIdHint": {
+        "description": "Hint text for email/ID field"
+    },
+    "passwordLabel": "Password",
+    "@passwordLabel": {
+        "description": "Label for password field"
+    },
+    "passwordHint": "Enter your password",
+    "@passwordHint": {
+        "description": "Hint text for password field"
+    },
+    "rememberMe": "Remember me",
+    "@rememberMe": {
+        "description": "Remember me checkbox label"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Forgot password link text"
+    },
+    "loginButton": "Login",
+    "@loginButton": {
+        "description": "Login button text"
+    },
+    "noAccount": "Don't have an account?",
+    "@noAccount": {
+        "description": "Text shown before register link"
+    },
+    "registerNow": "Register Now",
+    "@registerNow": {
+        "description": "Register link text"
+    },
+    "emailRequired": "Please enter your email or ID",
+    "@emailRequired": {
+        "description": "Email required validation message"
+    },
+    "passwordRequired": "Please enter your password",
+    "@passwordRequired": {
+        "description": "Password required validation message"
+    },
+    "continueAsGuest": "Continue as Guest",
+    "@continueAsGuest": {
+        "description": "Text for the guest login option"
+    },
+    "whyRoyal": "Why Royal?",
+    "@whyRoyal": {
+        "description": "Text for why royal question"
     }
 }

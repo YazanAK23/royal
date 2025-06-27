@@ -8,6 +8,7 @@ class AppAssets {
   static const String cart = '$_iconsPath/cart.svg';
   static const String notification = '$_iconsPath/notification_icon.svg';
   static const String drawerMenu = '$_iconsPath/drawer_menu_icon.svg';
+  static const String backButton = '$_iconsPath/back_button.svg';
 
   // Category Icons
   static const String furniture = '$_imagesPath/furniture.svg';

@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
+  static const Color primaryColor = Color(0xFF00A9E7);
+  static const TextStyle textStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
+
   static ThemeData lightTheme() {
     return ThemeData(
-      primaryColor: const Color(0xFF00A9E7),
+      primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.white,
       textTheme: TextTheme(
         displayLarge: GoogleFonts.inter(

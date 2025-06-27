@@ -6,7 +6,8 @@ import 'core/theme/app_theme.dart';
 import 'core/routes/app_routes.dart';
 import 'core/providers/locale_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -19,7 +20,8 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Royal',
       theme: AppTheme.lightTheme(),
-      locale: locale,
+      locale: locale, // Locale is already initialized with 'ar' in the provider
+      initialRoute: AppRoutes.login,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

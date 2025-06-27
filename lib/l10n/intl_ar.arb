@@ -14,6 +14,7 @@
     "informationLabel": "المعلومات",
     "profileLabel": "الملف الشخصي",
     "followUsLabel": "تابعنا",
+    "contactUsLabel": "تواصل معنا",
     "welcomeLabel": "مرحباً",
     "ordersLabel": "الطلبات",
     "newItemsLabel": "المنتجات الجديدة",
@@ -27,5 +28,61 @@
     "smartEnergyLabel": "الطاقة الذكية",
     "electricalLabel": "الأجهزة الكهربائية",
     "goodMorningLabel": "صباح الخير",
-    "nameLabel": "بشار"
+    "nameLabel": "بشار",
+    "loginWelcome": "مرحباً بعودتك",
+    "@loginWelcome": {
+        "description": "Welcome text on login page"
+    },
+    "emailIdLabel": "البريد الإلكتروني / الرقم التعريفي",
+    "@emailIdLabel": {
+        "description": "Label for email/ID field"
+    },
+    "emailIdHint": "أدخل بريدك الإلكتروني أو الرقم التعريفي",
+    "@emailIdHint": {
+        "description": "Hint text for email/ID field"
+    },
+    "passwordLabel": "كلمة المرور",
+    "@passwordLabel": {
+        "description": "Label for password field"
+    },
+    "passwordHint": "أدخل كلمة المرور",
+    "@passwordHint": {
+        "description": "Hint text for password field"
+    },
+    "rememberMe": "تذكرني",
+    "@rememberMe": {
+        "description": "Remember me checkbox label"
+    },
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "@forgotPassword": {
+        "description": "Forgot password link text"
+    },
+    "loginButton": "تسجيل الدخول",
+    "@loginButton": {
+        "description": "Login button text"
+    },
+    "noAccount": "ليس لديك حساب؟",
+    "@noAccount": {
+        "description": "Text shown before register link"
+    },
+    "registerNow": "سجل الآن",
+    "@registerNow": {
+        "description": "Register link text"
+    },
+    "emailRequired": "الرجاء إدخال بريدك الإلكتروني أو الرقم التعريفي",
+    "@emailRequired": {
+        "description": "Email required validation message"
+    },
+    "passwordRequired": "الرجاء إدخال كلمة المرور",
+    "@passwordRequired": {
+        "description": "Password required validation message"
+    },
+    "continueAsGuest": "أكمل كزائر",
+    "@continueAsGuest": {
+        "description": "Text for the guest login option"
+    },
+    "whyRoyal": "لماذا رويال؟",
+    "@whyRoyal": {
+        "description": "Text for why royal question"
+    }
 }

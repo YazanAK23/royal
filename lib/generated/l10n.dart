@@ -274,6 +274,16 @@ class S {
     );
   }
 
+  /// `Contact Us`
+  String get contactUsLabel {
+    return Intl.message(
+      'Contact Us',
+      name: 'contactUsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bashar`
   String get nameLabel {
     return Intl.message(
@@ -340,6 +350,146 @@ class S {
       'Electrical Devices',
       name: 'electricalLabel',
       desc: 'Label for electrical devices category',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back`
+  String get loginWelcome {
+    return Intl.message(
+      'Welcome Back',
+      name: 'loginWelcome',
+      desc: 'Welcome text on login page',
+      args: [],
+    );
+  }
+
+  /// `Email / ID`
+  String get emailIdLabel {
+    return Intl.message(
+      'Email / ID',
+      name: 'emailIdLabel',
+      desc: 'Label for email/ID field',
+      args: [],
+    );
+  }
+
+  /// `Enter your email or ID`
+  String get emailIdHint {
+    return Intl.message(
+      'Enter your email or ID',
+      name: 'emailIdHint',
+      desc: 'Hint text for email/ID field',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get passwordLabel {
+    return Intl.message(
+      'Password',
+      name: 'passwordLabel',
+      desc: 'Label for password field',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHint',
+      desc: 'Hint text for password field',
+      args: [],
+    );
+  }
+
+  /// `Remember me`
+  String get rememberMe {
+    return Intl.message(
+      'Remember me',
+      name: 'rememberMe',
+      desc: 'Remember me checkbox label',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPassword',
+      desc: 'Forgot password link text',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginButton {
+    return Intl.message(
+      'Login',
+      name: 'loginButton',
+      desc: 'Login button text',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get noAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'noAccount',
+      desc: 'Text shown before register link',
+      args: [],
+    );
+  }
+
+  /// `Register Now`
+  String get registerNow {
+    return Intl.message(
+      'Register Now',
+      name: 'registerNow',
+      desc: 'Register link text',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email or ID`
+  String get emailRequired {
+    return Intl.message(
+      'Please enter your email or ID',
+      name: 'emailRequired',
+      desc: 'Email required validation message',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get passwordRequired {
+    return Intl.message(
+      'Please enter your password',
+      name: 'passwordRequired',
+      desc: 'Password required validation message',
+      args: [],
+    );
+  }
+
+  /// `Continue as Guest`
+  String get continueAsGuest {
+    return Intl.message(
+      'Continue as Guest',
+      name: 'continueAsGuest',
+      desc: 'Text for the guest login option',
+      args: [],
+    );
+  }
+
+  /// `Why Royal?`
+  String get whyRoyal {
+    return Intl.message(
+      'Why Royal?',
+      name: 'whyRoyal',
+      desc: 'Text for why royal question',
       args: [],
     );
   }

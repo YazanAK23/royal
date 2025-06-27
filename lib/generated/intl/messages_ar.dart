@@ -29,18 +29,32 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cartLabel": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("الشهادات"),
+    "contactUsLabel": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "continueAsGuest": MessageLookupByLibrary.simpleMessage("أكمل كزائر"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("التنزيلات"),
     "electricalLabel": MessageLookupByLibrary.simpleMessage(
       "الأجهزة الكهربائية",
     ),
+    "emailIdHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني أو الرقم التعريفي",
+    ),
+    "emailIdLabel": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني / الرقم التعريفي",
+    ),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال بريدك الإلكتروني أو الرقم التعريفي",
+    ),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("تابعنا"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "furnitureLabel": MessageLookupByLibrary.simpleMessage("الاثاث المنزلي"),
     "goodMorningLabel": MessageLookupByLibrary.simpleMessage("صباح الخير"),
     "homeLabel": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "informationLabel": MessageLookupByLibrary.simpleMessage("المعلومات"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
+    "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "loginWelcome": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
     "menuLabel": MessageLookupByLibrary.simpleMessage("القائمة"),
     "monthlyOffersLabel": MessageLookupByLibrary.simpleMessage(
       "العروض الشهرية",
@@ -48,15 +62,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameLabel": MessageLookupByLibrary.simpleMessage("بشار"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("المنتجات الجديدة"),
     "newsLabel": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "ordersLabel": MessageLookupByLibrary.simpleMessage("الطلبات"),
+    "passwordHint": MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordRequired": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال كلمة المرور",
+    ),
     "profileLabel": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "احصل على الهوية التجارية مجاناً لفترة محدودة",
     ),
+    "registerNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
     "smartEnergyLabel": MessageLookupByLibrary.simpleMessage("الطاقة الذكية"),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("مرحباً"),
+    "whyRoyal": MessageLookupByLibrary.simpleMessage("لماذا رويال؟"),
   };
 }

@@ -29,12 +29,24 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cartLabel": MessageLookupByLibrary.simpleMessage("Cart"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("Certificates"),
+    "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "continueAsGuest": MessageLookupByLibrary.simpleMessage(
+      "Continue as Guest",
+    ),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("Downloads"),
     "electricalLabel": MessageLookupByLibrary.simpleMessage(
       "Electrical Devices",
     ),
+    "emailIdHint": MessageLookupByLibrary.simpleMessage(
+      "Enter your email or ID",
+    ),
+    "emailIdLabel": MessageLookupByLibrary.simpleMessage("Email / ID"),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email or ID",
+    ),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("Favorites"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("Follow Us"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "furnitureLabel": MessageLookupByLibrary.simpleMessage("Furniture"),
     "goodEveningLabel": MessageLookupByLibrary.simpleMessage("Good Evening"),
     "goodMorningLabel": MessageLookupByLibrary.simpleMessage("Good Morning"),
@@ -42,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "informationLabel": MessageLookupByLibrary.simpleMessage("Information"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
+    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginWelcome": MessageLookupByLibrary.simpleMessage("Welcome Back"),
     "menuLabel": MessageLookupByLibrary.simpleMessage("Menu"),
     "monthlyOffersLabel": MessageLookupByLibrary.simpleMessage(
       "Monthly Offers",
@@ -49,15 +63,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameLabel": MessageLookupByLibrary.simpleMessage("Bashar"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("New Items"),
     "newsLabel": MessageLookupByLibrary.simpleMessage("News"),
+    "noAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("Notifications"),
     "ordersLabel": MessageLookupByLibrary.simpleMessage("Orders"),
+    "passwordHint": MessageLookupByLibrary.simpleMessage("Enter your password"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your password",
+    ),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
     ),
+    "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
     "smartEnergyLabel": MessageLookupByLibrary.simpleMessage("Smart Energy"),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("Welcome"),
+    "whyRoyal": MessageLookupByLibrary.simpleMessage("Why Royal?"),
   };
 }

@@ -57,7 +57,7 @@ class CustomBottomNavBar extends StatelessWidget {
     return Directionality(
       textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
       child: Container(
-        height: 60,
+        height: 80, // Adjusted height to match the specified area
         decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -71,7 +71,7 @@ class CustomBottomNavBar extends StatelessWidget {
         child: Stack(
           children: [
             SizedBox(
-              height: 60,
+              height: 80, // Adjusted height for the navigation bar
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: rowChildren,

@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:royal/generated/l10n.dart';
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
+import '../generated/l10n.dart';
 import '../core/constants/drawer_menu_items.dart';
 import '../core/models/drawer_menu_item.dart';
 import '../core/providers/locale_provider.dart';
@@ -47,29 +47,41 @@ class CustomDrawer extends ConsumerWidget {
             // Main content
             Column(
               children: [
-                // Search and Language Toggle
+                // Top bar with Search, Back button, and Language toggle
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      // Search icon on left
                       SvgPicture.asset(
                         AppAssets.search,
                         width: 24,
                         height: 24,
                         color: AppColors.white,
                       ),
+                      // Back button in center
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pop(),
+                        child: SvgPicture.asset(
+                          AppAssets.backButton,
+                          width: 24,
+                          height: 24,
+                          color: AppColors.white,
+                        ),
+                      ),
+                      // Language toggle on right
                       _buildLanguageToggle(context, ref),
                     ],
                   ),
                 ),
-                // Welcome Text
+                // Welcome Text - right aligned as shown in the image
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Align(
-                    alignment: isArabic ? Alignment.centerRight : Alignment.centerLeft,
+                    alignment: Alignment.centerRight, // Always right-aligned in Arabic layout
                     child: Column(
-                      crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end, // Always end-aligned in Arabic layout
                       children: [
                         Text(
                           S.of(context).welcomeLabel,
@@ -94,28 +106,48 @@ class CustomDrawer extends ConsumerWidget {
                     ),
                   ),
                 ),
-                // Social Media Links
-                Padding(
-                  padding: const EdgeInsets.all(16),
+                // Social Media Links with wave pattern background
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.1),
+                      ],
+                    ),
+                  ),
                   child: Column(
-                    crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        S.of(context).followUsLabel,
-                        style: AppTextStyles.sectionTitle,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(
+                          S.of(context).contactUsLabel,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.right,
+                        ),
                       ),
                       const SizedBox(height: 16),
-                      Row(
-                        mainAxisAlignment: isArabic ? MainAxisAlignment.end : MainAxisAlignment.start,
-                        children: [
-                          _buildSocialIcon(AppAssets.facebook, 'Facebook'),
-                          const SizedBox(width: 16),
-                          _buildSocialIcon(AppAssets.instagram, 'Instagram'),
-                          const SizedBox(width: 16),
-                          _buildSocialIcon(AppAssets.youtube, 'YouTube'),
-                          const SizedBox(width: 16),
-                          _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
-                        ],
+                      // Social media icons with new styling - right aligned
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            _buildSocialIcon(AppAssets.facebook, 'Facebook'),
+                            const SizedBox(width: 24),
+                            _buildSocialIcon(AppAssets.instagram, 'Instagram'),
+                            const SizedBox(width: 24),
+                            _buildSocialIcon(AppAssets.youtube, 'YouTube'),
+                            const SizedBox(width: 24),
+                            _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 32),
                     ],
@@ -183,7 +215,9 @@ class CustomDrawer extends ConsumerWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            // Icon on left
             SvgPicture.asset(
               item.icon,
               width: 24,
@@ -191,6 +225,7 @@ class CustomDrawer extends ConsumerWidget {
               color: AppColors.white,
             ),
             const SizedBox(width: 12),
+            // Text after icon
             Text(
               item.getLocalizedTitle(context),
               style: AppTextStyles.drawerMenuItem,
@@ -207,18 +242,25 @@ class CustomDrawer extends ConsumerWidget {
         // Handle social media tap
       },
       child: Container(
-        width: 36,
-        height: 36,
+        width: 40,
+        height: 40,
         decoration: BoxDecoration(
-          color: Colors.white24,
-          borderRadius: BorderRadius.circular(18),
+          color: Colors.white.withOpacity(0.15),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: Offset(0, 4),
+            ),
+          ],
         ),
         child: Center(
           child: SvgPicture.asset(
             icon,
-            width: 20,
-            height: 20,
-            color: AppColors.white,
+            width: 22,
+            height: 22,
+            color: Colors.white,
           ),
         ),
       ),

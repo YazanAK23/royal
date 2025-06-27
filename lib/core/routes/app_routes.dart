@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:royal/screens/home/home_screen.dart';
+import 'package:royal/screens/auth/login_screen.dart';
 
 class AppRoutes {
   // Route Names
-  static const String home = '/';
+  static const String login = '/login';
+  static const String home = '/home';
   static const String account = '/account';
   static const String orders = '/orders';
   static const String newItems = '/new-items';
@@ -15,6 +17,7 @@ class AppRoutes {
 
   // Route Map
   static Map<String, Widget Function(BuildContext)> routes = {
+    login: (context) => const LoginScreen(),
     home: (context) => const HomeScreen(),
 
   };

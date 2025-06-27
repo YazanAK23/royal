@@ -11,7 +11,7 @@ class LocaleNotifier extends StateNotifier<Locale> {
     _loadSavedLocale();
   }
 
-  static const String _localeKey = 'locale';
+  static const String _localeKey = 'app_locale';
 
   Future<void> _loadSavedLocale() async {
     final prefs = await SharedPreferences.getInstance();
