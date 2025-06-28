@@ -11,6 +11,7 @@ import '../../widgets/category_card.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../widgets/custom_drawer.dart';
+import '../categories/category_detail_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -21,9 +22,125 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _currentIndex = 0;
+  int? _selectedCategoryIndex;
 
   String _getGreeting() {
     return S.of(context).goodMorningLabel;
+  }
+
+  void _onCategoryTap(int index) {
+    setState(() {
+      _selectedCategoryIndex = index;
+    });
+  }
+
+  void _onBackFromCategory() {
+    setState(() {
+      _selectedCategoryIndex = null;
+    });
+  }
+
+  Widget _buildCategoryDetails(int index) {
+    // Example: Only for "Sanitary Ware" (index 1), show your screenshot's list
+    if (index == 1) {
+      final items = [
+        {'title': S.of(context).waterTanks, 'icon': AppAssets.tank},
+        {'title': S.of(context).manholes, 'icon': null},
+        {'title': S.of(context).plasticPipes, 'icon': AppAssets.tube},
+        {'title': S.of(context).plasticParts, 'icon': null},
+        {'title': S.of(context).collectionBoxes, 'icon': null},
+        {'title': S.of(context).buildingSupplies, 'icon': null},
+      ];
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: _onBackFromCategory,
+                ),
+                Expanded(
+                  child: Text(
+                    S.of(context).sanitaryLabel,
+                    style: AppTextStyles.greetingPrimary,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(width: 48), // To balance the back button
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.separated(
+              itemCount: items.length,
+              separatorBuilder: (_, __) => const Divider(height: 1),
+              itemBuilder: (context, i) => ListTile(
+                leading: Icon(Icons.arrow_back_ios, color: AppColors.red),
+                title: Text(items[i]['title']!),
+                trailing: items[i]['icon'] != null
+                    ? Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: AppColors.red.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: SvgPicture.asset(
+                          items[i]['icon']!,
+                          fit: BoxFit.contain,
+                        ),
+                      )
+                    : Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: AppColors.red.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                onTap: () {},
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    // For other categories, just show a placeholder
+    final titles = [
+      S.of(context).furnitureLabel,
+      S.of(context).sanitaryLabel,
+      S.of(context).energyLabel,
+      S.of(context).trustLabel,
+    ];
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          child: Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: _onBackFromCategory,
+              ),
+              Expanded(
+                child: Text(
+                  titles[index],
+                  style: AppTextStyles.greetingPrimary,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(width: 48),
+            ],
+          ),
+        ),
+        Expanded(
+          child: Center(child: Text(S.of(context).noContentYet)), // Localized placeholder
+        ),
+      ],
+    );
   }
 
   @override
@@ -80,33 +197,71 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
           ),
           const SizedBox(height: 36),
-          // Category Grid
+          // Category Grid or Category Details
           Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
-              childAspectRatio: 1,
-              children: [
-                CategoryCard(
-                  iconPath: AppAssets.furniture,
-                  title: S.of(context).furnitureLabel,
-                ),
-                CategoryCard(
-                  iconPath: AppAssets.sanitaryWare,
-                  title: S.of(context).sanitaryLabel,
-                ),
-                CategoryCard(
-                  iconPath: AppAssets.smartEnergy,
-                  title: S.of(context).smartEnergyLabel,
-                ),
-                CategoryCard(
-                  iconPath: AppAssets.trust,
-                  title: S.of(context).electricalLabel,
-                ),
-              ],
-            ),
+            child: _selectedCategoryIndex == null
+                ? GridView.count(
+                    crossAxisCount: 2,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                    childAspectRatio: 1,
+                    children: [
+                      CategoryCard(
+                        iconPath: AppAssets.furniture,
+                        title: S.of(context).furnitureLabel,
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => CategoryDetailScreen(
+                              categoryTitle: S.of(context).furnitureLabel,
+                              categoryIcon: AppAssets.furniture,
+                            ),
+                          ),
+                        ),
+                      ),
+                      CategoryCard(
+                        iconPath: AppAssets.sanitaryWare,
+                        title: S.of(context).sanitaryLabel,
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => CategoryDetailScreen(
+                              categoryTitle: S.of(context).sanitaryLabel,
+                              categoryIcon: AppAssets.sanitaryWare,
+                            ),
+                          ),
+                        ),
+                      ),
+                      CategoryCard(
+                        iconPath: AppAssets.smartEnergy,
+                        title: S.of(context).energyLabel,
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => CategoryDetailScreen(
+                              categoryTitle: S.of(context).energyLabel,
+                              categoryIcon: AppAssets.smartEnergy,
+                            ),
+                          ),
+                        ),
+                      ),
+                      CategoryCard(
+                        iconPath: AppAssets.trust,
+                        title: S.of(context).trustLabel,
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => CategoryDetailScreen(
+                              categoryTitle: S.of(context).trustLabel,
+                              categoryIcon: AppAssets.trust,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                : _buildCategoryDetails(_selectedCategoryIndex!),
           ),
         ],
       ),
@@ -117,3 +272,4 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 }
+

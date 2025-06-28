@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:royal/screens/home/home_screen.dart';
 import 'package:royal/screens/auth/login_screen.dart';
 
+
 class AppRoutes {
   // Route Names
   static const String login = '/login';
@@ -14,13 +15,44 @@ class AppRoutes {
   static const String news = '/news';
   static const String certificates = '/certificates';
   static const String information = '/information';
+  static const String sanitaryWare = '/sanitary-ware';
+  static const String furniture = '/furniture';
+  static const String smartEnergy = '/smart-energy';
+  static const String trust = '/trust';
+  static const categoryDetailScreen = '/categoryDetailScreen';
+
 
   // Route Map
   static Map<String, Widget Function(BuildContext)> routes = {
     login: (context) => const LoginScreen(),
     home: (context) => const HomeScreen(),
 
+  
   };
+
+  // Route Generator
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    // Get the route builder from our routes map
+    final routeBuilder = routes[settings.name];
+
+    // If no builder is found, return a route to a default "not found" screen
+    // or return null to let the app handle it
+    if (routeBuilder == null) {
+      return MaterialPageRoute(
+        builder: (_) => Scaffold(
+          body: Center(
+            child: Text('Route ${settings.name} not found'),
+          ),
+        ),
+      );
+    }
+
+    // If we have a builder, build the route
+    return MaterialPageRoute(
+      builder: (context) => routeBuilder(context),
+      settings: settings,
+    );
+  }
 
   // Navigation Methods
   static Future<T?> navigateTo<T>(BuildContext context, String routeName) {
@@ -39,20 +71,13 @@ class AppRoutes {
     BuildContext context,
     String newRouteName,
     String anchorRoute,
-  ) {
+  ) 
+  
+  {
     return Navigator.pushNamedAndRemoveUntil<T>(
       context,
       newRouteName,
       (route) => route.settings.name == anchorRoute,
-    );
-  }
-
-  // Route Generator
-  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
-    // You can add logic here to handle dynamic routes or route parameters
-    return MaterialPageRoute(
-      builder: (context) => routes[settings.name]!(context),
-      settings: settings,
     );
   }
 }

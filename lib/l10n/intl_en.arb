@@ -109,13 +109,13 @@
     "@sanitaryLabel": {
         "description": "Label for sanitary ware category"
     },
-    "smartEnergyLabel": "Smart Energy",
-    "@smartEnergyLabel": {
+    "energyLabel": "Smart Energy",
+    "@energyLabel": {
         "description": "Label for smart energy category"
     },
-    "electricalLabel": "Electrical Devices",
-    "@electricalLabel": {
-        "description": "Label for electrical devices category"
+    "trustLabel": "Trust",
+    "@trustLabel": {
+        "description": "Label for trust category"
     },
     "loginWelcome": "Welcome Back",
     "@loginWelcome": {
@@ -172,5 +172,49 @@
     "whyRoyal": "Why Royal?",
     "@whyRoyal": {
         "description": "Text for why royal question"
+    },
+    "sanitaryTitle": "Sanitary Ware",
+    "@sanitaryTitle": {
+        "description": "Title for sanitary page"
+    },
+    "sanitaryWareTitle": "Sanitary Ware",
+    "@sanitaryWareTitle": {
+        "description": "Title for sanitary ware category page"
+    },
+    "waterTanks": "Water Tanks",
+    "@waterTanks": {
+        "description": "Water tanks subcategory"
+    },
+    "manholes": "Manholes",
+    "@manholes": {
+        "description": "Manholes subcategory"
+    },
+    "plasticPipes": "Plastic Pipes",
+    "@plasticPipes": {
+        "description": "Plastic pipes subcategory"
+    },
+    "plasticSurfaces": "Plastic Surfaces",
+    "@plasticSurfaces": {
+        "description": "Plastic surfaces subcategory"
+    },
+    "assemblyParts": "Assembly Parts",
+    "@assemblyParts": {
+        "description": "Assembly parts subcategory"
+    },
+    "buildingSupplies": "Building Supplies",
+    "@buildingSupplies": {
+        "description": "Building supplies subcategory"
+    },
+    "plasticParts": "Plastic Parts",
+    "@plasticParts": {
+        "description": "Plastic parts subcategory"
+    },
+    "collectionBoxes": "Collection Boxes",
+    "@collectionBoxes": {
+        "description": "Collection boxes subcategory"
+    },
+    "noContentYet": "No content yet",
+    "@noContentYet": {
+        "description": "Placeholder text for empty category details"
     }
 }

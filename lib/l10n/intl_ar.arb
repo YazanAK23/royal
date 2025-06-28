@@ -23,10 +23,22 @@
     "newsLabel": "الأخبار",
     "certificatesLabel": "الشهادات",
     "appInfoLabel": "معلومات التطبيق",
-    "furnitureLabel": "الاثاث المنزلي",
+    "furnitureLabel": "الأثاث",
+    "@furnitureLabel": {
+        "description": "Label for furniture category"
+    },
     "sanitaryLabel": "الأدوات الصحية",
-    "smartEnergyLabel": "الطاقة الذكية",
-    "electricalLabel": "الأجهزة الكهربائية",
+    "@sanitaryLabel": {
+        "description": "Label for sanitary ware category"
+    },
+    "energyLabel": "الطاقة الذكية",
+    "@energyLabel": {
+        "description": "Label for smart energy category"
+    },
+    "trustLabel": "الثقة",
+    "@trustLabel": {
+        "description": "Label for trust category"
+    },
     "goodMorningLabel": "صباح الخير",
     "nameLabel": "بشار",
     "loginWelcome": "مرحباً بعودتك",
@@ -84,5 +96,49 @@
     "whyRoyal": "لماذا رويال؟",
     "@whyRoyal": {
         "description": "Text for why royal question"
+    },
+    "sanitaryTitle": "الأدوات الصحية",
+    "@sanitaryTitle": {
+        "description": "Title for sanitary page"
+    },
+    "sanitaryWareTitle": "الأدوات الصحية",
+    "@sanitaryWareTitle": {
+        "description": "Title for sanitary ware category page"
+    },
+    "waterTanks": "خزانات مياه",
+    "@waterTanks": {
+        "description": "Water tanks subcategory"
+    },
+    "manholes": "المناهل",
+    "@manholes": {
+        "description": "Manholes subcategory"
+    },
+    "plasticPipes": "الأنابيب البلاستيكية",
+    "@plasticPipes": {
+        "description": "Plastic pipes subcategory"
+    },
+    "plasticSurfaces": "الأسطح البلاستيكية",
+    "@plasticSurfaces": {
+        "description": "Plastic surfaces subcategory"
+    },
+    "assemblyParts": "علب التجميع",
+    "@assemblyParts": {
+        "description": "Assembly parts subcategory"
+    },
+    "buildingSupplies": "إمدادات البناء",
+    "@buildingSupplies": {
+        "description": "Building supplies subcategory"
+    },
+    "plasticParts": "القطع البلاستيكية",
+    "@plasticParts": {
+        "description": "Plastic parts subcategory"
+    },
+    "collectionBoxes": "علب التجميع",
+    "@collectionBoxes": {
+        "description": "Collection boxes subcategory"
+    },
+    "noContentYet": "لا يوجد محتوى بعد",
+    "@noContentYet": {
+        "description": "Placeholder text for empty category details"
     }
 }

@@ -17,11 +17,11 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localeProvider);
+    
     return MaterialApp(
       title: 'Royal',
       theme: AppTheme.lightTheme(),
-      locale: locale, // Locale is already initialized with 'ar' in the provider
-      initialRoute: AppRoutes.login,
+      locale: locale,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -33,7 +33,7 @@ class MyApp extends ConsumerWidget {
         Locale('en'), // English
       ],
       onGenerateRoute: AppRoutes.onGenerateRoute,
-      routes: AppRoutes.routes,
+      initialRoute: AppRoutes.login,
       debugShowCheckedModeBanner: false,
     );
   }

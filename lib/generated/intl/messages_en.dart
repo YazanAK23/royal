@@ -24,19 +24,21 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("App Info"),
     "appName": MessageLookupByLibrary.simpleMessage("Royal"),
+    "assemblyParts": MessageLookupByLibrary.simpleMessage("Assembly Parts"),
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "Browsing Archive",
     ),
+    "buildingSupplies": MessageLookupByLibrary.simpleMessage(
+      "Building Supplies",
+    ),
     "cartLabel": MessageLookupByLibrary.simpleMessage("Cart"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("Certificates"),
+    "collectionBoxes": MessageLookupByLibrary.simpleMessage("Collection Boxes"),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
     ),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("Downloads"),
-    "electricalLabel": MessageLookupByLibrary.simpleMessage(
-      "Electrical Devices",
-    ),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "Enter your email or ID",
     ),
@@ -44,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage(
       "Please enter your email or ID",
     ),
+    "energyLabel": MessageLookupByLibrary.simpleMessage("Smart Energy"),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("Favorites"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("Follow Us"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
@@ -56,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginWelcome": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+    "manholes": MessageLookupByLibrary.simpleMessage("Manholes"),
     "menuLabel": MessageLookupByLibrary.simpleMessage("Menu"),
     "monthlyOffersLabel": MessageLookupByLibrary.simpleMessage(
       "Monthly Offers",
@@ -66,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
+    "noContentYet": MessageLookupByLibrary.simpleMessage("No content yet"),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("Notifications"),
     "ordersLabel": MessageLookupByLibrary.simpleMessage("Orders"),
     "passwordHint": MessageLookupByLibrary.simpleMessage("Enter your password"),
@@ -73,6 +78,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Please enter your password",
     ),
+    "plasticParts": MessageLookupByLibrary.simpleMessage("Plastic Parts"),
+    "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
+    "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
@@ -80,8 +88,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
+    "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
+    "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
-    "smartEnergyLabel": MessageLookupByLibrary.simpleMessage("Smart Energy"),
+    "trustLabel": MessageLookupByLibrary.simpleMessage("Trust"),
+    "waterTanks": MessageLookupByLibrary.simpleMessage("Water Tanks"),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("Welcome"),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("Why Royal?"),
   };

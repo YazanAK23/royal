@@ -2,6 +2,8 @@ class AppAssets {
   // Base path
   static const String _iconsPath = 'assets/icons';
   static const String _imagesPath = 'assets/images';
+  static const String tank = '$_imagesPath/tank.svg';
+  static const String tube = '$_imagesPath/tube.svg';
 
   // App Bar Icons
   static const String search = '$_iconsPath/search.svg';

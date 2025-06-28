@@ -335,21 +335,21 @@ class S {
   }
 
   /// `Smart Energy`
-  String get smartEnergyLabel {
+  String get energyLabel {
     return Intl.message(
       'Smart Energy',
-      name: 'smartEnergyLabel',
+      name: 'energyLabel',
       desc: 'Label for smart energy category',
       args: [],
     );
   }
 
-  /// `Electrical Devices`
-  String get electricalLabel {
+  /// `Trust`
+  String get trustLabel {
     return Intl.message(
-      'Electrical Devices',
-      name: 'electricalLabel',
-      desc: 'Label for electrical devices category',
+      'Trust',
+      name: 'trustLabel',
+      desc: 'Label for trust category',
       args: [],
     );
   }
@@ -490,6 +490,116 @@ class S {
       'Why Royal?',
       name: 'whyRoyal',
       desc: 'Text for why royal question',
+      args: [],
+    );
+  }
+
+  /// `Sanitary Ware`
+  String get sanitaryTitle {
+    return Intl.message(
+      'Sanitary Ware',
+      name: 'sanitaryTitle',
+      desc: 'Title for sanitary page',
+      args: [],
+    );
+  }
+
+  /// `Sanitary Ware`
+  String get sanitaryWareTitle {
+    return Intl.message(
+      'Sanitary Ware',
+      name: 'sanitaryWareTitle',
+      desc: 'Title for sanitary ware category page',
+      args: [],
+    );
+  }
+
+  /// `Water Tanks`
+  String get waterTanks {
+    return Intl.message(
+      'Water Tanks',
+      name: 'waterTanks',
+      desc: 'Water tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Manholes`
+  String get manholes {
+    return Intl.message(
+      'Manholes',
+      name: 'manholes',
+      desc: 'Manholes subcategory',
+      args: [],
+    );
+  }
+
+  /// `Plastic Pipes`
+  String get plasticPipes {
+    return Intl.message(
+      'Plastic Pipes',
+      name: 'plasticPipes',
+      desc: 'Plastic pipes subcategory',
+      args: [],
+    );
+  }
+
+  /// `Plastic Surfaces`
+  String get plasticSurfaces {
+    return Intl.message(
+      'Plastic Surfaces',
+      name: 'plasticSurfaces',
+      desc: 'Plastic surfaces subcategory',
+      args: [],
+    );
+  }
+
+  /// `Assembly Parts`
+  String get assemblyParts {
+    return Intl.message(
+      'Assembly Parts',
+      name: 'assemblyParts',
+      desc: 'Assembly parts subcategory',
+      args: [],
+    );
+  }
+
+  /// `Building Supplies`
+  String get buildingSupplies {
+    return Intl.message(
+      'Building Supplies',
+      name: 'buildingSupplies',
+      desc: 'Building supplies subcategory',
+      args: [],
+    );
+  }
+
+  /// `Plastic Parts`
+  String get plasticParts {
+    return Intl.message(
+      'Plastic Parts',
+      name: 'plasticParts',
+      desc: 'Plastic parts subcategory',
+      args: [],
+    );
+  }
+
+  /// `Collection Boxes`
+  String get collectionBoxes {
+    return Intl.message(
+      'Collection Boxes',
+      name: 'collectionBoxes',
+      desc: 'Collection boxes subcategory',
+      args: [],
+    );
+  }
+
+  /// `No content yet`
+  String get noContentYet {
+    return Intl.message(
+      'No content yet',
+      name: 'noContentYet',
+      desc: 'Placeholder text for empty category details',
       args: [],
     );
   }
