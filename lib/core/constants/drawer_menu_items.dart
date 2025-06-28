@@ -14,7 +14,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'ordersLabel',
         icon: AppAssets.orders,
-        route: '/orders',
+        route: AppRoutes.orders, 
       ),
       DrawerMenuItem(
         titleKey: 'newItemsLabel',

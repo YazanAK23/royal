@@ -48,4 +48,8 @@ class AppAssets {
 
   // Logos
   static const String companyLogo = '$_imagesPath/comapny_logo.svg';
+
+  // Delivery Icons
+  static const String delivered = '$_iconsPath/delivered_icon.svg';
+  static const String notDelivered = '$_iconsPath/not_delivered.svg';
 }

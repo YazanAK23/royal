@@ -5,6 +5,7 @@ import 'package:royal/screens/categories/subcategory_detail_screen.dart';
 import 'package:royal/screens/categories/product_detail_screen.dart'; // Import the ProductDetailScreen
 import 'package:royal/screens/news/news_page.dart'; // Import the NewsPage
 import 'package:royal/widgets/custom_drawer.dart'; // Import the CustomDrawer
+import 'package:royal/screens/orders/order_screen.dart'; // Import the OrderScreen
 
 
 class AppRoutes {
@@ -37,6 +38,7 @@ class AppRoutes {
     categoryDetailScreen: (context) => const SubcategoryDetailScreen(), // Assuming this is the same as subcategoryDetail
     productDetail: (context) => const ProductDetailScreen(), // FIXED: now points to ProductDetailScreen
     news: (context) => const NewsPage(),
+    orders: (context) => const OrderScreen(), // Added orders route
     customDrawer: (context) => CustomDrawer(
       onMenuItemTap: (route) {
         Navigator.of(context).pushReplacementNamed(route);
