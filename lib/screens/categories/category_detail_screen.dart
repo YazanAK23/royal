@@ -9,26 +9,46 @@ import '../../widgets/custom_drawer.dart';
 import '../../widgets/category_item_list.dart';
 
 class CategoryDetailScreen extends StatelessWidget {
-  final String categoryTitle;
-  final String categoryIcon;
+  final String? categoryTitle;
+  final String? categoryIcon;
 
   const CategoryDetailScreen({
     super.key,
-    required this.categoryTitle,
-    required this.categoryIcon,
+    this.categoryTitle,
+    this.categoryIcon,
   });
 
-  @override
-  Widget build(BuildContext context) {
+  List<CategoryItem> getCategoryItems(BuildContext context, String? title) {
     final s = S.of(context);
-    final items = [
+    // Example: return different data based on the title
+    if (title == s.waterTanks) {
+      return [
+        CategoryItem(title: s.tank300L, icon: 'assets/images/tank2.png'),
+        CategoryItem(title: s.tank300LLong, icon: 'assets/images/tank_long.png'),
+        CategoryItem(title: s.tank100L, icon: null),
+        CategoryItem(title: s.tank150L, icon: null),
+        CategoryItem(title: s.tank250L, icon: null),
+        CategoryItem(title: s.tank500L, icon: null),
+      ];
+    }
+    // Default: top-level categories
+    return [
       CategoryItem(title: s.waterTanks, icon: 'assets/images/tank2.png'),
       CategoryItem(title: s.manholes, icon: null),
-      CategoryItem(title: s.plasticPipes, icon: 'assets/images/tube.svg'),
+      CategoryItem(title: s.plasticPipes, icon: 'assets/images/tube2.png'),
       CategoryItem(title: s.plasticSurfaces, icon: null),
       CategoryItem(title: s.assemblyParts, icon: null),
       CategoryItem(title: s.buildingSupplies, icon: null),
     ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final String title = args?['title'] ?? categoryTitle ?? s.sanitaryLabel;
+    final String? icon = args?['icon'] ?? categoryIcon;
+    final items = getCategoryItems(context, title);
     return Scaffold(
       backgroundColor: AppColors.white,
       endDrawer: CustomDrawer(
@@ -46,8 +66,15 @@ class CategoryDetailScreen extends StatelessWidget {
         ),
       ),
       body: CategoryItemList(
-        title: categoryTitle.isNotEmpty ? categoryTitle : s.sanitaryLabel,
+        title: title,
         items: items,
+        onItemTap: (item) {
+          AppRoutes.navigateTo(
+            context,
+            AppRoutes.categoryDetailScreen,
+            arguments: {'title': item.title, 'icon': item.icon},
+          );
+        },
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:royal/screens/home/home_screen.dart';
 import 'package:royal/screens/auth/login_screen.dart';
+import 'package:royal/screens/categories/subcategory_detail_screen.dart';
+import 'package:royal/screens/categories/product_detail_screen.dart'; // Import the ProductDetailScreen
 
 
 class AppRoutes {
@@ -19,15 +21,18 @@ class AppRoutes {
   static const String furniture = '/furniture';
   static const String smartEnergy = '/smart-energy';
   static const String trust = '/trust';
-  static const categoryDetailScreen = '/categoryDetailScreen';
+  static const String categoryDetailScreen = '/categoryDetailScreen';
+  static const String subcategoryDetail = '/subcategoryDetail';
+  static const String productDetail = '/productDetail';
 
 
   // Route Map
   static Map<String, Widget Function(BuildContext)> routes = {
     login: (context) => const LoginScreen(),
     home: (context) => const HomeScreen(),
-
-  
+    subcategoryDetail: (context) => const SubcategoryDetailScreen(),
+    categoryDetailScreen: (context) => const SubcategoryDetailScreen(), // Assuming this is the same as subcategoryDetail
+    productDetail: (context) => const ProductDetailScreen(), // FIXED: now points to ProductDetailScreen
   };
 
   // Route Generator
@@ -55,8 +60,8 @@ class AppRoutes {
   }
 
   // Navigation Methods
-  static Future<T?> navigateTo<T>(BuildContext context, String routeName) {
-    return Navigator.pushNamed<T>(context, routeName);
+  static Future<T?> navigateTo<T>(BuildContext context, String routeName, {Object? arguments}) {
+    return Navigator.pushNamed<T>(context, routeName, arguments: arguments);
   }
 
   static Future<T?> navigateToAndReplace<T>(BuildContext context, String routeName) {

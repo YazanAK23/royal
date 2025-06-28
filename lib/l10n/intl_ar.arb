@@ -109,6 +109,12 @@
     "@waterTanks": {
         "description": "Water tanks subcategory"
     },
+    "oneLayerTanks": "خزانات طبقة واحدة",
+    "twoLayerTanks": "خزانات طبقتين",
+    "threeLayerTanks": "خزانات ثلاث طبقات",
+    "fourLayerTanks": "خزانات أربع طبقات",
+    "medicalTanks": "الخزانات القابلة للطبى",
+    "grpTanks": "خزانات GRP",
     "manholes": "المناهل",
     "@manholes": {
         "description": "Manholes subcategory"
@@ -140,5 +146,15 @@
     "noContentYet": "لا يوجد محتوى بعد",
     "@noContentYet": {
         "description": "Placeholder text for empty category details"
-    }
+    },
+    "waterTanksCategoryTitle": "خزانات مياه",
+    "@waterTanksCategoryTitle": {
+        "description": "Title for water tanks category used in CategoryDetailScreen"
+    },
+    "tank300L": "٣٠٠ لتر",
+    "tank300LLong": "٣٠٠ لتر طويل",
+    "tank100L": "١٠٠ لتر",
+    "tank150L": "١٥٠ لتر",
+    "tank250L": "٢٥٠ لتر",
+    "tank500L": "٥٠٠ لتر"
 }

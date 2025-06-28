@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+import 'package:royal/core/models/product_item.dart';
+import 'package:royal/generated/l10n.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/app_dimensions.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../../widgets/custom_bottom_nav_bar.dart';
+import '../../widgets/custom_drawer.dart';
+import '../../widgets/product_item_list.dart';
+
+class ProductDetailScreen extends StatefulWidget {
+  const ProductDetailScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProductDetailScreen> createState() => _ProductDetailScreenState();
+}
+
+class _ProductDetailScreenState extends State<ProductDetailScreen> {
+  late String title;
+  late List<ProductItem> products;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final s = S.of(context);
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? {};
+    title = args['title'] ?? s.sanitaryLabel;
+
+    products = [
+      ProductItem(title: s.tank300L, image: 'assets/images/tank2.png'),
+      ProductItem(title: s.tank300LLong, image: 'assets/images/tank_long.png', isFavorite: true),
+      ProductItem(title: s.tank100L),
+      ProductItem(title: s.tank150L),
+      ProductItem(title: s.tank250L),
+      ProductItem(title: s.tank500L),
+    ];
+  }
+
+  void toggleFavorite(ProductItem item) {
+    setState(() {
+      final index = products.indexOf(item);
+      products[index] = item.copyWith(isFavorite: !item.isFavorite);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      endDrawer: CustomDrawer(
+        onMenuItemTap: (route) {
+          Navigator.pop(context);
+          Navigator.pushNamed(context, route);
+        },
+      ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        child: Builder(
+          builder: (context) => CustomAppBar(
+            onMenuTap: () => Scaffold.of(context).openEndDrawer(),
+          ),
+        ),
+      ),
+      body: ProductItemList(
+        title: title,
+        items: products,
+        onFavoriteToggle: toggleFavorite,
+      ),
+      bottomNavigationBar: CustomBottomNavBar(
+        currentIndex: 0,
+        onTap: (index) {},
+      ),
+    );
+  }
+}

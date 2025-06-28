@@ -603,6 +603,111 @@ class S {
       args: [],
     );
   }
+
+  /// `One Layer Tanks`
+  String get oneLayerTanks {
+    return Intl.message(
+      'One Layer Tanks',
+      name: 'oneLayerTanks',
+      desc: 'One layer tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Two Layer Tanks`
+  String get twoLayerTanks {
+    return Intl.message(
+      'Two Layer Tanks',
+      name: 'twoLayerTanks',
+      desc: 'Two layer tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Three Layer Tanks`
+  String get threeLayerTanks {
+    return Intl.message(
+      'Three Layer Tanks',
+      name: 'threeLayerTanks',
+      desc: 'Three layer tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Four Layer Tanks`
+  String get fourLayerTanks {
+    return Intl.message(
+      'Four Layer Tanks',
+      name: 'fourLayerTanks',
+      desc: 'Four layer tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Medical Tanks`
+  String get medicalTanks {
+    return Intl.message(
+      'Medical Tanks',
+      name: 'medicalTanks',
+      desc: 'Medical tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `GRP Tanks`
+  String get grpTanks {
+    return Intl.message(
+      'GRP Tanks',
+      name: 'grpTanks',
+      desc: 'GRP tanks subcategory',
+      args: [],
+    );
+  }
+
+  /// `Water Tanks`
+  String get waterTanksCategoryTitle {
+    return Intl.message(
+      'Water Tanks',
+      name: 'waterTanksCategoryTitle',
+      desc: 'Title for water tanks category used in CategoryDetailScreen',
+      args: [],
+    );
+  }
+
+  /// `300 Litre`
+  String get tank300L {
+    return Intl.message('300 Litre', name: 'tank300L', desc: '', args: []);
+  }
+
+  /// `300 Litre Long`
+  String get tank300LLong {
+    return Intl.message(
+      '300 Litre Long',
+      name: 'tank300LLong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `100 Litre`
+  String get tank100L {
+    return Intl.message('100 Litre', name: 'tank100L', desc: '', args: []);
+  }
+
+  /// `150 Litre`
+  String get tank150L {
+    return Intl.message('150 Litre', name: 'tank150L', desc: '', args: []);
+  }
+
+  /// `250 Litre`
+  String get tank250L {
+    return Intl.message('250 Litre', name: 'tank250L', desc: '', args: []);
+  }
+
+  /// `500 Litre`
+  String get tank500L {
+    return Intl.message('500 Litre', name: 'tank500L', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

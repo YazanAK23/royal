@@ -11,12 +11,14 @@ class CategoryItemList extends StatelessWidget {
   final String title;
   final List<CategoryItem> items;
   final VoidCallback? onBack;
+  final void Function(CategoryItem)? onItemTap;
 
   const CategoryItemList({
     super.key,
     required this.title,
     required this.items,
     this.onBack,
+    this.onItemTap,
   });
 
   @override
@@ -65,81 +67,84 @@ class CategoryItemList extends StatelessWidget {
             separatorBuilder: (context, index) => const SizedBox(height: 8),
             itemBuilder: (context, index) {
               final item = items[index];
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.03),
-                        blurRadius: 2,
-                        offset: const Offset(0, 1),
-                      ),
-                    ],
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          // Image or placeholder (right)
-                          Container(
-                            width: 54,
-                            height: 54,
-                            margin: const EdgeInsets.only(right: 12, left: 8),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[100],
-                              borderRadius: BorderRadius.circular(12),
+              return GestureDetector(
+                onTap: () => onItemTap?.call(item),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.03),
+                          blurRadius: 2,
+                          offset: const Offset(0, 1),
+                        ),
+                      ],
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            // Image or placeholder (right)
+                            Container(
+                              width: 54,
+                              height: 54,
+                              margin: const EdgeInsets.only(right: 12, left: 8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: item.icon != null
+                                  ? Padding(
+                                      padding: const EdgeInsets.all(6.0),
+                                      child: item.icon!.endsWith('.svg')
+                                          ? SvgPicture.asset(
+                                              item.icon!,
+                                              fit: BoxFit.contain,
+                                            )
+                                          : Image.asset(
+                                              item.icon!,
+                                              fit: BoxFit.contain,
+                                            ),
+                                    )
+                                  : null,
                             ),
-                            child: item.icon != null
-                                ? Padding(
-                                    padding: const EdgeInsets.all(6.0),
-                                    child: item.icon!.endsWith('.svg')
-                                        ? SvgPicture.asset(
-                                            item.icon!,
-                                            fit: BoxFit.contain,
-                                          )
-                                        : Image.asset(
-                                            item.icon!,
-                                            fit: BoxFit.contain,
-                                          ),
-                                  )
-                                : null,
-                          ),
-                          // Title (expanded, right-aligned)
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 8),
-                              child: Text(
-                                item.title,
-                                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                                textAlign: TextAlign.right,
-                                overflow: TextOverflow.ellipsis,
+                            // Title (expanded, right-aligned)
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Text(
+                                  item.title,
+                                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                                  textAlign: TextAlign.right,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 8),
-                          // Arrow (left)
-                          const Icon(Icons.arrow_forward_ios, color: Color(0xFF009FE3), size: 22),
-                          const SizedBox(width: 8),
-                        ],
-                      ),
-                      // Divider at the bottom
-                      if (index != items.length - 1)
-                        const Positioned(
-                          left: 12,
-                          right: 12,
-                          bottom: 0,
-                          child: Divider(
-                            height: 1,
-                            thickness: 1,
-                            color: Color(0xFFF2F2F2),
-                          ),
+                            const SizedBox(width: 8),
+                            // Arrow (left)
+                            const Icon(Icons.arrow_forward_ios, color: Color(0xFF009FE3), size: 22),
+                            const SizedBox(width: 8),
+                          ],
                         ),
-                    ],
+                        // Divider at the bottom
+                        if (index != items.length - 1)
+                          const Positioned(
+                            left: 12,
+                            right: 12,
+                            bottom: 0,
+                            child: Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: Color(0xe8e8e8),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               );

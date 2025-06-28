@@ -216,5 +216,39 @@
     "noContentYet": "No content yet",
     "@noContentYet": {
         "description": "Placeholder text for empty category details"
-    }
+    },
+    "oneLayerTanks": "One Layer Tanks",
+    "@oneLayerTanks": {
+        "description": "One layer tanks subcategory"
+    },
+    "twoLayerTanks": "Two Layer Tanks",
+    "@twoLayerTanks": {
+        "description": "Two layer tanks subcategory"
+    },
+    "threeLayerTanks": "Three Layer Tanks",
+    "@threeLayerTanks": {
+        "description": "Three layer tanks subcategory"
+    },
+    "fourLayerTanks": "Four Layer Tanks",
+    "@fourLayerTanks": {
+        "description": "Four layer tanks subcategory"
+    },
+    "medicalTanks": "Medical Tanks",
+    "@medicalTanks": {
+        "description": "Medical tanks subcategory"
+    },
+    "grpTanks": "GRP Tanks",
+    "@grpTanks": {
+        "description": "GRP tanks subcategory"
+    },
+    "waterTanksCategoryTitle": "Water Tanks",
+    "@waterTanksCategoryTitle": {
+        "description": "Title for water tanks category used in CategoryDetailScreen"
+    },
+    "tank300L": "300 Litre",
+    "tank300LLong": "300 Litre Long",
+    "tank100L": "100 Litre",
+    "tank150L": "150 Litre",
+    "tank250L": "250 Litre",
+    "tank500L": "500 Litre"
 }
