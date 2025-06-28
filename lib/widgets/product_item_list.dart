@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/core/models/product_item.dart';
 import '../core/constants/app_colors.dart';
-import '../core/constants/app_dimensions.dart';
 
 class ProductItemList extends StatelessWidget {
   final String title;

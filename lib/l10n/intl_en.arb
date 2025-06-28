@@ -250,5 +250,25 @@
     "tank100L": "100 Litre",
     "tank150L": "150 Litre",
     "tank250L": "250 Litre",
-    "tank500L": "500 Litre"
+    "tank500L": "500 Litre",
+    "newsPageTitle": "News",
+    "news1Title": "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    "news2Title": "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    "news3Title": "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    "@newsPageTitle": {
+        "description": "Title for the news page"
+    },
+    "@news1Title": {
+        "description": "Title for the first news item on the news page"
+    },
+    "@news2Title": {
+        "description": "Title for the second news item on the news page"
+    },
+    "@news3Title": {
+        "description": "Title for the third news item on the news page"
+    },
+    "newsTitle": "News",
+    "@newsTitle": {
+        "description": "Title for the news section or page"
+    }
 }

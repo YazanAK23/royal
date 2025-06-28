@@ -1,3 +1,5 @@
+import 'package:royal/core/routes/app_routes.dart';
+
 import '../models/drawer_menu_item.dart';
 import 'app_assets.dart';
 
@@ -32,7 +34,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'newsLabel',
         icon: AppAssets.news,
-        route: '/news',
+        route: AppRoutes.news,
       ),
       DrawerMenuItem(
         titleKey: 'certificatesLabel',

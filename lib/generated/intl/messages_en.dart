@@ -69,7 +69,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Bashar"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("New Items"),
+    "news1Title": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    ),
+    "news2Title": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    ),
+    "news3Title": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    ),
     "newsLabel": MessageLookupByLibrary.simpleMessage("News"),
+    "newsPageTitle": MessageLookupByLibrary.simpleMessage("News"),
+    "newsTitle": MessageLookupByLibrary.simpleMessage("News"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),

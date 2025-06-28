@@ -3,6 +3,8 @@ import 'package:royal/screens/home/home_screen.dart';
 import 'package:royal/screens/auth/login_screen.dart';
 import 'package:royal/screens/categories/subcategory_detail_screen.dart';
 import 'package:royal/screens/categories/product_detail_screen.dart'; // Import the ProductDetailScreen
+import 'package:royal/screens/news_page.dart'; // Import the NewsPage
+import 'package:royal/widgets/custom_drawer.dart'; // Import the CustomDrawer
 
 
 class AppRoutes {
@@ -24,6 +26,7 @@ class AppRoutes {
   static const String categoryDetailScreen = '/categoryDetailScreen';
   static const String subcategoryDetail = '/subcategoryDetail';
   static const String productDetail = '/productDetail';
+  static const String customDrawer = '/drawer'; // NEW: route for the custom drawer
 
 
   // Route Map
@@ -33,6 +36,12 @@ class AppRoutes {
     subcategoryDetail: (context) => const SubcategoryDetailScreen(),
     categoryDetailScreen: (context) => const SubcategoryDetailScreen(), // Assuming this is the same as subcategoryDetail
     productDetail: (context) => const ProductDetailScreen(), // FIXED: now points to ProductDetailScreen
+    news: (context) => const NewsPage(),
+    customDrawer: (context) => CustomDrawer(
+      onMenuItemTap: (route) {
+        Navigator.of(context).pushReplacementNamed(route);
+      },
+    ), // NEW: CustomDrawer route
   };
 
   // Route Generator

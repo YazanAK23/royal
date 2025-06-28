@@ -708,6 +708,56 @@ class S {
   String get tank500L {
     return Intl.message('500 Litre', name: 'tank500L', desc: '', args: []);
   }
+
+  /// `News`
+  String get newsPageTitle {
+    return Intl.message(
+      'News',
+      name: 'newsPageTitle',
+      desc: 'Title for the news page',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.`
+  String get news1Title {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.',
+      name: 'news1Title',
+      desc: 'Title for the first news item on the news page',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.`
+  String get news2Title {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.',
+      name: 'news2Title',
+      desc: 'Title for the second news item on the news page',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.`
+  String get news3Title {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.',
+      name: 'news3Title',
+      desc: 'Title for the third news item on the news page',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get newsTitle {
+    return Intl.message(
+      'News',
+      name: 'newsTitle',
+      desc: 'Title for the news section or page',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

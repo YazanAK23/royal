@@ -68,7 +68,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nameLabel": MessageLookupByLibrary.simpleMessage("بشار"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("المنتجات الجديدة"),
+    "news1Title": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    ),
+    "news2Title": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    ),
+    "news3Title": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    ),
     "newsLabel": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "newsPageTitle": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "newsTitle": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "noContentYet": MessageLookupByLibrary.simpleMessage("لا يوجد محتوى بعد"),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("الإشعارات"),

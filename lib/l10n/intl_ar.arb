@@ -156,5 +156,25 @@
     "tank100L": "١٠٠ لتر",
     "tank150L": "١٥٠ لتر",
     "tank250L": "٢٥٠ لتر",
-    "tank500L": "٥٠٠ لتر"
+    "tank500L": "٥٠٠ لتر",
+    "newsPageTitle": "الأخبار",
+    "news1Title": "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    "news2Title": "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    "news3Title": "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    "newsTitle": "الأخبار",
+    "@newsTitle": {
+        "description": "عنوان قسم أو صفحة الأخبار"
+    },
+    "@newsPageTitle": {
+        "description": "Title for the news page"
+    },
+    "@news1Title": {
+        "description": "Title for the first news item on the news page"
+    },
+    "@news2Title": {
+        "description": "Title for the second news item on the news page"
+    },
+    "@news3Title": {
+        "description": "Title for the third news item on the news page"
+    }
 }
