@@ -68,11 +68,29 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nameLabel": MessageLookupByLibrary.simpleMessage("بشار"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("المنتجات الجديدة"),
+    "news1Content": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد غسان غيث مدير شؤون الموظفين و...\n\nتضمنت هذه الزيارة اجتماعاً مع إدارة الشركة وخلال اللقاء تم تسليم درع الدفاع المدني تقديراً لجهود الشركة في دعم الدفاع المدني. وقدمت إدارة الشركة الشكر للدفاع المدني على جهودهم المبذولة.",
+    ),
+    "news1Subtitle": MessageLookupByLibrary.simpleMessage(
+      "شركة رويال تستضيف وفداً من مديرية الدفاع المدني",
+    ),
     "news1Title": MessageLookupByLibrary.simpleMessage(
       "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
     ),
+    "news2Content": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد غسان غيث مدير شؤون الموظفين و...\n\nتضمنت هذه الزيارة اجتماعاً مع إدارة الشركة وخلال اللقاء تم تسليم درع الدفاع المدني تقديراً لجهود الشركة في دعم الدفاع المدني. وقدمت إدارة الشركة الشكر للدفاع المدني على جهودهم المبذولة.",
+    ),
+    "news2Subtitle": MessageLookupByLibrary.simpleMessage(
+      "شركة رويال تستضيف وفداً من مديرية الدفاع المدني",
+    ),
     "news2Title": MessageLookupByLibrary.simpleMessage(
       "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
+    ),
+    "news3Content": MessageLookupByLibrary.simpleMessage(
+      "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد غسان غيث مدير شؤون الموظفين و...\n\nتضمنت هذه الزيارة اجتماعاً مع إدارة الشركة وخلال اللقاء تم تسليم درع الدفاع المدني تقديراً لجهود الشركة في دعم الدفاع المدني. وقدمت إدارة الشركة الشكر للدفاع المدني على جهودهم المبذولة.",
+    ),
+    "news3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "شركة رويال تستضيف وفداً من مديرية الدفاع المدني",
     ),
     "news3Title": MessageLookupByLibrary.simpleMessage(
       "استضافت شركة رويال الصناعية التجارية ممثلة بالحاج مازن زغير مدير العلاقات العامة والسيد",
@@ -80,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newsLabel": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "newsPageTitle": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "newsTitle": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "nextNews": MessageLookupByLibrary.simpleMessage(" الخبرالتالي"),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "noContentYet": MessageLookupByLibrary.simpleMessage("لا يوجد محتوى بعد"),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("الإشعارات"),
@@ -97,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage(
       "الأسطح البلاستيكية",
     ),
+    "previousNews": MessageLookupByLibrary.simpleMessage("الخبر السابق"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "احصل على الهوية التجارية مجاناً لفترة محدودة",

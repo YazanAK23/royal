@@ -3,7 +3,7 @@ import 'package:royal/screens/home/home_screen.dart';
 import 'package:royal/screens/auth/login_screen.dart';
 import 'package:royal/screens/categories/subcategory_detail_screen.dart';
 import 'package:royal/screens/categories/product_detail_screen.dart'; // Import the ProductDetailScreen
-import 'package:royal/screens/news_page.dart'; // Import the NewsPage
+import 'package:royal/screens/news/news_page.dart'; // Import the NewsPage
 import 'package:royal/widgets/custom_drawer.dart'; // Import the CustomDrawer
 
 

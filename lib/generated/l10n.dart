@@ -749,12 +749,92 @@ class S {
     );
   }
 
+  /// `Royal hosts a delegation from the Civil Defense Directorate`
+  String get news1Subtitle {
+    return Intl.message(
+      'Royal hosts a delegation from the Civil Defense Directorate',
+      name: 'news1Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal hosts a delegation from the Civil Defense Directorate`
+  String get news2Subtitle {
+    return Intl.message(
+      'Royal hosts a delegation from the Civil Defense Directorate',
+      name: 'news2Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal hosts a delegation from the Civil Defense Directorate`
+  String get news3Subtitle {
+    return Intl.message(
+      'Royal hosts a delegation from the Civil Defense Directorate',
+      name: 'news3Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company's management, during which the Civil Defense Shield was presented in appreciation of the company's efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.`
+  String get news1Content {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.',
+      name: 'news1Content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company's management, during which the Civil Defense Shield was presented in appreciation of the company's efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.`
+  String get news2Content {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.',
+      name: 'news2Content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company's management, during which the Civil Defense Shield was presented in appreciation of the company's efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.`
+  String get news3Content {
+    return Intl.message(
+      'Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.',
+      name: 'news3Content',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `News`
   String get newsTitle {
     return Intl.message(
       'News',
       name: 'newsTitle',
       desc: 'Title for the news section or page',
+      args: [],
+    );
+  }
+
+  /// `Previous News`
+  String get previousNews {
+    return Intl.message(
+      'Previous News',
+      name: 'previousNews',
+      desc: 'Label for previous news button in details page',
+      args: [],
+    );
+  }
+
+  /// `Next News`
+  String get nextNews {
+    return Intl.message(
+      'Next News',
+      name: 'nextNews',
+      desc: 'Label for next news button in details page',
       args: [],
     );
   }

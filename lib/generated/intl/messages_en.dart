@@ -69,11 +69,29 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Bashar"),
     "newItemsLabel": MessageLookupByLibrary.simpleMessage("New Items"),
+    "news1Content": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.",
+    ),
+    "news1Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Royal hosts a delegation from the Civil Defense Directorate",
+    ),
     "news1Title": MessageLookupByLibrary.simpleMessage(
       "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
     ),
+    "news2Content": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.",
+    ),
+    "news2Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Royal hosts a delegation from the Civil Defense Directorate",
+    ),
     "news2Title": MessageLookupByLibrary.simpleMessage(
       "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
+    ),
+    "news3Content": MessageLookupByLibrary.simpleMessage(
+      "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr. Ghassan Ghaith, HR Manager...\n\nThis visit included a meeting with the company\'s management, during which the Civil Defense Shield was presented in appreciation of the company\'s efforts in supporting the Civil Defense. The company management thanked the Civil Defense for their efforts.",
+    ),
+    "news3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Royal hosts a delegation from the Civil Defense Directorate",
     ),
     "news3Title": MessageLookupByLibrary.simpleMessage(
       "Royal Industrial Trading Company hosted Mr. Mazen Zghair, Public Relations Manager, and Mr.",
@@ -81,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newsLabel": MessageLookupByLibrary.simpleMessage("News"),
     "newsPageTitle": MessageLookupByLibrary.simpleMessage("News"),
     "newsTitle": MessageLookupByLibrary.simpleMessage("News"),
+    "nextNews": MessageLookupByLibrary.simpleMessage("Next News"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -96,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "plasticParts": MessageLookupByLibrary.simpleMessage("Plastic Parts"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),
+    "previousNews": MessageLookupByLibrary.simpleMessage("Previous News"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
