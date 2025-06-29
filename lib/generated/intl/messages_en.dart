@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "Browsing Archive",
     ),
+    "browsingHistoryProductTitle": MessageLookupByLibrary.simpleMessage(
+      "Water Tank",
+    ),
     "buildingSupplies": MessageLookupByLibrary.simpleMessage(
       "Building Supplies",
     ),

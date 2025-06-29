@@ -988,6 +988,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Water Tank`
+  String get browsingHistoryProductTitle {
+    return Intl.message(
+      'Water Tank',
+      name: 'browsingHistoryProductTitle',
+      desc: 'Title for a product card in the browsing history page',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

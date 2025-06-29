@@ -210,5 +210,9 @@
     "completeOrderButton": "أتم الطلبية",
     "@completeOrderButton": {
         "description": "Button text for completing the order in the cart screen"
+    },
+    "browsingHistoryProductTitle": "خزان مياه",
+    "@browsingHistoryProductTitle": {
+        "description": "Title for a product card in the browsing history page"
     }
 }

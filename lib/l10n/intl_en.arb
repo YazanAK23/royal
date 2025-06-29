@@ -304,5 +304,9 @@
     "completeOrderButton": "Complete Order",
     "@completeOrderButton": {
         "description": "Button text for completing the order in the cart screen"
+    },
+    "browsingHistoryProductTitle": "Water Tank",
+    "@browsingHistoryProductTitle": {
+        "description": "Title for a product card in the browsing history page"
     }
 }

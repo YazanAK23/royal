@@ -24,7 +24,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'browsingArchiveLabel',
         icon: AppAssets.browsingArchive,
-        route: '/browsing-archive',
+        route: AppRoutes.history,
       ),
       DrawerMenuItem(
         titleKey: 'monthlyOffersLabel',

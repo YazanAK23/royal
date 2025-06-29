@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "أرشيف التصفح",
     ),
+    "browsingHistoryProductTitle": MessageLookupByLibrary.simpleMessage(
+      "خزان مياه",
+    ),
     "buildingSupplies": MessageLookupByLibrary.simpleMessage("إمدادات البناء"),
     "cartLabel": MessageLookupByLibrary.simpleMessage("السلة"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("الشهادات"),
