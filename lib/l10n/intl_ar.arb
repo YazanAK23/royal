@@ -190,5 +190,13 @@
     "nextNews": " الخبرالتالي",
     "@nextNews": {
         "description": "Label for next news button in details page"
-    }
+    },
+    "itemKitchenSinkTitle": "مغسلة مطبخ",
+    "itemKitchenSinkCode": "71-8533",
+    "itemKitchenSinkUnitDetails": "صندوق = ١٢ قطعة",
+    "itemKitchenSinkUnitCTN": "صندوق",
+    "itemKitchenSinkUnitPACK": "الحزمة",
+    "itemOrderNumber": "#5022201",
+    "itemOrderTitle": "الطلبية",
+    "itemSave": "حفظ"
 }

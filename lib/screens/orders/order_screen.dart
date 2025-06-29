@@ -89,98 +89,103 @@ class _OrderScreenState extends State<OrderScreen> {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   final isDelivered = index % 2 == 0;
-                  return Container(
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF7F8FA),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xFF03A9F4),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.orderDetails);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF7F8FA),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF03A9F4),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              ),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 8),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text('12/12/2022',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15)),
+                                Text('#5022201',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15)),
+                              ],
                             ),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text('12/12/2022',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 15)),
-                              Text('#5022201',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 15)),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text('٢٨ صنف',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15)),
-                                    const SizedBox(height: 4),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        SvgPicture.asset(
-                                          isDelivered
-                                              ? AppAssets.delivered
-                                              : AppAssets.notDelivered,
-                                          width: 19,
-                                          height: 13,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 8),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text('٢٨ صنف',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15)),
+                                      const SizedBox(height: 4),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          SvgPicture.asset(
+                                            isDelivered
+                                                ? AppAssets.delivered
+                                                : AppAssets.notDelivered,
+                                            width: 19,
+                                            height: 13,
+                                          ),
+                                          const SizedBox(width: 6),
+                                          const Text('حالة الطلبية',
+                                              style: TextStyle(fontSize: 14)),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                if (isDelivered) ...[
+                                  const SizedBox(width: 16),
+                                  Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 18,
+                                        backgroundColor: const Color(0xFF03A9F4),
+                                        child: IconButton(
+                                          icon: const Icon(Icons.edit,
+                                              color: Colors.white, size: 18),
+                                          onPressed: () {},
                                         ),
-                                        const SizedBox(width: 6),
-                                        const Text('حالة الطلبية',
-                                            style: TextStyle(fontSize: 14)),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              if (isDelivered) ...[
-                                const SizedBox(width: 16),
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 18,
-                                      backgroundColor: const Color(0xFF03A9F4),
-                                      child: IconButton(
-                                        icon: const Icon(Icons.edit,
-                                            color: Colors.white, size: 18),
-                                        onPressed: () {},
                                       ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    CircleAvatar(
-                                      radius: 18,
-                                      backgroundColor: const Color(0xFF03A9F4),
-                                      child: IconButton(
-                                        icon: const Icon(Icons.delete,
-                                            color: Colors.white, size: 18),
-                                        onPressed: () {},
+                                      const SizedBox(width: 8),
+                                      CircleAvatar(
+                                        radius: 18,
+                                        backgroundColor: const Color(0xFF03A9F4),
+                                        child: IconButton(
+                                          icon: const Icon(Icons.delete,
+                                              color: Colors.white, size: 18),
+                                          onPressed: () {},
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
+                                    ],
+                                  ),
+                                ],
                               ],
-                            ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

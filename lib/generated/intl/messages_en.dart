@@ -57,6 +57,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "grpTanks": MessageLookupByLibrary.simpleMessage("GRP Tanks"),
     "homeLabel": MessageLookupByLibrary.simpleMessage("Home"),
     "informationLabel": MessageLookupByLibrary.simpleMessage("Information"),
+    "itemKitchenSinkCode": MessageLookupByLibrary.simpleMessage("71-8533"),
+    "itemKitchenSinkTitle": MessageLookupByLibrary.simpleMessage(
+      "Kitchen Sink",
+    ),
+    "itemKitchenSinkUnitCTN": MessageLookupByLibrary.simpleMessage("CTN"),
+    "itemKitchenSinkUnitDetails": MessageLookupByLibrary.simpleMessage(
+      "Box = 12 pieces",
+    ),
+    "itemKitchenSinkUnitPACK": MessageLookupByLibrary.simpleMessage("PACK"),
+    "itemOrderNumber": MessageLookupByLibrary.simpleMessage("#5022201"),
+    "itemOrderTitle": MessageLookupByLibrary.simpleMessage("Order"),
+    "itemSave": MessageLookupByLibrary.simpleMessage("Save"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),

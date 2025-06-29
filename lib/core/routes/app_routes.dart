@@ -6,6 +6,7 @@ import 'package:royal/screens/categories/product_detail_screen.dart'; // Import 
 import 'package:royal/screens/news/news_page.dart'; // Import the NewsPage
 import 'package:royal/widgets/custom_drawer.dart'; // Import the CustomDrawer
 import 'package:royal/screens/orders/order_screen.dart'; // Import the OrderScreen
+import 'package:royal/screens/order_details_page.dart'; // Import the OrderDetailsPage
 
 
 class AppRoutes {
@@ -28,6 +29,7 @@ class AppRoutes {
   static const String subcategoryDetail = '/subcategoryDetail';
   static const String productDetail = '/productDetail';
   static const String customDrawer = '/drawer'; // NEW: route for the custom drawer
+  static const String orderDetails = '/orderDetails'; // NEW: route for order details
 
 
   // Route Map
@@ -44,6 +46,7 @@ class AppRoutes {
         Navigator.of(context).pushReplacementNamed(route);
       },
     ), // NEW: CustomDrawer route
+    orderDetails: (context) => const OrderDetailsPage(), // NEW: OrderDetailsPage route
   };
 
   // Route Generator

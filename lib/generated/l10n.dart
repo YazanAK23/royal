@@ -838,6 +838,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Kitchen Sink`
+  String get itemKitchenSinkTitle {
+    return Intl.message(
+      'Kitchen Sink',
+      name: 'itemKitchenSinkTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `71-8533`
+  String get itemKitchenSinkCode {
+    return Intl.message(
+      '71-8533',
+      name: 'itemKitchenSinkCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Box = 12 pieces`
+  String get itemKitchenSinkUnitDetails {
+    return Intl.message(
+      'Box = 12 pieces',
+      name: 'itemKitchenSinkUnitDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CTN`
+  String get itemKitchenSinkUnitCTN {
+    return Intl.message(
+      'CTN',
+      name: 'itemKitchenSinkUnitCTN',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PACK`
+  String get itemKitchenSinkUnitPACK {
+    return Intl.message(
+      'PACK',
+      name: 'itemKitchenSinkUnitPACK',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#5022201`
+  String get itemOrderNumber {
+    return Intl.message(
+      '#5022201',
+      name: 'itemOrderNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order`
+  String get itemOrderTitle {
+    return Intl.message('Order', name: 'itemOrderTitle', desc: '', args: []);
+  }
+
+  /// `Save`
+  String get itemSave {
+    return Intl.message('Save', name: 'itemSave', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

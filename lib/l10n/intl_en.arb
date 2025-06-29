@@ -284,5 +284,13 @@
     "nextNews": "Next News",
     "@nextNews": {
         "description": "Label for next news button in details page"
-    }
+    },
+    "itemKitchenSinkTitle": "Kitchen Sink",
+    "itemKitchenSinkCode": "71-8533",
+    "itemKitchenSinkUnitDetails": "Box = 12 pieces",
+    "itemKitchenSinkUnitCTN": "CTN",
+    "itemKitchenSinkUnitPACK": "PACK",
+    "itemOrderNumber": "#5022201",
+    "itemOrderTitle": "Order",
+    "itemSave": "Save"
 }
