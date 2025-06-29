@@ -10,6 +10,7 @@ import 'package:royal/screens/orders/order_details_page.dart'; // Import the Ord
 import 'package:royal/screens/cart/cart_screen.dart'; // Import the CartScreen
 import 'package:royal/screens/browsing%20history/browsing_history_page.dart'; // Import BrowsingHistoryPage
 import 'package:royal/screens/New items/new_items.dart'; // Import NewItemsPage
+import 'package:royal/screens/favorite/favorite_page.dart'; // Import the FavoritePage
 
 
 class AppRoutes {
@@ -34,6 +35,7 @@ class AppRoutes {
   static const String customDrawer = '/drawer'; // NEW: route for the custom drawer
   static const String orderDetails = '/orderDetails'; // NEW: route for order details
   static const String cart = '/cart'; // Added cart route
+  static const String favorite = '/favorite'; // Added favorite route
 
 
   // Route Map
@@ -54,6 +56,7 @@ class AppRoutes {
     cart: (context) => const CartScreen(), // Added cart screen route
     history: (context) => const BrowsingHistoryPage(), // Added history route
     newItems: (context) => const NewItemsPage(), // Added new items route
+    favorite: (context) => const FavoritePage(), // Added favorite page route
   };
 
   // Route Generator

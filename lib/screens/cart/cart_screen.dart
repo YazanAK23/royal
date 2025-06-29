@@ -12,7 +12,6 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  int _currentIndex = 0;
   // Example cart items
   final List<Map<String, dynamic>> _cartItems = List.generate(5, (index) => {
     'imagePath': 'assets/images/kitchen_sink.png',
@@ -122,11 +121,19 @@ class _CartScreenState extends State<CartScreen> {
         ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: _currentIndex,
-        onTap: (i) {
-          setState(() {
-            _currentIndex = i;
-          });
+        currentIndex: -1, // No item selected for Cart page
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorite');
+          } else if (index == 2) {
+            // Already on cart
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/browsing-history');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/information');
+          }
         },
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
+import '../core/routes/app_routes.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -23,22 +24,27 @@ class CustomBottomNavBar extends StatelessWidget {
       {
         'selectedIcon': AppAssets.homeLogoSelected,
         'unselectedIcon': AppAssets.homeLogoUnselected,
+        'route': AppRoutes.home,
       },
       {
         'selectedIcon': AppAssets.favoriteSelected,
         'unselectedIcon': AppAssets.favoriteUnselected,
+        'route': AppRoutes.favorite,
       },
       {
         'selectedIcon': AppAssets.profileIcon,
         'unselectedIcon': AppAssets.profileIcon,
+        'route': AppRoutes.account,
       },
       {
         'selectedIcon': AppAssets.downloadsSelected,
         'unselectedIcon': AppAssets.downloadsUnselected,
+        'route': AppRoutes.history,
       },
       {
         'selectedIcon': AppAssets.informationSelected,
         'unselectedIcon': AppAssets.informationUnselected,
+        'route': AppRoutes.information,
       },
     ];
     final itemsCount = navItemsData.length;
@@ -50,7 +56,12 @@ class CustomBottomNavBar extends StatelessWidget {
         selectedIcon: data['selectedIcon']!,
         unselectedIcon: data['unselectedIcon']!,
         isSelected: currentIndex == logicalIndex,
-        onTap: () => onTap(logicalIndex),
+        onTap: () {
+          if (currentIndex != logicalIndex) {
+            Navigator.of(context).pushReplacementNamed(data['route']!);
+          }
+          onTap(logicalIndex);
+        },
       );
     });
     final rowChildren = isRtl ? navBarWidgets.reversed.toList() : navBarWidgets;

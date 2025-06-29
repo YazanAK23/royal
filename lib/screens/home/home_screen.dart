@@ -267,7 +267,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+        onTap: (index) {
+          if (index == 0) {
+            // Already on home
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorite');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/account');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/browsing-history');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/information');
+          }
+        },
       ),
     );
   }
