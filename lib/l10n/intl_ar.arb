@@ -214,5 +214,45 @@
     "browsingHistoryProductTitle": "خزان مياه",
     "@browsingHistoryProductTitle": {
         "description": "Title for a product card in the browsing history page"
+    },
+    "searchTitle": "البحث",
+    "@searchTitle": {
+        "description": "Title for the search screen"
+    },
+    "searchHintDetails": "ابحث باسم الصنف أو كود الصنف",
+    "@searchHintDetails": {
+        "description": "Hint for the search details field"
+    },
+    "quantityLabel": "الكمية:",
+    "@quantityLabel": {
+        "description": "Label for quantity selector"
+    },
+    "confirmLabel": "تأكيد",
+    "@confirmLabel": {
+        "description": "Confirm button label"
+    },
+    "cancelLabel": "إلغاء",
+    "@cancelLabel": {
+        "description": "Cancel button label"
+    },
+    "addedToCartLabel": "تم الإضافة للسلة",
+    "@addedToCartLabel": {
+        "description": "Label for item added to cart"
+    },
+    "addToCartLabel": "أضف للسلة",
+    "@addToCartLabel": {
+        "description": "Add to cart button label"
+    },
+    "addToFavoritesLabel": "أضف للمفضلة",
+    "@addToFavoritesLabel": {
+        "description": "Add to favorites button label"
+    },
+    "tankTitle": "خزان ١٠٠٠ لتر",
+    "@tankTitle": {
+        "description": "Title for 1000L tank"
+    },
+    "tankDesc": "خزانات مياه < خزانات طبقة واحدة",
+    "@tankDesc": {
+        "description": "Description for 1000L tank"
     }
 }

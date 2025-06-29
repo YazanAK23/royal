@@ -115,12 +115,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       Container(
         width: 28,
         alignment: Alignment.center,
-        child: SvgPicture.asset(
-          AppAssets.search,
-          width: 20,
-          height: 20,
-          color: AppColors.primary,
-          semanticsLabel: S.of(context).searchHint,
+        child: GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed('/search'),
+          child: SvgPicture.asset(
+            AppAssets.search,
+            width: 20,
+            height: 20,
+            color: AppColors.primary,
+            semanticsLabel: S.of(context).searchHint,
+          ),
         ),
       ),
     ];
@@ -217,12 +220,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       Container(
         width: 28,
         alignment: Alignment.center,
-        child: SvgPicture.asset(
-          AppAssets.search,
-          width: 20,
-          height: 20,
-          color: AppColors.primary,
-          semanticsLabel: S.of(context).searchHint,
+        child: GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed('/search'),
+          child: SvgPicture.asset(
+            AppAssets.search,
+            width: 20,
+            height: 20,
+            color: AppColors.primary,
+            semanticsLabel: S.of(context).searchHint,
+          ),
         ),
       ),
     ];

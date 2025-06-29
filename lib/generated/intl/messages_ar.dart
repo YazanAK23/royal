@@ -22,6 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addToCartLabel": MessageLookupByLibrary.simpleMessage("أضف للسلة"),
+    "addToFavoritesLabel": MessageLookupByLibrary.simpleMessage("أضف للمفضلة"),
+    "addedToCartLabel": MessageLookupByLibrary.simpleMessage(
+      "تم الإضافة للسلة",
+    ),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("معلومات التطبيق"),
     "appName": MessageLookupByLibrary.simpleMessage("رويال"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("علب التجميع"),
@@ -32,10 +37,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "خزان مياه",
     ),
     "buildingSupplies": MessageLookupByLibrary.simpleMessage("إمدادات البناء"),
+    "cancelLabel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cartLabel": MessageLookupByLibrary.simpleMessage("السلة"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("الشهادات"),
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("علب التجميع"),
     "completeOrderButton": MessageLookupByLibrary.simpleMessage("أتم الطلبية"),
+    "confirmLabel": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage("أكمل كزائر"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("التنزيلات"),
@@ -143,18 +150,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "احصل على الهوية التجارية مجاناً لفترة محدودة",
     ),
+    "quantityLabel": MessageLookupByLibrary.simpleMessage("الكمية:"),
     "registerNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
+    "searchHintDetails": MessageLookupByLibrary.simpleMessage(
+      "ابحث باسم الصنف أو كود الصنف",
+    ),
+    "searchTitle": MessageLookupByLibrary.simpleMessage("البحث"),
     "tank100L": MessageLookupByLibrary.simpleMessage("١٠٠ لتر"),
     "tank150L": MessageLookupByLibrary.simpleMessage("١٥٠ لتر"),
     "tank250L": MessageLookupByLibrary.simpleMessage("٢٥٠ لتر"),
     "tank300L": MessageLookupByLibrary.simpleMessage("٣٠٠ لتر"),
     "tank300LLong": MessageLookupByLibrary.simpleMessage("٣٠٠ لتر طويل"),
     "tank500L": MessageLookupByLibrary.simpleMessage("٥٠٠ لتر"),
+    "tankDesc": MessageLookupByLibrary.simpleMessage(
+      "خزانات مياه < خزانات طبقة واحدة",
+    ),
+    "tankTitle": MessageLookupByLibrary.simpleMessage("خزان ١٠٠٠ لتر"),
     "threeLayerTanks": MessageLookupByLibrary.simpleMessage(
       "خزانات ثلاث طبقات",
     ),

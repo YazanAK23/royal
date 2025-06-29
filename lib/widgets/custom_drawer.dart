@@ -54,11 +54,14 @@ class CustomDrawer extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // Search icon on left
-                      SvgPicture.asset(
-                        AppAssets.search,
-                        width: 24,
-                        height: 24,
-                        color: AppColors.white,
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pushNamed('/search'),
+                        child: SvgPicture.asset(
+                          AppAssets.search,
+                          width: 24,
+                          height: 24,
+                          color: AppColors.white,
+                        ),
                       ),
                       // Back button in center
                       GestureDetector(

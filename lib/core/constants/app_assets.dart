@@ -52,4 +52,7 @@ class AppAssets {
   // Delivery Icons
   static const String delivered = '$_iconsPath/delivered_icon.svg';
   static const String notDelivered = '$_iconsPath/not_delivered.svg';
+
+  // QR Code Icon
+  static const String qrCode = 'assets/icons/qr_code_icon.svg';
 }

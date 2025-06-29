@@ -22,6 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addToCartLabel": MessageLookupByLibrary.simpleMessage("Add to cart"),
+    "addToFavoritesLabel": MessageLookupByLibrary.simpleMessage(
+      "Add to favorites",
+    ),
+    "addedToCartLabel": MessageLookupByLibrary.simpleMessage("Added to cart"),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("App Info"),
     "appName": MessageLookupByLibrary.simpleMessage("Royal"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("Assembly Parts"),
@@ -34,12 +39,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "buildingSupplies": MessageLookupByLibrary.simpleMessage(
       "Building Supplies",
     ),
+    "cancelLabel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cartLabel": MessageLookupByLibrary.simpleMessage("Cart"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("Certificates"),
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("Collection Boxes"),
     "completeOrderButton": MessageLookupByLibrary.simpleMessage(
       "Complete Order",
     ),
+    "confirmLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
@@ -146,18 +153,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
     ),
+    "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity:"),
     "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
+    "searchHintDetails": MessageLookupByLibrary.simpleMessage(
+      "Search by item name or code",
+    ),
+    "searchTitle": MessageLookupByLibrary.simpleMessage("Search"),
     "tank100L": MessageLookupByLibrary.simpleMessage("100 Litre"),
     "tank150L": MessageLookupByLibrary.simpleMessage("150 Litre"),
     "tank250L": MessageLookupByLibrary.simpleMessage("250 Litre"),
     "tank300L": MessageLookupByLibrary.simpleMessage("300 Litre"),
     "tank300LLong": MessageLookupByLibrary.simpleMessage("300 Litre Long"),
     "tank500L": MessageLookupByLibrary.simpleMessage("500 Litre"),
+    "tankDesc": MessageLookupByLibrary.simpleMessage(
+      "Water Tanks < One Layer Tanks",
+    ),
+    "tankTitle": MessageLookupByLibrary.simpleMessage("1000L Tank"),
     "threeLayerTanks": MessageLookupByLibrary.simpleMessage(
       "Three Layer Tanks",
     ),

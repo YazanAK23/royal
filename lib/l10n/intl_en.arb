@@ -308,5 +308,45 @@
     "browsingHistoryProductTitle": "Water Tank",
     "@browsingHistoryProductTitle": {
         "description": "Title for a product card in the browsing history page"
+    },
+    "searchTitle": "Search",
+    "@searchTitle": {
+        "description": "Title for the search screen"
+    },
+    "searchHintDetails": "Search by item name or code",
+    "@searchHintDetails": {
+        "description": "Hint for the search details field"
+    },
+    "quantityLabel": "Quantity:",
+    "@quantityLabel": {
+        "description": "Label for quantity selector"
+    },
+    "confirmLabel": "Confirm",
+    "@confirmLabel": {
+        "description": "Confirm button label"
+    },
+    "cancelLabel": "Cancel",
+    "@cancelLabel": {
+        "description": "Cancel button label"
+    },
+    "addedToCartLabel": "Added to cart",
+    "@addedToCartLabel": {
+        "description": "Label for item added to cart"
+    },
+    "addToCartLabel": "Add to cart",
+    "@addToCartLabel": {
+        "description": "Add to cart button label"
+    },
+    "addToFavoritesLabel": "Add to favorites",
+    "@addToFavoritesLabel": {
+        "description": "Add to favorites button label"
+    },
+    "tankTitle": "1000L Tank",
+    "@tankTitle": {
+        "description": "Title for 1000L tank"
+    },
+    "tankDesc": "Water Tanks < One Layer Tanks",
+    "@tankDesc": {
+        "description": "Description for 1000L tank"
     }
 }

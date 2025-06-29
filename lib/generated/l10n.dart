@@ -998,6 +998,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Search`
+  String get searchTitle {
+    return Intl.message(
+      'Search',
+      name: 'searchTitle',
+      desc: 'Title for the search screen',
+      args: [],
+    );
+  }
+
+  /// `Search by item name or code`
+  String get searchHintDetails {
+    return Intl.message(
+      'Search by item name or code',
+      name: 'searchHintDetails',
+      desc: 'Hint for the search details field',
+      args: [],
+    );
+  }
+
+  /// `Quantity:`
+  String get quantityLabel {
+    return Intl.message(
+      'Quantity:',
+      name: 'quantityLabel',
+      desc: 'Label for quantity selector',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirmLabel {
+    return Intl.message(
+      'Confirm',
+      name: 'confirmLabel',
+      desc: 'Confirm button label',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancelLabel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancelLabel',
+      desc: 'Cancel button label',
+      args: [],
+    );
+  }
+
+  /// `Added to cart`
+  String get addedToCartLabel {
+    return Intl.message(
+      'Added to cart',
+      name: 'addedToCartLabel',
+      desc: 'Label for item added to cart',
+      args: [],
+    );
+  }
+
+  /// `Add to cart`
+  String get addToCartLabel {
+    return Intl.message(
+      'Add to cart',
+      name: 'addToCartLabel',
+      desc: 'Add to cart button label',
+      args: [],
+    );
+  }
+
+  /// `Add to favorites`
+  String get addToFavoritesLabel {
+    return Intl.message(
+      'Add to favorites',
+      name: 'addToFavoritesLabel',
+      desc: 'Add to favorites button label',
+      args: [],
+    );
+  }
+
+  /// `1000L Tank`
+  String get tankTitle {
+    return Intl.message(
+      '1000L Tank',
+      name: 'tankTitle',
+      desc: 'Title for 1000L tank',
+      args: [],
+    );
+  }
+
+  /// `Water Tanks < One Layer Tanks`
+  String get tankDesc {
+    return Intl.message(
+      'Water Tanks < One Layer Tanks',
+      name: 'tankDesc',
+      desc: 'Description for 1000L tank',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
