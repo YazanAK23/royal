@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
-import '../widgets/custom_app_bar.dart';
-import '../widgets/custom_bottom_nav_bar.dart';
-import '../widgets/browsing_history_product_card.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../../widgets/custom_bottom_nav_bar.dart';
+import '../../widgets/product_card.dart';
 
 class BrowsingHistoryPage extends StatelessWidget {
   const BrowsingHistoryPage({Key? key}) : super(key: key);
@@ -52,27 +52,27 @@ class BrowsingHistoryPage extends StatelessWidget {
                 mainAxisSpacing: 16,
                 childAspectRatio: 0.95,
                 children: [
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank7.png',
                     title: s.waterTanks,
                   ),
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank7.png',
                     title: s.waterTanks ,
                   ),
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank6.png',
                     title: s.waterTanks,
                   ),
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank4.png',
                     title: s.waterTanks ,
                   ),
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank3.png',
                     title: s.waterTanks ,
                   ),
-                  BrowsingHistoryProductCard(
+                  ProductCard(
                     imagePath: 'assets/images/tank5.png',
                     title: s.waterTanks,
                   ),

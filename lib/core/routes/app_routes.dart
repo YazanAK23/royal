@@ -8,7 +8,8 @@ import 'package:royal/widgets/custom_drawer.dart'; // Import the CustomDrawer
 import 'package:royal/screens/orders/order_screen.dart'; // Import the OrderScreen
 import 'package:royal/screens/orders/order_details_page.dart'; // Import the OrderDetailsPage
 import 'package:royal/screens/cart/cart_screen.dart'; // Import the CartScreen
-import 'package:royal/screens/browsing_history_page.dart'; // Import BrowsingHistoryPage
+import 'package:royal/screens/browsing%20history/browsing_history_page.dart'; // Import BrowsingHistoryPage
+import 'package:royal/screens/New items/new_items.dart'; // Import NewItemsPage
 
 
 class AppRoutes {
@@ -52,6 +53,7 @@ class AppRoutes {
     orderDetails: (context) => const OrderDetailsPage(), // NEW: OrderDetailsPage route
     cart: (context) => const CartScreen(), // Added cart screen route
     history: (context) => const BrowsingHistoryPage(), // Added history route
+    newItems: (context) => const NewItemsPage(), // Added new items route
   };
 
   // Route Generator

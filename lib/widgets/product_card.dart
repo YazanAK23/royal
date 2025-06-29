@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BrowsingHistoryProductCard extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final VoidCallback? onTap;
 
-  const BrowsingHistoryProductCard({
+  const ProductCard({
     Key? key,
     required this.imagePath,
     required this.title,

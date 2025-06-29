@@ -19,7 +19,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'newItemsLabel',
         icon: AppAssets.newItems,
-        route: '/new-items',
+        route: AppRoutes.newItems, // Updated to use AppRoutes  
       ),
       DrawerMenuItem(
         titleKey: 'browsingArchiveLabel',
