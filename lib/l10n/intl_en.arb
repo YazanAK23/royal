@@ -300,5 +300,9 @@
     "orderItemsCount": "28 items",
     "orderStatus": "Order Status",
     "orderEdit": "Edit",
-    "orderDelete": "Delete"
+    "orderDelete": "Delete",
+    "completeOrderButton": "Complete Order",
+    "@completeOrderButton": {
+        "description": "Button text for completing the order in the cart screen"
+    }
 }

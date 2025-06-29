@@ -3,7 +3,7 @@
     "appName": "رويال",
     "searchHint": "بحث",
     "promotionText": "احصل على الهوية التجارية مجاناً لفترة محدودة",
-    "cartLabel": "عربة التسوق",
+    "cartLabel": "السلة",
     "notificationsLabel": "الإشعارات",
     "menuLabel": "القائمة",
     "languageEnglish": "English",
@@ -206,5 +206,9 @@
     "orderItemsCount": "٢٨ صنف",
     "orderStatus": "حالة الطلبية",
     "orderEdit": "تعديل",
-    "orderDelete": "حذف"
+    "orderDelete": "حذف",
+    "completeOrderButton": "أتم الطلبية",
+    "@completeOrderButton": {
+        "description": "Button text for completing the order in the cart screen"
+    }
 }

@@ -978,6 +978,16 @@ class S {
   String get orderDelete {
     return Intl.message('Delete', name: 'orderDelete', desc: '', args: []);
   }
+
+  /// `Complete Order`
+  String get completeOrderButton {
+    return Intl.message(
+      'Complete Order',
+      name: 'completeOrderButton',
+      desc: 'Button text for completing the order in the cart screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

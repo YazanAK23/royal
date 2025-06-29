@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_bottom_nav_bar.dart';
-import '../../widgets/item_card.dart';
-import '../../core/routes/app_routes.dart';
+import '../../../widgets/custom_app_bar.dart';
+import '../../../widgets/custom_bottom_nav_bar.dart';
+import '../../../widgets/item_card.dart';
+import '../../../core/routes/app_routes.dart';
 
 class OrderDetailsPage extends StatelessWidget {
   const OrderDetailsPage({Key? key}) : super(key: key);

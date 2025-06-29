@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:royal/core/routes/app_routes.dart';
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
@@ -65,12 +66,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            SvgPicture.asset(
-              AppAssets.cart,
-              width: 20,
-              height: 20,
-              color: AppColors.primary,
-              semanticsLabel: S.of(context).cartLabel,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.cart);
+              },
+              child: SvgPicture.asset(
+                AppAssets.cart,
+                width: 20,
+                height: 20,
+                color: AppColors.primary,
+                semanticsLabel: S.of(context).cartLabel,
+              ),
             ),
             _buildBadge('99+'),
           ],
@@ -162,12 +168,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            SvgPicture.asset(
-              AppAssets.cart,
-              width: 20,
-              height: 20,
-              color: AppColors.primary,
-              semanticsLabel: S.of(context).cartLabel,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.cart);
+              },
+              child: SvgPicture.asset(
+                AppAssets.cart,
+                width: 20,
+                height: 20,
+                color: AppColors.primary,
+                semanticsLabel: S.of(context).cartLabel,
+              ),
             ),
             _buildBadge('99+'),
           ],

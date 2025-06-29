@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cartLabel": MessageLookupByLibrary.simpleMessage("Cart"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("Certificates"),
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("Collection Boxes"),
+    "completeOrderButton": MessageLookupByLibrary.simpleMessage(
+      "Complete Order",
+    ),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
