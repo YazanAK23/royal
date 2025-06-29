@@ -198,5 +198,13 @@
     "itemKitchenSinkUnitPACK": "الحزمة",
     "itemOrderNumber": "#5022201",
     "itemOrderTitle": "الطلبية",
-    "itemSave": "حفظ"
+    "itemSave": "حفظ",
+    "ordersCurrent": "الطلبات الحالية",
+    "ordersArchive": "أرشيف الطلبات",
+    "orderDateSample": "12/12/2022",
+    "orderNumberSample": "#5022201",
+    "orderItemsCount": "٢٨ صنف",
+    "orderStatus": "حالة الطلبية",
+    "orderEdit": "تعديل",
+    "orderDelete": "حذف"
 }

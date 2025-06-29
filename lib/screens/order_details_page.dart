@@ -3,6 +3,7 @@ import 'package:royal/generated/l10n.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../widgets/item_card.dart';
+import '../../core/routes/app_routes.dart';
 
 class OrderDetailsPage extends StatelessWidget {
   const OrderDetailsPage({Key? key}) : super(key: key);
@@ -17,7 +18,18 @@ class OrderDetailsPage extends StatelessWidget {
         appBar: const CustomAppBar(),
         body: Column(
           children: [
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              textDirection: TextDirection.ltr,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new, color: Colors.blue),
+                  onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.orders),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
             Text(
               s.itemOrderTitle,
               style: const TextStyle(fontSize: 22, color: Colors.blue, fontWeight: FontWeight.bold),

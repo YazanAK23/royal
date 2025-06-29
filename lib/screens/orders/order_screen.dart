@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:royal/generated/l10n.dart';
 import '../../core/constants/app_assets.dart';
 import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_app_bar.dart';
@@ -18,6 +19,7 @@ class _OrderScreenState extends State<OrderScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -60,7 +62,7 @@ class _OrderScreenState extends State<OrderScreen> {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
-                      child: const Text('الطلبات الحالية'),
+                      child: Text(s.ordersCurrent),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -77,7 +79,7 @@ class _OrderScreenState extends State<OrderScreen> {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
-                      child: const Text('أرشيف الطلبات'),
+                      child: Text(s.ordersArchive),
                     ),
                   ),
                 ],
@@ -113,12 +115,12 @@ class _OrderScreenState extends State<OrderScreen> {
                                 horizontal: 16, vertical: 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text('12/12/2022',
-                                    style: TextStyle(
+                              children: [
+                                Text(s.orderDateSample,
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 15)),
-                                Text('#5022201',
-                                    style: TextStyle(
+                                Text(s.orderNumberSample,
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 15)),
                               ],
                             ),
@@ -132,8 +134,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      const Text('٢٨ صنف',
-                                          style: TextStyle(
+                                      Text(s.orderItemsCount,
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15)),
                                       const SizedBox(height: 4),
@@ -148,8 +150,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                             height: 13,
                                           ),
                                           const SizedBox(width: 6),
-                                          const Text('حالة الطلبية',
-                                              style: TextStyle(fontSize: 14)),
+                                          Text(s.orderStatus,
+                                              style: const TextStyle(fontSize: 14)),
                                         ],
                                       ),
                                     ],
@@ -166,6 +168,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           icon: const Icon(Icons.edit,
                                               color: Colors.white, size: 18),
                                           onPressed: () {},
+                                          tooltip: s.orderEdit,
                                         ),
                                       ),
                                       const SizedBox(width: 8),
@@ -176,6 +179,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           icon: const Icon(Icons.delete,
                                               color: Colors.white, size: 18),
                                           onPressed: () {},
+                                          tooltip: s.orderDelete,
                                         ),
                                       ),
                                     ],

@@ -908,6 +908,76 @@ class S {
   String get itemSave {
     return Intl.message('Save', name: 'itemSave', desc: '', args: []);
   }
+
+  /// `Current Orders`
+  String get ordersCurrent {
+    return Intl.message(
+      'Current Orders',
+      name: 'ordersCurrent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Archive`
+  String get ordersArchive {
+    return Intl.message(
+      'Order Archive',
+      name: 'ordersArchive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `12/12/2022`
+  String get orderDateSample {
+    return Intl.message(
+      '12/12/2022',
+      name: 'orderDateSample',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#5022201`
+  String get orderNumberSample {
+    return Intl.message(
+      '#5022201',
+      name: 'orderNumberSample',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `28 items`
+  String get orderItemsCount {
+    return Intl.message(
+      '28 items',
+      name: 'orderItemsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Status`
+  String get orderStatus {
+    return Intl.message(
+      'Order Status',
+      name: 'orderStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get orderEdit {
+    return Intl.message('Edit', name: 'orderEdit', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get orderDelete {
+    return Intl.message('Delete', name: 'orderDelete', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
