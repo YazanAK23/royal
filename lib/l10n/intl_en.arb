@@ -348,5 +348,17 @@
     "tankDesc": "Water Tanks < One Layer Tanks",
     "@tankDesc": {
         "description": "Description for 1000L tank"
-    }
+    },
+    "aboutRoyalLabel": "About Royal",
+    "jobsLabel": "Jobs",
+    "privacyPolicyLabel": "Privacy Policy",
+    "versionLabel": "Version {version}",
+    "@versionLabel": {
+        "description": "Label for app version with version number",
+        "placeholders": {
+            "version": {}
+        }
+    },
+    "madeInPalestine": "Made in Palestine",
+    "royalCo2022": "Royal Co 2022."
 }

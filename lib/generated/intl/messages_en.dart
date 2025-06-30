@@ -20,8 +20,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(version) => "Version ${version}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "aboutRoyalLabel": MessageLookupByLibrary.simpleMessage("About Royal"),
     "addToCartLabel": MessageLookupByLibrary.simpleMessage("Add to cart"),
     "addToFavoritesLabel": MessageLookupByLibrary.simpleMessage(
       "Add to favorites",
@@ -82,10 +85,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "itemOrderNumber": MessageLookupByLibrary.simpleMessage("#5022201"),
     "itemOrderTitle": MessageLookupByLibrary.simpleMessage("Order"),
     "itemSave": MessageLookupByLibrary.simpleMessage("Save"),
+    "jobsLabel": MessageLookupByLibrary.simpleMessage("Jobs"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginWelcome": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+    "madeInPalestine": MessageLookupByLibrary.simpleMessage(
+      "Made in Palestine",
+    ),
     "manholes": MessageLookupByLibrary.simpleMessage("Manholes"),
     "medicalTanks": MessageLookupByLibrary.simpleMessage("Medical Tanks"),
     "menuLabel": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -149,6 +156,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),
     "previousNews": MessageLookupByLibrary.simpleMessage("Previous News"),
+    "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
+      "Privacy Policy",
+    ),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
@@ -156,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity:"),
     "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "royalCo2022": MessageLookupByLibrary.simpleMessage("Royal Co 2022."),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
@@ -179,6 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "trustLabel": MessageLookupByLibrary.simpleMessage("Trust"),
     "twoLayerTanks": MessageLookupByLibrary.simpleMessage("Two Layer Tanks"),
+    "versionLabel": m0,
     "waterTanks": MessageLookupByLibrary.simpleMessage("Water Tanks"),
     "waterTanksCategoryTitle": MessageLookupByLibrary.simpleMessage(
       "Water Tanks",

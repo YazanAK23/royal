@@ -12,6 +12,7 @@ import 'package:royal/screens/browsing%20history/browsing_history_page.dart'; //
 import 'package:royal/screens/New items/new_items.dart'; // Import NewItemsPage
 import 'package:royal/screens/favorite/favorite_page.dart'; // Import the FavoritePage
 import 'package:royal/screens/search/search_screen.dart'; // Import the SearchScreen
+import 'package:royal/screens/about%20app/about_app_page.dart'; // Import AboutAppPage
 
 
 class AppRoutes {
@@ -38,6 +39,7 @@ class AppRoutes {
   static const String cart = '/cart'; // Added cart route
   static const String favorite = '/favorite'; // Added favorite route
   static const String search = '/search'; // Added search route
+  static const String aboutApp = '/about-app'; // Added about app route
 
 
   // Route Map
@@ -60,6 +62,7 @@ class AppRoutes {
     newItems: (context) => const NewItemsPage(), // Added new items route
     favorite: (context) => const FavoritePage(), // Added favorite page route
     search: (context) => const SearchScreen(), // Added search screen route
+    aboutApp: (context) => const AboutAppPage(), // Added about app page route
   };
 
   // Route Generator

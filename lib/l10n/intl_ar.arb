@@ -254,5 +254,19 @@
     "tankDesc": "خزانات مياه < خزانات طبقة واحدة",
     "@tankDesc": {
         "description": "Description for 1000L tank"
-    }
+    },
+    "aboutRoyalLabel": "عن رويال",
+    "jobsLabel": "وظائف",
+    "privacyPolicyLabel": "سياسة الخصوصية",
+    "versionLabel": "Version {version}",
+    "@versionLabel": {
+        "description": "Label for app version with version number",
+        "placeholders": {
+            "version": {
+                "type": "Object"
+            }
+        }
+    },
+    "madeInPalestine": "Made in Palestine",
+    "royalCo2022": "Royal Co 2022"
 }

@@ -1098,6 +1098,61 @@ class S {
       args: [],
     );
   }
+
+  /// `About Royal`
+  String get aboutRoyalLabel {
+    return Intl.message(
+      'About Royal',
+      name: 'aboutRoyalLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jobs`
+  String get jobsLabel {
+    return Intl.message('Jobs', name: 'jobsLabel', desc: '', args: []);
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicyLabel {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicyLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version {version}`
+  String versionLabel(Object version) {
+    return Intl.message(
+      'Version $version',
+      name: 'versionLabel',
+      desc: 'Label for app version with version number',
+      args: [version],
+    );
+  }
+
+  /// `Made in Palestine`
+  String get madeInPalestine {
+    return Intl.message(
+      'Made in Palestine',
+      name: 'madeInPalestine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Royal Co 2022.`
+  String get royalCo2022 {
+    return Intl.message(
+      'Royal Co 2022.',
+      name: 'royalCo2022',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

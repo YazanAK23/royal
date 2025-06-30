@@ -44,7 +44,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'appInfoLabel',
         icon: AppAssets.information,
-        route: '/app-info',
+        route: AppRoutes.aboutApp,
       ),
     ];
   }

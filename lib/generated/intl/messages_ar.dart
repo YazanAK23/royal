@@ -20,8 +20,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(version) => "Version ${version}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "aboutRoyalLabel": MessageLookupByLibrary.simpleMessage("عن رويال"),
     "addToCartLabel": MessageLookupByLibrary.simpleMessage("أضف للسلة"),
     "addToFavoritesLabel": MessageLookupByLibrary.simpleMessage("أضف للمفضلة"),
     "addedToCartLabel": MessageLookupByLibrary.simpleMessage(
@@ -75,10 +78,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "itemOrderNumber": MessageLookupByLibrary.simpleMessage("#5022201"),
     "itemOrderTitle": MessageLookupByLibrary.simpleMessage("الطلبية"),
     "itemSave": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "jobsLabel": MessageLookupByLibrary.simpleMessage("وظائف"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginWelcome": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
+    "madeInPalestine": MessageLookupByLibrary.simpleMessage(
+      "Made in Palestine",
+    ),
     "manholes": MessageLookupByLibrary.simpleMessage("المناهل"),
     "medicalTanks": MessageLookupByLibrary.simpleMessage(
       "الخزانات القابلة للطبى",
@@ -146,6 +153,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "الأسطح البلاستيكية",
     ),
     "previousNews": MessageLookupByLibrary.simpleMessage("الخبر السابق"),
+    "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
+      "سياسة الخصوصية",
+    ),
     "profileLabel": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "احصل على الهوية التجارية مجاناً لفترة محدودة",
@@ -153,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quantityLabel": MessageLookupByLibrary.simpleMessage("الكمية:"),
     "registerNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+    "royalCo2022": MessageLookupByLibrary.simpleMessage("Royal Co 2022"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
@@ -176,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "trustLabel": MessageLookupByLibrary.simpleMessage("الثقة"),
     "twoLayerTanks": MessageLookupByLibrary.simpleMessage("خزانات طبقتين"),
+    "versionLabel": m0,
     "waterTanks": MessageLookupByLibrary.simpleMessage("خزانات مياه"),
     "waterTanksCategoryTitle": MessageLookupByLibrary.simpleMessage(
       "خزانات مياه",
