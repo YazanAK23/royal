@@ -360,5 +360,12 @@
         }
     },
     "madeInPalestine": "Made in Palestine",
-    "royalCo2022": "Royal Co 2022."
+    "royalCo2022": "Royal Co 2022.",
+    "notificationCenterTitle": "Notification Center",
+    "notificationNewCategory": "New Category",
+    "notificationNewCategoryMsg": "A category or group of categories has been added",
+    "notificationUpdate": "Update",
+    "notificationUpdateMsg": "A catalog has been added to the downloads list",
+    "notificationEvent": "Event",
+    "notificationEventMsg": "Visit us at the construction business event"
 }

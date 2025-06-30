@@ -129,6 +129,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "nextNews": MessageLookupByLibrary.simpleMessage(" الخبرالتالي"),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "noContentYet": MessageLookupByLibrary.simpleMessage("لا يوجد محتوى بعد"),
+    "notificationCenterTitle": MessageLookupByLibrary.simpleMessage(
+      "مركز الإشعارات",
+    ),
+    "notificationEvent": MessageLookupByLibrary.simpleMessage("حدث"),
+    "notificationEventMsg": MessageLookupByLibrary.simpleMessage(
+      "زورونا في حدث الأعمال الإنشائية",
+    ),
+    "notificationNewCategory": MessageLookupByLibrary.simpleMessage("صنف جديد"),
+    "notificationNewCategoryMsg": MessageLookupByLibrary.simpleMessage(
+      "تم إضافة صنف أو مجموعة أصناف",
+    ),
+    "notificationUpdate": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "notificationUpdateMsg": MessageLookupByLibrary.simpleMessage(
+      "تم إضافة كتالوج في قائمة التنزيلات",
+    ),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "oneLayerTanks": MessageLookupByLibrary.simpleMessage("خزانات طبقة واحدة"),
     "orderDateSample": MessageLookupByLibrary.simpleMessage("12/12/2022"),

@@ -47,12 +47,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            SvgPicture.asset(
-              AppAssets.notification,
-              width: 20,
-              height: 20,
-              color: AppColors.primary,
-              semanticsLabel: S.of(context).notificationsLabel,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.notificationCenter);
+              },
+              child: SvgPicture.asset(
+                AppAssets.notification,
+                width: 20,
+                height: 20,
+                color: AppColors.primary,
+                semanticsLabel: S.of(context).notificationsLabel,
+              ),
             ),
             _buildBadge('5'),
           ],
@@ -116,7 +121,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: 28,
         alignment: Alignment.center,
         child: GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed('/search'),
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.search);
+          },
           child: SvgPicture.asset(
             AppAssets.search,
             width: 20,
@@ -152,12 +159,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            SvgPicture.asset(
-              AppAssets.notification,
-              width: 20,
-              height: 20,
-              color: AppColors.primary,
-              semanticsLabel: S.of(context).notificationsLabel,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.notificationCenter);
+              },
+              child: SvgPicture.asset(
+                AppAssets.notification,
+                width: 20,
+                height: 20,
+                color: AppColors.primary,
+                semanticsLabel: S.of(context).notificationsLabel,
+              ),
             ),
             _buildBadge('5'),
           ],
@@ -221,7 +233,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: 28,
         alignment: Alignment.center,
         child: GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed('/search'),
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.search);
+          },
           child: SvgPicture.asset(
             AppAssets.search,
             width: 20,

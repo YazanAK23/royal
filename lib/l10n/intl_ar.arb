@@ -268,5 +268,12 @@
         }
     },
     "madeInPalestine": "Made in Palestine",
-    "royalCo2022": "Royal Co 2022"
+    "royalCo2022": "Royal Co 2022",
+    "notificationCenterTitle": "مركز الإشعارات",
+    "notificationNewCategory": "صنف جديد",
+    "notificationNewCategoryMsg": "تم إضافة صنف أو مجموعة أصناف",
+    "notificationUpdate": "تحديث",
+    "notificationUpdateMsg": "تم إضافة كتالوج في قائمة التنزيلات",
+    "notificationEvent": "حدث",
+    "notificationEventMsg": "زورونا في حدث الأعمال الإنشائية"
 }

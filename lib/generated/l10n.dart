@@ -1153,6 +1153,71 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification Center`
+  String get notificationCenterTitle {
+    return Intl.message(
+      'Notification Center',
+      name: 'notificationCenterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Category`
+  String get notificationNewCategory {
+    return Intl.message(
+      'New Category',
+      name: 'notificationNewCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A category or group of categories has been added`
+  String get notificationNewCategoryMsg {
+    return Intl.message(
+      'A category or group of categories has been added',
+      name: 'notificationNewCategoryMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get notificationUpdate {
+    return Intl.message(
+      'Update',
+      name: 'notificationUpdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A catalog has been added to the downloads list`
+  String get notificationUpdateMsg {
+    return Intl.message(
+      'A catalog has been added to the downloads list',
+      name: 'notificationUpdateMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Event`
+  String get notificationEvent {
+    return Intl.message('Event', name: 'notificationEvent', desc: '', args: []);
+  }
+
+  /// `Visit us at the construction business event`
+  String get notificationEventMsg {
+    return Intl.message(
+      'Visit us at the construction business event',
+      name: 'notificationEventMsg',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

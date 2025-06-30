@@ -136,6 +136,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account?",
     ),
     "noContentYet": MessageLookupByLibrary.simpleMessage("No content yet"),
+    "notificationCenterTitle": MessageLookupByLibrary.simpleMessage(
+      "Notification Center",
+    ),
+    "notificationEvent": MessageLookupByLibrary.simpleMessage("Event"),
+    "notificationEventMsg": MessageLookupByLibrary.simpleMessage(
+      "Visit us at the construction business event",
+    ),
+    "notificationNewCategory": MessageLookupByLibrary.simpleMessage(
+      "New Category",
+    ),
+    "notificationNewCategoryMsg": MessageLookupByLibrary.simpleMessage(
+      "A category or group of categories has been added",
+    ),
+    "notificationUpdate": MessageLookupByLibrary.simpleMessage("Update"),
+    "notificationUpdateMsg": MessageLookupByLibrary.simpleMessage(
+      "A catalog has been added to the downloads list",
+    ),
     "notificationsLabel": MessageLookupByLibrary.simpleMessage("Notifications"),
     "oneLayerTanks": MessageLookupByLibrary.simpleMessage("One Layer Tanks"),
     "orderDateSample": MessageLookupByLibrary.simpleMessage("12/12/2022"),

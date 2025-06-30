@@ -13,6 +13,7 @@ import 'package:royal/screens/New items/new_items.dart'; // Import NewItemsPage
 import 'package:royal/screens/favorite/favorite_page.dart'; // Import the FavoritePage
 import 'package:royal/screens/search/search_screen.dart'; // Import the SearchScreen
 import 'package:royal/screens/about%20app/about_app_page.dart'; // Import AboutAppPage
+import 'package:royal/screens/notifications/notification_center_page.dart'; // Import NotificationCenterPage
 
 
 class AppRoutes {
@@ -40,6 +41,7 @@ class AppRoutes {
   static const String favorite = '/favorite'; // Added favorite route
   static const String search = '/search'; // Added search route
   static const String aboutApp = '/about-app'; // Added about app route
+  static const String notificationCenter = '/notification-center'; // Added notification center route
 
 
   // Route Map
@@ -63,6 +65,7 @@ class AppRoutes {
     favorite: (context) => const FavoritePage(), // Added favorite page route
     search: (context) => const SearchScreen(), // Added search screen route
     aboutApp: (context) => const AboutAppPage(), // Added about app page route
+    notificationCenter: (context) => const NotificationCenterPage(), // Added notification center route
   };
 
   // Route Generator
