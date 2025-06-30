@@ -39,7 +39,7 @@ class CustomBottomNavBar extends StatelessWidget {
       {
         'selectedIcon': AppAssets.downloadsSelected,
         'unselectedIcon': AppAssets.downloadsUnselected,
-        'route': AppRoutes.history,
+        'route': AppRoutes.downloads, // Corrected to downloads route
       },
       {
         'selectedIcon': AppAssets.informationSelected,

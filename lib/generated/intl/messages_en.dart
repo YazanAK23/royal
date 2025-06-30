@@ -55,6 +55,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
     ),
+    "downloadsCatalogName": MessageLookupByLibrary.simpleMessage(
+      "Catalog Name",
+    ),
+    "downloadsCategoryAll": MessageLookupByLibrary.simpleMessage("All"),
+    "downloadsCategoryFurniture": MessageLookupByLibrary.simpleMessage(
+      "Furniture",
+    ),
+    "downloadsCategorySanitary": MessageLookupByLibrary.simpleMessage(
+      "Sanitary Ware",
+    ),
+    "downloadsCenterTitle": MessageLookupByLibrary.simpleMessage(
+      "Downloads Center",
+    ),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("Downloads"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "Enter your email or ID",

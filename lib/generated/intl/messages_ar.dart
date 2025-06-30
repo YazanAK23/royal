@@ -49,6 +49,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmLabel": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage("أكمل كزائر"),
+    "downloadsCatalogName": MessageLookupByLibrary.simpleMessage(
+      "اسم الكتالوج",
+    ),
+    "downloadsCategoryAll": MessageLookupByLibrary.simpleMessage("الكل"),
+    "downloadsCategoryFurniture": MessageLookupByLibrary.simpleMessage("أثاث"),
+    "downloadsCategorySanitary": MessageLookupByLibrary.simpleMessage(
+      "أدوات صحية",
+    ),
+    "downloadsCenterTitle": MessageLookupByLibrary.simpleMessage(
+      "مركز التحميل",
+    ),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("التنزيلات"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدك الإلكتروني أو الرقم التعريفي",

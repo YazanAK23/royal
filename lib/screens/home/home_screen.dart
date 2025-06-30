@@ -275,7 +275,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           } else if (index == 2) {
             Navigator.of(context).pushReplacementNamed('/profile');
           } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/browsing-history');
+            Navigator.of(context).pushReplacementNamed('/downloads');
           } else if (index == 4) {
             Navigator.of(context).pushReplacementNamed('/information');
           }

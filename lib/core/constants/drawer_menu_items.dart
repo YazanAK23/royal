@@ -9,7 +9,7 @@ class DrawerMenuItems {
       DrawerMenuItem(
         titleKey: 'profileLabel',
         icon: AppAssets.profileIcon,
-        route: '/profile',
+        route: AppRoutes.profile, // Updated to use AppRoutes
       ),
       DrawerMenuItem(
         titleKey: 'ordersLabel',
@@ -42,7 +42,7 @@ class DrawerMenuItems {
         route: '/certificates',
       ),
       DrawerMenuItem(
-        titleKey: 'appInfoLabel',
+        titleKey: 'appInfoLabel', 
         icon: AppAssets.information,
         route: AppRoutes.aboutApp,
       ),

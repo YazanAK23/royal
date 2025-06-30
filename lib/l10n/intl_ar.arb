@@ -359,5 +359,25 @@
     "cancel": "تراجع",
     "@cancel": {
         "description": "زر تراجع في شاشة تعديل الملف الشخصي"
+    },
+    "downloadsCenterTitle": "مركز التحميل",
+    "@downloadsCenterTitle": {
+        "description": "عنوان شاشة مركز التحميل"
+    },
+    "downloadsCategoryFurniture": "أثاث",
+    "@downloadsCategoryFurniture": {
+        "description": "تصنيف الأثاث في مركز التحميل"
+    },
+    "downloadsCategorySanitary": "أدوات صحية",
+    "@downloadsCategorySanitary": {
+        "description": "تصنيف الأدوات الصحية في مركز التحميل"
+    },
+    "downloadsCategoryAll": "الكل",
+    "@downloadsCategoryAll": {
+        "description": "تصنيف الأكل في مركز التحميل"
+    },
+    "downloadsCatalogName": "اسم الكتالوج",
+    "@downloadsCatalogName": {
+        "description": "اسم الكتالوج في شبكة مركز التحميل"
     }
 }

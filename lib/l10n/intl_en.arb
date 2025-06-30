@@ -451,5 +451,25 @@
     "cancel": "Cancel",
     "@cancel": {
         "description": "Cancel button in profile edit screen"
+    },
+    "downloadsCenterTitle": "Downloads Center",
+    "@downloadsCenterTitle": {
+        "description": "Title for the downloads center screen"
+    },
+    "downloadsCategoryFurniture": "Furniture",
+    "@downloadsCategoryFurniture": {
+        "description": "Label for furniture category in downloads"
+    },
+    "downloadsCategorySanitary": "Sanitary Ware",
+    "@downloadsCategorySanitary": {
+        "description": "Label for sanitary ware category in downloads"
+    },
+    "downloadsCategoryAll": "All",
+    "@downloadsCategoryAll": {
+        "description": "Label for food category in downloads"
+    },
+    "downloadsCatalogName": "Catalog Name",
+    "@downloadsCatalogName": {
+        "description": "Label for catalog name in downloads grid"
     }
 }

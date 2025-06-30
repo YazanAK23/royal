@@ -1428,6 +1428,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Downloads Center`
+  String get downloadsCenterTitle {
+    return Intl.message(
+      'Downloads Center',
+      name: 'downloadsCenterTitle',
+      desc: 'Title for the downloads center screen',
+      args: [],
+    );
+  }
+
+  /// `Furniture`
+  String get downloadsCategoryFurniture {
+    return Intl.message(
+      'Furniture',
+      name: 'downloadsCategoryFurniture',
+      desc: 'Label for furniture category in downloads',
+      args: [],
+    );
+  }
+
+  /// `Sanitary Ware`
+  String get downloadsCategorySanitary {
+    return Intl.message(
+      'Sanitary Ware',
+      name: 'downloadsCategorySanitary',
+      desc: 'Label for sanitary ware category in downloads',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get downloadsCategoryAll {
+    return Intl.message(
+      'All',
+      name: 'downloadsCategoryAll',
+      desc: 'Label for food category in downloads',
+      args: [],
+    );
+  }
+
+  /// `Catalog Name`
+  String get downloadsCatalogName {
+    return Intl.message(
+      'Catalog Name',
+      name: 'downloadsCatalogName',
+      desc: 'Label for catalog name in downloads grid',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

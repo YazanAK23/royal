@@ -17,6 +17,7 @@ import 'package:royal/screens/notifications/notification_center_page.dart'; // I
 import 'package:royal/screens/why%20Royal/why_join_royal_page.dart'; // Import WhyJoinRoyalPage
 import 'package:royal/screens/profile/profile_screen.dart'; // Import ProfileScreen
 import 'package:royal/screens/profile/profile_edit_screen.dart'; // Import ProfileEditScreen
+import 'package:royal/screens/downloads/downloads_screen.dart'; // Import DownloadsScreen
 
 
 class AppRoutes {
@@ -48,6 +49,7 @@ class AppRoutes {
   static const String whyJoinRoyal = '/why-join-royal'; // Add route constant
   static const String profile = '/profile'; // Added profile route
   static const String profileEdit = '/profile-edit'; // Added profile edit route
+  static const String downloads = '/downloads'; // Add downloads route name
 
 
   // Route Map
@@ -75,6 +77,7 @@ class AppRoutes {
     whyJoinRoyal: (context) => const WhyJoinRoyalPage(), // Add route to map
     profile: (context) => const ProfileScreen(), // Added profile screen route
     profileEdit: (context) => const ProfileEditScreen(), // Added profile edit screen route
+    downloads: (context) => const DownloadsScreen(), // Add downloads route to map
   };
 
   // Route Generator
