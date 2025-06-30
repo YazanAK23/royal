@@ -291,5 +291,37 @@
     "notNowButton": "ليس الآن",
     "@notNowButton": {
         "description": "زر ليس الآن لصفحة لماذا تنضم إلى رويال"
+    },
+    "profileWelcome": "مرحباً",
+    "@profileWelcome": {
+        "description": "نص الترحيب في صفحة الملف الشخصي"
+    },
+    "profileName": "بشار",
+    "@profileName": {
+        "description": "اسم المستخدم في صفحة الملف الشخصي"
+    },
+    "profileEdit": "تعديل الملف الشخصي",
+    "@profileEdit": {
+        "description": "زر تعديل الملف الشخصي"
+    },
+    "profileOrders": "الطلبات",
+    "@profileOrders": {
+        "description": "عنصر الطلبات في صفحة الملف الشخصي"
+    },
+    "profileNewItems": "الأصناف الجديدة",
+    "@profileNewItems": {
+        "description": "عنصر الأصناف الجديدة في صفحة الملف الشخصي"
+    },
+    "profileBrowsingArchive": "أرشيف التصفح",
+    "@profileBrowsingArchive": {
+        "description": "عنصر أرشيف التصفح في صفحة الملف الشخصي"
+    },
+    "profileFavorites": "المفضلة",
+    "@profileFavorites": {
+        "description": "عنصر المفضلة في صفحة الملف الشخصي"
+    },
+    "profileLogout": "تسجيل خروج",
+    "@profileLogout": {
+        "description": "زر تسجيل الخروج في صفحة الملف الشخصي"
     }
 }

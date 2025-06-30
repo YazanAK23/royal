@@ -34,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
       {
         'selectedIcon': AppAssets.profileIcon,
         'unselectedIcon': AppAssets.profileIcon,
-        'route': AppRoutes.account,
+        'route': AppRoutes.profile, // Navigate to profile screen
       },
       {
         'selectedIcon': AppAssets.downloadsSelected,

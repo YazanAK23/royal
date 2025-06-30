@@ -1258,6 +1258,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome`
+  String get profileWelcome {
+    return Intl.message(
+      'Welcome',
+      name: 'profileWelcome',
+      desc: 'Welcome text on profile page',
+      args: [],
+    );
+  }
+
+  /// `Bashar`
+  String get profileName {
+    return Intl.message(
+      'Bashar',
+      name: 'profileName',
+      desc: 'User\'s name on profile page',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get profileEdit {
+    return Intl.message(
+      'Edit Profile',
+      name: 'profileEdit',
+      desc: 'Edit profile button text',
+      args: [],
+    );
+  }
+
+  /// `Orders`
+  String get profileOrders {
+    return Intl.message(
+      'Orders',
+      name: 'profileOrders',
+      desc: 'Orders menu item on profile page',
+      args: [],
+    );
+  }
+
+  /// `New Items`
+  String get profileNewItems {
+    return Intl.message(
+      'New Items',
+      name: 'profileNewItems',
+      desc: 'New items menu item on profile page',
+      args: [],
+    );
+  }
+
+  /// `Browsing Archive`
+  String get profileBrowsingArchive {
+    return Intl.message(
+      'Browsing Archive',
+      name: 'profileBrowsingArchive',
+      desc: 'Browsing archive menu item on profile page',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get profileFavorites {
+    return Intl.message(
+      'Favorites',
+      name: 'profileFavorites',
+      desc: 'Favorites menu item on profile page',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get profileLogout {
+    return Intl.message(
+      'Logout',
+      name: 'profileLogout',
+      desc: 'Logout button text on profile page',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

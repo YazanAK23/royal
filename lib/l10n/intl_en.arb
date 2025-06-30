@@ -383,5 +383,37 @@
     "notNowButton": "Not now",
     "@notNowButton": {
         "description": "Not now button text for why join royal page"
+    },
+    "profileWelcome": "Welcome",
+    "@profileWelcome": {
+        "description": "Welcome text on profile page"
+    },
+    "profileName": "Bashar",
+    "@profileName": {
+        "description": "User's name on profile page"
+    },
+    "profileEdit": "Edit Profile",
+    "@profileEdit": {
+        "description": "Edit profile button text"
+    },
+    "profileOrders": "Orders",
+    "@profileOrders": {
+        "description": "Orders menu item on profile page"
+    },
+    "profileNewItems": "New Items",
+    "@profileNewItems": {
+        "description": "New items menu item on profile page"
+    },
+    "profileBrowsingArchive": "Browsing Archive",
+    "@profileBrowsingArchive": {
+        "description": "Browsing archive menu item on profile page"
+    },
+    "profileFavorites": "Favorites",
+    "@profileFavorites": {
+        "description": "Favorites menu item on profile page"
+    },
+    "profileLogout": "Logout",
+    "@profileLogout": {
+        "description": "Logout button text on profile page"
     }
 }

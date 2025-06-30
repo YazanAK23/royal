@@ -178,7 +178,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
       "Privacy Policy",
     ),
+    "profileBrowsingArchive": MessageLookupByLibrary.simpleMessage(
+      "Browsing Archive",
+    ),
+    "profileEdit": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "profileFavorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileLogout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "profileName": MessageLookupByLibrary.simpleMessage("Bashar"),
+    "profileNewItems": MessageLookupByLibrary.simpleMessage("New Items"),
+    "profileOrders": MessageLookupByLibrary.simpleMessage("Orders"),
+    "profileWelcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
     ),

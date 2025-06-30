@@ -173,7 +173,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
       "سياسة الخصوصية",
     ),
+    "profileBrowsingArchive": MessageLookupByLibrary.simpleMessage(
+      "أرشيف التصفح",
+    ),
+    "profileEdit": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
+    "profileFavorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "profileLogout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
+    "profileName": MessageLookupByLibrary.simpleMessage("بشار"),
+    "profileNewItems": MessageLookupByLibrary.simpleMessage("الأصناف الجديدة"),
+    "profileOrders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+    "profileWelcome": MessageLookupByLibrary.simpleMessage("مرحباً"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "احصل على الهوية التجارية مجاناً لفترة محدودة",
     ),

@@ -273,7 +273,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           } else if (index == 1) {
             Navigator.of(context).pushReplacementNamed('/favorite');
           } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/account');
+            Navigator.of(context).pushReplacementNamed('/profile');
           } else if (index == 3) {
             Navigator.of(context).pushReplacementNamed('/browsing-history');
           } else if (index == 4) {
