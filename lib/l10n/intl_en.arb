@@ -367,5 +367,21 @@
     "notificationUpdate": "Update",
     "notificationUpdateMsg": "A catalog has been added to the downloads list",
     "notificationEvent": "Event",
-    "notificationEventMsg": "Visit us at the construction business event"
+    "notificationEventMsg": "Visit us at the construction business event",
+    "whyJoinRoyalTitle": "Why Join Royal?",
+    "@whyJoinRoyalTitle": {
+        "description": "Title for why join royal page"
+    },
+    "whyJoinRoyalContent": "Salujaan\n\nIf this book is good-natured, it will inspire you from the start. I do not seek to preach from behind its pages, but rather to pour out what is in my heart and mind, and I do not want your service or your praise, for I am writing to benefit myself before you from this experience. I have dedicated it to my special group of family and friends, for if they believed, they could create a better image of my nature and talents. They would find the lines I wrote in this book as a mirror of my soul and my talents. Even if I am not honest, I do not show my feelings, but I have worked to express myself and show my soul in a transparent area, so I do not know if I am in the midst of the images of ordinary nature without cost or embellishment, or if I am the one who paints myself with colors and allows myself to be painted by the customs and traditions.\n\nIt is clear in the introduction of Ibn al-Jawzi's book 'Sayd al-Khatir' that he wrote these chapters as a way to record his thoughts and reflections, which he experienced and lived through. These thoughts are not the result of deep research and study, but rather are always the result of thoughts that are born and descend quickly if not recorded. For this reason, I tried to record them in this book and called it 'Sayd al-Khatir' (Catching Thoughts), as Ibn Ahmad did months ago in the literary field and in the field of modern speech (Catching Thoughts), and this means that the concept of the chapters and what is in them are thoughts about what is said or that they are the experiences of the person himself and what he has reached from ideas related to life and society.",
+    "@whyJoinRoyalContent": {
+        "description": "Content for why join royal page"
+    },
+    "joinButton": "Join",
+    "@joinButton": {
+        "description": "Join button text for why join royal page"
+    },
+    "notNowButton": "Not now",
+    "@notNowButton": {
+        "description": "Not now button text for why join royal page"
+    }
 }

@@ -263,7 +263,9 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(AppRoutes.whyJoinRoyal);
+                },
                 child: Text(
                   l10n.whyRoyal,
                   style: const TextStyle(

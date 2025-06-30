@@ -65,6 +65,7 @@ class NewsDetailsPage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              textDirection: Directionality.of(context), // Let Flutter handle direction automatically
               children: [
                 TextButton.icon(
                   onPressed: onPrev,
@@ -90,7 +91,7 @@ class NewsDetailsPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerEnd,
               child: Text(
                 title,
                 style: const TextStyle(
@@ -98,19 +99,17 @@ class NewsDetailsPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const SizedBox(height: 8),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerEnd,
               child: Text(
                 subtitle,
                 style: const TextStyle(
                   color: Color(0xFF222222),
                   fontSize: 14,
                 ),
-                textAlign: TextAlign.right,
               ),
             ),
             const SizedBox(height: 12),
@@ -122,7 +121,6 @@ class NewsDetailsPage extends StatelessWidget {
                     color: Color(0xFF222222),
                     fontSize: 14,
                   ),
-                  textAlign: TextAlign.right,
                 ),
               ),
             ),

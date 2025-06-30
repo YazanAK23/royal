@@ -38,11 +38,11 @@ class _NewItemsPageState extends State<NewItemsPage> {
       appBar: const CustomAppBar(),
       body: Column(
         children: [
-          // Back button under the app bar, aligned left
+          // Back button under the app bar, aligned left (will flip automatically in RTL)
           Align(
-            alignment: Alignment.centerLeft,
+            alignment: AlignmentDirectional.centerStart,
             child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsetsDirectional.only(start: 8.0),
               child: IconButton(
                 icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF00AEEF)),
                 onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer),
@@ -65,6 +65,7 @@ class _NewItemsPageState extends State<NewItemsPage> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              textDirection: Directionality.of(context), // Let Flutter handle direction automatically
               children: List.generate(categories.length, (index) {
                 final isSelected = index == selectedCategory;
                 // Show red dot above 2nd and 3rd category (index 1 and 2)
@@ -72,7 +73,7 @@ class _NewItemsPageState extends State<NewItemsPage> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6.0),
                   child: Stack(
-                    alignment: Alignment.topCenter,
+                    alignment: AlignmentDirectional.topCenter,
                     children: [
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -103,7 +104,6 @@ class _NewItemsPageState extends State<NewItemsPage> {
                             ),
                           ),
                           const SizedBox(height: 4),
-                          // Removed blue dot under selected category
                         ],
                       ),
                       if (showRedDot)

@@ -86,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "itemOrderTitle": MessageLookupByLibrary.simpleMessage("Order"),
     "itemSave": MessageLookupByLibrary.simpleMessage("Save"),
     "jobsLabel": MessageLookupByLibrary.simpleMessage("Jobs"),
+    "joinButton": MessageLookupByLibrary.simpleMessage("Join"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
@@ -136,6 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account?",
     ),
     "noContentYet": MessageLookupByLibrary.simpleMessage("No content yet"),
+    "notNowButton": MessageLookupByLibrary.simpleMessage("Not now"),
     "notificationCenterTitle": MessageLookupByLibrary.simpleMessage(
       "Notification Center",
     ),
@@ -213,6 +215,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Water Tanks",
     ),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("Welcome"),
+    "whyJoinRoyalContent": MessageLookupByLibrary.simpleMessage(
+      "Salujaan\n\nIf this book is good-natured, it will inspire you from the start. I do not seek to preach from behind its pages, but rather to pour out what is in my heart and mind, and I do not want your service or your praise, for I am writing to benefit myself before you from this experience. I have dedicated it to my special group of family and friends, for if they believed, they could create a better image of my nature and talents. They would find the lines I wrote in this book as a mirror of my soul and my talents. Even if I am not honest, I do not show my feelings, but I have worked to express myself and show my soul in a transparent area, so I do not know if I am in the midst of the images of ordinary nature without cost or embellishment, or if I am the one who paints myself with colors and allows myself to be painted by the customs and traditions.\n\nIt is clear in the introduction of Ibn al-Jawzi\'s book \'Sayd al-Khatir\' that he wrote these chapters as a way to record his thoughts and reflections, which he experienced and lived through. These thoughts are not the result of deep research and study, but rather are always the result of thoughts that are born and descend quickly if not recorded. For this reason, I tried to record them in this book and called it \'Sayd al-Khatir\' (Catching Thoughts), as Ibn Ahmad did months ago in the literary field and in the field of modern speech (Catching Thoughts), and this means that the concept of the chapters and what is in them are thoughts about what is said or that they are the experiences of the person himself and what he has reached from ideas related to life and society.",
+    ),
+    "whyJoinRoyalTitle": MessageLookupByLibrary.simpleMessage(
+      "Why Join Royal?",
+    ),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("Why Royal?"),
   };
 }

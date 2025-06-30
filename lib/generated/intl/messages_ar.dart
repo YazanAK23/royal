@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "itemOrderTitle": MessageLookupByLibrary.simpleMessage("الطلبية"),
     "itemSave": MessageLookupByLibrary.simpleMessage("حفظ"),
     "jobsLabel": MessageLookupByLibrary.simpleMessage("وظائف"),
+    "joinButton": MessageLookupByLibrary.simpleMessage("إنضم"),
     "languageArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "languageEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -129,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "nextNews": MessageLookupByLibrary.simpleMessage(" الخبرالتالي"),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "noContentYet": MessageLookupByLibrary.simpleMessage("لا يوجد محتوى بعد"),
+    "notNowButton": MessageLookupByLibrary.simpleMessage("ليس الآن"),
     "notificationCenterTitle": MessageLookupByLibrary.simpleMessage(
       "مركز الإشعارات",
     ),
@@ -208,6 +210,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "خزانات مياه",
     ),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("مرحباً"),
+    "whyJoinRoyalContent": MessageLookupByLibrary.simpleMessage(
+      "سلوچان\n\nإن هذا الكتاب حسن الطوية فهو ينبهك منذ البداية إلى لا تستهدف من وراء صفحاته إلا ما ينفع القلب والخاص، ولم أرد من خدمتك أو إعجابك شيئًا، فإن مواهبي تعجز عن تحقيق مثل هذا الغاية.. لقد خصصته لمجموعة الخاصة من أهلي وأصدقائي حتى إذا ما اقتنعوني استطاعوا أن يحدثوا بك صورة طباعي وموهبتي. سيجدون خطوطًا التي خططتها في هذا الكتاب مرآة نفسي وموهبتي، حتى لو لم أكن صادقًا أو أظهر عواطفي أمامهم، فقد عملت على إظهار نفسي وإظهارها بمنطقة شفافة، فإني لا أدري إن كنت في أوسط صور الطبيعة العادية بدون تكلف ولا تزيين، أم أنني الذي أصور نفسي بألوان وأسمح لنفسي بأن تصبغها من العرف والعادات.\n\nيتضح في مقدمة كتاب ابن الجوزي صيد الخاطر إنما كتب هذه الفصول ليسجل فيها خواطره وانطباعاته وتجارب وعلاقاته عن الأشياء. وهذه الخواطر ليست وليدة البحث والدريس العميق وإنما هي خواطر تأتي وتولد وتنزل سريعًا إن لم تُسجل، لهذا سعى إلى تدوينها في هذا الكتاب وسماه (صيد الخاطر)، كما سمى قبله ابن أحمد أشهر كتّاب في المنطقة الأدبية في العصر الحديث (صيد الخاطر)، وهذا يعني أن مفهوم هذه الفصول وما فيها خواطر عما يُقال أو أن ذلك وتمصوا تجارب نفسه وما توصل إليه من أفكار تتعلق بالحياة والمجتمع.",
+    ),
+    "whyJoinRoyalTitle": MessageLookupByLibrary.simpleMessage(
+      "لماذا تنضم إلى رويال؟",
+    ),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("لماذا رويال؟"),
   };
 }
