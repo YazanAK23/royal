@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
-import '../widgets/custom_app_bar.dart';
-import '../widgets/custom_bottom_nav_bar.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../../widgets/custom_bottom_nav_bar.dart';
+import 'package:royal/core/routes/app_routes.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -59,7 +60,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 12),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  AppRoutes.navigateTo(context, AppRoutes.profileEdit);
+                },
                 child: Text(
                   s.profileEdit,
                   style: const TextStyle(fontSize: 18, color: Colors.white),

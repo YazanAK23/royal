@@ -415,5 +415,41 @@
     "profileLogout": "Logout",
     "@profileLogout": {
         "description": "Logout button text on profile page"
+    },
+    "profileFirstName": "First Name",
+    "@profileFirstName": {
+        "description": "First name field in profile edit screen"
+    },
+    "profileLastName": "Last Name",
+    "@profileLastName": {
+        "description": "Last name field in profile edit screen"
+    },
+    "profileMobile": "Mobile",
+    "@profileMobile": {
+        "description": "Mobile field in profile edit screen"
+    },
+    "profilePhone": "Phone",
+    "@profilePhone": {
+        "description": "Phone field in profile edit screen"
+    },
+    "profileAddress": "Address",
+    "@profileAddress": {
+        "description": "Address field in profile edit screen"
+    },
+    "profileEmail": "Email",
+    "@profileEmail": {
+        "description": "Email field in profile edit screen"
+    },
+    "profilePassword": "Password",
+    "@profilePassword": {
+        "description": "Password field in profile edit screen"
+    },
+    "save": "Save",
+    "@save": {
+        "description": "Save button in profile edit screen"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Cancel button in profile edit screen"
     }
 }

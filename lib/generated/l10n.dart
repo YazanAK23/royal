@@ -1338,6 +1338,96 @@ class S {
       args: [],
     );
   }
+
+  /// `First Name`
+  String get profileFirstName {
+    return Intl.message(
+      'First Name',
+      name: 'profileFirstName',
+      desc: 'First name field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get profileLastName {
+    return Intl.message(
+      'Last Name',
+      name: 'profileLastName',
+      desc: 'Last name field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Mobile`
+  String get profileMobile {
+    return Intl.message(
+      'Mobile',
+      name: 'profileMobile',
+      desc: 'Mobile field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get profilePhone {
+    return Intl.message(
+      'Phone',
+      name: 'profilePhone',
+      desc: 'Phone field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get profileAddress {
+    return Intl.message(
+      'Address',
+      name: 'profileAddress',
+      desc: 'Address field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get profileEmail {
+    return Intl.message(
+      'Email',
+      name: 'profileEmail',
+      desc: 'Email field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get profilePassword {
+    return Intl.message(
+      'Password',
+      name: 'profilePassword',
+      desc: 'Password field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: 'Save button in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: 'Cancel button in profile edit screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

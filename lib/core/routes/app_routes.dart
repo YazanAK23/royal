@@ -15,7 +15,8 @@ import 'package:royal/screens/search/search_screen.dart'; // Import the SearchSc
 import 'package:royal/screens/about%20app/about_app_page.dart'; // Import AboutAppPage
 import 'package:royal/screens/notifications/notification_center_page.dart'; // Import NotificationCenterPage
 import 'package:royal/screens/why%20Royal/why_join_royal_page.dart'; // Import WhyJoinRoyalPage
-import 'package:royal/screens/profile_screen.dart'; // Import ProfileScreen
+import 'package:royal/screens/profile/profile_screen.dart'; // Import ProfileScreen
+import 'package:royal/screens/profile/profile_edit_screen.dart'; // Import ProfileEditScreen
 
 
 class AppRoutes {
@@ -46,6 +47,7 @@ class AppRoutes {
   static const String notificationCenter = '/notification-center'; // Added notification center route
   static const String whyJoinRoyal = '/why-join-royal'; // Add route constant
   static const String profile = '/profile'; // Added profile route
+  static const String profileEdit = '/profile-edit'; // Added profile edit route
 
 
   // Route Map
@@ -72,6 +74,7 @@ class AppRoutes {
     notificationCenter: (context) => const NotificationCenterPage(), // Added notification center route
     whyJoinRoyal: (context) => const WhyJoinRoyalPage(), // Add route to map
     profile: (context) => const ProfileScreen(), // Added profile screen route
+    profileEdit: (context) => const ProfileEditScreen(), // Added profile edit screen route
   };
 
   // Route Generator

@@ -323,5 +323,41 @@
     "profileLogout": "تسجيل خروج",
     "@profileLogout": {
         "description": "زر تسجيل الخروج في صفحة الملف الشخصي"
+    },
+    "profileFirstName": "الاسم الأول",
+    "@profileFirstName": {
+        "description": "حقل الاسم الأول في شاشة تعديل الملف الشخصي"
+    },
+    "profileLastName": "الاسم الأخير",
+    "@profileLastName": {
+        "description": "حقل الاسم الأخير في شاشة تعديل الملف الشخصي"
+    },
+    "profileMobile": "جوال",
+    "@profileMobile": {
+        "description": "حقل الجوال في شاشة تعديل الملف الشخصي"
+    },
+    "profilePhone": "هاتف",
+    "@profilePhone": {
+        "description": "حقل الهاتف في شاشة تعديل الملف الشخصي"
+    },
+    "profileAddress": "العنوان",
+    "@profileAddress": {
+        "description": "حقل العنوان في شاشة تعديل الملف الشخصي"
+    },
+    "profileEmail": "الإيميل",
+    "@profileEmail": {
+        "description": "حقل الإيميل في شاشة تعديل الملف الشخصي"
+    },
+    "profilePassword": "كلمة السر",
+    "@profilePassword": {
+        "description": "حقل كلمة السر في شاشة تعديل الملف الشخصي"
+    },
+    "save": "حفظ",
+    "@save": {
+        "description": "زر حفظ في شاشة تعديل الملف الشخصي"
+    },
+    "cancel": "تراجع",
+    "@cancel": {
+        "description": "زر تراجع في شاشة تعديل الملف الشخصي"
     }
 }

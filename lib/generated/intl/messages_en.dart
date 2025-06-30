@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "buildingSupplies": MessageLookupByLibrary.simpleMessage(
       "Building Supplies",
     ),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelLabel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cartLabel": MessageLookupByLibrary.simpleMessage("Cart"),
     "certificatesLabel": MessageLookupByLibrary.simpleMessage("Certificates"),
@@ -178,16 +179,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
       "Privacy Policy",
     ),
+    "profileAddress": MessageLookupByLibrary.simpleMessage("Address"),
     "profileBrowsingArchive": MessageLookupByLibrary.simpleMessage(
       "Browsing Archive",
     ),
     "profileEdit": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "profileEmail": MessageLookupByLibrary.simpleMessage("Email"),
     "profileFavorites": MessageLookupByLibrary.simpleMessage("Favorites"),
+    "profileFirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "profileLabel": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileLastName": MessageLookupByLibrary.simpleMessage("Last Name"),
     "profileLogout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "profileMobile": MessageLookupByLibrary.simpleMessage("Mobile"),
     "profileName": MessageLookupByLibrary.simpleMessage("Bashar"),
     "profileNewItems": MessageLookupByLibrary.simpleMessage("New Items"),
     "profileOrders": MessageLookupByLibrary.simpleMessage("Orders"),
+    "profilePassword": MessageLookupByLibrary.simpleMessage("Password"),
+    "profilePhone": MessageLookupByLibrary.simpleMessage("Phone"),
     "profileWelcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "promotionText": MessageLookupByLibrary.simpleMessage(
       "Get your business identity free for a limited time",
@@ -199,6 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
     "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
     "searchHintDetails": MessageLookupByLibrary.simpleMessage(
       "Search by item name or code",
