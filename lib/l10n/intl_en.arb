@@ -507,5 +507,35 @@
     "addressLabel": "258m Haram Al-Rama, Hebron, Palestine 90000",
     "@addressLabel": {
         "description": "Address label in info screen"
+    },
+    "royalTitle": "Royal",
+    "royalSlogan": "Your satisfaction is our goal",
+    "contactRoyalLabel": "Contact Royal",
+    "workingHoursTime": "8:00AM - 16:00PM",
+    "workingHoursNote": "Daily except official holidays",
+    "phone1": "+970 2 2219800",
+    "phone2": "+970 2 2220127",
+    "email": "info@royal.ps",
+    "website": "www.royal.ps",
+    "addressLine1": "258 Bir Haram Al-Rama",
+    "addressLine2": "Hebron, Palestine 90000",
+    "contactUsLabelMini": "Contact Us",
+    "beyondCreativity": "Beyond Creativity",
+    "beyondCreativityDesc": "Stylish, Elegant, Innovation",
+    "contactPhone": "+970 2 2219800",
+    "@contactPhone": {
+        "description": "Contact phone number for info screen"
+    },
+    "contactFax": "+970 2 2220127",
+    "@contactFax": {
+        "description": "Contact fax number for info screen"
+    },
+    "contactEmail": "info@royal.ps",
+    "@contactEmail": {
+        "description": "Contact email for info screen"
+    },
+    "contactWebsite": "www.royal.ps",
+    "@contactWebsite": {
+        "description": "Contact website for info screen"
     }
 }

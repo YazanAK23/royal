@@ -33,9 +33,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressLabel": MessageLookupByLibrary.simpleMessage(
       "258m Haram Al-Rama, Hebron, Palestine 90000",
     ),
+    "addressLine1": MessageLookupByLibrary.simpleMessage(
+      "258 Bir Haram Al-Rama",
+    ),
+    "addressLine2": MessageLookupByLibrary.simpleMessage(
+      "Hebron, Palestine 90000",
+    ),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("App Info"),
     "appName": MessageLookupByLibrary.simpleMessage("Royal"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("Assembly Parts"),
+    "beyondCreativity": MessageLookupByLibrary.simpleMessage(
+      "Beyond Creativity",
+    ),
+    "beyondCreativityDesc": MessageLookupByLibrary.simpleMessage(
+      "Stylish, Elegant, Innovation",
+    ),
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "Browsing Archive",
     ),
@@ -54,10 +66,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Complete Order",
     ),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "contactEmail": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
+    "contactFax": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "contactPhone": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
+    "contactRoyalLabel": MessageLookupByLibrary.simpleMessage("Contact Royal"),
     "contactSubtitle": MessageLookupByLibrary.simpleMessage(
       "At Royal, your satisfaction is our goal",
     ),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "contactUsLabelMini": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "contactWebsite": MessageLookupByLibrary.simpleMessage("www.royal.ps"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
     ),
@@ -77,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadsDownload": MessageLookupByLibrary.simpleMessage("Download"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("Downloads"),
     "downloadsPreview": MessageLookupByLibrary.simpleMessage("Preview"),
+    "email": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "Enter your email or ID",
     ),
@@ -195,6 +214,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Please enter your password",
     ),
+    "phone1": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
+    "phone2": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
     "plasticParts": MessageLookupByLibrary.simpleMessage("Plastic Parts"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),
@@ -227,6 +248,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "registerNow": MessageLookupByLibrary.simpleMessage("Register Now"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "royalCo2022": MessageLookupByLibrary.simpleMessage("Royal Co 2022."),
+    "royalSlogan": MessageLookupByLibrary.simpleMessage(
+      "Your satisfaction is our goal",
+    ),
+    "royalTitle": MessageLookupByLibrary.simpleMessage("Royal"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
@@ -257,6 +282,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "waterTanksCategoryTitle": MessageLookupByLibrary.simpleMessage(
       "Water Tanks",
     ),
+    "website": MessageLookupByLibrary.simpleMessage("www.royal.ps"),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("Welcome"),
     "whyJoinRoyalContent": MessageLookupByLibrary.simpleMessage(
       "Salujaan\n\nIf this book is good-natured, it will inspire you from the start. I do not seek to preach from behind its pages, but rather to pour out what is in my heart and mind, and I do not want your service or your praise, for I am writing to benefit myself before you from this experience. I have dedicated it to my special group of family and friends, for if they believed, they could create a better image of my nature and talents. They would find the lines I wrote in this book as a mirror of my soul and my talents. Even if I am not honest, I do not show my feelings, but I have worked to express myself and show my soul in a transparent area, so I do not know if I am in the midst of the images of ordinary nature without cost or embellishment, or if I am the one who paints myself with colors and allows myself to be painted by the customs and traditions.\n\nIt is clear in the introduction of Ibn al-Jawzi\'s book \'Sayd al-Khatir\' that he wrote these chapters as a way to record his thoughts and reflections, which he experienced and lived through. These thoughts are not the result of deep research and study, but rather are always the result of thoughts that are born and descend quickly if not recorded. For this reason, I tried to record them in this book and called it \'Sayd al-Khatir\' (Catching Thoughts), as Ibn Ahmad did months ago in the literary field and in the field of modern speech (Catching Thoughts), and this means that the concept of the chapters and what is in them are thoughts about what is said or that they are the experiences of the person himself and what he has reached from ideas related to life and society.",
@@ -269,5 +295,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Everyday except official holidays",
     ),
     "workingHoursLabel": MessageLookupByLibrary.simpleMessage("Working Hours"),
+    "workingHoursNote": MessageLookupByLibrary.simpleMessage(
+      "Daily except official holidays",
+    ),
+    "workingHoursTime": MessageLookupByLibrary.simpleMessage(
+      "8:00AM - 16:00PM",
+    ),
   };
 }

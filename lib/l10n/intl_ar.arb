@@ -415,5 +415,34 @@
     "addressLabel": "258 متر حرم الرامة، الخليل، فلسطين 90000",
     "@addressLabel": {
         "description": "Address label in info screen"
+    },
+    "royalTitle": "في رويال",
+    "royalSlogan": "رضاك غاية لنا",
+    "contactRoyalLabel": "تواصل مع رويال",
+    "workingHoursTime": "8:00AM - 16:00PM",
+    "phone1": "+970 2 2219800",
+    "phone2": "+970 2 2220127",
+    "email": "info@royal.ps",
+    "website": "www.royal.ps",
+    "addressLine1": "258 بئر حرم الرامة",
+    "addressLine2": "الخليل، فلسطين 90000",
+    "contactUsLabelMini": "تواصل معنا",
+    "beyondCreativity": "Beyond Creativity",
+    "beyondCreativityDesc": "Stylish, Elegant, Innovation",
+    "contactPhone": "+970 2 2219800",
+    "@contactPhone": {
+        "description": "رقم الهاتف في شاشة تواصل معنا"
+    },
+    "contactFax": "+970 2 2220127",
+    "@contactFax": {
+        "description": "رقم الفاكس في شاشة تواصل معنا"
+    },
+    "contactEmail": "info@royal.ps",
+    "@contactEmail": {
+        "description": "البريد الإلكتروني في شاشة تواصل معنا"
+    },
+    "contactWebsite": "www.royal.ps",
+    "@contactWebsite": {
+        "description": "الموقع الإلكتروني في شاشة تواصل معنا"
     }
 }

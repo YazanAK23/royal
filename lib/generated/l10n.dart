@@ -1568,6 +1568,161 @@ class S {
       args: [],
     );
   }
+
+  /// `Royal`
+  String get royalTitle {
+    return Intl.message('Royal', name: 'royalTitle', desc: '', args: []);
+  }
+
+  /// `Your satisfaction is our goal`
+  String get royalSlogan {
+    return Intl.message(
+      'Your satisfaction is our goal',
+      name: 'royalSlogan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Royal`
+  String get contactRoyalLabel {
+    return Intl.message(
+      'Contact Royal',
+      name: 'contactRoyalLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `8:00AM - 16:00PM`
+  String get workingHoursTime {
+    return Intl.message(
+      '8:00AM - 16:00PM',
+      name: 'workingHoursTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily except official holidays`
+  String get workingHoursNote {
+    return Intl.message(
+      'Daily except official holidays',
+      name: 'workingHoursNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+970 2 2219800`
+  String get phone1 {
+    return Intl.message('+970 2 2219800', name: 'phone1', desc: '', args: []);
+  }
+
+  /// `+970 2 2220127`
+  String get phone2 {
+    return Intl.message('+970 2 2220127', name: 'phone2', desc: '', args: []);
+  }
+
+  /// `info@royal.ps`
+  String get email {
+    return Intl.message('info@royal.ps', name: 'email', desc: '', args: []);
+  }
+
+  /// `www.royal.ps`
+  String get website {
+    return Intl.message('www.royal.ps', name: 'website', desc: '', args: []);
+  }
+
+  /// `258 Bir Haram Al-Rama`
+  String get addressLine1 {
+    return Intl.message(
+      '258 Bir Haram Al-Rama',
+      name: 'addressLine1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hebron, Palestine 90000`
+  String get addressLine2 {
+    return Intl.message(
+      'Hebron, Palestine 90000',
+      name: 'addressLine2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get contactUsLabelMini {
+    return Intl.message(
+      'Contact Us',
+      name: 'contactUsLabelMini',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beyond Creativity`
+  String get beyondCreativity {
+    return Intl.message(
+      'Beyond Creativity',
+      name: 'beyondCreativity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stylish, Elegant, Innovation`
+  String get beyondCreativityDesc {
+    return Intl.message(
+      'Stylish, Elegant, Innovation',
+      name: 'beyondCreativityDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+970 2 2219800`
+  String get contactPhone {
+    return Intl.message(
+      '+970 2 2219800',
+      name: 'contactPhone',
+      desc: 'Contact phone number for info screen',
+      args: [],
+    );
+  }
+
+  /// `+970 2 2220127`
+  String get contactFax {
+    return Intl.message(
+      '+970 2 2220127',
+      name: 'contactFax',
+      desc: 'Contact fax number for info screen',
+      args: [],
+    );
+  }
+
+  /// `info@royal.ps`
+  String get contactEmail {
+    return Intl.message(
+      'info@royal.ps',
+      name: 'contactEmail',
+      desc: 'Contact email for info screen',
+      args: [],
+    );
+  }
+
+  /// `www.royal.ps`
+  String get contactWebsite {
+    return Intl.message(
+      'www.royal.ps',
+      name: 'contactWebsite',
+      desc: 'Contact website for info screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

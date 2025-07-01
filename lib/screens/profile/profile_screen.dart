@@ -13,89 +13,93 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: const CustomAppBar(),
-      body: Column(
-        children: [
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            textDirection: TextDirection.rtl,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              const CircleAvatar(
-                radius: 60,
-                backgroundColor: Color(0xFFE0E0E0),
-                child: Icon(Icons.person, size: 80, color: Colors.grey),
+              const SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const CircleAvatar(
+                    radius: 60,
+                    backgroundColor: Color(0xFFE0E0E0),
+                    child: Icon(Icons.person, size: 80, color: Colors.grey),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Text(
+                s.profileWelcome,
+                style: const TextStyle(
+                  fontSize: 28,
+                  color: Color(0xFF00AEEF),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                s.profileName,
+                style: const TextStyle(
+                  fontSize: 24,
+                  color: Color(0xFF00AEEF),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF00AEEF),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    onPressed: () {
+                      AppRoutes.navigateTo(context, AppRoutes.profileEdit);
+                    },
+                    child: Text(
+                      s.profileEdit,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              _ProfileMenuItem(icon: Icons.assignment, label: s.profileOrders),
+              _ProfileMenuItem(icon: Icons.star, label: s.profileNewItems),
+              _ProfileMenuItem(icon: Icons.history, label: s.profileBrowsingArchive),
+              _ProfileMenuItem(icon: Icons.favorite_border, label: s.profileFavorites),
+              const SizedBox(height: 24),
+              Center(
+                child: SizedBox(
+                  width: 150,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFFF5A5A),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      s.profileLogout,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          Text(
-            s.profileWelcome,
-            style: const TextStyle(
-              fontSize: 28,
-              color: Color(0xFF00AEEF),
-              fontWeight: FontWeight.w400,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            s.profileName,
-            style: const TextStyle(
-              fontSize: 24,
-              color: Color(0xFF00AEEF),
-              fontWeight: FontWeight.w400,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 24),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF00AEEF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                ),
-                onPressed: () {
-                  AppRoutes.navigateTo(context, AppRoutes.profileEdit);
-                },
-                child: Text(
-                  s.profileEdit,
-                  style: const TextStyle(fontSize: 18, color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          _ProfileMenuItem(icon: Icons.assignment, label: s.profileOrders),
-          _ProfileMenuItem(icon: Icons.star, label: s.profileNewItems),
-          _ProfileMenuItem(icon: Icons.history, label: s.profileBrowsingArchive),
-          _ProfileMenuItem(icon: Icons.favorite_border, label: s.profileFavorites),
-          const SizedBox(height: 24),
-          Center(
-            child: SizedBox(
-              width: 150,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFFF5A5A),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                ),
-                onPressed: () {},
-                child: Text(
-                  s.profileLogout,
-                  style: const TextStyle(fontSize: 18, color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 2, // Profile tab

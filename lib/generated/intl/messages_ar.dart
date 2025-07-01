@@ -33,9 +33,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "addressLabel": MessageLookupByLibrary.simpleMessage(
       "258 متر حرم الرامة، الخليل، فلسطين 90000",
     ),
+    "addressLine1": MessageLookupByLibrary.simpleMessage("258 بئر حرم الرامة"),
+    "addressLine2": MessageLookupByLibrary.simpleMessage(
+      "الخليل، فلسطين 90000",
+    ),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("معلومات التطبيق"),
     "appName": MessageLookupByLibrary.simpleMessage("رويال"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("علب التجميع"),
+    "beyondCreativity": MessageLookupByLibrary.simpleMessage(
+      "Beyond Creativity",
+    ),
+    "beyondCreativityDesc": MessageLookupByLibrary.simpleMessage(
+      "Stylish, Elegant, Innovation",
+    ),
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "أرشيف التصفح",
     ),
@@ -50,10 +60,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("علب التجميع"),
     "completeOrderButton": MessageLookupByLibrary.simpleMessage("أتم الطلبية"),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "contactEmail": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
+    "contactFax": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "contactPhone": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
+    "contactRoyalLabel": MessageLookupByLibrary.simpleMessage("تواصل مع رويال"),
     "contactSubtitle": MessageLookupByLibrary.simpleMessage(
       "في رويال رضاك غاية لنا",
     ),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "contactUsLabelMini": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "contactWebsite": MessageLookupByLibrary.simpleMessage("www.royal.ps"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage("أكمل كزائر"),
     "downloadsCatalogName": MessageLookupByLibrary.simpleMessage(
       "اسم الكتالوج",
@@ -69,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadsDownload": MessageLookupByLibrary.simpleMessage("تنزيل"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("التنزيلات"),
     "downloadsPreview": MessageLookupByLibrary.simpleMessage("معاينة"),
+    "email": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدك الإلكتروني أو الرقم التعريفي",
     ),
@@ -184,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال كلمة المرور",
     ),
+    "phone1": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
+    "phone2": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
     "plasticParts": MessageLookupByLibrary.simpleMessage("القطع البلاستيكية"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage(
       "الأنابيب البلاستيكية",
@@ -220,6 +239,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "registerNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "royalCo2022": MessageLookupByLibrary.simpleMessage("Royal Co 2022"),
+    "royalSlogan": MessageLookupByLibrary.simpleMessage("رضاك غاية لنا"),
+    "royalTitle": MessageLookupByLibrary.simpleMessage("في رويال"),
     "sanitaryLabel": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
@@ -250,6 +271,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "waterTanksCategoryTitle": MessageLookupByLibrary.simpleMessage(
       "خزانات مياه",
     ),
+    "website": MessageLookupByLibrary.simpleMessage("www.royal.ps"),
     "welcomeLabel": MessageLookupByLibrary.simpleMessage("مرحباً"),
     "whyJoinRoyalContent": MessageLookupByLibrary.simpleMessage(
       "سلوچان\n\nإن هذا الكتاب حسن الطوية فهو ينبهك منذ البداية إلى لا تستهدف من وراء صفحاته إلا ما ينفع القلب والخاص، ولم أرد من خدمتك أو إعجابك شيئًا، فإن مواهبي تعجز عن تحقيق مثل هذا الغاية.. لقد خصصته لمجموعة الخاصة من أهلي وأصدقائي حتى إذا ما اقتنعوني استطاعوا أن يحدثوا بك صورة طباعي وموهبتي. سيجدون خطوطًا التي خططتها في هذا الكتاب مرآة نفسي وموهبتي، حتى لو لم أكن صادقًا أو أظهر عواطفي أمامهم، فقد عملت على إظهار نفسي وإظهارها بمنطقة شفافة، فإني لا أدري إن كنت في أوسط صور الطبيعة العادية بدون تكلف ولا تزيين، أم أنني الذي أصور نفسي بألوان وأسمح لنفسي بأن تصبغها من العرف والعادات.\n\nيتضح في مقدمة كتاب ابن الجوزي صيد الخاطر إنما كتب هذه الفصول ليسجل فيها خواطره وانطباعاته وتجارب وعلاقاته عن الأشياء. وهذه الخواطر ليست وليدة البحث والدريس العميق وإنما هي خواطر تأتي وتولد وتنزل سريعًا إن لم تُسجل، لهذا سعى إلى تدوينها في هذا الكتاب وسماه (صيد الخاطر)، كما سمى قبله ابن أحمد أشهر كتّاب في المنطقة الأدبية في العصر الحديث (صيد الخاطر)، وهذا يعني أن مفهوم هذه الفصول وما فيها خواطر عما يُقال أو أن ذلك وتمصوا تجارب نفسه وما توصل إليه من أفكار تتعلق بالحياة والمجتمع.",
@@ -262,5 +284,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "يومياً ما عدا العطل الرسمية",
     ),
     "workingHoursLabel": MessageLookupByLibrary.simpleMessage("أوقات الدوام"),
+    "workingHoursTime": MessageLookupByLibrary.simpleMessage(
+      "8:00AM - 16:00PM",
+    ),
   };
 }
