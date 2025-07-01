@@ -125,68 +125,81 @@ class InfoScreen extends StatelessWidget {
             left: 0,
             right: 0,
             bottom: 120, // Height of SVG
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0), // Remove extra vertical padding
-              child: Column(
-                children: [
-                  // Add "تواصل معنا" text above icons
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 0),
-                    child: Text(
-                      'تواصل معنا',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleLarge
-                          ?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF1CA9E5),
-                            fontSize: 22, // Minimized
-                            fontFamily: 'Cairo',
+            child: Center(
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.08),
+                      blurRadius: 12,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 0),
+                      child: Text(
+                        'تواصل معنا',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF1CA9E5),
+                              fontSize: 22, // Minimized
+                              fontFamily: 'Cairo',
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _SocialIcon(
+                            icon: 'assets/icons/facebook_icon.svg',
+                            bgColor: Color(0xFF153A5B),
+                            border: true,
+                            size: 32, // Minimized
+                            iconSize: 18, // Minimized
                           ),
-                      textAlign: TextAlign.center,
+                          const SizedBox(width: 12),
+                          _SocialIcon(
+                            icon: 'assets/icons/instagram_icon.svg',
+                            bgColor: Color(0xFF153A5B),
+                            border: true,
+                            size: 32,
+                            iconSize: 18,
+                          ),
+                          const SizedBox(width: 12),
+                          _SocialIcon(
+                            icon: 'assets/icons/youtube_icon.svg',
+                            bgColor: Color(0xFF153A5B),
+                            border: true,
+                            size: 32,
+                            iconSize: 18,
+                          ),
+                          const SizedBox(width: 12),
+                          _SocialIcon(
+                            icon: 'assets/icons/whatsapp_icon.svg',
+                            bgColor: Color(0xFF153A5B),
+                            border: true,
+                            size: 32,
+                            iconSize: 18,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 8), // Less space between text and icons
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _SocialIcon(
-                          icon: 'assets/icons/facebook_icon.svg',
-                          bgColor: Color(0xFF153A5B),
-                          border: true,
-                          size: 32, // Minimized
-                          iconSize: 18, // Minimized
-                        ),
-                        const SizedBox(width: 12), // Less space between icons
-                        _SocialIcon(
-                          icon: 'assets/icons/instagram_icon.svg',
-                          bgColor: Color(0xFF153A5B),
-                          border: true,
-                          size: 32,
-                          iconSize: 18,
-                        ),
-                        const SizedBox(width: 12),
-                        _SocialIcon(
-                          icon: 'assets/icons/youtube_icon.svg',
-                          bgColor: Color(0xFF153A5B),
-                          border: true,
-                          size: 32,
-                          iconSize: 18,
-                        ),
-                        const SizedBox(width: 12),
-                        _SocialIcon(
-                          icon: 'assets/icons/whatsapp_icon.svg',
-                          bgColor: Color(0xFF153A5B),
-                          border: true,
-                          size: 32,
-                          iconSize: 18,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

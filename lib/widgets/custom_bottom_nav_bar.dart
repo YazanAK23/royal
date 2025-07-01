@@ -16,7 +16,11 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double itemWidth = MediaQuery.of(context).size.width / 5;
+    final double deviceWidth = MediaQuery.of(context).size.width;
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double navBarHeight = (deviceHeight * 0.09).clamp(60.0, 90.0); // Responsive height
+    final double iconSize = (deviceWidth * 0.06).clamp(22.0, 32.0); // Responsive icon size
+    final double itemWidth = deviceWidth / 5;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     debugPrint('CustomBottomNavBar isRtl: ' + isRtl.toString());
     // Define nav item data
@@ -56,6 +60,7 @@ class CustomBottomNavBar extends StatelessWidget {
         selectedIcon: data['selectedIcon']!,
         unselectedIcon: data['unselectedIcon']!,
         isSelected: currentIndex == logicalIndex,
+        iconSize: iconSize,
         onTap: () {
           if (currentIndex != logicalIndex) {
             Navigator.of(context).pushReplacementNamed(data['route']!);
@@ -65,10 +70,10 @@ class CustomBottomNavBar extends StatelessWidget {
       );
     });
     final rowChildren = isRtl ? navBarWidgets.reversed.toList() : navBarWidgets;
-    return Directionality(
-      textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
+    return SafeArea(
+      top: false,
       child: Container(
-        height: 80, // Adjusted height to match the specified area
+        height: navBarHeight,
         decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -82,7 +87,7 @@ class CustomBottomNavBar extends StatelessWidget {
         child: Stack(
           children: [
             SizedBox(
-              height: 80, // Adjusted height for the navigation bar
+              height: navBarHeight,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: rowChildren,
@@ -105,11 +110,12 @@ class CustomBottomNavBar extends StatelessWidget {
     );
   }
 
-  // Update _buildNavItem to accept isSelected and onTap
+  // Update _buildNavItem to accept isSelected, iconSize, and onTap
   Widget _buildNavItem(BuildContext context, int index, {
     required String selectedIcon,
     required String unselectedIcon,
     bool isSelected = false,
+    double iconSize = 24,
     VoidCallback? onTap,
   }) {
     final itemWidth = MediaQuery.of(context).size.width / 5;
@@ -127,8 +133,8 @@ class CustomBottomNavBar extends StatelessWidget {
             child: Center(
               child: SvgPicture.asset(
                 isSelected ? selectedIcon : unselectedIcon,
-                width: 24,
-                height: 24,
+                width: iconSize,
+                height: iconSize,
                 colorFilter: ColorFilter.mode(
                   isSelected ? AppColors.primary : AppColors.iconInactive,
                   BlendMode.srcIn,
