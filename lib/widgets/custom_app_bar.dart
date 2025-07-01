@@ -25,7 +25,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     final List<Widget> ltrChildren = [
       // Menu icon (left)
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: onMenuTap,
@@ -39,10 +40,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Notification icon with badge
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
@@ -63,10 +65,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Cart icon with badge
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
@@ -87,7 +90,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Blue promotion button beside cart
       ConstrainedBox(
         constraints: BoxConstraints(
@@ -118,7 +121,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       const Spacer(),
       // Search icon (right)
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: () {
@@ -137,7 +141,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     final List<Widget> rtlChildren = [
       // Menu icon (left)
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: onMenuTap,
@@ -151,10 +156,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Notification icon with badge
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
@@ -175,10 +181,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Cart icon with badge
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
@@ -199,7 +206,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      const SizedBox(width: 12),
+      const SizedBox(width: 4), // Reduced space
       // Blue promotion button beside cart
       ConstrainedBox(
         constraints: BoxConstraints(
@@ -230,7 +237,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       const Spacer(),
       // Search icon (right)
       Container(
-        width: 28,
+        width: 40, // Increased touch area
+        height: 40,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: () {
