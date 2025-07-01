@@ -44,7 +44,7 @@ class CustomBottomNavBar extends StatelessWidget {
       {
         'selectedIcon': AppAssets.informationSelected,
         'unselectedIcon': AppAssets.informationUnselected,
-        'route': AppRoutes.information,
+        'route': AppRoutes.info, // Updated to use the new info route
       },
     ];
     final itemsCount = navItemsData.length;

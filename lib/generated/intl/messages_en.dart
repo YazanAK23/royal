@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add to favorites",
     ),
     "addedToCartLabel": MessageLookupByLibrary.simpleMessage("Added to cart"),
+    "addressLabel": MessageLookupByLibrary.simpleMessage(
+      "258m Haram Al-Rama, Hebron, Palestine 90000",
+    ),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("App Info"),
     "appName": MessageLookupByLibrary.simpleMessage("Royal"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("Assembly Parts"),
@@ -51,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Complete Order",
     ),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "contactSubtitle": MessageLookupByLibrary.simpleMessage(
+      "At Royal, your satisfaction is our goal",
+    ),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage(
       "Continue as Guest",
@@ -68,7 +74,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadsCenterTitle": MessageLookupByLibrary.simpleMessage(
       "Downloads Center",
     ),
+    "downloadsDownload": MessageLookupByLibrary.simpleMessage("Download"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("Downloads"),
+    "downloadsPreview": MessageLookupByLibrary.simpleMessage("Preview"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "Enter your email or ID",
     ),
@@ -77,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your email or ID",
     ),
     "energyLabel": MessageLookupByLibrary.simpleMessage("Smart Energy"),
+    "faqLabel": MessageLookupByLibrary.simpleMessage("FAQ"),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("Favorites"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("Follow Us"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
@@ -108,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "madeInPalestine": MessageLookupByLibrary.simpleMessage(
       "Made in Palestine",
     ),
+    "mainOfficeLabel": MessageLookupByLibrary.simpleMessage("Main Office"),
     "manholes": MessageLookupByLibrary.simpleMessage("Manholes"),
     "medicalTanks": MessageLookupByLibrary.simpleMessage("Medical Tanks"),
     "menuLabel": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -226,6 +236,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by item name or code",
     ),
     "searchTitle": MessageLookupByLibrary.simpleMessage("Search"),
+    "supportLabel": MessageLookupByLibrary.simpleMessage("Support"),
     "tank100L": MessageLookupByLibrary.simpleMessage("100 Litre"),
     "tank150L": MessageLookupByLibrary.simpleMessage("150 Litre"),
     "tank250L": MessageLookupByLibrary.simpleMessage("250 Litre"),
@@ -254,5 +265,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Why Join Royal?",
     ),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("Why Royal?"),
+    "workingDaysLabel": MessageLookupByLibrary.simpleMessage(
+      "Everyday except official holidays",
+    ),
+    "workingHoursLabel": MessageLookupByLibrary.simpleMessage("Working Hours"),
   };
 }

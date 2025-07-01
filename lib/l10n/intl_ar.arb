@@ -379,5 +379,41 @@
     "downloadsCatalogName": "اسم الكتالوج",
     "@downloadsCatalogName": {
         "description": "اسم الكتالوج في شبكة مركز التحميل"
+    },
+    "downloadsPreview": "معاينة",
+    "@downloadsPreview": {
+        "description": "Preview button in downloads popup"
+    },
+    "downloadsDownload": "تنزيل",
+    "@downloadsDownload": {
+        "description": "Download button in downloads popup"
+    },
+    "contactSubtitle": "في رويال رضاك غاية لنا",
+    "@contactSubtitle": {
+        "description": "Subtitle under contact us title in info screen"
+    },
+    "faqLabel": "الأسئلة الشائعة",
+    "@faqLabel": {
+        "description": "FAQ card label in info screen"
+    },
+    "supportLabel": "الدعم الفني",
+    "@supportLabel": {
+        "description": "Support card label in info screen"
+    },
+    "mainOfficeLabel": "المبنى الرئيسي",
+    "@mainOfficeLabel": {
+        "description": "Main office card label in info screen"
+    },
+    "workingHoursLabel": "أوقات الدوام",
+    "@workingHoursLabel": {
+        "description": "Working hours label in info screen"
+    },
+    "workingDaysLabel": "يومياً ما عدا العطل الرسمية",
+    "@workingDaysLabel": {
+        "description": "Working days label in info screen"
+    },
+    "addressLabel": "258 متر حرم الرامة، الخليل، فلسطين 90000",
+    "@addressLabel": {
+        "description": "Address label in info screen"
     }
 }

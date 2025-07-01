@@ -1478,6 +1478,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Preview`
+  String get downloadsPreview {
+    return Intl.message(
+      'Preview',
+      name: 'downloadsPreview',
+      desc: 'Preview button in downloads popup',
+      args: [],
+    );
+  }
+
+  /// `Download`
+  String get downloadsDownload {
+    return Intl.message(
+      'Download',
+      name: 'downloadsDownload',
+      desc: 'Download button in downloads popup',
+      args: [],
+    );
+  }
+
+  /// `At Royal, your satisfaction is our goal`
+  String get contactSubtitle {
+    return Intl.message(
+      'At Royal, your satisfaction is our goal',
+      name: 'contactSubtitle',
+      desc: 'Subtitle under contact us title in info screen',
+      args: [],
+    );
+  }
+
+  /// `FAQ`
+  String get faqLabel {
+    return Intl.message(
+      'FAQ',
+      name: 'faqLabel',
+      desc: 'FAQ card label in info screen',
+      args: [],
+    );
+  }
+
+  /// `Support`
+  String get supportLabel {
+    return Intl.message(
+      'Support',
+      name: 'supportLabel',
+      desc: 'Support card label in info screen',
+      args: [],
+    );
+  }
+
+  /// `Main Office`
+  String get mainOfficeLabel {
+    return Intl.message(
+      'Main Office',
+      name: 'mainOfficeLabel',
+      desc: 'Main office card label in info screen',
+      args: [],
+    );
+  }
+
+  /// `Working Hours`
+  String get workingHoursLabel {
+    return Intl.message(
+      'Working Hours',
+      name: 'workingHoursLabel',
+      desc: 'Working hours label in info screen',
+      args: [],
+    );
+  }
+
+  /// `Everyday except official holidays`
+  String get workingDaysLabel {
+    return Intl.message(
+      'Everyday except official holidays',
+      name: 'workingDaysLabel',
+      desc: 'Working days label in info screen',
+      args: [],
+    );
+  }
+
+  /// `258m Haram Al-Rama, Hebron, Palestine 90000`
+  String get addressLabel {
+    return Intl.message(
+      '258m Haram Al-Rama, Hebron, Palestine 90000',
+      name: 'addressLabel',
+      desc: 'Address label in info screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

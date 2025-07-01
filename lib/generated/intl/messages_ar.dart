@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "addedToCartLabel": MessageLookupByLibrary.simpleMessage(
       "تم الإضافة للسلة",
     ),
+    "addressLabel": MessageLookupByLibrary.simpleMessage(
+      "258 متر حرم الرامة، الخليل، فلسطين 90000",
+    ),
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("معلومات التطبيق"),
     "appName": MessageLookupByLibrary.simpleMessage("رويال"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("علب التجميع"),
@@ -47,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("علب التجميع"),
     "completeOrderButton": MessageLookupByLibrary.simpleMessage("أتم الطلبية"),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "contactSubtitle": MessageLookupByLibrary.simpleMessage(
+      "في رويال رضاك غاية لنا",
+    ),
     "contactUsLabel": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
     "continueAsGuest": MessageLookupByLibrary.simpleMessage("أكمل كزائر"),
     "downloadsCatalogName": MessageLookupByLibrary.simpleMessage(
@@ -60,7 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadsCenterTitle": MessageLookupByLibrary.simpleMessage(
       "مركز التحميل",
     ),
+    "downloadsDownload": MessageLookupByLibrary.simpleMessage("تنزيل"),
     "downloadsLabel": MessageLookupByLibrary.simpleMessage("التنزيلات"),
+    "downloadsPreview": MessageLookupByLibrary.simpleMessage("معاينة"),
     "emailIdHint": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدك الإلكتروني أو الرقم التعريفي",
     ),
@@ -71,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال بريدك الإلكتروني أو الرقم التعريفي",
     ),
     "energyLabel": MessageLookupByLibrary.simpleMessage("الطاقة الذكية"),
+    "faqLabel": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("تابعنا"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
@@ -99,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "madeInPalestine": MessageLookupByLibrary.simpleMessage(
       "Made in Palestine",
     ),
+    "mainOfficeLabel": MessageLookupByLibrary.simpleMessage("المبنى الرئيسي"),
     "manholes": MessageLookupByLibrary.simpleMessage("المناهل"),
     "medicalTanks": MessageLookupByLibrary.simpleMessage(
       "الخزانات القابلة للطبى",
@@ -219,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابحث باسم الصنف أو كود الصنف",
     ),
     "searchTitle": MessageLookupByLibrary.simpleMessage("البحث"),
+    "supportLabel": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
     "tank100L": MessageLookupByLibrary.simpleMessage("١٠٠ لتر"),
     "tank150L": MessageLookupByLibrary.simpleMessage("١٥٠ لتر"),
     "tank250L": MessageLookupByLibrary.simpleMessage("٢٥٠ لتر"),
@@ -247,5 +258,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لماذا تنضم إلى رويال؟",
     ),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("لماذا رويال؟"),
+    "workingDaysLabel": MessageLookupByLibrary.simpleMessage(
+      "يومياً ما عدا العطل الرسمية",
+    ),
+    "workingHoursLabel": MessageLookupByLibrary.simpleMessage("أوقات الدوام"),
   };
 }

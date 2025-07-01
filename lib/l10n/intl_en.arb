@@ -471,5 +471,41 @@
     "downloadsCatalogName": "Catalog Name",
     "@downloadsCatalogName": {
         "description": "Label for catalog name in downloads grid"
+    },
+    "downloadsPreview": "Preview",
+    "@downloadsPreview": {
+        "description": "Preview button in downloads popup"
+    },
+    "downloadsDownload": "Download",
+    "@downloadsDownload": {
+        "description": "Download button in downloads popup"
+    },
+    "contactSubtitle": "At Royal, your satisfaction is our goal",
+    "@contactSubtitle": {
+        "description": "Subtitle under contact us title in info screen"
+    },
+    "faqLabel": "FAQ",
+    "@faqLabel": {
+        "description": "FAQ card label in info screen"
+    },
+    "supportLabel": "Support",
+    "@supportLabel": {
+        "description": "Support card label in info screen"
+    },
+    "mainOfficeLabel": "Main Office",
+    "@mainOfficeLabel": {
+        "description": "Main office card label in info screen"
+    },
+    "workingHoursLabel": "Working Hours",
+    "@workingHoursLabel": {
+        "description": "Working hours label in info screen"
+    },
+    "workingDaysLabel": "Everyday except official holidays",
+    "@workingDaysLabel": {
+        "description": "Working days label in info screen"
+    },
+    "addressLabel": "258m Haram Al-Rama, Hebron, Palestine 90000",
+    "@addressLabel": {
+        "description": "Address label in info screen"
     }
 }
