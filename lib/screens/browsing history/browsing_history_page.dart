@@ -13,9 +13,8 @@ class BrowsingHistoryPage extends StatelessWidget {
     final s = S.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFFF7F7F7),
-      appBar: const CustomAppBar(
-        // No title param, so use a child widget for title below
-        // Add onMenuTap if needed
+      appBar: CustomAppBar(
+        onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
       ),
       body: Column(
         children: [
@@ -85,7 +84,17 @@ class BrowsingHistoryPage extends StatelessWidget {
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,
         onTap: (index) {
-          // TODO: Implement navigation logic
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorites');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
         },
       ),
     );

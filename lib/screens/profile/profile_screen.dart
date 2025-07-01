@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_bottom_nav_bar.dart';
+import '../../widgets/royal_scaffold.dart';
 import 'package:royal/core/routes/app_routes.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -10,9 +9,21 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const CustomAppBar(),
+    return RoyalScaffold(
+      currentIndex: 2, // Profile tab
+      onNavTap: (index) {
+        if (index == 0) {
+          Navigator.of(context).pushReplacementNamed('/home');
+        } else if (index == 1) {
+          Navigator.of(context).pushReplacementNamed('/favorite');
+        } else if (index == 2) {
+          // Already on profile
+        } else if (index == 3) {
+          Navigator.of(context).pushReplacementNamed('/downloads');
+        } else if (index == 4) {
+          Navigator.of(context).pushReplacementNamed('/info');
+        }
+      },
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -73,10 +84,26 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              _ProfileMenuItem(icon: Icons.assignment, label: s.profileOrders),
-              _ProfileMenuItem(icon: Icons.star, label: s.profileNewItems),
-              _ProfileMenuItem(icon: Icons.history, label: s.profileBrowsingArchive),
-              _ProfileMenuItem(icon: Icons.favorite_border, label: s.profileFavorites),
+              _ProfileMenuItem(
+                icon: Icons.assignment,
+                label: s.profileOrders,
+                onTap: () => AppRoutes.navigateTo(context, '/orders'),
+              ),
+              _ProfileMenuItem(
+                icon: Icons.star,
+                label: s.profileNewItems,
+                onTap: () => AppRoutes.navigateTo(context, '/new-items'),
+              ),
+              _ProfileMenuItem(
+                icon: Icons.history,
+                label: s.profileBrowsingArchive,
+                onTap: () => AppRoutes.navigateTo(context, '/browsing-history'),
+              ),
+              _ProfileMenuItem(
+                icon: Icons.favorite_border,
+                label: s.profileFavorites,
+                onTap: () => AppRoutes.navigateTo(context, '/favorite'),
+              ),
               const SizedBox(height: 24),
               Center(
                 child: SizedBox(
@@ -101,12 +128,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 2, // Profile tab
-        onTap: (index) {
-          // Navigation handled in CustomBottomNavBar
-        },
-      ),
     );
   }
 }
@@ -114,7 +135,8 @@ class ProfileScreen extends StatelessWidget {
 class _ProfileMenuItem extends StatelessWidget {
   final IconData icon;
   final String label;
-  const _ProfileMenuItem({required this.icon, required this.label});
+  final VoidCallback? onTap;
+  const _ProfileMenuItem({required this.icon, required this.label, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +156,7 @@ class _ProfileMenuItem extends StatelessWidget {
               style: const TextStyle(fontSize: 16, color: Colors.black),
               textAlign: TextAlign.right,
             ),
-            onTap: () {},
+            onTap: onTap,
           ),
         ),
       ),

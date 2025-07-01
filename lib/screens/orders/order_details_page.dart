@@ -15,7 +15,10 @@ class OrderDetailsPage extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: const Color(0xFFF9F9F9),
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+            onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+
+        ),
         body: Column(
           children: [
             const SizedBox(height: 8),
@@ -85,7 +88,19 @@ class OrderDetailsPage extends StatelessWidget {
         ),
         bottomNavigationBar: CustomBottomNavBar(
           currentIndex: 0,
-          onTap: (index) {},
+          onTap: (index) {
+            if (index == 0) {
+              Navigator.of(context).pushReplacementNamed('/home');
+            } else if (index == 1) {
+              Navigator.of(context).pushReplacementNamed('/favorites');
+            } else if (index == 2) {
+              Navigator.of(context).pushReplacementNamed('/profile');
+            } else if (index == 3) {
+              Navigator.of(context).pushReplacementNamed('/downloads');
+            } else if (index == 4) {
+              Navigator.of(context).pushReplacementNamed('/info');
+            }
+          },
         ),
       ),
     );

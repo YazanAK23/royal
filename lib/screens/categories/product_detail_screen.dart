@@ -7,6 +7,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../widgets/custom_drawer.dart';
 import '../../widgets/product_item_list.dart';
+import '../../core/routes/app_routes.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);
@@ -57,7 +58,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
-            onMenuTap: () => Scaffold.of(context).openEndDrawer(),
+            onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
           ),
         ),
       ),
@@ -68,7 +69,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,
-        onTap: (index) {},
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorites');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
+        },
       ),
     );
   }

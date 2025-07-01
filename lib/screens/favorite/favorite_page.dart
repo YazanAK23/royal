@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/widgets/product_card.dart';
-import '../../../widgets/custom_app_bar.dart';
-import '../../../widgets/custom_bottom_nav_bar.dart';
-import '../../../widgets/custom_drawer.dart';
+import '../../../widgets/royal_scaffold.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -33,22 +31,21 @@ class _FavoritePageState extends State<FavoritePage> {
       {'image': 'assets/images/tank5.png', 'title': s.waterTanks},
       {'image': 'assets/images/tank7.png', 'title': s.waterTanks},
     ];
-    return Scaffold(
-      backgroundColor: const Color(0xFFF7F7F7),
-      endDrawer: CustomDrawer(
-        onMenuItemTap: (route) {
-          Navigator.of(context).pop();
-          Navigator.of(context).pushReplacementNamed(route);
-        },
-      ),
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80.0),
-        child: Builder(
-          builder: (context) => CustomAppBar(
-            onMenuTap: () => Scaffold.of(context).openEndDrawer(),
-          ),
-        ),
-      ),
+    return RoyalScaffold(
+      currentIndex: 1, // 1 for Favorite page
+      onNavTap: (index) {
+        if (index == 0) {
+          Navigator.of(context).pushReplacementNamed('/home');
+        } else if (index == 1) {
+          // Already on favorite, do nothing
+        } else if (index == 2) {
+          Navigator.of(context).pushReplacementNamed('/profile');
+        } else if (index == 3) {
+          Navigator.of(context).pushReplacementNamed('/browsing-history');
+        } else if (index == 4) {
+          Navigator.of(context).pushReplacementNamed('/info');
+        }
+      },
       body: Column(
         children: [
           const SizedBox(height: 12),
@@ -122,22 +119,6 @@ class _FavoritePageState extends State<FavoritePage> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 1, // 1 for Favorite page
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
-          } else if (index == 1) {
-            // Already on favorite, do nothing
-          } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/account');
-          } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/browsing-history');
-          } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/information');
-          }
-        },
       ),
     );
   }

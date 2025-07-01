@@ -4,13 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../core/constants/app_assets.dart';
 import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_dimensions.dart';
 import '../../core/constants/app_text_styles.dart';
-import '../../core/routes/app_routes.dart';
 import '../../widgets/category_card.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_bottom_nav_bar.dart';
-import '../../widgets/custom_drawer.dart';
+import '../../widgets/royal_scaffold.dart';
 import '../categories/category_detail_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -145,22 +141,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      endDrawer: CustomDrawer(
-        onMenuItemTap: (route) {
-          AppRoutes.pop(context);
-          AppRoutes.navigateTo(context, route);
-        },
-      ),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
-        child: Builder(
-          builder: (context) => CustomAppBar(
-            onMenuTap: () => Scaffold.of(context).openEndDrawer(),
-          ),
-        ),
-      ),
+    return RoyalScaffold(
+      currentIndex: _currentIndex,
+      onNavTap: (index) {
+        if (index == 0) {
+          // Already on home
+        } else if (index == 1) {
+          Navigator.of(context).pushReplacementNamed('/favorite');
+        } else if (index == 2) {
+          Navigator.of(context).pushReplacementNamed('/profile');
+        } else if (index == 3) {
+          Navigator.of(context).pushReplacementNamed('/downloads');
+        } else if (index == 4) {
+          Navigator.of(context).pushReplacementNamed('/info');
+        }
+      },
       body: Column(
         children: [
           const SizedBox(height: 24),
@@ -264,22 +259,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 : _buildCategoryDetails(_selectedCategoryIndex!),
           ),
         ],
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          if (index == 0) {
-            // Already on home
-          } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
-          } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
-          } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/downloads');
-          } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
-          }
-        },
       ),
     );
   }

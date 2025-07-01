@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/widgets/custom_app_bar.dart';
 import 'package:royal/widgets/custom_bottom_nav_bar.dart';
 import 'package:royal/widgets/item_card.dart';
@@ -27,7 +28,10 @@ class _CartScreenState extends State<CartScreen> {
     final s = S.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9F9),
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(
+          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -132,7 +136,7 @@ class _CartScreenState extends State<CartScreen> {
           } else if (index == 3) {
             Navigator.of(context).pushReplacementNamed('/browsing-history');
           } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/information');
+            Navigator.of(context).pushReplacementNamed('/info');
           }
         },
       ),

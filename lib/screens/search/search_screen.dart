@@ -262,9 +262,19 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ],
         ),
         bottomNavigationBar: CustomBottomNavBar(
-          currentIndex: 0, // Set to the appropriate index for Search
+          currentIndex: -1, // No tab selected for Search screen
           onTap: (index) {
-            // Handle navigation or setState if needed
+            if (index == 0) {
+              Navigator.of(context).pushReplacementNamed('/home');
+            } else if (index == 1) {
+              Navigator.of(context).pushReplacementNamed('/favorites');
+            } else if (index == 2) {
+              Navigator.of(context).pushReplacementNamed('/profile');
+            } else if (index == 3) {
+              Navigator.of(context).pushReplacementNamed('/downloads');
+            } else if (index == 4) {
+              Navigator.of(context).pushReplacementNamed('/info');
+            }
           },
         ),
       ),

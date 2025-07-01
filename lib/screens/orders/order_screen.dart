@@ -23,7 +23,9 @@ class _OrderScreenState extends State<OrderScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+        ),
         body: Column(
           children: [
             // Back button under the appbar, left side
@@ -40,7 +42,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       height: 28,
                       color: Colors.blue,
                     ),
-                    onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer),
+                    onPressed: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
                   ),
                 ],
               ),
@@ -199,7 +201,20 @@ class _OrderScreenState extends State<OrderScreen> {
         ),
         bottomNavigationBar: CustomBottomNavBar(
           currentIndex: _selectedNav,
-          onTap: (index) => setState(() => _selectedNav = index),
+          onTap: (index) {
+            setState(() => _selectedNav = index);
+            if (index == 0) {
+              Navigator.of(context).pushReplacementNamed('/home');
+            } else if (index == 1) {
+              Navigator.of(context).pushReplacementNamed('/favorites');
+            } else if (index == 2) {
+              Navigator.of(context).pushReplacementNamed('/profile');
+            } else if (index == 3) {
+              Navigator.of(context).pushReplacementNamed('/downloads');
+            } else if (index == 4) {
+              Navigator.of(context).pushReplacementNamed('/info');
+            }
+          },
         ),
       ),
     );

@@ -36,7 +36,10 @@ class NewsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(
+          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+
+      ),
       drawer: CustomDrawer(
         onMenuItemTap: (route) {
           Navigator.of(context).pop(); // Close drawer first
@@ -145,9 +148,19 @@ class NewsPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 0, // You can change if news tab has index
+        currentIndex: -1, // No tab selected for NewsPage
         onTap: (index) {
-          // Handle bottom nav logic if needed
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorites');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
         },
       ),
     );

@@ -82,7 +82,7 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
         preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
-            onMenuTap: () => Scaffold.of(context).openEndDrawer(),
+           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
           ),
         ),
       ),
@@ -102,7 +102,19 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,
-        onTap: (index) {},
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorites');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
+        },
       ),
     );
   }

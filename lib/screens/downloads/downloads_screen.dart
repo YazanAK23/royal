@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_bottom_nav_bar.dart';
+import '../../widgets/royal_scaffold.dart';
 
 class DownloadsScreen extends StatefulWidget {
   const DownloadsScreen({Key? key}) : super(key: key);
@@ -49,8 +48,21 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
+    return RoyalScaffold(
+      currentIndex: 3, // Downloads tab index
+      onNavTap: (index) {
+        if (index == 0) {
+          Navigator.of(context).pushReplacementNamed('/home');
+        } else if (index == 1) {
+          Navigator.of(context).pushReplacementNamed('/favorite');
+        } else if (index == 2) {
+          Navigator.of(context).pushReplacementNamed('/profile');
+        } else if (index == 3) {
+          // Already on downloads
+        } else if (index == 4) {
+          Navigator.of(context).pushReplacementNamed('/info');
+        }
+      },
       body: Column(
         children: [
           Padding(
@@ -111,12 +123,6 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 3, // Downloads tab index
-        onTap: (index) {
-          // Handle navigation
-        },
       ),
     );
   }

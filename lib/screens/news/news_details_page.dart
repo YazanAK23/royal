@@ -27,11 +27,24 @@ class NewsDetailsPage extends StatelessWidget {
     final s = S.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(
+          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+
+      ),
       bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 0, // Set to news index if needed
+        currentIndex: -1, // No tab selected for NewsDetailsPage
         onTap: (index) {
-          // Handle bottom nav logic if needed
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorites');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
         },
       ),
       body: Padding(

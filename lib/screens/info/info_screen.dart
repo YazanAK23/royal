@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
+import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 
 class InfoScreen extends StatefulWidget {
@@ -43,7 +44,8 @@ class _InfoScreenState extends State<InfoScreen> {
                   const SizedBox(width: 16),
                   _AppBarIcon(
                     icon: Icons.search,
-                    onTap: () {},
+                    onTap: () =>  Navigator.of(context).pushNamed(AppRoutes.search),
+
                   ),
                 ],
               ),
@@ -57,16 +59,21 @@ class _InfoScreenState extends State<InfoScreen> {
                   _AppBarSvgIcon(
                     asset: 'assets/icons/cart.svg',
                     badge: true,
+                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.cart), // Use AppRoutes for consistency
+
                   ),
                   const SizedBox(width: 16),
                   _AppBarSvgIcon(
                     asset: 'assets/icons/notification_icon.svg',
                     badge: true,
+                    onTap: () =>  Navigator.of(context).pushNamed(AppRoutes.notificationCenter),
+
                   ),
                   const SizedBox(width: 16),
                   _AppBarIcon(
                     icon: Icons.menu,
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.customDrawer),
+
                   ),
                 ],
               ),
@@ -469,7 +476,18 @@ class _InfoScreenState extends State<InfoScreen> {
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 4,
         onTap: (index) {
-          // handle tab taps if needed
+          // Handle navigation based on index
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            Navigator.of(context).pushReplacementNamed('/favorite');
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/downloads');
+          } else if (index == 4) {
+            // Already on InfoScreen, do nothing
+          }
         },
       ),
     );
@@ -817,50 +835,54 @@ class _AppBarIcon extends StatelessWidget {
 class _AppBarSvgIcon extends StatelessWidget {
   final String asset;
   final bool badge;
-  const _AppBarSvgIcon({required this.asset, this.badge = false});
+  final VoidCallback? onTap;
+  const _AppBarSvgIcon({required this.asset, this.badge = false, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.7),
-            shape: BoxShape.circle,
-          ),
-          child: Center(
-            child: SvgPicture.asset(
-              asset,
-              width: 22,
-              height: 22,
-              color: Colors.black,
+    return GestureDetector(
+      onTap: onTap,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.7),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                asset,
+                width: 22,
+                height: 22,
+                color: Colors.black,
+              ),
             ),
           ),
-        ),
-        if (badge)
-          Positioned(
-            top: 2,
-            right: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Text(
-                S.of(context).badge99plus,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
+          if (badge)
+            Positioned(
+              top: 2,
+              right: 2,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  S.of(context).badge99plus,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }
