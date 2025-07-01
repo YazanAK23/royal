@@ -194,66 +194,133 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                // Contact & Address Section Title + Cards + Dots with background and shadow
-                Container(
-                  color: Color(0xFFF8F8F8), // Set background color
-                  width: double.infinity, // Ensure full width
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 24, bottom: 0),
-                        child: Text(
-                          S.of(context).contactRoyalLabel,
-                          style: TextStyle(
-                            color: Color(0xFF153A5B),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 26,
-                            fontFamily: 'Cairo',
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+                // Conditionally render content based on selectedCardIndex
+                if (selectedCardIndex == 1)
+                  // Support content (match provided image)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8F8F8),
+                        borderRadius: BorderRadius.circular(28),
                       ),
-                      SizedBox(height: 36), // Add space for the floating icon
-                      // Contact Card
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
-                        child: _ContactCardRedesigned(),
-                      ),
-                      SizedBox(height: 32), // More space above address card
-                      // Address Card
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
-                        child: _AddressCardRedesigned(),
-                      ),
-                      SizedBox(height: 20),
-                      // Dot indicator (moved here)
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(3, (index) {
-                          return AnimatedContainer(
-                            duration: Duration(milliseconds: 200),
-                            margin: EdgeInsets.symmetric(horizontal: 4),
-                            width: selectedCardIndex == index ? 12 : 8,
-                            height: selectedCardIndex == index ? 12 : 8,
-                            decoration: BoxDecoration(
-                              color: selectedCardIndex == index ? Color(0xFF1CA9E5) : Color(0xFFD6EAF8),
-                              shape: BoxShape.circle,
+                      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                      child: Column(
+                        children: [
+                          // Section title above the icon, not overlapped
+                          Text(
+                            'موجودون لمساعدتك',
+                            style: TextStyle(
+                              color: Color(0xFF153A5B),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              fontFamily: 'Cairo',
                             ),
-                          );
-                        }),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 50),
+                          // First card: phone/email
+                          _SupportCard(
+                            svgIcon: 'assets/icons/support_icon.svg', // headset icon
+                            iconBg: Color(0xFF1CA9E5),
+                            title: '1700 900 300',
+                            subtitle: 'Support@royal.ps',
+                          ),
+                          SizedBox(height: 50),
+                          // Second card: address
+                          _SupportCard(
+                            svgIcon: 'assets/icons/mail_icon.svg', // mail icon
+                            iconBg: Color(0xFF1CA9E5),
+                            title: 'P.O Box 51841',
+                            subtitle: 'Jerusalem, IL 9711025',
+                          ),
+                          SizedBox(height: 24),
+                          // Dots indicator (optional, for consistency)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: List.generate(3, (index) {
+                              return AnimatedContainer(
+                                duration: Duration(milliseconds: 200),
+                                margin: EdgeInsets.symmetric(horizontal: 4),
+                                width: selectedCardIndex == index ? 12 : 8,
+                                height: selectedCardIndex == index ? 12 : 8,
+                                decoration: BoxDecoration(
+                                  color: selectedCardIndex == index ? Color(0xFF1CA9E5) : Color(0xFFD6EAF8),
+                                  shape: BoxShape.circle,
+                                ),
+                              );
+                            }),
+                          ),
+                          SizedBox(height: 12),
+                        ],
+                      ),
+                    ),
+                  )
+                else
+                  // Default content (contact, address, etc.)
+                  Column(
+                    children: [
+                      // Contact & Address Section Title + Cards + Dots with background and shadow
+                      Container(
+                        color: Color(0xFFF8F8F8),
+                        width: double.infinity,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 24, bottom: 0),
+                              child: Text(
+                                S.of(context).contactRoyalLabel,
+                                style: TextStyle(
+                                  color: Color(0xFF153A5B),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 26,
+                                  fontFamily: 'Cairo',
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            SizedBox(height: 36),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+                              child: _ContactCardRedesigned(),
+                            ),
+                            SizedBox(height: 32),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+                              child: _AddressCardRedesigned(),
+                            ),
+                            SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: List.generate(3, (index) {
+                                return AnimatedContainer(
+                                  duration: Duration(milliseconds: 200),
+                                  margin: EdgeInsets.symmetric(horizontal: 4),
+                                  width: selectedCardIndex == index ? 12 : 8,
+                                  height: selectedCardIndex == index ? 12 : 8,
+                                  decoration: BoxDecoration(
+                                    color: selectedCardIndex == index ? Color(0xFF1CA9E5) : Color(0xFFD6EAF8),
+                                    shape: BoxShape.circle,
+                                  ),
+                                );
+                              }),
+                            ),
+                            SizedBox(height: 12),
+                          ],
+                        ),
                       ),
                       SizedBox(height: 12),
                     ],
                   ),
-                ),
+                // Social Media Row and Beyond Creativity section (always visible)
                 SizedBox(height: 12),
-                // Social Media Row (minimized)
                 Text(
                   S.of(context).contactUsLabelMini,
                   style: TextStyle(
                     color: Color(0xFF1CA9E5),
                     fontWeight: FontWeight.bold,
-                    fontSize: 17, // Minimized
+                    fontSize: 17,
                     fontFamily: 'Cairo',
                   ),
                   textAlign: TextAlign.center,
@@ -268,8 +335,8 @@ class _InfoScreenState extends State<InfoScreen> {
                         icon: 'assets/icons/facebook_icon.svg',
                         bgColor: Color(0xFF153A5B),
                         border: false,
-                        size: 32, // Minimized
-                        iconSize: 18, // Minimized
+                        size: 32,
+                        iconSize: 18,
                       ),
                       SizedBox(width: 8),
                       _SocialIcon(
@@ -299,11 +366,10 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                 ),
                 SizedBox(height: 8),
-                // Beyond Creativity section (now scrolls with content, covers full width, no space below)
                 Container(
                   width: double.infinity,
                   height: 120,
-                  margin: EdgeInsets.only(bottom: 0), // No space below
+                  margin: EdgeInsets.only(bottom: 0),
                   padding: EdgeInsets.zero,
                   child: Stack(
                     fit: StackFit.expand,
@@ -754,6 +820,106 @@ class _AppBarSvgIcon extends StatelessWidget {
               ),
             ),
           ),
+      ],
+    );
+  }
+}
+
+// Add this widget at the bottom of the file:
+class _SupportCard extends StatelessWidget {
+  final String svgIcon; // Use SVG asset path instead of IconData
+  final Color iconBg;
+  final String title;
+  final String subtitle;
+  const _SupportCard({required this.svgIcon, required this.iconBg, required this.title, required this.subtitle});
+
+  @override
+  Widget build(BuildContext context) {
+    final double cardWidth = MediaQuery.of(context).size.width * 0.93;
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          width: cardWidth,
+          margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          padding: EdgeInsets.only(top: 54, bottom: 32, left: 18, right: 18),
+          decoration: BoxDecoration(
+            color: Color(0xFF1CA9E5),
+            borderRadius: BorderRadius.circular(28),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.13),
+                blurRadius: 14,
+                offset: Offset(0, 6),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 22,
+                  fontFamily: 'Cairo',
+                  letterSpacing: 0.5,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(height: 10),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17,
+                  fontFamily: 'Cairo',
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: -40,
+          left: 0,
+          right: 0,
+          child: Center(
+            child: Container(
+              width: 72,
+              height: 72,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                border: Border.all(color: iconBg, width: 4),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.13),
+                    blurRadius: 8,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SvgPicture.asset(
+                    svgIcon,
+                    width: 36,
+                    height: 36,
+                    color: iconBg,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
