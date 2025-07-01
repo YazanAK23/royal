@@ -257,6 +257,46 @@ class _InfoScreenState extends State<InfoScreen> {
                       ),
                     ),
                   )
+                else if (selectedCardIndex == 2)
+                  // FAQ content (newly added)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8F8F8),
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                      child: Column(
+                        children: [
+                          Text(
+                            'هل تحتاج لمساعدة ؟',
+                            style: TextStyle(
+                              color: Color(0xFF153A5B),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              fontFamily: 'Cairo',
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            'تصفح الأسئلة الشائعة.',
+                            style: TextStyle(
+                              color: Color(0xFF153A5B),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontFamily: 'Cairo',
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 24),
+                          _FaqList(),
+                        ],
+                      ),
+                    ),
+                  )
                 else
                   // Default content (contact, address, etc.)
                   Column(
@@ -921,6 +961,111 @@ class _SupportCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// Add this widget for FAQ list
+class _FaqList extends StatefulWidget {
+  @override
+  State<_FaqList> createState() => _FaqListState();
+}
+
+class _FaqListState extends State<_FaqList> {
+  int? expandedIndex;
+  final faqs = [
+    {
+      'q': 'ما هي العمليات الانتاجية التي تجريها في مصنعك؟',
+      'a': 'نقوم في مصنع رويال بإستخدام العديد من العمليات الانتاجية مثل القولبة الدورانية وقولبة النفخ وقولبة الحقن والعديد من العمليات الأخرى والتي تمكننا من التحكم في جودة منتجاتنا ووقت انتاجها.'
+    },
+    {'q': 'ما هي ساعات العمل في المصنع؟', 'a': ''},
+    {'q': 'اين موقع المصنع ؟ هل يمكنني زيارة المصنع؟', 'a': ''},
+    {'q': 'هل لديك خبرة كافية في التصنيع والتصدير؟', 'a': ''},
+    {'q': 'أين تبيع منتجاتك بشكل رئيسي؟', 'a': ''},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: List.generate(faqs.length, (i) {
+        final isExpanded = expandedIndex == i;
+        return Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  expandedIndex = isExpanded ? null : i;
+                });
+              },
+              child: Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(vertical: 6, horizontal: 0),
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 18),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(18),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.07),
+                      blurRadius: 8,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        faqs[i]['q']!,
+                        style: TextStyle(
+                          color: Color(0xFF153A5B),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          fontFamily: 'Cairo',
+                        ),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                    Icon(
+                      isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_left,
+                      color: Color(0xFF153A5B),
+                      size: 28,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (isExpanded && faqs[i]['a']!.isNotEmpty)
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.only(top: 0, bottom: 6, left: 0, right: 0),
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 18),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(18),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.07),
+                      blurRadius: 8,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  faqs[i]['a']!,
+                  style: TextStyle(
+                    color: Color(0xFF153A5B),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15,
+                    fontFamily: 'Cairo',
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+              ),
+          ],
+        );
+      }),
     );
   }
 }
