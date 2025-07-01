@@ -444,5 +444,24 @@
     "contactWebsite": "www.royal.ps",
     "@contactWebsite": {
         "description": "الموقع الإلكتروني في شاشة تواصل معنا"
-    }
+    },
+    "faqProductionProcessQ": "ما هي العمليات الانتاجية التي تجريها في مصنعك؟",
+    "faqProductionProcessA": "نقوم في مصنع رويال بإستخدام العديد من العمليات الانتاجية مثل القولبة الدورانية وقولبة النفخ وقولبة الحقن والعديد من العمليات الأخرى والتي تمكننا من التحكم في جودة منتجاتنا ووقت انتاجها.",
+    "faqWorkingHoursQ": "ما هي ساعات العمل في المصنع؟",
+    "faqWorkingHoursA": "",
+    "faqFactoryLocationQ": "اين موقع المصنع ؟ هل يمكنني زيارة المصنع؟",
+    "faqFactoryLocationA": "",
+    "faqExperienceQ": "هل لديك خبرة كافية في التصنيع والتصدير؟",
+    "faqExperienceA": "",
+    "faqMainMarketQ": "أين تبيع منتجاتك بشكل رئيسي؟",
+    "faqMainMarketA": "",
+    "hereToHelpTitle": "موجودون لمساعدتك",
+    "supportPhone": "1700 900 300",
+    "supportEmail": "Support@royal.ps",
+    "supportPOBox": "P.O Box 51841",
+    "supportJerusalem": "Jerusalem, IL 9711025",
+    "faqNeedHelpTitle": "هل تحتاج لمساعدة ؟",
+    "faqBrowseSubtitle": "تصفح الأسئلة الشائعة.",
+    "badge99plus": "99+",
+    "workingHoursNote": "يومياً ما عدا العطل الرسمية"
 }

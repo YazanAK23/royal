@@ -159,8 +159,8 @@ class _InfoScreenState extends State<InfoScreen> {
                             ]
                           : [
                               _InfoCard(
-                                icon: 'assets/icons/questions_icon.svg',
-                                label: S.of(context).faqLabel,
+                                icon: 'assets/icons/Headquarter_icon.svg',
+                                label: S.of(context).mainOfficeLabel,
                                 circleColor: selectedCardIndex == 0 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
@@ -171,8 +171,8 @@ class _InfoScreenState extends State<InfoScreen> {
                                 width: cardWidth,
                               ),
                               _InfoCard(
-                                icon: 'assets/icons/Headquarter_icon.svg',
-                                label: S.of(context).mainOfficeLabel,
+                                icon: 'assets/icons/questions_icon.svg',
+                                label: S.of(context).faqLabel,
                                 circleColor: selectedCardIndex == 2 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
@@ -210,7 +210,7 @@ class _InfoScreenState extends State<InfoScreen> {
                         children: [
                           // Section title above the icon, not overlapped
                           Text(
-                            'موجودون لمساعدتك',
+                            S.of(context).hereToHelpTitle,
                             style: TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
@@ -224,16 +224,16 @@ class _InfoScreenState extends State<InfoScreen> {
                           _SupportCard(
                             svgIcon: 'assets/icons/support_icon.svg', // headset icon
                             iconBg: Color(0xFF1CA9E5),
-                            title: '1700 900 300',
-                            subtitle: 'Support@royal.ps',
+                            title: S.of(context).supportPhone,
+                            subtitle: S.of(context).supportEmail,
                           ),
                           SizedBox(height: 50),
                           // Second card: address
                           _SupportCard(
                             svgIcon: 'assets/icons/mail_icon.svg', // mail icon
                             iconBg: Color(0xFF1CA9E5),
-                            title: 'P.O Box 51841',
-                            subtitle: 'Jerusalem, IL 9711025',
+                            title: S.of(context).supportPOBox,
+                            subtitle: S.of(context).supportJerusalem,
                           ),
                           SizedBox(height: 24),
                           // Dots indicator (optional, for consistency)
@@ -271,7 +271,7 @@ class _InfoScreenState extends State<InfoScreen> {
                       child: Column(
                         children: [
                           Text(
-                            'هل تحتاج لمساعدة ؟',
+                            S.of(context).faqNeedHelpTitle,
                             style: TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
@@ -282,7 +282,7 @@ class _InfoScreenState extends State<InfoScreen> {
                           ),
                           SizedBox(height: 8),
                           Text(
-                            'تصفح الأسئلة الشائعة.',
+                            S.of(context).faqBrowseSubtitle,
                             style: TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
@@ -850,8 +850,8 @@ class _AppBarSvgIcon extends StatelessWidget {
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Text(
-                '99+',
+              child: Text(
+                S.of(context).badge99plus,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 10,
@@ -973,19 +973,31 @@ class _FaqList extends StatefulWidget {
 
 class _FaqListState extends State<_FaqList> {
   int? expandedIndex;
-  final faqs = [
-    {
-      'q': 'ما هي العمليات الانتاجية التي تجريها في مصنعك؟',
-      'a': 'نقوم في مصنع رويال بإستخدام العديد من العمليات الانتاجية مثل القولبة الدورانية وقولبة النفخ وقولبة الحقن والعديد من العمليات الأخرى والتي تمكننا من التحكم في جودة منتجاتنا ووقت انتاجها.'
-    },
-    {'q': 'ما هي ساعات العمل في المصنع؟', 'a': ''},
-    {'q': 'اين موقع المصنع ؟ هل يمكنني زيارة المصنع؟', 'a': ''},
-    {'q': 'هل لديك خبرة كافية في التصنيع والتصدير؟', 'a': ''},
-    {'q': 'أين تبيع منتجاتك بشكل رئيسي؟', 'a': ''},
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final faqs = [
+      {
+        'q': S.of(context).faqProductionProcessQ,
+        'a': S.of(context).faqProductionProcessA,
+      },
+      {
+        'q': S.of(context).faqWorkingHoursQ,
+        'a': S.of(context).faqWorkingHoursA,
+      },
+      {
+        'q': S.of(context).faqFactoryLocationQ,
+        'a': S.of(context).faqFactoryLocationA,
+      },
+      {
+        'q': S.of(context).faqExperienceQ,
+        'a': S.of(context).faqExperienceA,
+      },
+      {
+        'q': S.of(context).faqMainMarketQ,
+        'a': S.of(context).faqMainMarketA,
+      },
+    ];
     return Column(
       children: List.generate(faqs.length, (i) {
         final isExpanded = expandedIndex == i;

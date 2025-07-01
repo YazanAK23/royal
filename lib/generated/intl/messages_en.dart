@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("App Info"),
     "appName": MessageLookupByLibrary.simpleMessage("Royal"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("Assembly Parts"),
+    "badge99plus": MessageLookupByLibrary.simpleMessage("99+"),
     "beyondCreativity": MessageLookupByLibrary.simpleMessage(
       "Beyond Creativity",
     ),
@@ -104,7 +105,33 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your email or ID",
     ),
     "energyLabel": MessageLookupByLibrary.simpleMessage("Smart Energy"),
+    "faqBrowseSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Browse the FAQ.",
+    ),
+    "faqExperienceA": MessageLookupByLibrary.simpleMessage(""),
+    "faqExperienceQ": MessageLookupByLibrary.simpleMessage(
+      "Do you have enough experience in manufacturing and exporting?",
+    ),
+    "faqFactoryLocationA": MessageLookupByLibrary.simpleMessage(""),
+    "faqFactoryLocationQ": MessageLookupByLibrary.simpleMessage(
+      "Where is the factory located? Can I visit the factory?",
+    ),
     "faqLabel": MessageLookupByLibrary.simpleMessage("FAQ"),
+    "faqMainMarketA": MessageLookupByLibrary.simpleMessage(""),
+    "faqMainMarketQ": MessageLookupByLibrary.simpleMessage(
+      "Where do you mainly sell your products?",
+    ),
+    "faqNeedHelpTitle": MessageLookupByLibrary.simpleMessage("Need help?"),
+    "faqProductionProcessA": MessageLookupByLibrary.simpleMessage(
+      "At Royal factory, we use various production processes such as rotational molding, blow molding, injection molding, and many other processes that allow us to control the quality and production time of our products.",
+    ),
+    "faqProductionProcessQ": MessageLookupByLibrary.simpleMessage(
+      "What are the production processes carried out in your factory?",
+    ),
+    "faqWorkingHoursA": MessageLookupByLibrary.simpleMessage(""),
+    "faqWorkingHoursQ": MessageLookupByLibrary.simpleMessage(
+      "What are the working hours at the factory?",
+    ),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("Favorites"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("Follow Us"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
@@ -113,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodEveningLabel": MessageLookupByLibrary.simpleMessage("Good Evening"),
     "goodMorningLabel": MessageLookupByLibrary.simpleMessage("Good Morning"),
     "grpTanks": MessageLookupByLibrary.simpleMessage("GRP Tanks"),
+    "hereToHelpTitle": MessageLookupByLibrary.simpleMessage("Here to help you"),
     "homeLabel": MessageLookupByLibrary.simpleMessage("Home"),
     "informationLabel": MessageLookupByLibrary.simpleMessage("Information"),
     "itemKitchenSinkCode": MessageLookupByLibrary.simpleMessage("71-8533"),
@@ -261,7 +289,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by item name or code",
     ),
     "searchTitle": MessageLookupByLibrary.simpleMessage("Search"),
+    "supportEmail": MessageLookupByLibrary.simpleMessage("Support@royal.ps"),
+    "supportJerusalem": MessageLookupByLibrary.simpleMessage(
+      "Jerusalem, IL 9711025",
+    ),
     "supportLabel": MessageLookupByLibrary.simpleMessage("Support"),
+    "supportPOBox": MessageLookupByLibrary.simpleMessage("P.O Box 51841"),
+    "supportPhone": MessageLookupByLibrary.simpleMessage("1700 900 300"),
     "tank100L": MessageLookupByLibrary.simpleMessage("100 Litre"),
     "tank150L": MessageLookupByLibrary.simpleMessage("150 Litre"),
     "tank250L": MessageLookupByLibrary.simpleMessage("250 Litre"),

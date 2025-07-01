@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appInfoLabel": MessageLookupByLibrary.simpleMessage("معلومات التطبيق"),
     "appName": MessageLookupByLibrary.simpleMessage("رويال"),
     "assemblyParts": MessageLookupByLibrary.simpleMessage("علب التجميع"),
+    "badge99plus": MessageLookupByLibrary.simpleMessage("99+"),
     "beyondCreativity": MessageLookupByLibrary.simpleMessage(
       "Beyond Creativity",
     ),
@@ -96,7 +97,35 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال بريدك الإلكتروني أو الرقم التعريفي",
     ),
     "energyLabel": MessageLookupByLibrary.simpleMessage("الطاقة الذكية"),
+    "faqBrowseSubtitle": MessageLookupByLibrary.simpleMessage(
+      "تصفح الأسئلة الشائعة.",
+    ),
+    "faqExperienceA": MessageLookupByLibrary.simpleMessage(""),
+    "faqExperienceQ": MessageLookupByLibrary.simpleMessage(
+      "هل لديك خبرة كافية في التصنيع والتصدير؟",
+    ),
+    "faqFactoryLocationA": MessageLookupByLibrary.simpleMessage(""),
+    "faqFactoryLocationQ": MessageLookupByLibrary.simpleMessage(
+      "اين موقع المصنع ؟ هل يمكنني زيارة المصنع؟",
+    ),
     "faqLabel": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+    "faqMainMarketA": MessageLookupByLibrary.simpleMessage(""),
+    "faqMainMarketQ": MessageLookupByLibrary.simpleMessage(
+      "أين تبيع منتجاتك بشكل رئيسي؟",
+    ),
+    "faqNeedHelpTitle": MessageLookupByLibrary.simpleMessage(
+      "هل تحتاج لمساعدة ؟",
+    ),
+    "faqProductionProcessA": MessageLookupByLibrary.simpleMessage(
+      "نقوم في مصنع رويال بإستخدام العديد من العمليات الانتاجية مثل القولبة الدورانية وقولبة النفخ وقولبة الحقن والعديد من العمليات الأخرى والتي تمكننا من التحكم في جودة منتجاتنا ووقت انتاجها.",
+    ),
+    "faqProductionProcessQ": MessageLookupByLibrary.simpleMessage(
+      "ما هي العمليات الانتاجية التي تجريها في مصنعك؟",
+    ),
+    "faqWorkingHoursA": MessageLookupByLibrary.simpleMessage(""),
+    "faqWorkingHoursQ": MessageLookupByLibrary.simpleMessage(
+      "ما هي ساعات العمل في المصنع؟",
+    ),
     "favoritesLabel": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "followUsLabel": MessageLookupByLibrary.simpleMessage("تابعنا"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
@@ -104,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "furnitureLabel": MessageLookupByLibrary.simpleMessage("الأثاث"),
     "goodMorningLabel": MessageLookupByLibrary.simpleMessage("صباح الخير"),
     "grpTanks": MessageLookupByLibrary.simpleMessage("خزانات GRP"),
+    "hereToHelpTitle": MessageLookupByLibrary.simpleMessage("موجودون لمساعدتك"),
     "homeLabel": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "informationLabel": MessageLookupByLibrary.simpleMessage("المعلومات"),
     "itemKitchenSinkCode": MessageLookupByLibrary.simpleMessage("71-8533"),
@@ -250,7 +280,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابحث باسم الصنف أو كود الصنف",
     ),
     "searchTitle": MessageLookupByLibrary.simpleMessage("البحث"),
+    "supportEmail": MessageLookupByLibrary.simpleMessage("Support@royal.ps"),
+    "supportJerusalem": MessageLookupByLibrary.simpleMessage(
+      "Jerusalem, IL 9711025",
+    ),
     "supportLabel": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
+    "supportPOBox": MessageLookupByLibrary.simpleMessage("P.O Box 51841"),
+    "supportPhone": MessageLookupByLibrary.simpleMessage("1700 900 300"),
     "tank100L": MessageLookupByLibrary.simpleMessage("١٠٠ لتر"),
     "tank150L": MessageLookupByLibrary.simpleMessage("١٥٠ لتر"),
     "tank250L": MessageLookupByLibrary.simpleMessage("٢٥٠ لتر"),
@@ -284,6 +320,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يومياً ما عدا العطل الرسمية",
     ),
     "workingHoursLabel": MessageLookupByLibrary.simpleMessage("أوقات الدوام"),
+    "workingHoursNote": MessageLookupByLibrary.simpleMessage(
+      "يومياً ما عدا العطل الرسمية",
+    ),
     "workingHoursTime": MessageLookupByLibrary.simpleMessage(
       "8:00AM - 16:00PM",
     ),

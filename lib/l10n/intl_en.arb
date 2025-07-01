@@ -537,5 +537,24 @@
     "contactWebsite": "www.royal.ps",
     "@contactWebsite": {
         "description": "Contact website for info screen"
-    }
+    },
+    "faqProductionProcessQ": "What are the production processes carried out in your factory?",
+    "faqProductionProcessA": "At Royal factory, we use various production processes such as rotational molding, blow molding, injection molding, and many other processes that allow us to control the quality and production time of our products.",
+    "faqWorkingHoursQ": "What are the working hours at the factory?",
+    "faqWorkingHoursA": "",
+    "faqFactoryLocationQ": "Where is the factory located? Can I visit the factory?",
+    "faqFactoryLocationA": "",
+    "faqExperienceQ": "Do you have enough experience in manufacturing and exporting?",
+    "faqExperienceA": "",
+    "faqMainMarketQ": "Where do you mainly sell your products?",
+    "faqMainMarketA": "",
+    "hereToHelpTitle": "Here to help you",
+    "supportPhone": "1700 900 300",
+    "supportEmail": "Support@royal.ps",
+    "supportPOBox": "P.O Box 51841",
+    "supportJerusalem": "Jerusalem, IL 9711025",
+    "faqNeedHelpTitle": "Need help?",
+    "faqBrowseSubtitle": "Browse the FAQ.",
+    "badge99plus": "99+"
+
 }

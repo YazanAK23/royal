@@ -1723,6 +1723,161 @@ class S {
       args: [],
     );
   }
+
+  /// `What are the production processes carried out in your factory?`
+  String get faqProductionProcessQ {
+    return Intl.message(
+      'What are the production processes carried out in your factory?',
+      name: 'faqProductionProcessQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At Royal factory, we use various production processes such as rotational molding, blow molding, injection molding, and many other processes that allow us to control the quality and production time of our products.`
+  String get faqProductionProcessA {
+    return Intl.message(
+      'At Royal factory, we use various production processes such as rotational molding, blow molding, injection molding, and many other processes that allow us to control the quality and production time of our products.',
+      name: 'faqProductionProcessA',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What are the working hours at the factory?`
+  String get faqWorkingHoursQ {
+    return Intl.message(
+      'What are the working hours at the factory?',
+      name: 'faqWorkingHoursQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get faqWorkingHoursA {
+    return Intl.message('', name: 'faqWorkingHoursA', desc: '', args: []);
+  }
+
+  /// `Where is the factory located? Can I visit the factory?`
+  String get faqFactoryLocationQ {
+    return Intl.message(
+      'Where is the factory located? Can I visit the factory?',
+      name: 'faqFactoryLocationQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get faqFactoryLocationA {
+    return Intl.message('', name: 'faqFactoryLocationA', desc: '', args: []);
+  }
+
+  /// `Do you have enough experience in manufacturing and exporting?`
+  String get faqExperienceQ {
+    return Intl.message(
+      'Do you have enough experience in manufacturing and exporting?',
+      name: 'faqExperienceQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get faqExperienceA {
+    return Intl.message('', name: 'faqExperienceA', desc: '', args: []);
+  }
+
+  /// `Where do you mainly sell your products?`
+  String get faqMainMarketQ {
+    return Intl.message(
+      'Where do you mainly sell your products?',
+      name: 'faqMainMarketQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get faqMainMarketA {
+    return Intl.message('', name: 'faqMainMarketA', desc: '', args: []);
+  }
+
+  /// `Here to help you`
+  String get hereToHelpTitle {
+    return Intl.message(
+      'Here to help you',
+      name: 'hereToHelpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1700 900 300`
+  String get supportPhone {
+    return Intl.message(
+      '1700 900 300',
+      name: 'supportPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support@royal.ps`
+  String get supportEmail {
+    return Intl.message(
+      'Support@royal.ps',
+      name: 'supportEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `P.O Box 51841`
+  String get supportPOBox {
+    return Intl.message(
+      'P.O Box 51841',
+      name: 'supportPOBox',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jerusalem, IL 9711025`
+  String get supportJerusalem {
+    return Intl.message(
+      'Jerusalem, IL 9711025',
+      name: 'supportJerusalem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Need help?`
+  String get faqNeedHelpTitle {
+    return Intl.message(
+      'Need help?',
+      name: 'faqNeedHelpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Browse the FAQ.`
+  String get faqBrowseSubtitle {
+    return Intl.message(
+      'Browse the FAQ.',
+      name: 'faqBrowseSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `99+`
+  String get badge99plus {
+    return Intl.message('99+', name: 'badge99plus', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
