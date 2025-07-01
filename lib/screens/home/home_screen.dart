@@ -24,11 +24,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return S.of(context).goodMorningLabel;
   }
 
-  void _onCategoryTap(int index) {
-    setState(() {
-      _selectedCategoryIndex = index;
-    });
-  }
 
   void _onBackFromCategory() {
     setState(() {

@@ -92,7 +92,7 @@ class OrderDetailsPage extends StatelessWidget {
             if (index == 0) {
               Navigator.of(context).pushReplacementNamed('/home');
             } else if (index == 1) {
-              Navigator.of(context).pushReplacementNamed('/favorites');
+              Navigator.of(context).pushReplacementNamed('/favorite');
             } else if (index == 2) {
               Navigator.of(context).pushReplacementNamed('/profile');
             } else if (index == 3) {

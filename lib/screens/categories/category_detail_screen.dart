@@ -47,7 +47,6 @@ class CategoryDetailScreen extends StatelessWidget {
     final s = S.of(context);
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     final String title = args?['title'] ?? categoryTitle ?? s.sanitaryLabel;
-    final String? icon = args?['icon'] ?? categoryIcon;
     final items = getCategoryItems(context, title);
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -82,7 +81,7 @@ class CategoryDetailScreen extends StatelessWidget {
           if (index == 0) {
             Navigator.of(context).pushReplacementNamed('/home');
           } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorites');
+            Navigator.of(context).pushReplacementNamed('/favorite');
           } else if (index == 2) {
             Navigator.of(context).pushReplacementNamed('/profile');
           } else if (index == 3) {
