@@ -20,7 +20,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     5,
     (i) => {
       'title': 'خزان ١٠٠٠ لتر',
-      'desc': 'خزانات مياه < خزانات طبقة واحدة',
+      'desc': 'خزانات مياه > خزانات طبقة واحدة',
       'image': 'assets/images/tank7.png',
       'isFavorite': false,
       'inCart': false,
@@ -85,7 +85,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
             ),
           ),
           centerTitle: true,
-          actions: const [SizedBox(width: 48)], // To balance the leading icon
+          actions: const [SizedBox(width: 48)],
         ),
         body: Column(
           children: [
@@ -134,8 +134,18 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               ),
             ),
             if (_query.isEmpty)
-              const Expanded(
-                child: Center(child: Text('')),
+              Expanded(
+                child: Center(
+                  child: Opacity(
+                    opacity: 0.6, // subtle faded effect
+                    child: SvgPicture.asset(
+                      'assets/icons/search.svg',
+                      width: 250,
+                      height: 250,
+                      color: Color.fromRGBO(246, 247, 251, 0.984), // Use the requested color for the icon itself
+                    ),
+                  ),
+                ),
               )
             else
               Expanded(
@@ -147,6 +157,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
                       child: Card(
+                        color: const Color(0xFFF5F5F7),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -155,7 +166,6 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // ✅ صورة على اليمين
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
                                 child: Image.asset(
@@ -166,7 +176,6 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                 ),
                               ),
                               const SizedBox(width: 12),
-                              // ✅ تفاصيل المنتج وأزرار التحكم
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,9 +194,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                             const SizedBox(width: 8),
                                             IconButton(
                                               icon: const Icon(Icons.remove),
-                                              onPressed: _quantity > 1
-                                                  ? () => setState(() => _quantity--)
-                                                  : null,
+                                              onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null,
                                             ),
                                             Text('$_quantity', style: const TextStyle(fontWeight: FontWeight.bold)),
                                             IconButton(
@@ -210,42 +217,83 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                       )
                                     else
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 8.0),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            Flexible(
-                                              child: item['inCart']
-                                                  ? ElevatedButton(
-                                                      onPressed: null,
-                                                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green, minimumSize: const Size(100, 40)),
-                                                      child: const Text('تم الإضافة للسلة'),
-                                                    )
-                                                  : ElevatedButton.icon(
-                                                      onPressed: () => _showQuantitySelector(index),
-                                                      icon: const Icon(Icons.shopping_cart, color: Colors.white),
-                                                      label: const Text('أضف للسلة'),
-                                                      style: ElevatedButton.styleFrom(
-                                                        backgroundColor: Color(0xFF1B3E69), // Use a specific color instead of blue[900],
-                                                        foregroundColor: Colors.white, // Make text and icon white
-                                                        minimumSize: const Size(100, 40),
+                                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                        child: LayoutBuilder(
+                                          builder: (context, constraints) {
+                                            return Row(
+                                              children: [
+                                                // 🛒 Cart Button on the right
+                                                Flexible(
+                                                  fit: FlexFit.tight,
+                                                  child: ElevatedButton(
+                                                    onPressed: item['inCart'] ? null : () => _showQuantitySelector(index),
+                                                    style: ElevatedButton.styleFrom(
+                                                      backgroundColor: item['inCart'] ? const Color(0xFF43BC59) : const Color(0xFF1B3E69),
+                                                      disabledBackgroundColor: const Color(0xFF43BC59), // Keep green when disabled
+                                                      foregroundColor: Colors.white,
+                                                      disabledForegroundColor: Colors.white, // Keep text/icon white when disabled
+                                                      shape: RoundedRectangleBorder(
+                                                        borderRadius: BorderRadius.circular(20),
                                                       ),
+                                                      padding: const EdgeInsets.symmetric(vertical: 12),
+                                                      elevation: 0,
                                                     ),
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Flexible(
-                                              child: ElevatedButton.icon(
-                                                onPressed: () => _toggleFavorite(index),
-                                                icon: const Icon(Icons.favorite_border),
-                                                label: const Text('أضف للمفضلة'),
-                                                style: ElevatedButton.styleFrom(
-                                                  backgroundColor: Colors.lightBlue,
-                                                  foregroundColor: Colors.white, // Make text and icon white
-                                                  minimumSize: const Size(100, 40),
+                                                    child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      mainAxisSize: MainAxisSize.min,
+                                                      children: [
+                                                        Flexible(
+                                                          child: FittedBox(
+                                                            child: Text(
+                                                              item['inCart'] ? 'تمت الإضافة' : 'أضف للسلة',
+                                                              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                                                              overflow: TextOverflow.ellipsis,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(width: 6),
+                                                        const Icon(Icons.shopping_cart, size: 20, color: Colors.white),
+                                                      ],
+                                                    ),
+                                                  ),
                                                 ),
-                                              ),
-                                            ),
-                                          ],
+                                                const SizedBox(width: 8),
+                                                // ❤️ Favorite Button on the left
+                                                Flexible(
+                                                  fit: FlexFit.tight,
+                                                  child: ElevatedButton(
+                                                    onPressed: () => _toggleFavorite(index),
+                                                    style: ElevatedButton.styleFrom(
+                                                      backgroundColor: const Color(0xFF11B7F3), // Bright blue from image
+                                                      foregroundColor: Colors.white,
+                                                      shape: RoundedRectangleBorder(
+                                                        borderRadius: BorderRadius.circular(20),
+                                                      ),
+                                                      padding: const EdgeInsets.symmetric(vertical: 12),
+                                                      elevation: 0,
+                                                    ),
+                                                    child: const Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      mainAxisSize: MainAxisSize.min,
+                                                      children: [
+                                                        Flexible(
+                                                          child: FittedBox(
+                                                            child: Text(
+                                                              'أضف للمفضلة',
+                                                              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                                                              overflow: TextOverflow.ellipsis,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(width: 6),
+                                                        Icon(Icons.favorite, size: 20, color: Colors.white),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            );
+                                          },
                                         ),
                                       ),
                                   ],
@@ -262,7 +310,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ],
         ),
         bottomNavigationBar: CustomBottomNavBar(
-          currentIndex: -1, // No tab selected for Search screen
+          currentIndex: -1,
           onTap: (index) {
             if (index == 0) {
               Navigator.of(context).pushReplacementNamed('/home');

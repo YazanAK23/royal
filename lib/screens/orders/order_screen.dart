@@ -240,9 +240,51 @@ class _OrderScreenState extends State<OrderScreen> {
                                     child: Column(
                                       crossAxisAlignment: isRTL ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                                       children: [
-                                        Text(order['items'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                                        const SizedBox(height: 8),
-                                        _buildStatusChip(status),
+                                        if (isRTL) ...[
+                                          Align(
+                                            alignment: Alignment.centerRight,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                // Extract item count if present in the string (e.g., "كرسي ٨ صنف")
+                                                Builder(
+                                                  builder: (context) {
+                                                    final itemsText = order['items'] as String;
+                                                    final match = RegExp(r'(\d+\s*صنف)').firstMatch(itemsText);
+                                                    String? count;
+                                                    String? name;
+                                                    if (match != null) {
+                                                      count = match.group(0);
+                                                      name = itemsText.replaceAll(match.group(0)!, '').trim();
+                                                    } else {
+                                                      name = itemsText;
+                                                    }
+                                                    return Row(
+                                                      mainAxisSize: MainAxisSize.min,
+                                                      children: [
+                                                        if (count != null) ...[
+                                                          Text(count, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                                          const SizedBox(width: 6),
+                                                        ],
+                                                        Text(name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                                      ],
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Align(
+                                            alignment: Alignment.centerRight,
+                                            child: _buildStatusChip(status),
+                                          ),
+                                        ] else ...[
+                                          // For LTR, keep as before
+                                          Text(order['items'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                          const SizedBox(height: 8),
+                                          _buildStatusChip(status),
+                                        ],
                                       ],
                                     ),
                                   ),

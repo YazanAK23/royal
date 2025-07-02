@@ -158,13 +158,13 @@ class _CategoryIcon extends StatelessWidget {
               height: selected ? 56 : 48,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white, // White background inside the circle
+                color: selected ? Colors.white : Color(0xFFF5F6F8), // Use f5f6f8 for unselected
                 border: Border.all(
                   color: selected
                       ? (label == S.of(context).downloadsCategoryAll
                           ? Color(0xFF0faeef) // Blue for "all"
                           : Color(0xFFFF5A5A)) // Red for selected others
-                      : Colors.grey.shade200, // Light gray for unselected
+                      : Color(0xFFF5F6F8), // Border matches background for unselected
                   width: selected ? 4 : 2,
                 ),
               ),
