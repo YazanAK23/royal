@@ -929,31 +929,41 @@ class S {
     );
   }
 
-  /// `12/12/2022`
-  String get orderDateSample {
+  /// `Order Date`
+  String get orderDate {
+    return Intl.message('Order Date', name: 'orderDate', desc: '', args: []);
+  }
+
+  /// `Order Number`
+  String get orderNumber {
     return Intl.message(
-      '12/12/2022',
-      name: 'orderDateSample',
+      'Order Number',
+      name: 'orderNumber',
       desc: '',
       args: [],
     );
   }
 
-  /// `#5022201`
-  String get orderNumberSample {
-    return Intl.message(
-      '#5022201',
-      name: 'orderNumberSample',
-      desc: '',
-      args: [],
-    );
+  /// `Items Count`
+  String get orderItems {
+    return Intl.message('Items Count', name: 'orderItems', desc: '', args: []);
   }
 
-  /// `28 items`
-  String get orderItemsCount {
+  /// `Edit`
+  String get orderEdit {
+    return Intl.message('Edit', name: 'orderEdit', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get orderDelete {
+    return Intl.message('Delete', name: 'orderDelete', desc: '', args: []);
+  }
+
+  /// `Order Details`
+  String get orderDetails {
     return Intl.message(
-      '28 items',
-      name: 'orderItemsCount',
+      'Order Details',
+      name: 'orderDetails',
       desc: '',
       args: [],
     );
@@ -969,14 +979,59 @@ class S {
     );
   }
 
-  /// `Edit`
-  String get orderEdit {
-    return Intl.message('Edit', name: 'orderEdit', desc: '', args: []);
+  /// `Ready`
+  String get orderReady {
+    return Intl.message('Ready', name: 'orderReady', desc: '', args: []);
   }
 
-  /// `Delete`
-  String get orderDelete {
-    return Intl.message('Delete', name: 'orderDelete', desc: '', args: []);
+  /// `Cancelled`
+  String get orderCancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'orderCancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparing`
+  String get orderPreparing {
+    return Intl.message(
+      'Preparing',
+      name: 'orderPreparing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `8 items`
+  String get orderItemsSample {
+    return Intl.message(
+      '8 items',
+      name: 'orderItemsSample',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#5022201`
+  String get orderNumberSample {
+    return Intl.message(
+      '#5022201',
+      name: 'orderNumberSample',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `12/12/2022`
+  String get orderDateSample {
+    return Intl.message(
+      '12/12/2022',
+      name: 'orderDateSample',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Complete Order`
@@ -1885,6 +1940,101 @@ class S {
       'Press back again to exit',
       name: 'pressBackAgainToExit',
       desc: 'Shown when user presses back once on home page',
+      args: [],
+    );
+  }
+
+  /// `Ready`
+  String get statusReady {
+    return Intl.message('Ready', name: 'statusReady', desc: '', args: []);
+  }
+
+  /// `Cancelled`
+  String get statusCancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'statusCancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparing`
+  String get statusPreparing {
+    return Intl.message(
+      'Preparing',
+      name: 'statusPreparing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bashar`
+  String get profileLastNameHint {
+    return Intl.message(
+      'Bashar',
+      name: 'profileLastNameHint',
+      desc: 'Hint for last name field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Hjooj`
+  String get profileFirstNameHint {
+    return Intl.message(
+      'Hjooj',
+      name: 'profileFirstNameHint',
+      desc: 'Hint for first name field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `0599 123 123`
+  String get profilePhoneHint {
+    return Intl.message(
+      '0599 123 123',
+      name: 'profilePhoneHint',
+      desc: 'Hint for phone field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `02 22 22222`
+  String get profileMobileHint {
+    return Intl.message(
+      '02 22 22222',
+      name: 'profileMobileHint',
+      desc: 'Hint for mobile field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Sample address`
+  String get profileAddressHint {
+    return Intl.message(
+      'Sample address',
+      name: 'profileAddressHint',
+      desc: 'Hint for address field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `Bashar@royal.ps`
+  String get profileEmailHint {
+    return Intl.message(
+      'Bashar@royal.ps',
+      name: 'profileEmailHint',
+      desc: 'Hint for email field in profile edit screen',
+      args: [],
+    );
+  }
+
+  /// `**********`
+  String get profilePasswordHint {
+    return Intl.message(
+      '**********',
+      name: 'profilePasswordHint',
+      desc: 'Hint for password field in profile edit screen',
       args: [],
     );
   }

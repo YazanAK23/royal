@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/screens/home/home_screen.dart';
-
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_routes.dart';
 import 'core/providers/locale_provider.dart';

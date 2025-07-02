@@ -295,12 +295,19 @@
     "itemSave": "Save",
     "ordersCurrent": "Current Orders",
     "ordersArchive": "Order Archive",
-    "orderDateSample": "12/12/2022",
-    "orderNumberSample": "#5022201",
-    "orderItemsCount": "28 items",
-    "orderStatus": "Order Status",
+    "orderDate": "Order Date",
+    "orderNumber": "Order Number",
+    "orderItems": "Items Count",
     "orderEdit": "Edit",
     "orderDelete": "Delete",
+    "orderDetails": "Order Details",
+    "orderStatus": "Order Status",
+    "orderReady": "Ready",
+    "orderCancelled": "Cancelled",
+    "orderPreparing": "Preparing",
+    "orderItemsSample": "8 items",
+    "orderNumberSample": "#5022201",
+    "orderDateSample": "12/12/2022",
     "completeOrderButton": "Complete Order",
     "@completeOrderButton": {
         "description": "Button text for completing the order in the cart screen"
@@ -559,5 +566,36 @@
     "pressBackAgainToExit": "Press back again to exit",
     "@pressBackAgainToExit": {
         "description": "Shown when user presses back once on home page"
+    },
+    "statusReady": "Ready",
+    "statusCancelled": "Cancelled",
+    "statusPreparing": "Preparing",
+    "profileLastNameHint": "Bashar",
+    "@profileLastNameHint": {
+        "description": "Hint for last name field in profile edit screen"
+    },
+    "profileFirstNameHint": "Hjooj",
+    "@profileFirstNameHint": {
+        "description": "Hint for first name field in profile edit screen"
+    },
+    "profilePhoneHint": "0599 123 123",
+    "@profilePhoneHint": {
+        "description": "Hint for phone field in profile edit screen"
+    },
+    "profileMobileHint": "02 22 22222",
+    "@profileMobileHint": {
+        "description": "Hint for mobile field in profile edit screen"
+    },
+    "profileAddressHint": "Sample address",
+    "@profileAddressHint": {
+        "description": "Hint for address field in profile edit screen"
+    },
+    "profileEmailHint": "Bashar@royal.ps",
+    "@profileEmailHint": {
+        "description": "Hint for email field in profile edit screen"
+    },
+    "profilePasswordHint": "**********",
+    "@profilePasswordHint": {
+        "description": "Hint for password field in profile edit screen"
     }
 }

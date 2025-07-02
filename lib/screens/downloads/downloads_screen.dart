@@ -78,32 +78,35 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
           // Category selector row matching the design
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                // Left chevron
-                IconButton(
-                  icon: const Icon(Icons.chevron_left, size: 36, color: Color(0xFF17375E)),
-                  onPressed: _goLeft,
-                  splashRadius: 24,
-                ),
-                const SizedBox(width: 8),
-                // Categories
-                ...List.generate(categories.length, (i) => _CategoryIcon(
-                  label: categories[i].labelBuilder(context),
-                  asset: categories[i].asset,
-                  selected: selectedIndex == i,
-                  onTap: () => _selectCategory(i),
-                )),
-                const SizedBox(width: 8),
-                // Right chevron
-                IconButton(
-                  icon: const Icon(Icons.chevron_right, size: 36, color: Color(0xFF17375E)),
-                  onPressed: _goRight,
-                  splashRadius: 24,
-                ),
-              ],
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // Left chevron
+                  IconButton(
+                    icon: const Icon(Icons.chevron_left, size: 36, color: Color(0xFF17375E)),
+                    onPressed: _goLeft,
+                    splashRadius: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  // Categories
+                  ...List.generate(categories.length, (i) => _CategoryIcon(
+                    label: categories[i].labelBuilder(context),
+                    asset: categories[i].asset,
+                    selected: selectedIndex == i,
+                    onTap: () => _selectCategory(i),
+                  )),
+                  const SizedBox(width: 8),
+                  // Right chevron
+                  IconButton(
+                    icon: const Icon(Icons.chevron_right, size: 36, color: Color(0xFF17375E)),
+                    onPressed: _goRight,
+                    splashRadius: 24,
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 8),
@@ -150,10 +153,24 @@ class _CategoryIcon extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: selected ? 28 : 24,
-              backgroundColor: selected ? Theme.of(context).primaryColor : Colors.grey[200],
-              child: SvgPicture.asset(asset, width: 32, height: 32),
+            Container(
+              width: selected ? 56 : 48,
+              height: selected ? 56 : 48,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white, // White background inside the circle
+                border: Border.all(
+                  color: selected
+                      ? (label == S.of(context).downloadsCategoryAll
+                          ? Color(0xFF0faeef) // Blue for "all"
+                          : Color(0xFFFF5A5A)) // Red for selected others
+                      : Colors.grey.shade200, // Light gray for unselected
+                  width: selected ? 4 : 2,
+                ),
+              ),
+              child: Center(
+                child: SvgPicture.asset(asset, width: 32, height: 32),
+              ),
             ),
             const SizedBox(height: 8),
             Text(
@@ -236,6 +253,7 @@ class _DownloadItem extends StatelessWidget {
       onTap: () => _showDownloadDialog(context),
       child: Card(
         elevation: 2,
+        color: Colors.white, // Set card background to #ffffff
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -243,12 +261,18 @@ class _DownloadItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    'assets/images/catalog.png',
-                    fit: BoxFit.cover,
-                    width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF0faeef), // Set background color around the image
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset(
+                      'assets/images/catalog.png',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
                   ),
                 ),
               ),
@@ -256,7 +280,6 @@ class _DownloadItem extends StatelessWidget {
               Text(
                 S.of(context).downloadsCatalogName,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  // Removed underline
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold,
                 ),

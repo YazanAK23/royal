@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
-import '../../core/constants/app_assets.dart';
 import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
@@ -17,6 +15,40 @@ class _OrderScreenState extends State<OrderScreen> {
   int _selectedTab = 1;
   int _selectedNav = -1;
   String? _source;
+
+  // Order status data for demo
+  final List<Map<String, dynamic>> _orders = [
+    {
+      'date': S.current.orderDateSample,
+      'number': S.current.orderNumberSample,
+      'items': S.current.orderItemsSample,
+      'status': S.current.statusReady,
+    },
+    {
+      'date': S.current.orderDateSample,
+      'number': S.current.orderNumberSample,
+      'items': S.current.orderItemsSample,
+      'status': S.current.statusCancelled,
+    },
+    {
+      'date': S.current.orderDateSample,
+      'number': S.current.orderNumberSample,
+      'items': S.current.orderItemsSample,
+      'status': S.current.statusPreparing,
+    },
+    {
+      'date': S.current.orderDateSample,
+      'number': S.current.orderNumberSample,
+      'items': S.current.orderItemsSample,
+      'status': S.current.statusReady,
+    },
+    {
+      'date': S.current.orderDateSample,
+      'number': S.current.orderNumberSample,
+      'items': S.current.orderItemsSample,
+      'status': S.current.statusCancelled,
+    },
+  ];
 
   @override
   void didChangeDependencies() {
@@ -36,64 +68,109 @@ class _OrderScreenState extends State<OrderScreen> {
     } else if (_source == 'drawer') {
       AppRoutes.navigateTo(context, AppRoutes.customDrawer);
     } else {
-      // Fallback: go to drawer menu if source is missing or unknown
       AppRoutes.navigateTo(context, AppRoutes.customDrawer);
     }
+  }
+
+  Widget _buildStatusChip(String status) {
+    final s = S.of(context);
+    if (status == s.statusReady) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        decoration: BoxDecoration(
+          color: const Color(0xFF4CAF50),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(s.statusReady, style: const TextStyle(color: Colors.white, fontSize: 15)),
+            const SizedBox(width: 4),
+            const Icon(Icons.check_circle, color: Colors.white, size: 18),
+          ],
+        ),
+      );
+    } else if (status == s.statusCancelled) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF44336),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(s.statusCancelled, style: const TextStyle(color: Colors.white, fontSize: 15)),
+            const SizedBox(width: 4),
+            const Icon(Icons.cancel, color: Colors.white, size: 18),
+          ],
+        ),
+      );
+    } else if (status == s.statusPreparing) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        decoration: BoxDecoration(
+          color: const Color(0xFF233A63),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(s.statusPreparing, style: const TextStyle(color: Colors.white, fontSize: 15)),
+            const SizedBox(width: 4),
+            const Icon(Icons.settings, color: Colors.white, size: 18),
+          ],
+        ),
+      );
+    }
+    return const SizedBox();
   }
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    // Detect text direction from locale
+    final isRTL = Directionality.of(context) == TextDirection.rtl || Localizations.localeOf(context).languageCode == 'ar';
     return WillPopScope(
       onWillPop: () async {
         _handleBackNavigation();
         return false;
       },
       child: Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
         child: Scaffold(
           appBar: CustomAppBar(
             onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
           ),
           body: Column(
             children: [
-              // Back button under the appbar, left side
-              Padding(
-                padding: const EdgeInsets.only(top: 8, left: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Spacer(),
-                    IconButton(
-                      icon: SvgPicture.asset(
-                        AppAssets.backButton,
-                        width: 28,
-                        height: 28,
-                        color: Colors.blue,
-                      ),
-                      onPressed: _handleBackNavigation,
-                    ),
-                  ],
-                ),
+              const SizedBox(height: 12),
+              // Title
+              Text(
+                s.ordersLabel,
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                textAlign: isRTL ? TextAlign.right : TextAlign.left,
               ),
+              const SizedBox(height: 12),
+              // Tab bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
+                  textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                   children: [
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () => setState(() => _selectedTab = 1),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              _selectedTab == 1 ? Colors.blue : Colors.grey[200],
-                          foregroundColor:
-                              _selectedTab == 1 ? Colors.white : Colors.black,
+                          backgroundColor: _selectedTab == 1 ? const Color(0xFF03A9F4) : Colors.grey[200],
+                          foregroundColor: _selectedTab == 1 ? Colors.white : Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          elevation: 0,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
-                        child: Text(s.ordersCurrent),
+                        child: Text(s.ordersCurrent, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -101,38 +178,40 @@ class _OrderScreenState extends State<OrderScreen> {
                       child: ElevatedButton(
                         onPressed: () => setState(() => _selectedTab = 0),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              _selectedTab == 0 ? Colors.blue : Colors.grey[200],
-                          foregroundColor:
-                              _selectedTab == 0 ? Colors.white : Colors.black,
+                          backgroundColor: _selectedTab == 0 ? const Color(0xFF03A9F4) : Colors.grey[200],
+                          foregroundColor: _selectedTab == 0 ? Colors.white : Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          elevation: 0,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
-                        child: Text(s.ordersArchive),
+                        child: Text(s.ordersArchive, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                       ),
                     ),
                   ],
                 ),
               ),
+              const SizedBox(height: 8),
               Expanded(
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                  itemCount: 5,
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  itemCount: _orders.length,
                   itemBuilder: (context, index) {
-                    final isDelivered = index % 2 == 0;
+                    final order = _orders[index];
+                    final status = order['status'] as String;
                     return GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, AppRoutes.orderDetails);
                       },
                       child: Container(
-                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
                           color: const Color(0xFFF7F8FA),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
+                          crossAxisAlignment: isRTL ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                           children: [
                             Container(
                               decoration: const BoxDecoration(
@@ -142,62 +221,40 @@ class _OrderScreenState extends State<OrderScreen> {
                                   topRight: Radius.circular(20),
                                 ),
                               ),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 8),
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                 children: [
-                                  Text(s.orderDateSample,
-                                      style: const TextStyle(
-                                          color: Colors.white, fontSize: 15)),
-                                  Text(s.orderNumberSample,
-                                      style: const TextStyle(
-                                          color: Colors.white, fontSize: 15)),
+                                  Text(order['date'], style: const TextStyle(color: Colors.white, fontSize: 15)),
+                                  Text(order['number'], style: const TextStyle(color: Colors.white, fontSize: 15)),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 8),
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                               child: Row(
+                                textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                 children: [
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment: isRTL ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                                       children: [
-                                        Text(s.orderItemsCount,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15)),
-                                        const SizedBox(height: 4),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            SvgPicture.asset(
-                                              isDelivered
-                                                  ? AppAssets.delivered
-                                                  : AppAssets.notDelivered,
-                                              width: 19,
-                                              height: 13,
-                                            ),
-                                            const SizedBox(width: 6),
-                                            Text(s.orderStatus,
-                                                style: const TextStyle(fontSize: 14)),
-                                          ],
-                                        ),
+                                        Text(order['items'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                        const SizedBox(height: 8),
+                                        _buildStatusChip(status),
                                       ],
                                     ),
                                   ),
-                                  if (isDelivered) ...[
-                                    const SizedBox(width: 16),
+                                  if (status == s.statusReady) ...[
                                     Row(
+                                      textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                       children: [
                                         CircleAvatar(
                                           radius: 18,
                                           backgroundColor: const Color(0xFF03A9F4),
                                           child: IconButton(
-                                            icon: const Icon(Icons.edit,
-                                                color: Colors.white, size: 18),
+                                            icon: const Icon(Icons.edit, color: Colors.white, size: 18),
                                             onPressed: () {},
                                             tooltip: s.orderEdit,
                                           ),
@@ -207,8 +264,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           radius: 18,
                                           backgroundColor: const Color(0xFF03A9F4),
                                           child: IconButton(
-                                            icon: const Icon(Icons.delete,
-                                                color: Colors.white, size: 18),
+                                            icon: const Icon(Icons.delete, color: Colors.white, size: 18),
                                             onPressed: () {},
                                             tooltip: s.orderDelete,
                                           ),
@@ -229,7 +285,7 @@ class _OrderScreenState extends State<OrderScreen> {
             ],
           ),
           bottomNavigationBar: CustomBottomNavBar(
-            currentIndex: -1, // No item selected for Orders page
+            currentIndex: -1,
             onTap: (index) {
               setState(() => _selectedNav = index);
               if (index == 0) {

@@ -201,12 +201,19 @@
     "itemSave": "حفظ",
     "ordersCurrent": "الطلبات الحالية",
     "ordersArchive": "أرشيف الطلبات",
-    "orderDateSample": "12/12/2022",
-    "orderNumberSample": "#5022201",
-    "orderItemsCount": "٢٨ صنف",
-    "orderStatus": "حالة الطلبية",
+    "orderDate": "تاريخ الطلب",
+    "orderNumber": "رقم الطلب",
+    "orderItems": "عدد الأصناف",
     "orderEdit": "تعديل",
     "orderDelete": "حذف",
+    "orderDetails": "تفاصيل الطلب",
+    "orderStatus": "حالة الطلب",
+    "orderReady": "جاهز",
+    "orderCancelled": "ملغي",
+    "orderPreparing": "قيد التحضير",
+    "orderItemsSample": "٨ صنف",
+    "orderNumberSample": "#5022201",
+    "orderDateSample": "12/12/2022",
     "completeOrderButton": "أتم الطلبية",
     "@completeOrderButton": {
         "description": "Button text for completing the order in the cart screen"
@@ -467,5 +474,36 @@
     "pressBackAgainToExit": "اضغط مرة أخرى للخروج",
     "@pressBackAgainToExit": {
         "description": "يظهر عند الضغط على زر الرجوع مرة واحدة في الصفحة الرئيسية"
+    },
+    "statusReady": "جاهز",
+    "statusCancelled": "ملغي",
+    "statusPreparing": "قيد التحضير",
+    "profileLastNameHint": "بشار",
+    "@profileLastNameHint": {
+        "description": "تلميح حقل الاسم الأخير في شاشة تعديل الملف الشخصي"
+    },
+    "profileFirstNameHint": "حجوج",
+    "@profileFirstNameHint": {
+        "description": "تلميح حقل الاسم الأول في شاشة تعديل الملف الشخصي"
+    },
+    "profilePhoneHint": "٠٥٩٩ ١٢٣ ١٢٣",
+    "@profilePhoneHint": {
+        "description": "تلميح حقل الهاتف في شاشة تعديل الملف الشخصي"
+    },
+    "profileMobileHint": "٠٢ ٢٢ ٢٢٢٢٢",
+    "@profileMobileHint": {
+        "description": "تلميح حقل الجوال في شاشة تعديل الملف الشخصي"
+    },
+    "profileAddressHint": "عنوان تجريبي",
+    "@profileAddressHint": {
+        "description": "تلميح حقل العنوان في شاشة تعديل الملف الشخصي"
+    },
+    "profileEmailHint": "Bashar@royal.ps",
+    "@profileEmailHint": {
+        "description": "تلميح حقل الإيميل في شاشة تعديل الملف الشخصي"
+    },
+    "profilePasswordHint": "**********",
+    "@profilePasswordHint": {
+        "description": "تلميح حقل كلمة السر في شاشة تعديل الملف الشخصي"
     }
 }
