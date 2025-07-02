@@ -247,6 +247,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "plasticParts": MessageLookupByLibrary.simpleMessage("Plastic Parts"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),
+    "pressBackAgainToExit": MessageLookupByLibrary.simpleMessage(
+      "Press back again to exit",
+    ),
     "previousNews": MessageLookupByLibrary.simpleMessage("Previous News"),
     "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
       "Privacy Policy",

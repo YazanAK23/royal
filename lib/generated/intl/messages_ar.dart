@@ -240,6 +240,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage(
       "الأسطح البلاستيكية",
     ),
+    "pressBackAgainToExit": MessageLookupByLibrary.simpleMessage(
+      "اضغط مرة أخرى للخروج",
+    ),
     "previousNews": MessageLookupByLibrary.simpleMessage("الخبر السابق"),
     "privacyPolicyLabel": MessageLookupByLibrary.simpleMessage(
       "سياسة الخصوصية",

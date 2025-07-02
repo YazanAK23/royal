@@ -12,6 +12,18 @@ class FavoritePage extends StatefulWidget {
 
 class _FavoritePageState extends State<FavoritePage> {
   int selectedCategory = 0;
+  String? _source;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final args = ModalRoute.of(context)?.settings.arguments;
+    if (args is Map && args['source'] is String) {
+      _source = args['source'] as String;
+    } else {
+      _source = null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,94 +43,103 @@ class _FavoritePageState extends State<FavoritePage> {
       {'image': 'assets/images/tank5.png', 'title': s.waterTanks},
       {'image': 'assets/images/tank7.png', 'title': s.waterTanks},
     ];
-    return RoyalScaffold(
-      currentIndex: 1, // 1 for Favorite page
-      onNavTap: (index) {
-        if (index == 0) {
-          Navigator.of(context).pushReplacementNamed('/home');
-        } else if (index == 1) {
-          // Already on favorite, do nothing
-        } else if (index == 2) {
-          Navigator.of(context).pushReplacementNamed('/profile');
-        } else if (index == 3) {
-          Navigator.of(context).pushReplacementNamed('/browsing-history');
-        } else if (index == 4) {
-          Navigator.of(context).pushReplacementNamed('/info');
+    return WillPopScope(
+      onWillPop: () async {
+        if (_source == 'drawer') {
+          Navigator.of(context).pushReplacementNamed('/'); // or AppRoutes.customDrawer
+          return false;
         }
+        return true;
       },
-      body: Column(
-        children: [
-          const SizedBox(height: 12),
-          Center(
-            child: Text(
-              s.favoritesLabel, // Use your localized favorite label
-              style: const TextStyle(
-                color: Color(0xFF00AEEF),
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
+      child: RoyalScaffold(
+        currentIndex: 1, // 1 for Favorite page
+        onNavTap: (index) {
+          if (index == 0) {
+            Navigator.of(context).pushReplacementNamed('/home');
+          } else if (index == 1) {
+            // Already on favorite, do nothing
+          } else if (index == 2) {
+            Navigator.of(context).pushReplacementNamed('/profile');
+          } else if (index == 3) {
+            Navigator.of(context).pushReplacementNamed('/browsing-history');
+          } else if (index == 4) {
+            Navigator.of(context).pushReplacementNamed('/info');
+          }
+        },
+        body: Column(
+          children: [
+            const SizedBox(height: 12),
+            Center(
+              child: Text(
+                s.favoritesLabel, // Use your localized favorite label
+                style: const TextStyle(
+                  color: Color(0xFF00AEEF),
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 16),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(categories.length, (index) {
-                final isSelected = index == selectedCategory;
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const SizedBox(height: 8),
-                      TextButton(
-                        onPressed: () {
-                          setState(() => selectedCategory = index);
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: isSelected ? const Color(0xFF00AEEF) : Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            side: BorderSide(
-                              color: isSelected ? const Color(0xFF00AEEF) : Colors.grey.shade300,
-                              width: 1.5,
+            const SizedBox(height: 16),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(categories.length, (index) {
+                  final isSelected = index == selectedCategory;
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(height: 8),
+                        TextButton(
+                          onPressed: () {
+                            setState(() => selectedCategory = index);
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: isSelected ? const Color(0xFF00AEEF) : Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              side: BorderSide(
+                                color: isSelected ? const Color(0xFF00AEEF) : Colors.grey.shade300,
+                                width: 1.5,
+                              ),
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+                          ),
+                          child: Text(
+                            categories[index],
+                            style: TextStyle(
+                              color: isSelected ? Colors.white : Colors.grey[700],
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
                             ),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
                         ),
-                        child: Text(
-                          categories[index],
-                          style: TextStyle(
-                            color: isSelected ? Colors.white : Colors.grey[700],
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                    ],
-                  ),
-                );
-              }),
-            ),
-          ),
-          const SizedBox(height: 12),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: 0.95,
-                children: products.map((product) => ProductCard(
-                  imagePath: product['image']!,
-                  title: product['title']!,
-                )).toList(),
+                        const SizedBox(height: 4),
+                      ],
+                    ),
+                  );
+                }),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 12),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.95,
+                  children: products.map((product) => ProductCard(
+                    imagePath: product['image']!,
+                    title: product['title']!,
+                  )).toList(),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -463,5 +463,9 @@
     "faqNeedHelpTitle": "هل تحتاج لمساعدة ؟",
     "faqBrowseSubtitle": "تصفح الأسئلة الشائعة.",
     "badge99plus": "99+",
-    "workingHoursNote": "يومياً ما عدا العطل الرسمية"
+    "workingHoursNote": "يومياً ما عدا العطل الرسمية",
+    "pressBackAgainToExit": "اضغط مرة أخرى للخروج",
+    "@pressBackAgainToExit": {
+        "description": "يظهر عند الضغط على زر الرجوع مرة واحدة في الصفحة الرئيسية"
+    }
 }

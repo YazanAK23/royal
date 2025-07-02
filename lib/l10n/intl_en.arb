@@ -555,6 +555,9 @@
     "supportJerusalem": "Jerusalem, IL 9711025",
     "faqNeedHelpTitle": "Need help?",
     "faqBrowseSubtitle": "Browse the FAQ.",
-    "badge99plus": "99+"
-
+    "badge99plus": "99+",
+    "pressBackAgainToExit": "Press back again to exit",
+    "@pressBackAgainToExit": {
+        "description": "Shown when user presses back once on home page"
+    }
 }

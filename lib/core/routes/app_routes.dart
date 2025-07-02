@@ -65,7 +65,18 @@ class AppRoutes {
     orders: (context) => const OrderScreen(), // Added orders route
     customDrawer: (context) => CustomDrawer(
       onMenuItemTap: (route) {
-        Navigator.of(context).pushReplacementNamed(route);
+        // Use pushReplacementNamed and pass source: 'drawer' for relevant pages
+        if (route == AppRoutes.orders ||
+            route == AppRoutes.newItems ||
+            route == AppRoutes.history ||
+            route == AppRoutes.favorite) {
+          Navigator.of(context).pushReplacementNamed(
+            route,
+            arguments: {'source': 'drawer'},
+          );
+        } else {
+          Navigator.of(context).pushReplacementNamed(route);
+        }
       },
     ), // NEW: CustomDrawer route
     orderDetails: (context) => const OrderDetailsPage(), // NEW: OrderDetailsPage route

@@ -23,150 +23,156 @@ class CustomDrawer extends ConsumerWidget {
     final locale = ref.watch(localeProvider);
     final isArabic = locale.languageCode == 'ar';
 
-    return Drawer(
-      width: MediaQuery.of(context).size.width,
-      backgroundColor: AppColors.primary,
-      child: Stack(
-        children: [
-          // Pattern SVG absolutely at the bottom left of the screen, full width, flush with bottom
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: SvgPicture.asset(
-              AppAssets.drawerPattern,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-          // Main content (no social section at the bottom)
-          Column(
-            children: [
-              const SizedBox(height: 64), // Added space to move content down
-              // Top bar with Language toggle, Welcome text (left) and Search/Back (right)
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Left side: Language toggle, Welcome, Name (all left-aligned)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _buildLanguageToggle(context, ref),
-                        const SizedBox(height: 16),
-                        Text(
-                          S.of(context).welcomeLabel,
-                          style: AppTextStyles.welcomeText,
-                          textAlign: TextAlign.left,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          S.of(context).nameLabel,
-                          style: AppTextStyles.userName,
-                          textAlign: TextAlign.left,
-                        ),
-                      ],
-                    ),
-                    // Right side: Search icon and Back button stacked vertically, right-aligned
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
-                          child: SvgPicture.asset(
-                            AppAssets.search,
-                            width: 24,
-                            height: 24,
-                            color: AppColors.white,
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        GestureDetector(
-                          onTap: () => Navigator.of(context).pop(),
-                          child: SvgPicture.asset(
-                            AppAssets.backButton,
-                            width: 24,
-                            height: 24,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.of(context).pushReplacementNamed('/home');
+        return false;
+      },
+      child: Drawer(
+        width: MediaQuery.of(context).size.width,
+        backgroundColor: AppColors.primary,
+        child: Stack(
+          children: [
+            // Pattern SVG absolutely at the bottom left of the screen, full width, flush with bottom
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: SvgPicture.asset(
+                AppAssets.drawerPattern,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fitWidth,
               ),
-              const SizedBox(height: 32),
-              // Menu Items
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                    children: DrawerMenuItems.getItems().map((item) => _buildMenuItem(context, item)).toList(),
+            ),
+            // Main content (no social section at the bottom)
+            Column(
+              children: [
+                const SizedBox(height: 64), // Added space to move content down
+                // Top bar with Language toggle, Welcome text (left) and Search/Back (right)
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Left side: Language toggle, Welcome, Name (all left-aligned)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildLanguageToggle(context, ref),
+                          const SizedBox(height: 16),
+                          Text(
+                            S.of(context).welcomeLabel,
+                            style: AppTextStyles.welcomeText,
+                            textAlign: TextAlign.left,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            S.of(context).nameLabel,
+                            style: AppTextStyles.userName,
+                            textAlign: TextAlign.left,
+                          ),
+                        ],
+                      ),
+                      // Right side: Search icon and Back button stacked vertically, right-aligned
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          GestureDetector(
+                            onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
+                            child: SvgPicture.asset(
+                              AppAssets.search,
+                              width: 24,
+                              height: 24,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          GestureDetector(
+                            onTap: () => Navigator.of(context).pushReplacementNamed('/home'),
+                            child: SvgPicture.asset(
+                              AppAssets.backButton,
+                              width: 24,
+                              height: 24,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 32),
+                // Menu Items
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                      children: DrawerMenuItems.getItems().map((item) => _buildMenuItem(context, item)).toList(),
+                    ),
+                  ),
+                ),
+                // Remove the social section from here
+              ],
+            ),
+            // Social Media Links section pinned to the bottom, above the SVG
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 24, right: 32),
+                  child: Builder(
+                    builder: (context) {
+                      // Calculate the width of the icons row
+                      double iconWidth = 40;
+                      double iconSpacing = 20;
+                      int iconCount = 4;
+                      double rowWidth = iconWidth * iconCount + iconSpacing * (iconCount - 1);
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          SizedBox(
+                            width: rowWidth,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                S.of(context).contactUsLabel,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              _buildSocialIcon(AppAssets.facebook, 'Facebook'),
+                              const SizedBox(width: 20),
+                              _buildSocialIcon(AppAssets.instagram, 'Instagram'),
+                              const SizedBox(width: 20),
+                              _buildSocialIcon(AppAssets.youtube, 'YouTube'),
+                              const SizedBox(width: 20),
+                              _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
+                            ],
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ),
-              // Remove the social section from here
-            ],
-          ),
-          // Social Media Links section pinned to the bottom, above the SVG
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 24, right: 32),
-                child: Builder(
-                  builder: (context) {
-                    // Calculate the width of the icons row
-                    double iconWidth = 40;
-                    double iconSpacing = 20;
-                    int iconCount = 4;
-                    double rowWidth = iconWidth * iconCount + iconSpacing * (iconCount - 1);
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        SizedBox(
-                          width: rowWidth,
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              S.of(context).contactUsLabel,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            _buildSocialIcon(AppAssets.facebook, 'Facebook'),
-                            const SizedBox(width: 20),
-                            _buildSocialIcon(AppAssets.instagram, 'Instagram'),
-                            const SizedBox(width: 20),
-                            _buildSocialIcon(AppAssets.youtube, 'YouTube'),
-                            const SizedBox(width: 20),
-                            _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
-                          ],
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -34,134 +34,138 @@ class NewsPage extends StatelessWidget {
       ),
     ];
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: CustomAppBar(
+    return WillPopScope(
+      onWillPop: () async {
+        AppRoutes.navigateTo(context, AppRoutes.customDrawer);
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: CustomAppBar(
           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
-
-      ),
-      drawer: CustomDrawer(
-        onMenuItemTap: (route) {
-          Navigator.of(context).pop(); // Close drawer first
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (ModalRoute.of(context)?.settings.name != route) {
-              Navigator.of(context).pushReplacementNamed(route);
-            }
-          });
-        },
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFF00B4D8)),
-                onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer),
-
+        ),
+        drawer: CustomDrawer(
+          onMenuItemTap: (route) {
+            Navigator.of(context).pop(); // Close drawer first
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (ModalRoute.of(context)?.settings.name != route) {
+                Navigator.of(context).pushReplacementNamed(route);
+              }
+            });
+          },
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFF00B4D8)),
+                  onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: Center(
-                child: Text(
-                  s.newsTitle,
-                  style: const TextStyle(
-                    color: Color(0xFF00B4D8),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Center(
+                  child: Text(
+                    s.newsTitle,
+                    style: const TextStyle(
+                      color: Color(0xFF00B4D8),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                itemCount: newsItems.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 16),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => NewsDetailsPage(
-                            image: newsItems[index].image,
-                            title: newsItems[index].title,
-                            subtitle: newsItems[index].subtitle,
-                            content: newsItems[index].content,
-                            onNext: index < newsItems.length - 1
-                                ? () => Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                        builder: (_) => NewsDetailsPage(
-                                          image: newsItems[index + 1].image,
-                                          title: newsItems[index + 1].title,
-                                          subtitle: newsItems[index + 1].subtitle,
-                                          content: newsItems[index + 1].content,
-                                          onNext: index + 1 < newsItems.length - 1 ? () {} : null,
-                                          onPrev: () => Navigator.of(context).pushReplacement(
-                                            MaterialPageRoute(
-                                              builder: (_) => NewsDetailsPage(
-                                                image: newsItems[index].image,
-                                                title: newsItems[index].title,
-                                                subtitle: newsItems[index].subtitle,
-                                                content: newsItems[index].content,
+              Expanded(
+                child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: newsItems.length,
+                  separatorBuilder: (_, __) => const SizedBox(height: 16),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => NewsDetailsPage(
+                              image: newsItems[index].image,
+                              title: newsItems[index].title,
+                              subtitle: newsItems[index].subtitle,
+                              content: newsItems[index].content,
+                              onNext: index < newsItems.length - 1
+                                  ? () => Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (_) => NewsDetailsPage(
+                                            image: newsItems[index + 1].image,
+                                            title: newsItems[index + 1].title,
+                                            subtitle: newsItems[index + 1].subtitle,
+                                            content: newsItems[index + 1].content,
+                                            onNext: index + 1 < newsItems.length - 1 ? () {} : null,
+                                            onPrev: () => Navigator.of(context).pushReplacement(
+                                              MaterialPageRoute(
+                                                builder: (_) => NewsDetailsPage(
+                                                  image: newsItems[index].image,
+                                                  title: newsItems[index].title,
+                                                  subtitle: newsItems[index].subtitle,
+                                                  content: newsItems[index].content,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    )
-                                : null,
-                            onPrev: index > 0
-                                ? () => Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                        builder: (_) => NewsDetailsPage(
-                                          image: newsItems[index - 1].image,
-                                          title: newsItems[index - 1].title,
-                                          subtitle: newsItems[index - 1].subtitle,
-                                          content: newsItems[index - 1].content,
-                                          onNext: () => Navigator.of(context).pushReplacement(
-                                            MaterialPageRoute(
-                                              builder: (_) => NewsDetailsPage(
-                                                image: newsItems[index].image,
-                                                title: newsItems[index].title,
-                                                subtitle: newsItems[index].subtitle,
-                                                content: newsItems[index].content,
+                                      )
+                                  : null,
+                              onPrev: index > 0
+                                  ? () => Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (_) => NewsDetailsPage(
+                                            image: newsItems[index - 1].image,
+                                            title: newsItems[index - 1].title,
+                                            subtitle: newsItems[index - 1].subtitle,
+                                            content: newsItems[index - 1].content,
+                                            onNext: () => Navigator.of(context).pushReplacement(
+                                              MaterialPageRoute(
+                                                builder: (_) => NewsDetailsPage(
+                                                  image: newsItems[index].image,
+                                                  title: newsItems[index].title,
+                                                  subtitle: newsItems[index].subtitle,
+                                                  content: newsItems[index].content,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    )
-                                : null,
+                                      )
+                                  : null,
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                    child: NewsCard(item: newsItems[index]),
-                  );
-                },
+                        );
+                      },
+                      child: NewsCard(item: newsItems[index]),
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: -1, // No tab selected for NewsPage
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
-          } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
-          } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
-          } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/downloads');
-          } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
-          }
-        },
+        bottomNavigationBar: CustomBottomNavBar(
+          currentIndex: -1, // No tab selected for NewsPage
+          onTap: (index) {
+            if (index == 0) {
+              Navigator.of(context).pushReplacementNamed('/home');
+            } else if (index == 1) {
+              Navigator.of(context).pushReplacementNamed('/favorite');
+            } else if (index == 2) {
+              Navigator.of(context).pushReplacementNamed('/profile');
+            } else if (index == 3) {
+              Navigator.of(context).pushReplacementNamed('/downloads');
+            } else if (index == 4) {
+              Navigator.of(context).pushReplacementNamed('/info');
+            }
+          },
+        ),
       ),
     );
   }

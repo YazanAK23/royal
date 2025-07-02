@@ -87,22 +87,38 @@ class ProfileScreen extends StatelessWidget {
               _ProfileMenuItem(
                 icon: Icons.assignment,
                 label: s.profileOrders,
-                onTap: () => AppRoutes.navigateTo(context, '/orders'),
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  AppRoutes.orders,
+                  arguments: {'source': 'profile'},
+                ),
               ),
               _ProfileMenuItem(
                 icon: Icons.star,
                 label: s.profileNewItems,
-                onTap: () => AppRoutes.navigateTo(context, '/new-items'),
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/new-items',
+                  arguments: {'source': 'profile'},
+                ),
               ),
               _ProfileMenuItem(
                 icon: Icons.history,
                 label: s.profileBrowsingArchive,
-                onTap: () => AppRoutes.navigateTo(context, '/browsing-history'),
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/browsing-history',
+                  arguments: {'source': 'profile'},
+                ),
               ),
               _ProfileMenuItem(
                 icon: Icons.favorite_border,
                 label: s.profileFavorites,
-                onTap: () => AppRoutes.navigateTo(context, '/favorite'),
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/favorite',
+                  arguments: {'source': 'profile'},
+                ),
               ),
               const SizedBox(height: 24),
               Center(

@@ -1878,6 +1878,16 @@ class S {
   String get badge99plus {
     return Intl.message('99+', name: 'badge99plus', desc: '', args: []);
   }
+
+  /// `Press back again to exit`
+  String get pressBackAgainToExit {
+    return Intl.message(
+      'Press back again to exit',
+      name: 'pressBackAgainToExit',
+      desc: 'Shown when user presses back once on home page',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

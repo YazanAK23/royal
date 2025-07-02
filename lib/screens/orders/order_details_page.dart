@@ -87,7 +87,7 @@ class OrderDetailsPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: CustomBottomNavBar(
-          currentIndex: 0,
+          currentIndex: -1, // No item selected for Order Details page
           onTap: (index) {
             if (index == 0) {
               Navigator.of(context).pushReplacementNamed('/home');
