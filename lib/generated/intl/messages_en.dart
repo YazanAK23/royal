@@ -305,10 +305,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("Sanitary Ware"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "searchCancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "searchDoneButton": MessageLookupByLibrary.simpleMessage("Done"),
     "searchHint": MessageLookupByLibrary.simpleMessage("Search"),
     "searchHintDetails": MessageLookupByLibrary.simpleMessage(
       "Search by item name or code",
     ),
+    "searchPackDetails": MessageLookupByLibrary.simpleMessage(
+      "Pack = 12 pieces",
+    ),
+    "searchPackLabel": MessageLookupByLibrary.simpleMessage("PACK"),
+    "searchQuantityLabel": MessageLookupByLibrary.simpleMessage("Quantity:"),
     "searchTitle": MessageLookupByLibrary.simpleMessage("Search"),
     "statusCancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "statusPreparing": MessageLookupByLibrary.simpleMessage("Preparing"),

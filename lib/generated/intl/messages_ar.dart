@@ -294,10 +294,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "sanitaryTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "sanitaryWareTitle": MessageLookupByLibrary.simpleMessage("الأدوات الصحية"),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "searchCancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "searchDoneButton": MessageLookupByLibrary.simpleMessage("تم"),
     "searchHint": MessageLookupByLibrary.simpleMessage("بحث"),
     "searchHintDetails": MessageLookupByLibrary.simpleMessage(
       "ابحث باسم الصنف أو كود الصنف",
     ),
+    "searchPackDetails": MessageLookupByLibrary.simpleMessage(
+      "الحزمة = 12 قطعة",
+    ),
+    "searchPackLabel": MessageLookupByLibrary.simpleMessage("الحزمة"),
+    "searchQuantityLabel": MessageLookupByLibrary.simpleMessage("الكمية:"),
     "searchTitle": MessageLookupByLibrary.simpleMessage("البحث"),
     "statusCancelled": MessageLookupByLibrary.simpleMessage("ملغي"),
     "statusPreparing": MessageLookupByLibrary.simpleMessage("قيد التحضير"),

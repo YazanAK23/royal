@@ -146,7 +146,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                               children: [
                                 Row(
                                   children: [
-                                    const Text("الكمية:"),
+                                    Text(s.searchQuantityLabel),
                                     const SizedBox(width: 6),
                                     IconButton(
                                       icon: const Icon(Icons.add),
@@ -168,16 +168,16 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Row(
-                                        children: const [
-                                          Icon(Icons.arrow_drop_down),
-                                          Text('PACK'),
+                                        children: [
+                                          const Icon(Icons.arrow_drop_down),
+                                          Text(s.searchPackLabel),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
                                 const SizedBox(height: 4),
-                                const Text('الحزمة = 12 قطعة', style: TextStyle(fontSize: 10, color: Colors.grey)),
+                                Text(s.searchPackDetails, style: const TextStyle(fontSize: 10, color: Colors.grey)),
                                 const SizedBox(height: 8),
                                 Row(
                                   children: [
@@ -189,7 +189,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                           borderRadius: BorderRadius.circular(50),
                                         ),
                                       ),
-                                      child: const Text('تم'),
+                                      child: Text(s.searchDoneButton),
                                     ),
                                     const SizedBox(width: 8),
                                     OutlinedButton(
@@ -201,7 +201,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                           borderRadius: BorderRadius.circular(50),
                                         ),
                                       ),
-                                      child: const Text('إلغاء'),
+                                      child: Text(s.searchCancelButton),
                                     ),
                                   ],
                                 ),

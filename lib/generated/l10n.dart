@@ -2058,6 +2058,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Quantity:`
+  String get searchQuantityLabel {
+    return Intl.message(
+      'Quantity:',
+      name: 'searchQuantityLabel',
+      desc: 'Label for quantity selector in search screen',
+      args: [],
+    );
+  }
+
+  /// `PACK`
+  String get searchPackLabel {
+    return Intl.message(
+      'PACK',
+      name: 'searchPackLabel',
+      desc: 'Label for pack unit in search screen',
+      args: [],
+    );
+  }
+
+  /// `Pack = 12 pieces`
+  String get searchPackDetails {
+    return Intl.message(
+      'Pack = 12 pieces',
+      name: 'searchPackDetails',
+      desc: 'Pack details in search screen',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get searchDoneButton {
+    return Intl.message(
+      'Done',
+      name: 'searchDoneButton',
+      desc: 'Done button in search screen',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get searchCancelButton {
+    return Intl.message(
+      'Cancel',
+      name: 'searchCancelButton',
+      desc: 'Cancel button in search screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

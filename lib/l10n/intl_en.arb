@@ -605,5 +605,25 @@
     "piecesLabel": "Pieces",
     "@piecesLabel": {
         "description": "Label for pieces unit selector"
+    },
+    "searchQuantityLabel": "Quantity:",
+    "@searchQuantityLabel": {
+        "description": "Label for quantity selector in search screen"
+    },
+    "searchPackLabel": "PACK",
+    "@searchPackLabel": {
+        "description": "Label for pack unit in search screen"
+    },
+    "searchPackDetails": "Pack = 12 pieces",
+    "@searchPackDetails": {
+        "description": "Pack details in search screen"
+    },
+    "searchDoneButton": "Done",
+    "@searchDoneButton": {
+        "description": "Done button in search screen"
+    },
+    "searchCancelButton": "Cancel",
+    "@searchCancelButton": {
+        "description": "Cancel button in search screen"
     }
 }

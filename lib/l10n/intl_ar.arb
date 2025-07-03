@@ -513,5 +513,25 @@
     "piecesLabel": "قطعة",
     "@piecesLabel": {
         "description": "تسمية وحدة القطعة في محدد الوحدة"
+    },
+    "searchQuantityLabel": "الكمية:",
+    "@searchQuantityLabel": {
+        "description": "تسمية محدد الكمية في شاشة البحث"
+    },
+    "searchPackLabel": "الحزمة",
+    "@searchPackLabel": {
+        "description": "تسمية وحدة الحزمة في شاشة البحث"
+    },
+    "searchPackDetails": "الحزمة = 12 قطعة",
+    "@searchPackDetails": {
+        "description": "تفاصيل الحزمة في شاشة البحث"
+    },
+    "searchDoneButton": "تم",
+    "@searchDoneButton": {
+        "description": "زر تم في شاشة البحث"
+    },
+    "searchCancelButton": "إلغاء",
+    "@searchCancelButton": {
+        "description": "زر إلغاء في شاشة البحث"
     }
 }
