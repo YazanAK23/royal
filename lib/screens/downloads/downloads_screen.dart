@@ -68,7 +68,9 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
             child: Align(
-              alignment: Alignment.centerRight,
+              alignment: Directionality.of(context) == TextDirection.rtl
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: Text(
                 S.of(context).downloadsCenterTitle,
                 style: Theme.of(context).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -220,7 +222,12 @@ class _DownloadItem extends StatelessWidget {
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.menu_book_outlined, size: 56, color: Color(0xFF17375E)),
+                        SvgPicture.asset(
+                          'assets/icons/previw_icon.svg',
+                          width: 56,
+                          height: 56,
+                          color: const Color(0xFF17375E),
+                        ),
                         const SizedBox(height: 8),
                         Text(S.of(context).downloadsPreview, style: TextStyle(fontSize: 16, color: Colors.black)),
                       ],
@@ -229,7 +236,11 @@ class _DownloadItem extends StatelessWidget {
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.picture_as_pdf, size: 56, color: Color(0xFFD32F2F)),
+                        SvgPicture.asset(
+                          'assets/icons/pdf_icons.svg',
+                          width: 56,
+                          height: 56,
+                        ),
                         const SizedBox(height: 8),
                         Text(S.of(context).downloadsDownload, style: TextStyle(fontSize: 16, color: Colors.black)),
                       ],
@@ -279,12 +290,16 @@ class _DownloadItem extends StatelessWidget {
         color: Colors.white, // Set card background to #ffffff
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(3.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
+                flex: 0,
                 child: Container(
+                  
+                  height: 74, // Increased image height
+                  width: 110,  // Increased image width
                   decoration: BoxDecoration(
                     color: Color(0xFF0faeef), // Set background color around the image
                     borderRadius: BorderRadius.circular(12),
@@ -294,12 +309,13 @@ class _DownloadItem extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/catalog.png',
                       fit: BoxFit.cover,
-                      width: double.infinity,
+                      width: 125, // Match container width
+                      height: 125, // Match container height
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 16),
               Text(
                 S.of(context).downloadsCatalogName,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
