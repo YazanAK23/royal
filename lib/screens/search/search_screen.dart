@@ -1,5 +1,3 @@
-// search_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -148,7 +146,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                               children: [
                                 Row(
                                   children: [
-                                    Text("الكمية:"),
+                                    const Text("الكمية:"),
                                     const SizedBox(width: 6),
                                     IconButton(
                                       icon: const Icon(Icons.add),
@@ -188,7 +186,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.green,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius: BorderRadius.circular(50),
                                         ),
                                       ),
                                       child: const Text('تم'),
@@ -200,7 +198,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                                         foregroundColor: Colors.red,
                                         side: const BorderSide(color: Colors.red),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius: BorderRadius.circular(50),
                                         ),
                                       ),
                                       child: const Text('إلغاء'),
@@ -311,11 +309,13 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       Expanded(
         child: inCart
             ? ElevatedButton(
-                onPressed: () {}, // Keep button green and non-gray
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // Rectangle with small radius
+                  ),
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   elevation: 0,
                 ),
@@ -325,7 +325,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                     Flexible(
                       child: FittedBox(
                         child: Text(
-                          s.addedToCartLabel, // Use localization key instead of hardcoded text
+                          s.addedToCartLabel,
                           style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -341,7 +341,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF1B3E69),
                   foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // Rectangle with small radius
+                  ),
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   elevation: 0,
                 ),
@@ -370,7 +372,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF11B7F3),
             foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12), // Rectangle with small radius
+            ),
             padding: const EdgeInsets.symmetric(vertical: 12),
             elevation: 0,
           ),
