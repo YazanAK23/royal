@@ -14,7 +14,7 @@ class ItemCard extends StatelessWidget {
   final ValueChanged<String?> onUnitChanged;
 
   const ItemCard({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.title,
     required this.code,
@@ -25,7 +25,7 @@ class ItemCard extends StatelessWidget {
     required this.onAdd,
     required this.onRemove,
     required this.onUnitChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,7 @@ class _CircleButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const _CircleButton({required this.icon, required this.onTap, Key? key}) : super(key: key);
+  const _CircleButton({required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

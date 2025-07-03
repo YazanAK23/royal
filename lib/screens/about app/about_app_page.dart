@@ -31,7 +31,7 @@ class AboutAppPage extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          actions: [],
+          actions: const [],
         ),
         body: Column(
           children: [

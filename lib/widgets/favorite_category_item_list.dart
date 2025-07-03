@@ -58,7 +58,7 @@ class FavoriteCategoryItemList extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.03),
+                          color: Colors.black.withAlpha(8),
                           blurRadius: 2,
                           offset: const Offset(0, 1),
                         ),
@@ -106,7 +106,7 @@ class FavoriteCategoryItemList extends StatelessWidget {
                         // Favorite icon
                         Icon(
                           item.isFavorite ? Icons.favorite : Icons.favorite_border,
-                          color: item.isFavorite ? Color(0xFF009FE3) : Colors.grey,
+                          color: item.isFavorite ? const Color(0xFF009FE3) : Colors.grey,
                         ),
                         const SizedBox(width: 8),
                         // Arrow (left)

@@ -17,7 +17,7 @@ final List<Map<String, String>> _tableRows = [
 ];
 
 class SubProductDetailsScreen extends StatelessWidget {
-  const SubProductDetailsScreen({Key? key}) : super(key: key);
+  const SubProductDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class SubProductDetailsScreen extends StatelessWidget {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => Scaffold.of(context).openEndDrawer(),
@@ -64,12 +64,12 @@ class SubProductDetailsScreen extends StatelessWidget {
                 color: const Color(0xFFFBFCFC),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                       child: Center(
                         child: Text(
                           'U-PVC Drain & Sewer Pipe (SN-2)',
-                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -83,7 +83,7 @@ class SubProductDetailsScreen extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).pushReplacementNamed('/subProductDetail', arguments: {'direction': 'previous'});
                             },
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.chevron_left, color: Colors.blue, size: 18),
                                 SizedBox(width: 2),
@@ -97,7 +97,7 @@ class SubProductDetailsScreen extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).pushReplacementNamed('/subProductDetail', arguments: {'direction': 'next'});
                             },
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Text('Next product',
                                     textAlign: TextAlign.center,
@@ -114,8 +114,8 @@ class SubProductDetailsScreen extends StatelessWidget {
                 ),
               ),
               // Product image and carousel with left/right buttons
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
+              const Padding(
+                padding: EdgeInsets.only(top: 8),
                 child: _ImageCarousel(
                   images: [
                     'assets/images/tank6.png',
@@ -125,8 +125,8 @@ class SubProductDetailsScreen extends StatelessWidget {
                 ),
               ),
               // Description with See more functionality
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 child: _ExpandableDescription(
                   text: 'U-PVC Pipes are the ideal substitute for cast-iron and asbestos. Because of its special...',
                   maxLength: 60,
@@ -142,8 +142,8 @@ class SubProductDetailsScreen extends StatelessWidget {
               Container(
                 color: Colors.blue[50],
                 padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Expanded(child: Text('Length (m)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
                     Expanded(child: Text('Size (inch)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
                     Expanded(child: Text('Item Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
@@ -159,11 +159,11 @@ class SubProductDetailsScreen extends StatelessWidget {
                     Expanded(
                       child: ListView.separated(
                         itemCount: _tableRows.length + 1, // Add one for the last divider
-                        separatorBuilder: (context, i) => Divider(thickness: 1, height: 1),
+                        separatorBuilder: (context, i) => const Divider(thickness: 1, height: 1),
                         itemBuilder: (context, i) {
                           if (i == _tableRows.length) {
                             // Last divider under the last row
-                            return Divider(thickness: 2, height: 2);
+                            return const Divider(thickness: 2, height: 2);
                           }
                           final row = _tableRows[i];
                           final isFirst = i == 0;
@@ -213,26 +213,26 @@ class SubProductDetailsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               // Centered action icons below the table
               // Right-align the action icons using an Align widget
-              Align(
+              const Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 24),
+                  padding: EdgeInsets.only(right: 24),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       _CircleActionButton(icon: Icons.inventory_2),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       _CircleActionButton(icon: Icons.attachment),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       _CircleActionButton(icon: Icons.copy),
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
             ],
           ),
         ],
@@ -323,16 +323,16 @@ class _ExpandableDescriptionState extends State<_ExpandableDescription> {
     final isLong = widget.text.length > widget.maxLength;
     final displayText = expanded || !isLong
         ? widget.text
-        : widget.text.substring(0, widget.maxLength) + '...';
+        : '${widget.text.substring(0, widget.maxLength)}...';
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (isLong && !expanded)
           GestureDetector(
             onTap: () => setState(() => expanded = true),
-            child: Text('See more', style: TextStyle(color: Colors.blue, fontSize: 12)),
+            child: const Text('See more', style: TextStyle(color: Colors.blue, fontSize: 12)),
           ),
-        if (isLong && !expanded) SizedBox(width: 4),
+        if (isLong && !expanded) const SizedBox(width: 4),
         Expanded(
           child: Text(
             displayText,

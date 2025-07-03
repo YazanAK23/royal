@@ -9,7 +9,7 @@ import '../../widgets/category_item_list.dart';
 import '../../core/routes/app_routes.dart';
 
 class SubcategoryDetailScreen extends StatefulWidget {
-  const SubcategoryDetailScreen({Key? key}) : super(key: key);
+  const SubcategoryDetailScreen({super.key});
 
   @override
   State<SubcategoryDetailScreen> createState() => _SubcategoryDetailScreenState();
@@ -79,7 +79,7 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
            onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),

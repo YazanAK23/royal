@@ -6,7 +6,7 @@ import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../core/constants/app_assets.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({super.key});
 
   @override
   ConsumerState<SearchScreen> createState() => _SearchScreenState();
@@ -104,7 +104,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                     'assets/icons/search.svg',
                     width: 250,
                     height: 250,
-                    color: const Color(0xFFF6F7FB),
+                    colorFilter: const ColorFilter.mode(Color(0xFFF6F7FB), BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -271,7 +271,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 4)],
+        boxShadow: [BoxShadow(color: Colors.grey.withAlpha(51), blurRadius: 4)],
       ),
       child: IconButton(
         icon: SizedBox(

@@ -4,7 +4,7 @@ import 'package:royal/widgets/product_card.dart';
 import '../../../widgets/royal_scaffold.dart';
 
 class FavoritePage extends StatefulWidget {
-  const FavoritePage({Key? key}) : super(key: key);
+  const FavoritePage({super.key});
 
   @override
   State<FavoritePage> createState() => _FavoritePageState();

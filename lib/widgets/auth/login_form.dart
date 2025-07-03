@@ -4,7 +4,7 @@ import 'package:royal/generated/l10n.dart';
 import '../../core/routes/app_routes.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
+  const LoginForm({super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();

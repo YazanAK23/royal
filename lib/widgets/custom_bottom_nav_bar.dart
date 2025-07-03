@@ -9,10 +9,10 @@ class CustomBottomNavBar extends StatelessWidget {
   final Function(int) onTap;
 
   const CustomBottomNavBar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class CustomBottomNavBar extends StatelessWidget {
     final double iconSize = (deviceWidth * 0.06).clamp(22.0, 32.0); // Responsive icon size
     final double itemWidth = deviceWidth / 5;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
-    debugPrint('CustomBottomNavBar isRtl: ' + isRtl.toString());
+    debugPrint('CustomBottomNavBar isRtl: $isRtl');
     // Define nav item data
     final navItemsData = [
       {
@@ -126,8 +126,8 @@ class CustomBottomNavBar extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
-          splashColor: AppColors.primary.withOpacity(0.1),
-          highlightColor: AppColors.primary.withOpacity(0.05),
+          splashColor: AppColors.primary.withAlpha(26),
+          highlightColor: AppColors.primary.withAlpha(13),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             child: Center(

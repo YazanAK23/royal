@@ -6,7 +6,7 @@ import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 
 class InfoScreen extends StatefulWidget {
-  const InfoScreen({Key? key}) : super(key: key);
+  const InfoScreen({super.key});
 
   @override
   State<InfoScreen> createState() => _InfoScreenState();
@@ -114,7 +114,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     children: [
                       Text(
                         S.of(context).royalTitle,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF153A5B),
                           fontWeight: FontWeight.bold,
                           fontSize: 32,
@@ -124,7 +124,7 @@ class _InfoScreenState extends State<InfoScreen> {
                       ),
                       Text(
                         S.of(context).royalSlogan,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF153A5B),
                           fontWeight: FontWeight.bold,
                           fontSize: 28,
@@ -148,19 +148,19 @@ class _InfoScreenState extends State<InfoScreen> {
                               _InfoCard(
                                 icon: 'assets/icons/Headquarter_icon.svg',
                                 label: S.of(context).mainOfficeLabel,
-                                circleColor: selectedCardIndex == 0 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 0 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                               _InfoCard(
                                 icon: 'assets/icons/support_icon.svg',
                                 label: S.of(context).supportLabel,
-                                circleColor: selectedCardIndex == 1 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 1 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                               _InfoCard(
                                 icon: 'assets/icons/questions_icon.svg',
                                 label: S.of(context).faqLabel,
-                                circleColor: selectedCardIndex == 2 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 2 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                             ]
@@ -168,19 +168,19 @@ class _InfoScreenState extends State<InfoScreen> {
                               _InfoCard(
                                 icon: 'assets/icons/Headquarter_icon.svg',
                                 label: S.of(context).mainOfficeLabel,
-                                circleColor: selectedCardIndex == 0 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 0 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                               _InfoCard(
                                 icon: 'assets/icons/support_icon.svg',
                                 label: S.of(context).supportLabel,
-                                circleColor: selectedCardIndex == 1 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 1 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                               _InfoCard(
                                 icon: 'assets/icons/questions_icon.svg',
                                 label: S.of(context).faqLabel,
-                                circleColor: selectedCardIndex == 2 ? Color(0xFF1CA9E5) : Color(0xFF153A5B),
+                                circleColor: selectedCardIndex == 2 ? const Color(0xFF1CA9E5) : const Color(0xFF153A5B),
                                 width: cardWidth,
                               ),
                             ];
@@ -209,7 +209,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xFFF8F8F8),
+                        color: const Color(0xFFF8F8F8),
                         borderRadius: BorderRadius.circular(28),
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
@@ -218,7 +218,7 @@ class _InfoScreenState extends State<InfoScreen> {
                           // Section title above the icon, not overlapped
                           Text(
                             S.of(context).hereToHelpTitle,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
                               fontSize: 22,
@@ -226,40 +226,40 @@ class _InfoScreenState extends State<InfoScreen> {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 50),
+                          const SizedBox(height: 50),
                           // First card: phone/email
                           _SupportCard(
                             svgIcon: 'assets/icons/support_icon.svg', // headset icon
-                            iconBg: Color(0xFF1CA9E5),
+                            iconBg: const Color(0xFF1CA9E5),
                             title: S.of(context).supportPhone,
                             subtitle: S.of(context).supportEmail,
                           ),
-                          SizedBox(height: 50),
+                          const SizedBox(height: 50),
                           // Second card: address
                           _SupportCard(
                             svgIcon: 'assets/icons/mail_icon.svg', // mail icon
-                            iconBg: Color(0xFF1CA9E5),
+                            iconBg: const Color(0xFF1CA9E5),
                             title: S.of(context).supportPOBox,
                             subtitle: S.of(context).supportJerusalem,
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           // Dots indicator (optional, for consistency)
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: List.generate(3, (index) {
                               return AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
-                                margin: EdgeInsets.symmetric(horizontal: 4),
+                                duration: const Duration(milliseconds: 200),
+                                margin: const EdgeInsets.symmetric(horizontal: 4),
                                 width: selectedCardIndex == index ? 12 : 8,
                                 height: selectedCardIndex == index ? 12 : 8,
                                 decoration: BoxDecoration(
-                                  color: selectedCardIndex == index ? Color(0xFF1CA9E5) : Color(0xFFD6EAF8),
+                                  color: selectedCardIndex == index ? const Color(0xFF1CA9E5) : const Color(0xFFD6EAF8),
                                   shape: BoxShape.circle,
                                 ),
                               );
                             }),
                           ),
-                          SizedBox(height: 12),
+                          const SizedBox(height: 12),
                         ],
                       ),
                     ),
@@ -271,7 +271,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xFFF8F8F8),
+                        color: const Color(0xFFF8F8F8),
                         borderRadius: BorderRadius.circular(28),
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
@@ -279,7 +279,7 @@ class _InfoScreenState extends State<InfoScreen> {
                         children: [
                           Text(
                             S.of(context).faqNeedHelpTitle,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
                               fontSize: 22,
@@ -287,10 +287,10 @@ class _InfoScreenState extends State<InfoScreen> {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             S.of(context).faqBrowseSubtitle,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -298,7 +298,7 @@ class _InfoScreenState extends State<InfoScreen> {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 24),
+                          const SizedBox(height: 24),
                           _FaqList(),
                         ],
                       ),
@@ -310,7 +310,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     children: [
                       // Contact & Address Section Title + Cards + Dots with background and shadow
                       Container(
-                        color: Color(0xFFF8F8F8),
+                        color: const Color(0xFFF8F8F8),
                         width: double.infinity,
                         child: Column(
                           children: [
@@ -318,7 +318,7 @@ class _InfoScreenState extends State<InfoScreen> {
                               padding: const EdgeInsets.only(top: 24, bottom: 0),
                               child: Text(
                                 S.of(context).contactRoyalLabel,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Color(0xFF153A5B),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 26,
@@ -327,44 +327,44 @@ class _InfoScreenState extends State<InfoScreen> {
                                 textAlign: TextAlign.center,
                               ),
                             ),
-                            SizedBox(height: 36),
+                            const SizedBox(height: 36),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
                               child: _ContactCardRedesigned(),
                             ),
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
                               child: _AddressCardRedesigned(),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(3, (index) {
                                 return AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  margin: EdgeInsets.symmetric(horizontal: 4),
+                                  duration: const Duration(milliseconds: 200),
+                                  margin: const EdgeInsets.symmetric(horizontal: 4),
                                   width: selectedCardIndex == index ? 12 : 8,
                                   height: selectedCardIndex == index ? 12 : 8,
                                   decoration: BoxDecoration(
-                                    color: selectedCardIndex == index ? Color(0xFF1CA9E5) : Color(0xFFD6EAF8),
+                                    color: selectedCardIndex == index ? const Color(0xFF1CA9E5) : const Color(0xFFD6EAF8),
                                     shape: BoxShape.circle,
                                   ),
                                 );
                               }),
                             ),
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                           ],
                         ),
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                     ],
                   ),
                 // Social Media Row and Beyond Creativity section (always visible)
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Text(
                   S.of(context).contactUsLabelMini,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF1CA9E5),
                     fontWeight: FontWeight.bold,
                     fontSize: 17,
@@ -372,8 +372,8 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 4),
-                Directionality(
+                const SizedBox(height: 4),
+                const Directionality(
                   textDirection: TextDirection.rtl,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -412,11 +412,11 @@ class _InfoScreenState extends State<InfoScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Container(
                   width: double.infinity,
                   height: 120,
-                  margin: EdgeInsets.only(bottom: 0),
+                  margin: const EdgeInsets.only(bottom: 0),
                   padding: EdgeInsets.zero,
                   child: Stack(
                     fit: StackFit.expand,
@@ -438,14 +438,14 @@ class _InfoScreenState extends State<InfoScreen> {
                               shadows: [
                                 Shadow(
                                   blurRadius: 8,
-                                  color: Colors.black.withOpacity(0.2),
-                                  offset: Offset(0, 2),
+                                  color: Colors.black.withAlpha(51), // 0.2 * 255 ≈ 51
+                                  offset: const Offset(0, 2),
                                 ),
                               ],
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Text(
                             S.of(context).beyondCreativityDesc,
                             style: TextStyle(
@@ -456,8 +456,8 @@ class _InfoScreenState extends State<InfoScreen> {
                               shadows: [
                                 Shadow(
                                   blurRadius: 6,
-                                  color: Colors.black.withOpacity(0.15),
-                                  offset: Offset(0, 1),
+                                  color: Colors.black.withAlpha(38), // 0.15 * 255 ≈ 38
+                                  offset: const Offset(0, 1),
                                 ),
                               ],
                             ),
@@ -528,7 +528,7 @@ class _InfoCard extends StatelessWidget {
                   icon,
                   width: width * 0.33,
                   height: width * 0.33,
-                  color: Colors.white,
+                  colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 ),
               ),
             ),
@@ -563,13 +563,13 @@ class _ContactCardRedesigned extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 18),
           decoration: BoxDecoration(
-            color: Color(0xFF1CA9E5),
+            color: const Color(0xFF1CA9E5),
             borderRadius: BorderRadius.circular(22),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.13),
+                color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                 blurRadius: 14,
-                offset: Offset(0, 6),
+                offset: const Offset(0, 6),
               ),
             ],
           ),
@@ -584,25 +584,25 @@ class _ContactCardRedesigned extends StatelessWidget {
                   children: [
                     Text(
                       S.of(context).workingHoursLabel,
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18, fontFamily: 'Cairo'),
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18, fontFamily: 'Cairo'),
                       textAlign: isArabic ? TextAlign.left : TextAlign.right,
                     ),
-                    SizedBox(height: 6),
+                    const SizedBox(height: 6),
                     Text(
                       S.of(context).workingHoursTime,
-                      style: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'Cairo', fontWeight: FontWeight.w500),
+                      style: const TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'Cairo', fontWeight: FontWeight.w500),
                       textAlign: isArabic ? TextAlign.left : TextAlign.right,
                     ),
-                    SizedBox(height: 6),
+                    const SizedBox(height: 6),
                     Text(
                       S.of(context).workingHoursNote,
-                      style: TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'Cairo', fontWeight: FontWeight.w400),
+                      style: const TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'Cairo', fontWeight: FontWeight.w400),
                       textAlign: isArabic ? TextAlign.left : TextAlign.right,
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 18),
+              const SizedBox(width: 18),
               // Contact info (always right in LTR, left in RTL)
               Expanded(
                 flex: 2,
@@ -610,11 +610,11 @@ class _ContactCardRedesigned extends StatelessWidget {
                   crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                   children: [
                     _ContactRow(icon: 'assets/icons/mobile_icon.svg', text: S.of(context).contactPhone, textColor: Colors.white, iconColor: Colors.white, alignEnd: isArabic),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     _ContactRow(icon: 'assets/icons/printer_icon.svg', text: S.of(context).contactFax, textColor: Colors.white, iconColor: Colors.white, alignEnd: isArabic),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     _ContactRow(icon: 'assets/icons/mail_icon.svg', text: S.of(context).contactEmail, textColor: Colors.white, iconColor: Colors.white, alignEnd: isArabic),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     _ContactRow(icon: 'assets/icons/web_icon.svg', text: S.of(context).contactWebsite, textColor: Colors.white, iconColor: Colors.white, alignEnd: isArabic),
                   ],
                 ),
@@ -634,16 +634,16 @@ class _ContactCardRedesigned extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
-                border: Border.all(color: Color(0xFF1CA9E5), width: 4),
+                border: Border.all(color: const Color(0xFF1CA9E5), width: 4),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.13),
+                    color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                     blurRadius: 8,
-                    offset: Offset(0, 2),
+                    offset: const Offset(0, 2),
                   ),
                 ],
               ),
-              child: Center(
+              child: const Center(
                 child: Icon(Icons.phone, color: Color(0xFF1CA9E5), size: 32),
               ),
             ),
@@ -676,12 +676,12 @@ class _ContactRow extends StatelessWidget {
                   textAlign: TextAlign.right,
                 ),
               ),
-              SizedBox(width: 8),
-              SvgPicture.asset(icon, width: 22, color: iconColor),
+              const SizedBox(width: 8),
+              SvgPicture.asset(icon, width: 22, colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn)),
             ]
           : [
-              SvgPicture.asset(icon, width: 22, color: iconColor),
-              SizedBox(width: 8),
+              SvgPicture.asset(icon, width: 22, colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn)),
+              const SizedBox(width: 8),
               Flexible(
                 child: Text(
                   text,
@@ -706,28 +706,28 @@ class _AddressCardRedesigned extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
           decoration: BoxDecoration(
-            color: Color(0xFF1CA9E5),
+            color: const Color(0xFF1CA9E5),
             borderRadius: BorderRadius.circular(28),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.13),
+                color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                 blurRadius: 14,
-                offset: Offset(0, 6),
+                offset: const Offset(0, 6),
               ),
             ],
           ),
           child: Column(
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 S.of(context).addressLine1,
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20, fontFamily: 'Cairo'),
+                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20, fontFamily: 'Cairo'),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 S.of(context).addressLine2,
-                style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'Cairo'),
+                style: const TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'Cairo'),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -745,16 +745,16 @@ class _AddressCardRedesigned extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
-                border: Border.all(color: Color(0xFF1CA9E5), width: 4),
+                border: Border.all(color: const Color(0xFF1CA9E5), width: 4),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.13),
+                    color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                     blurRadius: 8,
-                    offset: Offset(0, 2),
+                    offset: const Offset(0, 2),
                   ),
                 ],
               ),
-              child: Center(
+              child: const Center(
                 child: Icon(Icons.location_on, color: Color(0xFF1CA9E5), size: 32),
               ),
             ),
@@ -790,7 +790,7 @@ class _SocialIcon extends StatelessWidget {
         border: border ? Border.all(color: Colors.white, width: 2) : null,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.10),
+            color: Colors.black.withAlpha(26), // 0.10 * 255 ≈ 26
             blurRadius: 4,
             offset: const Offset(0, 1),
           ),
@@ -801,7 +801,7 @@ class _SocialIcon extends StatelessWidget {
           icon,
           width: iconSize,
           height: iconSize,
-          color: Colors.white,
+          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
         ),
       ),
     );
@@ -822,7 +822,7 @@ class _AppBarIcon extends StatelessWidget {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.7),
+          color: Colors.white.withAlpha(179), // 0.7 * 255 ≈ 179
           shape: BoxShape.circle,
         ),
         child: Icon(icon, color: Colors.black, size: 22),
@@ -849,7 +849,7 @@ class _AppBarSvgIcon extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withAlpha(179), // 0.7 * 255 ≈ 179
               shape: BoxShape.circle,
             ),
             child: Center(
@@ -857,7 +857,7 @@ class _AppBarSvgIcon extends StatelessWidget {
                 asset,
                 width: 22,
                 height: 22,
-                color: Colors.black,
+                colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
               ),
             ),
           ),
@@ -873,7 +873,7 @@ class _AppBarSvgIcon extends StatelessWidget {
                 ),
                 child: Text(
                   S.of(context).badge99plus,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
@@ -903,16 +903,16 @@ class _SupportCard extends StatelessWidget {
       children: [
         Container(
           width: cardWidth,
-          margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-          padding: EdgeInsets.only(top: 54, bottom: 32, left: 18, right: 18),
+          margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          padding: const EdgeInsets.only(top: 54, bottom: 32, left: 18, right: 18),
           decoration: BoxDecoration(
-            color: Color(0xFF1CA9E5),
+            color: const Color(0xFF1CA9E5),
             borderRadius: BorderRadius.circular(28),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.13),
+                color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                 blurRadius: 14,
-                offset: Offset(0, 6),
+                offset: const Offset(0, 6),
               ),
             ],
           ),
@@ -921,7 +921,7 @@ class _SupportCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 22,
@@ -932,10 +932,10 @@ class _SupportCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 subtitle,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 17,
                   fontFamily: 'Cairo',
@@ -962,9 +962,9 @@ class _SupportCard extends StatelessWidget {
                 border: Border.all(color: iconBg, width: 4),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.13),
+                    color: Colors.black.withAlpha(33), // 0.13 * 255 ≈ 33
                     blurRadius: 8,
-                    offset: Offset(0, 2),
+                    offset: const Offset(0, 2),
                   ),
                 ],
               ),
@@ -975,7 +975,7 @@ class _SupportCard extends StatelessWidget {
                     svgIcon,
                     width: 36,
                     height: 36,
-                    color: iconBg,
+                    colorFilter: ColorFilter.mode(iconBg, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -1033,16 +1033,16 @@ class _FaqListState extends State<_FaqList> {
               },
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(vertical: 6, horizontal: 0),
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 18),
+                margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.07),
+                      color: Colors.black.withAlpha(18), // 0.07 * 255 ≈ 18
                       blurRadius: 8,
-                      offset: Offset(0, 2),
+                      offset: const Offset(0, 2),
                     ),
                   ],
                 ),
@@ -1052,7 +1052,7 @@ class _FaqListState extends State<_FaqList> {
                     Expanded(
                       child: Text(
                         faqs[i]['q']!,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF153A5B),
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -1063,7 +1063,7 @@ class _FaqListState extends State<_FaqList> {
                     ),
                     Icon(
                       isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_left,
-                      color: Color(0xFF153A5B),
+                      color: const Color(0xFF153A5B),
                       size: 28,
                     ),
                   ],
@@ -1073,22 +1073,22 @@ class _FaqListState extends State<_FaqList> {
             if (isExpanded && faqs[i]['a']!.isNotEmpty)
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 0, bottom: 6, left: 0, right: 0),
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 18),
+                margin: const EdgeInsets.only(top: 0, bottom: 6, left: 0, right: 0),
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.07),
+                      color: Colors.black.withAlpha(18), // 0.07 * 255 ≈ 18
                       blurRadius: 8,
-                      offset: Offset(0, 2),
+                      offset: const Offset(0, 2),
                     ),
                   ],
                 ),
                 child: Text(
                   faqs[i]['a']!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF153A5B),
                     fontWeight: FontWeight.w400,
                     fontSize: 15,

@@ -3,7 +3,7 @@ import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 
 class WhyJoinRoyalPage extends StatelessWidget {
-  const WhyJoinRoyalPage({Key? key}) : super(key: key);
+  const WhyJoinRoyalPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ class RoyalScaffold extends StatelessWidget {
   final Widget? endDrawer;
 
   const RoyalScaffold({
-    Key? key,
+    super.key,
     required this.body,
     required this.currentIndex,
     required this.onNavTap,
@@ -23,7 +23,7 @@ class RoyalScaffold extends StatelessWidget {
     this.backgroundColor,
     this.appBar,
     this.endDrawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class RoyalScaffold extends StatelessWidget {
             ))
           : null,
       appBar: appBar ?? PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => Scaffold.of(context).openEndDrawer(),

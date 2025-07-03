@@ -6,11 +6,11 @@ class ProductCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.title,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withAlpha(10), // 0.04 * 255 ≈ 10
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),

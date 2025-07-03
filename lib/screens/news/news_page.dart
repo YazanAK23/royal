@@ -7,7 +7,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer.dart';
 
 class NewsPage extends StatelessWidget {
-  const NewsPage({Key? key}) : super(key: key);
+  const NewsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +181,7 @@ class NewsItem {
 
 class NewsCard extends StatelessWidget {
   final NewsItem item;
-  const NewsCard({Key? key, required this.item}) : super(key: key);
+  const NewsCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

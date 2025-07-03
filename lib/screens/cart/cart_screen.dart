@@ -6,7 +6,7 @@ import 'package:royal/widgets/item_card.dart';
 import 'package:royal/generated/l10n.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   @override
   State<CartScreen> createState() => _CartScreenState();

@@ -5,7 +5,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 
 class OrderScreen extends StatefulWidget {
-  const OrderScreen({Key? key}) : super(key: key);
+  const OrderScreen({super.key});
 
   @override
   State<OrderScreen> createState() => _OrderScreenState();
@@ -13,7 +13,6 @@ class OrderScreen extends StatefulWidget {
 
 class _OrderScreenState extends State<OrderScreen> {
   int _selectedTab = 1;
-  int _selectedNav = -1;
   String? _source;
 
   // Order status data for demo
@@ -62,7 +61,7 @@ class _OrderScreenState extends State<OrderScreen> {
   }
 
   void _handleBackNavigation() {
-    debugPrint('OrderScreen: _source argument is: \\${_source}');
+    debugPrint('OrderScreen: _source argument is: \\$_source');
     if (_source == 'profile') {
       Navigator.of(context).pushReplacementNamed('/profile');
     } else if (_source == 'drawer') {
@@ -329,7 +328,6 @@ class _OrderScreenState extends State<OrderScreen> {
           bottomNavigationBar: CustomBottomNavBar(
             currentIndex: -1,
             onTap: (index) {
-              setState(() => _selectedNav = index);
               if (index == 0) {
                 Navigator.of(context).pushReplacementNamed('/home');
               } else if (index == 1) {

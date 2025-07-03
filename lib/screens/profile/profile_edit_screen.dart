@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
 
 class ProfileEditScreen extends StatelessWidget {
-  const ProfileEditScreen({Key? key}) : super(key: key);
+  const ProfileEditScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ProfileEditScreen extends StatelessWidget {
                       left: isRTL ? 10 : null,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color(0xFF00AEEF),
+                          color: const Color(0xFF00AEEF),
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.white, width: 2),
                         ),
@@ -102,7 +102,7 @@ class ProfileEditScreen extends StatelessWidget {
                   label: s.profilePassword,
                   hint: s.profilePasswordHint,
                   obscureText: true,
-                  suffixIcon: Icon(Icons.visibility_off, color: Colors.grey),
+                  suffixIcon: const Icon(Icons.visibility_off, color: Colors.grey),
                   isRTL: isRTL,
                 ),
                 const SizedBox(height: 44),

@@ -74,7 +74,7 @@ class NotificationCard extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade200),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.05),
+            color: Colors.grey.withAlpha(13), // 0.05 * 255 ≈ 13
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),

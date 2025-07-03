@@ -57,7 +57,7 @@ class CategoryDetailScreen extends StatelessWidget {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),

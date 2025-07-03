@@ -10,7 +10,7 @@ import '../../widgets/product_item_list.dart';
 import '../../core/routes/app_routes.dart';
 
 class ProductDetailScreen extends StatefulWidget {
-  const ProductDetailScreen({Key? key}) : super(key: key);
+  const ProductDetailScreen({super.key});
 
   @override
   State<ProductDetailScreen> createState() => _ProductDetailScreenState();
@@ -55,7 +55,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),

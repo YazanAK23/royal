@@ -6,7 +6,7 @@ import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../widgets/product_card.dart';
 
 class BrowsingHistoryPage extends StatefulWidget {
-  const BrowsingHistoryPage({Key? key}) : super(key: key);
+  const BrowsingHistoryPage({super.key});
 
   @override
   State<BrowsingHistoryPage> createState() => _BrowsingHistoryPageState();

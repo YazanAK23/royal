@@ -69,7 +69,7 @@ class ProductItemList extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.03),
+                          color: Colors.black.withAlpha(8), // 0.03 * 255 ≈ 8
                           blurRadius: 2,
                           offset: const Offset(0, 1),
                         ),
@@ -134,7 +134,7 @@ class ProductItemList extends StatelessWidget {
                             child: Divider(
                               height: 1,
                               thickness: 1,
-                              color:  Color(0xe8e8e8),
+                              color:  Color(0x00e8e8e8),
                             ),
                           ),
                       ],

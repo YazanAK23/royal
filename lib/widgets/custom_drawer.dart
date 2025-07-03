@@ -84,7 +84,7 @@ class CustomDrawer extends ConsumerWidget {
                               AppAssets.search,
                               width: 24,
                               height: 24,
-                              color: AppColors.white,
+                              colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                             ),
                           ),
                           const SizedBox(height: 24),
@@ -94,7 +94,7 @@ class CustomDrawer extends ConsumerWidget {
                               AppAssets.backButton,
                               width: 24,
                               height: 24,
-                              color: AppColors.white,
+                              colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                             ),
                           ),
                         ],
@@ -141,7 +141,7 @@ class CustomDrawer extends ConsumerWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 S.of(context).contactUsLabel,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 28,
                                   fontWeight: FontWeight.w500,
@@ -238,7 +238,7 @@ class CustomDrawer extends ConsumerWidget {
               item.icon,
               width: 24,
               height: 24,
-              color: AppColors.white,
+              colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
             ),
             const SizedBox(width: 12),
             // Text after icon
@@ -261,13 +261,13 @@ class CustomDrawer extends ConsumerWidget {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.15),
+          color: Colors.white.withAlpha(38), // 0.15 * 255 ≈ 38
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withAlpha(26), // 0.1 * 255 ≈ 26
               blurRadius: 8,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -276,7 +276,7 @@ class CustomDrawer extends ConsumerWidget {
             icon,
             width: 22,
             height: 22,
-            color: Colors.white,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
         ),
       ),

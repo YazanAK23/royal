@@ -6,7 +6,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 
 class NewItemsPage extends StatefulWidget {
-  const NewItemsPage({Key? key}) : super(key: key);
+  const NewItemsPage({super.key});
 
   @override
   State<NewItemsPage> createState() => _NewItemsPageState();

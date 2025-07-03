@@ -4,7 +4,7 @@ import '../../widgets/royal_scaffold.dart';
 import 'package:royal/core/routes/app_routes.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,8 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
-                  children: [
-                    const CircleAvatar(
+                  children: const [
+                    CircleAvatar(
                       radius: 60,
                       backgroundColor: Color(0xFFE0E0E0),
                       child: Icon(Icons.person, size: 80, color: Colors.grey),

@@ -4,7 +4,7 @@ import 'package:royal/generated/l10n.dart';
 import '../../widgets/royal_scaffold.dart';
 
 class DownloadsScreen extends StatefulWidget {
-  const DownloadsScreen({Key? key}) : super(key: key);
+  const DownloadsScreen({super.key});
 
   @override
   State<DownloadsScreen> createState() => _DownloadsScreenState();
@@ -161,8 +161,8 @@ class _CategoryIcon extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: selected
-                    ? Color(0xFF0faeef)
-                    : Color(0xFFF5F6F8),
+                    ? const Color(0xFF0faeef)
+                    : const Color(0xFFF5F6F8),
               ),
               child: Center(
                 child: Container(
@@ -171,15 +171,18 @@ class _CategoryIcon extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: selected
-                        ? Color(0xFF0faeef)
-                        : Color(0xFFF3F4F6),
+                        ? const Color(0xFF0faeef)
+                        : const Color(0xFFF3F4F6),
                   ),
                   child: Center(
                     child: SvgPicture.asset(
                       asset,
                       width: selected ? 56 : 46, // Increased icon size
                       height: selected ? 56 : 46,
-                      color: selected ? Colors.white : Color(0xFF222222),
+                      colorFilter: ColorFilter.mode(
+                        selected ? Colors.white : const Color(0xFF222222),
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
@@ -190,7 +193,7 @@ class _CategoryIcon extends StatelessWidget {
               label,
               style: TextStyle(
                 fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-                color: selected ? Color(0xFF0faeef) : Color(0xFF222222),
+                color: selected ? const Color(0xFF0faeef) : const Color(0xFF222222),
                 fontSize: selected ? 18 : 16, // Slightly larger font
               ),
             ),
@@ -226,10 +229,10 @@ class _DownloadItem extends StatelessWidget {
                           'assets/icons/previw_icon.svg',
                           width: 56,
                           height: 56,
-                          color: const Color(0xFF17375E),
+                          colorFilter: const ColorFilter.mode(Color(0xFF17375E), BlendMode.srcIn),
                         ),
                         const SizedBox(height: 8),
-                        Text(S.of(context).downloadsPreview, style: TextStyle(fontSize: 16, color: Colors.black)),
+                        Text(S.of(context).downloadsPreview, style: const TextStyle(fontSize: 16, color: Colors.black)),
                       ],
                     ),
                     // Download
@@ -242,7 +245,7 @@ class _DownloadItem extends StatelessWidget {
                           height: 56,
                         ),
                         const SizedBox(height: 8),
-                        Text(S.of(context).downloadsDownload, style: TextStyle(fontSize: 16, color: Colors.black)),
+                        Text(S.of(context).downloadsDownload, style: const TextStyle(fontSize: 16, color: Colors.black)),
                       ],
                     ),
                   ],
@@ -258,13 +261,13 @@ class _DownloadItem extends StatelessWidget {
                     width: 36,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: Color(0xFF0faeef), // Solid blue
+                      color: const Color(0xFF0faeef), // Solid blue
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.08),
+                          color: Colors.black.withAlpha(20), // 0.08 * 255 ≈ 20
                           blurRadius: 8,
-                          offset: Offset(0, 2),
+                          offset: const Offset(0, 2),
                         ),
                       ],
                     ),
@@ -301,7 +304,7 @@ class _DownloadItem extends StatelessWidget {
                   height: 74, // Increased image height
                   width: 110,  // Increased image width
                   decoration: BoxDecoration(
-                    color: Color(0xFF0faeef), // Set background color around the image
+                    color: const Color(0xFF0faeef), // Set background color around the image
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ClipRRect(
@@ -319,7 +322,7 @@ class _DownloadItem extends StatelessWidget {
               Text(
                 S.of(context).downloadsCatalogName,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Color(0xFF656565), // Changed to #656565
+                  color: const Color(0xFF656565), // Changed to #656565
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,

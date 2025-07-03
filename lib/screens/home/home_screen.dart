@@ -17,7 +17,7 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
   int? _selectedCategoryIndex;
 
   String _getGreeting() {
@@ -68,14 +68,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               itemCount: items.length,
               separatorBuilder: (_, __) => const Divider(height: 1),
               itemBuilder: (context, i) => ListTile(
-                leading: Icon(Icons.arrow_back_ios, color: AppColors.red),
+                leading: const Icon(Icons.arrow_back_ios, color: AppColors.red),
                 title: Text(items[i]['title']!),
                 trailing: items[i]['icon'] != null
                     ? Container(
                         width: 48,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: AppColors.red.withOpacity(0.1),
+                          color: AppColors.red.withAlpha(26),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: SvgPicture.asset(
@@ -87,7 +87,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         width: 48,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: AppColors.red.withOpacity(0.1),
+                          color: AppColors.red.withAlpha(26),
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),

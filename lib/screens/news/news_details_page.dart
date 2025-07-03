@@ -13,14 +13,14 @@ class NewsDetailsPage extends StatelessWidget {
   final VoidCallback? onPrev;
 
   const NewsDetailsPage({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.subtitle,
     required this.content,
     this.onNext,
     this.onPrev,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

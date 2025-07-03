@@ -6,42 +6,42 @@ import 'app_assets.dart';
 class DrawerMenuItems {
   static List<DrawerMenuItem> getItems() {
     return [
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'profileLabel',
         icon: AppAssets.profileIcon,
         route: AppRoutes.profile, // Updated to use AppRoutes
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'ordersLabel',
         icon: AppAssets.orders,
         route: AppRoutes.orders, 
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'newItemsLabel',
         icon: AppAssets.newItems,
         route: AppRoutes.newItems, // Updated to use AppRoutes  
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'browsingArchiveLabel',
         icon: AppAssets.browsingArchive,
         route: AppRoutes.history,
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'monthlyOffersLabel',
         icon: AppAssets.monthlyOffers,
         route: '/monthly-offers',
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'newsLabel',
         icon: AppAssets.news,
         route: AppRoutes.news,
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'certificatesLabel',
         icon: AppAssets.certificates,
         route: '/certificates',
       ),
-      DrawerMenuItem(
+      const DrawerMenuItem(
         titleKey: 'appInfoLabel', 
         icon: AppAssets.information,
         route: AppRoutes.aboutApp,
