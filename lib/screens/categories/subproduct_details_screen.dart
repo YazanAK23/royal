@@ -158,9 +158,13 @@ class SubProductDetailsScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ListView.separated(
-                        itemCount: _tableRows.length,
+                        itemCount: _tableRows.length + 1, // Add one for the last divider
                         separatorBuilder: (context, i) => Divider(thickness: 1, height: 1),
                         itemBuilder: (context, i) {
+                          if (i == _tableRows.length) {
+                            // Last divider under the last row
+                            return Divider(thickness: 2, height: 2);
+                          }
                           final row = _tableRows[i];
                           final isFirst = i == 0;
                           return Padding(
@@ -206,8 +210,6 @@ class SubProductDetailsScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    Divider(thickness: 2, height: 2),
-                    SizedBox(height: 12),
                   ],
                 ),
               ),

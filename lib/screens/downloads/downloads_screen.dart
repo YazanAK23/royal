@@ -149,36 +149,47 @@ class _CategoryIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: selected ? 56 : 48,
-              height: selected ? 56 : 48,
+              width: selected ? 96 : 84, // Increased size
+              height: selected ? 96 : 84,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: selected ? Colors.white : Color(0xFFF5F6F8), // Use f5f6f8 for unselected
-                border: Border.all(
-                  color: selected
-                      ? (label == S.of(context).downloadsCategoryAll
-                          ? Color(0xFF0faeef) // Blue for "all"
-                          : Color(0xFFFF5A5A)) // Red for selected others
-                      : Color(0xFFF5F6F8), // Border matches background for unselected
-                  width: selected ? 4 : 2,
-                ),
+                color: selected
+                    ? Color(0xFF0faeef)
+                    : Color(0xFFF5F6F8),
               ),
               child: Center(
-                child: SvgPicture.asset(asset, width: 32, height: 32),
+                child: Container(
+                  width: selected ? 80 : 70, // Increased inner circle
+                  height: selected ? 80 : 70,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: selected
+                        ? Color(0xFF0faeef)
+                        : Color(0xFFF3F4F6),
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      asset,
+                      width: selected ? 56 : 46, // Increased icon size
+                      height: selected ? 56 : 46,
+                      color: selected ? Colors.white : Color(0xFF222222),
+                    ),
+                  ),
+                ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16), // Slightly more spacing
             Text(
               label,
               style: TextStyle(
                 fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-                color: selected ? Theme.of(context).primaryColor : Colors.black,
-                fontSize: 13,
+                color: selected ? Color(0xFF0faeef) : Color(0xFF222222),
+                fontSize: selected ? 18 : 16, // Slightly larger font
               ),
             ),
           ],
@@ -292,7 +303,7 @@ class _DownloadItem extends StatelessWidget {
               Text(
                 S.of(context).downloadsCatalogName,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).primaryColor,
+                  color: Color(0xFF656565), // Changed to #656565
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
