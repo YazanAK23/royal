@@ -316,7 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tank300LLong": MessageLookupByLibrary.simpleMessage("٣٠٠ لتر طويل"),
     "tank500L": MessageLookupByLibrary.simpleMessage("٥٠٠ لتر"),
     "tankDesc": MessageLookupByLibrary.simpleMessage(
-      "خزانات مياه < خزانات طبقة واحدة",
+      "خزانات مياه > خزانات طبقة واحدة",
     ),
     "tankTitle": MessageLookupByLibrary.simpleMessage("خزان ١٠٠٠ لتر"),
     "threeLayerTanks": MessageLookupByLibrary.simpleMessage(

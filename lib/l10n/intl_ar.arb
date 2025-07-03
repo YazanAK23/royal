@@ -258,7 +258,7 @@
     "@tankTitle": {
         "description": "Title for 1000L tank"
     },
-    "tankDesc": "خزانات مياه < خزانات طبقة واحدة",
+    "tankDesc": "خزانات مياه > خزانات طبقة واحدة",
     "@tankDesc": {
         "description": "Description for 1000L tank"
     },

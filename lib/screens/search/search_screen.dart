@@ -1,3 +1,5 @@
+// search_screen.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,7 +18,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   final TextEditingController _controller = TextEditingController();
   String _query = '';
   int? _selectedIndex;
-  int _quantity = 1;
+  int _quantity = 12;
   final List<Map<String, dynamic>> _results = List.generate(
     5,
     (i) => {
@@ -25,14 +27,11 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       'image': 'assets/images/tank7.png',
       'isFavorite': false,
       'inCart': false,
-      'quantity': 1,
     },
   );
 
   void _onSearch(String value) {
-    setState(() {
-      _query = value;
-    });
+    setState(() => _query = value);
   }
 
   void _toggleFavorite(int index) {
@@ -42,24 +41,18 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   }
 
   void _showQuantitySelector(int index) {
-    setState(() {
-      _selectedIndex = index;
-      _quantity = _results[index]['quantity'];
-    });
+    setState(() => _selectedIndex = index);
   }
 
   void _addToCart(int index) {
     setState(() {
       _results[index]['inCart'] = true;
-      _results[index]['quantity'] = _quantity;
       _selectedIndex = null;
     });
   }
 
   void _cancelQuantity() {
-    setState(() {
-      _selectedIndex = null;
-    });
+    setState(() => _selectedIndex = null);
   }
 
   String _getLocalizedValue(S s, String key) {
@@ -77,6 +70,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final isRTL = Directionality.of(context) == TextDirection.rtl;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -84,17 +78,11 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF00AEEF), size: 32),
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, '/home');
-          },
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
         ),
         title: Text(
           s.searchTitle,
-          style: const TextStyle(
-            color: Color(0xFF00AEEF),
-            fontWeight: FontWeight.w400,
-            fontSize: 20,
-          ),
+          style: const TextStyle(color: Color(0xFF00AEEF), fontWeight: FontWeight.w400, fontSize: 20),
         ),
         centerTitle: true,
         actions: const [SizedBox(width: 48)],
@@ -105,23 +93,15 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: isRTL
-                  ? [
-                      _buildQRButton(),
-                      const SizedBox(width: 8),
-                      _buildSearchField(s, isRTL),
-                    ]
-                  : [
-                      _buildSearchField(s, isRTL),
-                      const SizedBox(width: 8),
-                      _buildQRButton(),
-                    ],
+                  ? [_buildQRButton(), const SizedBox(width: 8), _buildSearchField(s, isRTL)]
+                  : [_buildSearchField(s, isRTL), const SizedBox(width: 8), _buildQRButton()],
             ),
           ),
           if (_query.isEmpty)
             Expanded(
               child: Center(
                 child: Opacity(
-                  opacity: 0.6, // subtle faded effect
+                  opacity: 0.6,
                   child: SvgPicture.asset(
                     'assets/icons/search.svg',
                     width: 250,
@@ -138,8 +118,13 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 separatorBuilder: (_, __) => const Divider(),
                 itemBuilder: (context, index) {
                   final item = _results[index];
-                  final imageWidget = ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+
+                  final image = Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF5F5F7),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: const EdgeInsets.all(8),
                     child: Image.asset(
                       item['image'],
                       width: 60,
@@ -147,59 +132,124 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                       fit: BoxFit.contain,
                     ),
                   );
-                  final textWidget = Expanded(
-                    child: Column(
-                      crossAxisAlignment: isRTL ? CrossAxisAlignment.start : CrossAxisAlignment.end,
-                      children: [
-                        Text(_getLocalizedValue(s, item['descKey']), style: const TextStyle(fontSize: 12, color: Colors.grey), textAlign: isRTL ? TextAlign.right : TextAlign.left),
-                        const SizedBox(height: 4),
-                        Text(_getLocalizedValue(s, item['titleKey']), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blue), textAlign: isRTL ? TextAlign.right : TextAlign.left),
-                        const SizedBox(height: 8),
-                        if (_selectedIndex == index)
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
-                              children: _buildQuantityRow(s, index, isRTL),
-                            ),
-                          )
-                        else
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final actionRow = _buildActionRow(s, item, index, isRTL);
-                                return Row(
-                                  children: actionRow,
-                                );
-                              },
+
+                  Widget content;
+                  if (_selectedIndex == index) {
+                    content = Directionality(
+                      textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          image,
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text("الكمية:"),
+                                    const SizedBox(width: 6),
+                                    IconButton(
+                                      icon: const Icon(Icons.add),
+                                      onPressed: () => setState(() => _quantity++),
+                                    ),
+                                    Text(
+                                      '$_quantity',
+                                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.remove),
+                                      onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null,
+                                    ),
+                                    const Spacer(),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Row(
+                                        children: const [
+                                          Icon(Icons.arrow_drop_down),
+                                          Text('PACK'),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 4),
+                                const Text('الحزمة = 12 قطعة', style: TextStyle(fontSize: 10, color: Colors.grey)),
+                                const SizedBox(height: 8),
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () => _addToCart(index),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.green,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: const Text('تم'),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    OutlinedButton(
+                                      onPressed: _cancelQuantity,
+                                      style: OutlinedButton.styleFrom(
+                                        foregroundColor: Colors.red,
+                                        side: const BorderSide(color: Colors.red),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      child: const Text('إلغاء'),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
-                      ],
-                    ),
-                  );
-                  final rowChildren = isRTL
-                    ? [imageWidget, const SizedBox(width: 12), textWidget]
-                    : [textWidget, const SizedBox(width: 12), imageWidget];
+                        ],
+                      ),
+                    );
+                  } else {
+                    content = Directionality(
+                      textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          image,
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  _getLocalizedValue(s, item['descKey']),
+                                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  _getLocalizedValue(s, item['titleKey']),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blue),
+                                ),
+                                const SizedBox(height: 8),
+                                Row(
+                                  children: _buildActionRow(s, item, index, isRTL),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-                    child: Card(
-                      color: const Color(0xFFF5F5F7),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Directionality(
-                          textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: rowChildren,
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: content,
                   );
                 },
               ),
@@ -209,16 +259,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: -1,
         onTap: (index) {
-          if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
-          } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
-          } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
-          } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/downloads');
-          } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
+          final routes = ['/home', '/favorite', '/profile', '/downloads', '/info'];
+          if (index >= 0 && index < routes.length) {
+            Navigator.of(context).pushReplacementNamed(routes[index]);
           }
         },
       ),
@@ -230,12 +273,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            blurRadius: 4,
-          ),
-        ],
+        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 4)],
       ),
       child: IconButton(
         icon: SizedBox(
@@ -267,87 +305,77 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     );
   }
 
-  List<Widget> _buildQuantityRow(S s, int index, bool isRTL) {
-    final children = <Widget>[
-      Text(s.quantityLabel),
-      const SizedBox(width: 8),
-      IconButton(
-        icon: const Icon(Icons.remove),
-        onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null,
-      ),
-      Text('$_quantity', style: const TextStyle(fontWeight: FontWeight.bold)),
-      IconButton(
-        icon: const Icon(Icons.add),
-        onPressed: () => setState(() => _quantity++),
-      ),
-      const SizedBox(width: 8),
-      ElevatedButton(
-        onPressed: () => _addToCart(index),
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-        child: Text(s.confirmLabel),
-      ),
-      const SizedBox(width: 4),
-      OutlinedButton(
-        onPressed: _cancelQuantity,
-        child: Text(s.cancelLabel),
-      ),
-    ];
-    return isRTL ? children : children.reversed.toList();
-  }
-
   List<Widget> _buildActionRow(S s, Map<String, dynamic> item, int index, bool isRTL) {
-    final actionRow = <Widget>[
-      Flexible(
-        fit: FlexFit.tight,
-        child: ElevatedButton(
-          onPressed: item['inCart'] ? null : () => _showQuantitySelector(index),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: item['inCart'] ? const Color(0xFF43BC59) : const Color(0xFF1B3E69),
-            disabledBackgroundColor: const Color(0xFF43BC59),
-            foregroundColor: Colors.white,
-            disabledForegroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(
-                child: FittedBox(
-                  child: Text(
-                    item['inCart'] ? s.addedToCartLabel : s.addToCartLabel,
-                    style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
-                    overflow: TextOverflow.ellipsis,
-                  ),
+    final bool inCart = item['inCart'] == true;
+    return [
+      Expanded(
+        child: inCart
+            ? ElevatedButton(
+                onPressed: () {}, // Keep button green and non-gray
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  elevation: 0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: FittedBox(
+                        child: Text(
+                          s.addedToCartLabel, // Use localization key instead of hardcoded text
+                          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    const Icon(Icons.shopping_cart, size: 20, color: Colors.white),
+                  ],
+                ),
+              )
+            : ElevatedButton(
+                onPressed: () => _showQuantitySelector(index),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF1B3E69),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  elevation: 0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: FittedBox(
+                        child: Text(
+                          s.addToCartLabel,
+                          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    const Icon(Icons.shopping_cart, size: 20, color: Colors.white),
+                  ],
                 ),
               ),
-              const SizedBox(width: 6),
-              const Icon(Icons.shopping_cart, size: 20, color: Colors.white),
-            ],
-          ),
-        ),
       ),
       const SizedBox(width: 8),
-      Flexible(
-        fit: FlexFit.tight,
+      Expanded(
         child: ElevatedButton(
           onPressed: () => _toggleFavorite(index),
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF11B7F3),
             foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             padding: const EdgeInsets.symmetric(vertical: 12),
             elevation: 0,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
             children: [
               Flexible(
                 child: FittedBox(
@@ -365,6 +393,5 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
         ),
       ),
     ];
-    return isRTL ? actionRow : actionRow.reversed.toList();
   }
 }
