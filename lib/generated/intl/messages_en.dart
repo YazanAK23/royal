@@ -244,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ordersArchive": MessageLookupByLibrary.simpleMessage("Order Archive"),
     "ordersCurrent": MessageLookupByLibrary.simpleMessage("Current Orders"),
     "ordersLabel": MessageLookupByLibrary.simpleMessage("Orders"),
+    "packageLabel": MessageLookupByLibrary.simpleMessage("Package"),
     "passwordHint": MessageLookupByLibrary.simpleMessage("Enter your password"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
@@ -251,6 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phone1": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
     "phone2": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "piecesLabel": MessageLookupByLibrary.simpleMessage("Pieces"),
     "plasticParts": MessageLookupByLibrary.simpleMessage("Plastic Parts"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage("Plastic Pipes"),
     "plasticSurfaces": MessageLookupByLibrary.simpleMessage("Plastic Surfaces"),

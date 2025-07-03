@@ -597,5 +597,13 @@
     "profilePasswordHint": "**********",
     "@profilePasswordHint": {
         "description": "Hint for password field in profile edit screen"
+    },
+    "packageLabel": "Package",
+    "@packageLabel": {
+        "description": "Label for package unit selector"
+    },
+    "piecesLabel": "Pieces",
+    "@piecesLabel": {
+        "description": "Label for pieces unit selector"
     }
 }

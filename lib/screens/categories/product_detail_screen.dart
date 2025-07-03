@@ -66,6 +66,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         title: title,
         items: products,
         onFavoriteToggle: toggleFavorite,
+        onItemTap: (product) {
+          Navigator.of(context).pushNamed(
+            AppRoutes.subProductDetail,
+            arguments: {'title': product.title, 'image': product.image},
+          );
+        },
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,

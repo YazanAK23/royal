@@ -233,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ordersArchive": MessageLookupByLibrary.simpleMessage("أرشيف الطلبات"),
     "ordersCurrent": MessageLookupByLibrary.simpleMessage("الطلبات الحالية"),
     "ordersLabel": MessageLookupByLibrary.simpleMessage("الطلبات"),
+    "packageLabel": MessageLookupByLibrary.simpleMessage("الحزمة"),
     "passwordHint": MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
@@ -240,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phone1": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
     "phone2": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "piecesLabel": MessageLookupByLibrary.simpleMessage("قطعة"),
     "plasticParts": MessageLookupByLibrary.simpleMessage("القطع البلاستيكية"),
     "plasticPipes": MessageLookupByLibrary.simpleMessage(
       "الأنابيب البلاستيكية",

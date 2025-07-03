@@ -19,6 +19,7 @@ import 'package:royal/screens/profile/profile_screen.dart'; // Import ProfileScr
 import 'package:royal/screens/profile/profile_edit_screen.dart'; // Import ProfileEditScreen
 import 'package:royal/screens/downloads/downloads_screen.dart'; // Import DownloadsScreen
 import 'package:royal/screens/info/info_screen.dart'; // Import InfoScreen
+import 'package:royal/screens/categories/subproduct_details_screen.dart'; // Import SubProductDetailsScreen
 
 
 class AppRoutes {
@@ -52,6 +53,7 @@ class AppRoutes {
   static const String profileEdit = '/profile-edit'; // Added profile edit route
   static const String downloads = '/downloads'; // Add downloads route name
   static const String info = '/info'; // Added info screen route name
+  static const String subProductDetail = '/subProductDetail'; // Added sub product detail route
 
 
   // Route Map
@@ -92,6 +94,7 @@ class AppRoutes {
     profileEdit: (context) => const ProfileEditScreen(), // Added profile edit screen route
     downloads: (context) => const DownloadsScreen(), // Add downloads route to map
     info: (context) => const InfoScreen(), // Added info screen route
+    subProductDetail: (context) => const SubProductDetailsScreen(), // Added SubProductDetailsScreen route
   };
 
   // Route Generator

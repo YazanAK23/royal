@@ -505,5 +505,13 @@
     "profilePasswordHint": "**********",
     "@profilePasswordHint": {
         "description": "تلميح حقل كلمة السر في شاشة تعديل الملف الشخصي"
+    },
+    "packageLabel": "الحزمة",
+    "@packageLabel": {
+        "description": "تسمية وحدة الحزمة في محدد الوحدة"
+    },
+    "piecesLabel": "قطعة",
+    "@piecesLabel": {
+        "description": "تسمية وحدة القطعة في محدد الوحدة"
     }
 }

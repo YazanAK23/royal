@@ -2038,6 +2038,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Package`
+  String get packageLabel {
+    return Intl.message(
+      'Package',
+      name: 'packageLabel',
+      desc: 'Label for package unit selector',
+      args: [],
+    );
+  }
+
+  /// `Pieces`
+  String get piecesLabel {
+    return Intl.message(
+      'Pieces',
+      name: 'piecesLabel',
+      desc: 'Label for pieces unit selector',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
