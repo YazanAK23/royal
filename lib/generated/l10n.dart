@@ -344,10 +344,10 @@ class S {
     );
   }
 
-  /// `Trust`
+  /// `Electrical Appliances`
   String get trustLabel {
     return Intl.message(
-      'Trust',
+      'Electrical Appliances',
       name: 'trustLabel',
       desc: 'Label for trust category',
       args: [],
@@ -1144,10 +1144,10 @@ class S {
     );
   }
 
-  /// `Water Tanks < One Layer Tanks`
+  /// `Water Tanks > One Layer Tanks`
   String get tankDesc {
     return Intl.message(
-      'Water Tanks < One Layer Tanks',
+      'Water Tanks > One Layer Tanks',
       name: 'tankDesc',
       desc: 'Description for 1000L tank',
       args: [],

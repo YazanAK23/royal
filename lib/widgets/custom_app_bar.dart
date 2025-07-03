@@ -91,7 +91,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       const SizedBox(width: 4), // Reduced space
-      // Blue promotion button beside cart
+      // --- Get Offer / Promotion Button ---
+      /*
       ConstrainedBox(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.4,
@@ -118,6 +119,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
+      */ // Promotion button is hidden for now
       const Spacer(),
       // Search icon (right)
       Container(
@@ -207,7 +209,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       const SizedBox(width: 4), // Reduced space
-      // Blue promotion button beside cart
+      // --- Get Offer / Promotion Button ---
+      /*
       ConstrainedBox(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.4,
@@ -234,6 +237,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
+      */ // Promotion button is hidden for now
       const Spacer(),
       // Search icon (right)
       Container(

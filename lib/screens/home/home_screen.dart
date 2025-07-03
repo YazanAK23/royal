@@ -24,7 +24,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return S.of(context).goodMorningLabel;
   }
 
-
   void _onBackFromCategory() {
     setState(() {
       _selectedCategoryIndex = null;
@@ -174,13 +173,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               children: [
                 Text(
                   _getGreeting(),
-                  style: AppTextStyles.greetingPrimary,
+                  style: const TextStyle(
+                    color: Color(0xFF03A9F4), // Bright blue
+                    fontSize: 40, // Large font size
+                    fontWeight: FontWeight.bold,
+                  ),
                   textAlign: TextAlign.start,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   S.of(context).nameLabel,
-                  style: AppTextStyles.greetingSecondary,
+                  style: const TextStyle(
+                    color: Color(0xFF757575), // Grey
+                    fontSize: 35, // Large font size
+                    fontWeight: FontWeight.normal,
+                  ),
                   textAlign: TextAlign.start,
                 ),
               ],
@@ -190,66 +197,129 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           // Category Grid or Category Details
           Expanded(
             child: _selectedCategoryIndex == null
-                ? GridView.count(
-                    crossAxisCount: 2,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 16,
-                    childAspectRatio: 1,
-                    children: [
-                      CategoryCard(
-                        iconPath: AppAssets.furniture,
-                        title: S.of(context).furnitureLabel,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => CategoryDetailScreen(
-                              categoryTitle: S.of(context).furnitureLabel,
-                              categoryIcon: AppAssets.furniture,
-                            ),
-                          ),
-                        ),
-                      ),
-                      CategoryCard(
-                        iconPath: AppAssets.sanitaryWare,
-                        title: S.of(context).sanitaryLabel,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => CategoryDetailScreen(
-                              categoryTitle: S.of(context).sanitaryLabel,
-                              categoryIcon: AppAssets.sanitaryWare,
-                            ),
-                          ),
-                        ),
-                      ),
-                      CategoryCard(
-                        iconPath: AppAssets.smartEnergy,
-                        title: S.of(context).energyLabel,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => CategoryDetailScreen(
-                              categoryTitle: S.of(context).energyLabel,
-                              categoryIcon: AppAssets.smartEnergy,
-                            ),
-                          ),
-                        ),
-                      ),
-                      CategoryCard(
-                        iconPath: AppAssets.trust,
-                        title: S.of(context).trustLabel,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => CategoryDetailScreen(
-                              categoryTitle: S.of(context).trustLabel,
-                              categoryIcon: AppAssets.trust,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                ? Builder(
+                    builder: (context) {
+                      final isRtl = Directionality.of(context) == TextDirection.rtl;
+                      final categories = isRtl
+                          ? [
+                              // RTL: sanitary right, furniture left
+                              CategoryCard(
+                                iconPath: AppAssets.sanitaryWare,
+                                title: S.of(context).sanitaryLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).sanitaryLabel,
+                                      categoryIcon: AppAssets.sanitaryWare,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.furniture,
+                                title: S.of(context).furnitureLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).furnitureLabel,
+                                      categoryIcon: AppAssets.furniture,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.smartEnergy,
+                                title: S.of(context).energyLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).energyLabel,
+                                      categoryIcon: AppAssets.smartEnergy,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.trust,
+                                title: S.of(context).trustLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).trustLabel,
+                                      categoryIcon: AppAssets.trust,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ]
+                          : [
+                              // LTR: furniture left, sanitary right
+                              CategoryCard(
+                                iconPath: AppAssets.furniture,
+                                title: S.of(context).furnitureLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).furnitureLabel,
+                                      categoryIcon: AppAssets.furniture,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.sanitaryWare,
+                                title: S.of(context).sanitaryLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).sanitaryLabel,
+                                      categoryIcon: AppAssets.sanitaryWare,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.smartEnergy,
+                                title: S.of(context).energyLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).energyLabel,
+                                      categoryIcon: AppAssets.smartEnergy,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                iconPath: AppAssets.trust,
+                                title: S.of(context).trustLabel,
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => CategoryDetailScreen(
+                                      categoryTitle: S.of(context).trustLabel,
+                                      categoryIcon: AppAssets.trust,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ];
+                      return GridView.count(
+                        crossAxisCount: 2,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                        childAspectRatio: 1,
+                        children: categories,
+                      );
+                    },
                   )
                 : _buildCategoryDetails(_selectedCategoryIndex!),
           ),

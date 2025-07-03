@@ -35,7 +35,7 @@
     "@energyLabel": {
         "description": "Label for smart energy category"
     },
-    "trustLabel": "الثقة",
+    "trustLabel": "الأجهزة الكهربائية",
     "@trustLabel": {
         "description": "Label for trust category"
     },

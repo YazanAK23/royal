@@ -327,13 +327,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "tank300LLong": MessageLookupByLibrary.simpleMessage("300 Litre Long"),
     "tank500L": MessageLookupByLibrary.simpleMessage("500 Litre"),
     "tankDesc": MessageLookupByLibrary.simpleMessage(
-      "Water Tanks < One Layer Tanks",
+      "Water Tanks > One Layer Tanks",
     ),
     "tankTitle": MessageLookupByLibrary.simpleMessage("1000L Tank"),
     "threeLayerTanks": MessageLookupByLibrary.simpleMessage(
       "Three Layer Tanks",
     ),
-    "trustLabel": MessageLookupByLibrary.simpleMessage("Trust"),
+    "trustLabel": MessageLookupByLibrary.simpleMessage("Electrical Appliances"),
     "twoLayerTanks": MessageLookupByLibrary.simpleMessage("Two Layer Tanks"),
     "versionLabel": m0,
     "waterTanks": MessageLookupByLibrary.simpleMessage("Water Tanks"),

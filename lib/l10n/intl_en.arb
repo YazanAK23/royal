@@ -113,7 +113,7 @@
     "@energyLabel": {
         "description": "Label for smart energy category"
     },
-    "trustLabel": "Trust",
+    "trustLabel": "Electrical Appliances",
     "@trustLabel": {
         "description": "Label for trust category"
     },
@@ -352,7 +352,7 @@
     "@tankTitle": {
         "description": "Title for 1000L tank"
     },
-    "tankDesc": "Water Tanks < One Layer Tanks",
+    "tankDesc": "Water Tanks > One Layer Tanks",
     "@tankDesc": {
         "description": "Description for 1000L tank"
     },

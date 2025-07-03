@@ -322,7 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "threeLayerTanks": MessageLookupByLibrary.simpleMessage(
       "خزانات ثلاث طبقات",
     ),
-    "trustLabel": MessageLookupByLibrary.simpleMessage("الثقة"),
+    "trustLabel": MessageLookupByLibrary.simpleMessage("الأجهزة الكهربائية"),
     "twoLayerTanks": MessageLookupByLibrary.simpleMessage("خزانات طبقتين"),
     "versionLabel": m0,
     "waterTanks": MessageLookupByLibrary.simpleMessage("خزانات مياه"),
