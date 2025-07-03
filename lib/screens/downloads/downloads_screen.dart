@@ -198,6 +198,7 @@ class _DownloadItem extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           backgroundColor: Colors.white,
           child: Stack(
+            clipBehavior: Clip.none,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
@@ -225,18 +226,29 @@ class _DownloadItem extends StatelessWidget {
                   ],
                 ),
               ),
-              // Close button (top right)
+              // Close button (top right, floating and styled, smaller)
               Positioned(
-                top: 8,
-                right: 8,
+                top: -18, // Adjusted for smaller size
+                right: -18, // Adjusted for smaller size
                 child: GestureDetector(
                   onTap: () => Navigator.of(context).pop(),
                   child: Container(
+                    width: 36,
+                    height: 36,
                     decoration: BoxDecoration(
-                      color: Colors.blue[100],
+                      color: Color(0xFF0faeef), // Solid blue
                       shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.08),
+                          blurRadius: 8,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
-                    child: const Icon(Icons.close, color: Colors.blue, size: 24),
+                    child: const Center(
+                      child: Icon(Icons.close, color: Colors.white, size: 24),
+                    ),
                   ),
                 ),
               ),
