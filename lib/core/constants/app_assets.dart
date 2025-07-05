@@ -55,4 +55,12 @@ class AppAssets {
 
   // QR Code Icon
   static const String qrCode = 'assets/icons/qr_code_icon.svg';
+
+  // New Images
+  static const String smallImageBottomLeft = '$_imagesPath/SmallImageBottomleft.svg';
+  static const String smallImageBottomRight = '$_imagesPath/SmallImageBottomRight.svg';
+  static const String bigImageBottomLeft = '$_imagesPath/BigImageBottomleft.svg';
+  static const String smallImageBottomLeftReversed = 'assets/images/smallImageBottomLeftReversed.svg';
+  static const String smallImageBottomRightReversed = 'assets/images/smallImageBottomRightReversed.svg';
+  static const String bigImageBottomLeftReversed = 'assets/images/BigImageBottomleftReversed.svg';
 }

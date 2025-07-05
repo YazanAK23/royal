@@ -35,13 +35,36 @@ class CustomDrawer extends ConsumerWidget {
           children: [
             // Pattern SVG absolutely at the bottom left of the screen, full width, flush with bottom
             Positioned(
-              left: 0,
-              right: 0,
+              left: isArabic ? -1 : null,
+              right: isArabic ? null : -1,
               bottom: 0,
               child: SvgPicture.asset(
-                AppAssets.drawerPattern,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.fitWidth,
+                isArabic ? AppAssets.smallImageBottomLeft : AppAssets.smallImageBottomRight,
+                width: MediaQuery.of(context).size.width * 0.10,
+                height: MediaQuery.of(context).size.height * 0.15,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Positioned(
+              right: isArabic ? 0 : null,
+              left: isArabic ? null : 0,
+              bottom: 0,
+              child: SvgPicture.asset(
+                isArabic ? AppAssets.smallImageBottomRight : AppAssets.smallImageBottomLeft,
+                width: MediaQuery.of(context).size.width * 0.25,
+                height: MediaQuery.of(context).size.height * 0.10,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Positioned(
+              left: isArabic ? 0 : null,
+              right: isArabic ? null : 6,
+              bottom: MediaQuery.of(context).size.height * 0.0,
+              child: SvgPicture.asset(
+                isArabic ? AppAssets.bigImageBottomLeft : AppAssets.bigImageBottomLeftReversed,
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height * 0.6,
+                fit: BoxFit.contain,
               ),
             ),
             // Main content (no social section at the bottom)
@@ -117,23 +140,25 @@ class CustomDrawer extends ConsumerWidget {
             ),
             // Social Media Links section pinned to the bottom, above the SVG
             Positioned(
-              left: 0,
-              right: 0,
+              left: isArabic ? null : 0,
+              right: isArabic ? 0 : null,
               bottom: 0,
               child: Align(
-                alignment: Alignment.bottomRight,
+                alignment: isArabic ? Alignment.bottomRight : Alignment.bottomLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 24, right: 32),
+                  padding: isArabic
+                      ? const EdgeInsets.only(bottom: 48, right: 32)
+                      : const EdgeInsets.only(bottom: 48, left: 32),
                   child: Builder(
                     builder: (context) {
                       // Calculate the width of the icons row
                       double iconWidth = 40;
-                      double iconSpacing = 20;
                       int iconCount = 4;
-                      double rowWidth = iconWidth * iconCount + iconSpacing * (iconCount - 1);
+                      double rowWidth = iconWidth * iconCount;
                       return Column(
                         mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment:
+                            isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                         children: [
                           SizedBox(
                             width: rowWidth,
@@ -156,11 +181,8 @@ class CustomDrawer extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               _buildSocialIcon(AppAssets.facebook, 'Facebook'),
-                              const SizedBox(width: 20),
                               _buildSocialIcon(AppAssets.instagram, 'Instagram'),
-                              const SizedBox(width: 20),
                               _buildSocialIcon(AppAssets.youtube, 'YouTube'),
-                              const SizedBox(width: 20),
                               _buildSocialIcon(AppAssets.whatsapp, 'WhatsApp'),
                             ],
                           ),
