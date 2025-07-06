@@ -67,8 +67,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Complete Order",
     ),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "contactDetails": MessageLookupByLibrary.simpleMessage(
+      "Details about contact information",
+    ),
     "contactEmail": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
     "contactFax": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "contactInfo": MessageLookupByLibrary.simpleMessage("Contact Information"),
     "contactPhone": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
     "contactRoyalLabel": MessageLookupByLibrary.simpleMessage("Contact Royal"),
     "contactSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -358,6 +362,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "whyRoyal": MessageLookupByLibrary.simpleMessage("Why Royal?"),
     "workingDaysLabel": MessageLookupByLibrary.simpleMessage(
       "Everyday except official holidays",
+    ),
+    "workingHours": MessageLookupByLibrary.simpleMessage("Working Hours"),
+    "workingHoursDetails": MessageLookupByLibrary.simpleMessage(
+      "Details about working hours",
     ),
     "workingHoursLabel": MessageLookupByLibrary.simpleMessage("Working Hours"),
     "workingHoursNote": MessageLookupByLibrary.simpleMessage(

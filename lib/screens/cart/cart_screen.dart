@@ -4,6 +4,9 @@ import 'package:royal/widgets/custom_app_bar.dart';
 import 'package:royal/widgets/custom_bottom_nav_bar.dart';
 import 'package:royal/widgets/item_card.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:royal/core/constants/app_colors.dart';
+import 'package:royal/core/constants/app_text_styles.dart';
+import 'package:royal/core/constants/app_dimensions.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -27,43 +30,39 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F9F9),
+      backgroundColor: AppColors.cartBackground,
       appBar: CustomAppBar(
           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
-
       ),
       body: SafeArea(
         child: Stack(
           children: [
-            // Centered title
             Padding(
-              padding: const EdgeInsets.only(top: 8),
+              padding: const EdgeInsets.only(top: AppDimensions.cartTitlePaddingTop),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Text(
                   s.cartLabel,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
+                  style: AppTextStyles.cartTitle,
                 ),
               ),
             ),
-            // Back button (top left, under appbar)
             Positioned(
-              top: 0,
-              left: 0,
+              top: AppDimensions.cartBackButtonPaddingTop,
+              left: AppDimensions.cartBackButtonPaddingLeft,
               child: IconButton(
-                icon: const Icon(Icons.arrow_back_ios, color: Colors.blue),
+                icon: const Icon(Icons.arrow_back_ios, color: AppColors.cartBackButton),
                 onPressed: () => Navigator.of(context).pop(),
               ),
             ),
-            // Main content
             Padding(
-              padding: const EdgeInsets.only(top: 48),
+              padding: const EdgeInsets.only(top: AppDimensions.cartContentPaddingTop),
               child: Column(
                 children: [
-                  const SizedBox(height: 8),
+                  const SizedBox(height: AppDimensions.cartSpacingSmall),
                   Expanded(
                     child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.cartButtonPaddingHorizontal),
                       itemCount: _cartItems.length,
                       itemBuilder: (context, index) {
                         final item = _cartItems[index];
@@ -99,21 +98,21 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: AppDimensions.cartButtonPaddingHorizontal, vertical: AppDimensions.cartButtonPaddingVertical),
                     child: SizedBox(
                       width: double.infinity,
-                      height: 48,
+                      height: AppDimensions.cartButtonHeight,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: AppColors.cartButtonBackground,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(AppDimensions.cartButtonBorderRadius),
                           ),
                         ),
                         onPressed: () {},
                         child: Text(
                           s.completeOrderButton,
-                          style: const TextStyle(fontSize: 18, color: Colors.white),
+                          style: AppTextStyles.cartButtonText,
                         ),
                       ),
                     ),
@@ -128,15 +127,15 @@ class _CartScreenState extends State<CartScreen> {
         currentIndex: -1, // No item selected for Cart page
         onTap: (index) {
           if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.home);
           } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
           } else if (index == 2) {
             // Already on cart
           } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/browsing-history');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.history);
           } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.info);
           }
         },
       ),

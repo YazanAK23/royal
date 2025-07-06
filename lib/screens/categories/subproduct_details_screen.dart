@@ -4,6 +4,8 @@ import 'package:royal/widgets/custom_bottom_nav_bar.dart';
 import 'package:royal/widgets/custom_drawer.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
+import '../../core/routes/app_routes.dart';
+import '../../core/constants/app_text_styles.dart';
 
 final List<Map<String, String>> _tableRows = [
   {'productNo': '01-0010', 'itemName': 'Nipple', 'size': '3', 'length': '-'},
@@ -22,7 +24,7 @@ class SubProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.subProductDetailsBackground,
       endDrawer: CustomDrawer(
         onMenuItemTap: (route) {
           Navigator.pop(context);
@@ -44,15 +46,17 @@ class SubProductDetailsScreen extends StatelessWidget {
               // Breadcrumb with left-aligned title and background color
               Container(
                 width: double.infinity,
-                color: const Color(0xFFEFEFEF),
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: Row(
+                color: AppColors.breadcrumbBackground,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppDimensions.breadcrumbPaddingHorizontal,
+                  vertical: AppDimensions.breadcrumbPaddingVertical,
+                ),
+                child: const Row(
                   children: [
                     Expanded(
                       child: Text(
                         'Sanitary Ware / ... / 200 Liters Water Tank',
-                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                        textAlign: TextAlign.left,
+                        style: AppTextStyles.breadcrumbText,
                       ),
                     ),
                   ],
@@ -61,49 +65,55 @@ class SubProductDetailsScreen extends StatelessWidget {
               // Title and navigation with background color
               Container(
                 width: double.infinity,
-                color: const Color(0xFFFBFCFC),
+                color: AppColors.titleBackground,
                 child: Column(
                   children: [
                     const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppDimensions.titlePaddingHorizontal,
+                        vertical: AppDimensions.titlePaddingVertical,
+                      ),
                       child: Center(
                         child: Text(
                           'U-PVC Drain & Sewer Pipe (SN-2)',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                          textAlign: TextAlign.center,
+                          style: AppTextStyles.titleText,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppDimensions.titlePaddingHorizontal,
+                        vertical: 0,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pushReplacementNamed('/subProductDetail', arguments: {'direction': 'previous'});
+                              Navigator.of(context).pushReplacementNamed(
+                                AppRoutes.subProductDetail,
+                                arguments: {'direction': 'previous'},
+                              );
                             },
                             child: const Row(
                               children: [
-                                Icon(Icons.chevron_left, color: Colors.blue, size: 18),
+                                Icon(Icons.chevron_left, color: AppColors.iconBlue, size: 18),
                                 SizedBox(width: 2),
                                 Text('Previous product',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.blue, fontSize: 12)),
+                                    style: TextStyle(color: AppColors.iconBlue, fontSize: 12)),
                               ],
                             ),
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pushReplacementNamed('/subProductDetail', arguments: {'direction': 'next'});
+                              Navigator.of(context).pushReplacementNamed(
+                                AppRoutes.subProductDetail,
+                                arguments: {'direction': 'next'},
+                              );
                             },
                             child: const Row(
                               children: [
-                                Text('Next product',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.lightBlue, fontSize: 12)),
-                                SizedBox(width: 2),
-                                Icon(Icons.chevron_right, color: Colors.lightBlue, size: 18),
+                                Icon(Icons.chevron_right, color: AppColors.iconLightBlue, size: 18),
                               ],
                             ),
                           ),
@@ -126,29 +136,36 @@ class SubProductDetailsScreen extends StatelessWidget {
               ),
               // Description with See more functionality
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppDimensions.titlePaddingHorizontal,
+                  vertical: AppDimensions.titlePaddingVertical,
+                ),
                 child: _ExpandableDescription(
                   text: 'U-PVC Pipes are the ideal substitute for cast-iron and asbestos. Because of its special...',
                   maxLength: 60,
-                  textAlign: TextAlign.left,
                 ),
               ),
               // Size tabs (order and style as in image)
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppDimensions.breadcrumbPaddingHorizontal,
+                  vertical: AppDimensions.breadcrumbPaddingVertical,
+                ),
                 child: _SelectableSizeTabs(),
               ),
               // Table header (order: Length, Size, Item Name, Product No., Arrow)
               Container(
-                color: Colors.blue[50],
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+                color: AppColors.tableHeaderBackground,
+                padding: const EdgeInsets.symmetric(
+                  vertical: AppDimensions.tableHeaderPaddingVertical,
+                ),
                 child: const Row(
                   children: [
-                    Expanded(child: Text('Length (m)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
-                    Expanded(child: Text('Size (inch)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
-                    Expanded(child: Text('Item Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
-                    Expanded(child: Text('Product No.', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey))),
-                    SizedBox(width: 32), // For the arrow icon at the end
+                    Expanded(child: Text('Length (m)', style: AppTextStyles.tableHeaderText)),
+                    Expanded(child: Text('Size (inch)', style: AppTextStyles.tableHeaderText)),
+                    Expanded(child: Text('Item Name', style: AppTextStyles.tableHeaderText)),
+                    Expanded(child: Text('Product No.', style: AppTextStyles.tableHeaderText)),
+                    SizedBox(width: 32),
                   ],
                 ),
               ),
@@ -166,43 +183,16 @@ class SubProductDetailsScreen extends StatelessWidget {
                             return const Divider(thickness: 2, height: 2);
                           }
                           final row = _tableRows[i];
-                          final isFirst = i == 0;
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                             child: Row(
                               children: [
-                                Expanded(
-                                  child: Text(row['length'] ?? '',
-                                      style: TextStyle(
-                                        color: isFirst ? Colors.lightBlue : Colors.grey,
-                                        fontWeight: isFirst ? FontWeight.bold : FontWeight.normal,
-                                        fontSize: 14,
-                                      ), textAlign: TextAlign.center)),
-                                Expanded(
-                                  child: Text(row['size'] ?? '',
-                                      style: TextStyle(
-                                        color: isFirst ? Colors.lightBlue : Colors.grey,
-                                        fontWeight: isFirst ? FontWeight.bold : FontWeight.normal,
-                                        fontSize: 14,
-                                      ), textAlign: TextAlign.center)),
-                                Expanded(
-                                  child: Text(row['itemName'] ?? '',
-                                      style: TextStyle(
-                                        color: isFirst ? Colors.lightBlue : Colors.grey,
-                                        fontWeight: isFirst ? FontWeight.bold : FontWeight.normal,
-                                        fontSize: 14,
-                                        decoration: isFirst ? TextDecoration.underline : null,
-                                      ), textAlign: TextAlign.center)),
-                                Expanded(
-                                  child: Text(row['productNo'] ?? '',
-                                      style: TextStyle(
-                                        color: isFirst ? Colors.lightBlue : Colors.grey,
-                                        fontWeight: isFirst ? FontWeight.bold : FontWeight.normal,
-                                        fontSize: 14,
-                                      ), textAlign: TextAlign.center)),
-                                SizedBox(
-                                  width: 32,
-                                  child: Icon(Icons.reply, color: isFirst ? Colors.lightBlue : Colors.grey, size: 20),
+                                Expanded(child: Text(row['length'] ?? '')),
+                                Expanded(child: Text(row['size'] ?? '')),
+                                Expanded(child: Text(row['itemName'] ?? '')),
+                                Expanded(child: Text(row['productNo'] ?? '')),
+                                const SizedBox(
+                                  child: Icon(Icons.reply, color: AppColors.iconLightBlue, size: 20),
                                 ),
                               ],
                             ),
@@ -213,26 +203,26 @@ class SubProductDetailsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppDimensions.actionButtonSpacing),
               // Centered action icons below the table
               // Right-align the action icons using an Align widget
               const Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.only(right: 24),
+                  padding: EdgeInsets.only(right: AppDimensions.breadcrumbPaddingHorizontal),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       _CircleActionButton(icon: Icons.inventory_2),
-                      SizedBox(width: 16),
+                      SizedBox(width: AppDimensions.actionButtonSpacing),
                       _CircleActionButton(icon: Icons.attachment),
-                      SizedBox(width: 16),
+                      SizedBox(width: AppDimensions.actionButtonSpacing),
                       _CircleActionButton(icon: Icons.copy),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AppDimensions.actionButtonSpacing),
             ],
           ),
         ],
@@ -241,15 +231,15 @@ class SubProductDetailsScreen extends StatelessWidget {
         currentIndex: 0,
         onTap: (index) {
           if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.home);
           } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
           } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
           } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/downloads');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.downloads);
           } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.info);
           }
         },
       ),
@@ -270,13 +260,13 @@ class _SizeTab extends StatelessWidget {
         decoration: BoxDecoration(
           color: selected ? Colors.blue : Colors.white,
           borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: Colors.blue),
+          border: Border.all(color: selected ? AppColors.iconBlue : AppColors.iconLightBlue),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
         child: Text(
           label,
           style: TextStyle(
-            color: selected ? Colors.white : Colors.blue,
+            color: selected ? AppColors.iconWhite : AppColors.iconBlue,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -309,8 +299,7 @@ class _ImageCircle extends StatelessWidget {
 class _ExpandableDescription extends StatefulWidget {
   final String text;
   final int maxLength;
-  final TextAlign textAlign;
-  const _ExpandableDescription({required this.text, this.maxLength = 60, this.textAlign = TextAlign.right});
+  const _ExpandableDescription({required this.text, this.maxLength = 60});
 
   @override
   State<_ExpandableDescription> createState() => _ExpandableDescriptionState();
@@ -337,7 +326,7 @@ class _ExpandableDescriptionState extends State<_ExpandableDescription> {
           child: Text(
             displayText,
             style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-            textAlign: widget.textAlign,
+            textAlign: TextAlign.right,
           ),
         ),
       ],
@@ -381,7 +370,7 @@ class _ImageCarouselState extends State<_ImageCarousel> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: Icon(Icons.chevron_left, color: currentIndex == 0 ? Colors.grey[300] : Colors.lightBlue, size: 36),
+                icon: Icon(Icons.chevron_left, color: currentIndex == 0 ? Colors.grey[300] : AppColors.iconLightBlue, size: 36),
                 onPressed: currentIndex == 0 ? null : _goLeft,
               ),
               Expanded(
@@ -390,7 +379,7 @@ class _ImageCarouselState extends State<_ImageCarousel> {
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.chevron_right, color: currentIndex == widget.images.length - 1 ? Colors.grey[300] : Colors.lightBlue, size: 36),
+                icon: Icon(Icons.chevron_right, color: currentIndex == widget.images.length - 1 ? Colors.grey[300] : AppColors.iconLightBlue, size: 36),
                 onPressed: currentIndex == widget.images.length - 1 ? null : _goRight,
               ),
             ],
@@ -443,9 +432,9 @@ class _CircleActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: AppColors.iconLightBlue,
       radius: 24,
-      child: Icon(icon, color: Colors.white, size: 26),
+      child: Icon(icon, color: AppColors.iconWhite, size: 26),
     );
   }
 }

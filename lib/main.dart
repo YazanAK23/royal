@@ -22,10 +22,9 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Royal',
 
-      // 1) Explicitly register "/" to your login screen
       routes: {
-        '/': (ctx) => const HomeScreen(),      // now popping at root will hit LoginScreen
-        ...AppRoutes.routes,                    // all your other named routes
+        '/': (ctx) => const HomeScreen(),      
+        ...AppRoutes.routes,                   
       },
 
       // 2) Keep login as the initial route

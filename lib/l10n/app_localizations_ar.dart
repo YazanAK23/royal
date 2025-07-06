@@ -663,4 +663,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get searchCancelButton => 'إلغاء';
+
+  @override
+  String get workingHours => 'أوقات الدوام';
+
+  @override
+  String get workingHoursDetails => 'يومياً ما عدا العطل الرسمية';
+
+  @override
+  String get contactInfo => 'معلومات الاتصال';
+
+  @override
+  String get contactDetails => 'تفاصيل معلومات الاتصال';
 }

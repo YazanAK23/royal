@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../widgets/royal_scaffold.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/routes/app_routes.dart';
 
 class DownloadsScreen extends StatefulWidget {
   const DownloadsScreen({super.key});
@@ -52,15 +54,15 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
       currentIndex: 3, // Downloads tab index
       onNavTap: (index) {
         if (index == 0) {
-          Navigator.of(context).pushReplacementNamed('/home');
+          Navigator.of(context).pushReplacementNamed(AppRoutes.home);
         } else if (index == 1) {
-          Navigator.of(context).pushReplacementNamed('/favorite');
+          Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
         } else if (index == 2) {
-          Navigator.of(context).pushReplacementNamed('/profile');
+          Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
         } else if (index == 3) {
           // Already on downloads
         } else if (index == 4) {
-          Navigator.of(context).pushReplacementNamed('/info');
+          Navigator.of(context).pushReplacementNamed(AppRoutes.info);
         }
       },
       body: Column(
@@ -161,8 +163,8 @@ class _CategoryIcon extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: selected
-                    ? const Color(0xFF0faeef)
-                    : const Color(0xFFF5F6F8),
+                    ? AppColors.downloadsSelectedCategory
+                    : AppColors.downloadsUnselectedCategory,
               ),
               child: Center(
                 child: Container(
@@ -171,8 +173,8 @@ class _CategoryIcon extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: selected
-                        ? const Color(0xFF0faeef)
-                        : const Color(0xFFF3F4F6),
+                        ? AppColors.downloadsSelectedCategory
+                        : AppColors.downloadsUnselectedCategory,
                   ),
                   child: Center(
                     child: SvgPicture.asset(
@@ -193,7 +195,7 @@ class _CategoryIcon extends StatelessWidget {
               label,
               style: TextStyle(
                 fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-                color: selected ? const Color(0xFF0faeef) : const Color(0xFF222222),
+                color: selected ? AppColors.downloadsSelectedCategory : const Color(0xFF222222),
                 fontSize: selected ? 18 : 16, // Slightly larger font
               ),
             ),

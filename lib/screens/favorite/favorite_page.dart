@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/widgets/product_card.dart';
 import '../../../widgets/royal_scaffold.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/app_text_styles.dart';
+import '../../core/constants/app_dimensions.dart';
+import '../../core/routes/app_routes.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({super.key});
@@ -55,15 +59,15 @@ class _FavoritePageState extends State<FavoritePage> {
         currentIndex: 1, // 1 for Favorite page
         onNavTap: (index) {
           if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.home);
           } else if (index == 1) {
             // Already on favorite, do nothing
           } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
           } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/browsing-history');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.history);
           } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.info);
           }
         },
         body: Column(
@@ -72,11 +76,7 @@ class _FavoritePageState extends State<FavoritePage> {
             Center(
               child: Text(
                 s.favoritesLabel, // Use your localized favorite label
-                style: const TextStyle(
-                  color: Color(0xFF00AEEF),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: AppTextStyles.favoriteTitle,
               ),
             ),
             const SizedBox(height: 16),
@@ -96,23 +96,19 @@ class _FavoritePageState extends State<FavoritePage> {
                             setState(() => selectedCategory = index);
                           },
                           style: TextButton.styleFrom(
-                            backgroundColor: isSelected ? const Color(0xFF00AEEF) : Colors.white,
+                            backgroundColor: isSelected ? AppColors.favoriteSelectedCategory : Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                               side: BorderSide(
-                                color: isSelected ? const Color(0xFF00AEEF) : Colors.grey.shade300,
+                                color: isSelected ? AppColors.favoriteSelectedCategory : Colors.grey.shade300,
                                 width: 1.5,
                               ),
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+                            padding: const EdgeInsets.symmetric(horizontal: AppDimensions.favoriteCategoryPaddingHorizontal, vertical: AppDimensions.favoriteCategoryPaddingVertical),
                           ),
                           child: Text(
                             categories[index],
-                            style: TextStyle(
-                              color: isSelected ? Colors.white : Colors.grey[700],
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                            ),
+                            style: isSelected ? AppTextStyles.favoriteCategorySelected : AppTextStyles.favoriteCategoryUnselected,
                           ),
                         ),
                         const SizedBox(height: 4),

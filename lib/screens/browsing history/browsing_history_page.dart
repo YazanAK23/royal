@@ -4,6 +4,9 @@ import 'package:royal/generated/l10n.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 import '../../widgets/product_card.dart';
+import 'package:royal/core/constants/app_colors.dart';
+import 'package:royal/core/constants/app_dimensions.dart';
+import 'package:royal/core/constants/app_text_styles.dart';
 
 class BrowsingHistoryPage extends StatefulWidget {
   const BrowsingHistoryPage({super.key});
@@ -38,19 +41,19 @@ class _BrowsingHistoryPageState extends State<BrowsingHistoryPage> {
         return true;
       },
       child: Scaffold(
-        backgroundColor: const Color(0xFFF7F7F7),
+        backgroundColor: AppColors.browsingHistoryBackground,
         appBar: CustomAppBar(
           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
         ),
         body: Column(
           children: [
-            const SizedBox(height: 4),
+            const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+                padding: const EdgeInsets.only(left: AppDimensions.browsingHistorySpacingSmall),
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF00AEEF)),
+                  icon: const Icon(Icons.arrow_back_ios, color: AppColors.browsingHistoryIcon, size: AppDimensions.browsingHistoryIconSize),
                   onPressed: () {
                     if (_source == 'drawer') {
                       AppRoutes.navigateTo(context, AppRoutes.customDrawer);
@@ -62,26 +65,22 @@ class _BrowsingHistoryPageState extends State<BrowsingHistoryPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
             Center(
               child: Text(
                 s.browsingArchiveLabel,
-                style: const TextStyle(
-                  color: Color(0xFF00AEEF),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: AppTextStyles.browsingHistoryTitle,
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: AppDimensions.browsingHistorySpacingMedium),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: AppDimensions.browsingHistoryPaddingHorizontal, vertical: AppDimensions.browsingHistoryPaddingVertical),
                 child: GridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.95,
+                  crossAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
+                  mainAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
+                  childAspectRatio: AppDimensions.browsingHistoryGridAspectRatio,
                   children: [
                     ProductCard(
                       imagePath: 'assets/images/tank7.png',
@@ -117,15 +116,15 @@ class _BrowsingHistoryPageState extends State<BrowsingHistoryPage> {
           currentIndex: -1, // No item selected for Browsing History page
           onTap: (index) {
             if (index == 0) {
-              Navigator.of(context).pushReplacementNamed('/home');
+              Navigator.of(context).pushReplacementNamed(AppRoutes.home);
             } else if (index == 1) {
-              Navigator.of(context).pushReplacementNamed('/favorite');
+              Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
             } else if (index == 2) {
-              Navigator.of(context).pushReplacementNamed('/profile');
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             } else if (index == 3) {
-              Navigator.of(context).pushReplacementNamed('/downloads');
+              Navigator.of(context).pushReplacementNamed(AppRoutes.downloads);
             } else if (index == 4) {
-              Navigator.of(context).pushReplacementNamed('/info');
+              Navigator.of(context).pushReplacementNamed(AppRoutes.info);
             }
           },
         ),

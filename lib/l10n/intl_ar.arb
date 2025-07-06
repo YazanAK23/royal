@@ -533,5 +533,9 @@
     "searchCancelButton": "إلغاء",
     "@searchCancelButton": {
         "description": "زر إلغاء في شاشة البحث"
-    }
+    },
+    "workingHours": "أوقات الدوام",
+    "workingHoursDetails": "يومياً ما عدا العطل الرسمية",
+    "contactInfo": "معلومات الاتصال",
+    "contactDetails": "تفاصيل معلومات الاتصال"
 }

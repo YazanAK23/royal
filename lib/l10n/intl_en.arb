@@ -625,5 +625,9 @@
     "searchCancelButton": "Cancel",
     "@searchCancelButton": {
         "description": "Cancel button in search screen"
-    }
+    },
+    "workingHours": "Working Hours",
+    "workingHoursDetails": "Details about working hours",
+    "contactInfo": "Contact Information",
+    "contactDetails": "Details about contact information"
 }

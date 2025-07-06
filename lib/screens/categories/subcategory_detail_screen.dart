@@ -71,7 +71,7 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
       );
     }
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.subcategoryDetailBackground,
       endDrawer: CustomDrawer(
         onMenuItemTap: (route) {
           Navigator.of(context).pop();
@@ -79,7 +79,7 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: const Size.fromHeight(AppDimensions.subcategoryDetailAppBarHeight),
         child: Builder(
           builder: (context) => CustomAppBar(
            onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
@@ -104,15 +104,15 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
         currentIndex: 0,
         onTap: (index) {
           if (index == 0) {
-            Navigator.of(context).pushReplacementNamed('/home');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.home);
           } else if (index == 1) {
-            Navigator.of(context).pushReplacementNamed('/favorite');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
           } else if (index == 2) {
-            Navigator.of(context).pushReplacementNamed('/profile');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
           } else if (index == 3) {
-            Navigator.of(context).pushReplacementNamed('/downloads');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.downloads);
           } else if (index == 4) {
-            Navigator.of(context).pushReplacementNamed('/info');
+            Navigator.of(context).pushReplacementNamed(AppRoutes.info);
           }
         },
       ),

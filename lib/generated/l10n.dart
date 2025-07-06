@@ -2108,6 +2108,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Working Hours`
+  String get workingHours {
+    return Intl.message(
+      'Working Hours',
+      name: 'workingHours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Details about working hours`
+  String get workingHoursDetails {
+    return Intl.message(
+      'Details about working hours',
+      name: 'workingHoursDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Information`
+  String get contactInfo {
+    return Intl.message(
+      'Contact Information',
+      name: 'contactInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Details about contact information`
+  String get contactDetails {
+    return Intl.message(
+      'Details about contact information',
+      name: 'contactDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

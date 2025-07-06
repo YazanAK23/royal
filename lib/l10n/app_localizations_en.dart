@@ -663,4 +663,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchCancelButton => 'Cancel';
+
+  @override
+  String get workingHours => 'Working Hours';
+
+  @override
+  String get workingHoursDetails => 'Details about working hours';
+
+  @override
+  String get contactInfo => 'Contact Information';
+
+  @override
+  String get contactDetails => 'Details about contact information';
 }

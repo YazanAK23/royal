@@ -61,8 +61,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "collectionBoxes": MessageLookupByLibrary.simpleMessage("علب التجميع"),
     "completeOrderButton": MessageLookupByLibrary.simpleMessage("أتم الطلبية"),
     "confirmLabel": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "contactDetails": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل معلومات الاتصال",
+    ),
     "contactEmail": MessageLookupByLibrary.simpleMessage("info@royal.ps"),
     "contactFax": MessageLookupByLibrary.simpleMessage("+970 2 2220127"),
+    "contactInfo": MessageLookupByLibrary.simpleMessage("معلومات الاتصال"),
     "contactPhone": MessageLookupByLibrary.simpleMessage("+970 2 2219800"),
     "contactRoyalLabel": MessageLookupByLibrary.simpleMessage("تواصل مع رويال"),
     "contactSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -346,6 +350,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "whyRoyal": MessageLookupByLibrary.simpleMessage("لماذا رويال؟"),
     "workingDaysLabel": MessageLookupByLibrary.simpleMessage(
+      "يومياً ما عدا العطل الرسمية",
+    ),
+    "workingHours": MessageLookupByLibrary.simpleMessage("أوقات الدوام"),
+    "workingHoursDetails": MessageLookupByLibrary.simpleMessage(
       "يومياً ما عدا العطل الرسمية",
     ),
     "workingHoursLabel": MessageLookupByLibrary.simpleMessage("أوقات الدوام"),
