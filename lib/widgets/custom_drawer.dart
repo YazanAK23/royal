@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/core/routes/app_routes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
@@ -35,45 +37,45 @@ class CustomDrawer extends ConsumerWidget {
           children: [
             // Pattern SVG absolutely at the bottom left of the screen, full width, flush with bottom
             Positioned(
-              left: isArabic ? -1 : null,
-              right: isArabic ? null : -1,
+              left: isArabic ? -1.w : null,
+              right: isArabic ? null : -1.w,
               bottom: 0,
               child: SvgPicture.asset(
                 isArabic ? AppAssets.smallImageBottomLeft : AppAssets.smallImageBottomRight,
-                width: MediaQuery.of(context).size.width * 0.10,
-                height: MediaQuery.of(context).size.height * 0.15,
+                width: MediaQuery.of(context).size.width * 0.10.w,
+                height: MediaQuery.of(context).size.height * 0.15.h,
                 fit: BoxFit.contain,
               ),
             ),
             Positioned(
-              right: isArabic ? 0 : null,
-              left: isArabic ? null : 0,
+              right: isArabic ? 0.w : null,
+              left: isArabic ? null : 0.w,
               bottom: 0,
               child: SvgPicture.asset(
                 isArabic ? AppAssets.smallImageBottomRight : AppAssets.smallImageBottomLeft,
-                width: MediaQuery.of(context).size.width * 0.25,
-                height: MediaQuery.of(context).size.height * 0.10,
+                width: MediaQuery.of(context).size.width * 0.25.w,
+                height: MediaQuery.of(context).size.height * 0.10.h,
                 fit: BoxFit.contain,
               ),
             ),
             Positioned(
-              left: isArabic ? 0 : null,
-              right: isArabic ? null : 6,
-              bottom: MediaQuery.of(context).size.height * 0.0,
+              left: isArabic ? 0.w : null,
+              right: isArabic ? null : 6.w,
+              bottom: MediaQuery.of(context).size.height * 0.0.h,
               child: SvgPicture.asset(
                 isArabic ? AppAssets.bigImageBottomLeft : AppAssets.bigImageBottomLeftReversed,
-                width: MediaQuery.of(context).size.width * 0.2,
-                height: MediaQuery.of(context).size.height * 0.6,
+                width: MediaQuery.of(context).size.width * 0.2.w,
+                height: MediaQuery.of(context).size.height * 0.6.h,
                 fit: BoxFit.contain,
               ),
             ),
             // Main content (no social section at the bottom)
             Column(
               children: [
-                const SizedBox(height: 64), // Added space to move content down
+                SizedBox(height: 30.h), // Added space to move content down
                 // Top bar with Language toggle, Welcome text (left) and Search/Back (right)
                 Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,16 +85,16 @@ class CustomDrawer extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildLanguageToggle(context, ref),
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16.h),
                           Text(
                             S.of(context).welcomeLabel,
-                            style: AppTextStyles.welcomeText,
+                            style: AppTextStyles.welcomeText.copyWith(fontSize: 18.sp),
                             textAlign: TextAlign.left,
                           ),
-                          const SizedBox(height: 4),
+                          SizedBox(height: 4.h),
                           Text(
                             S.of(context).nameLabel,
-                            style: AppTextStyles.userName,
+                            style: AppTextStyles.userName.copyWith(fontSize: 16.sp),
                             textAlign: TextAlign.left,
                           ),
                         ],
@@ -105,18 +107,18 @@ class CustomDrawer extends ConsumerWidget {
                             onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
                             child: SvgPicture.asset(
                               AppAssets.search,
-                              width: 24,
-                              height: 24,
+                              width: 24.w,
+                              height: 24.h,
                               colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                             ),
                           ),
-                          const SizedBox(height: 24),
+                          SizedBox(height: 24.h),
                           GestureDetector(
                             onTap: () => Navigator.of(context).pushReplacementNamed('/home'),
                             child: SvgPicture.asset(
                               AppAssets.backButton,
-                              width: 24,
-                              height: 24,
+                              width: 24.w,
+                              height: 24.h,
                               colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                             ),
                           ),
@@ -125,13 +127,16 @@ class CustomDrawer extends ConsumerWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 32),
+                SizedBox(height: 32.h),
                 // Menu Items
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                      children: DrawerMenuItems.getItems().map((item) => _buildMenuItem(context, item)).toList(),
+                      children: DrawerMenuItems.getItems().map((item) => Padding(
+                        padding: EdgeInsets.only(bottom: 0.h), // Adjusted to move items further up
+                        child: _buildMenuItem(context, item),
+                      )).toList(),
                     ),
                   ),
                 ),
@@ -140,19 +145,18 @@ class CustomDrawer extends ConsumerWidget {
             ),
             // Social Media Links section pinned to the bottom, above the SVG
             Positioned(
-              left: isArabic ? null : 0,
-              right: isArabic ? 0 : null,
-              bottom: 0,
+              left: isArabic ? null : 0.w,
+              right: isArabic ? 0.w : null,
+              bottom: -44.h, // Moved further down
               child: Align(
                 alignment: isArabic ? Alignment.bottomRight : Alignment.bottomLeft,
                 child: Padding(
                   padding: isArabic
-                      ? const EdgeInsets.only(bottom: 48, right: 32)
-                      : const EdgeInsets.only(bottom: 48, left: 32),
+                      ? EdgeInsets.only(bottom: 80.h, right: 32.w)
+                      : EdgeInsets.only(bottom: 80.h, left: 32.w),
                   child: Builder(
                     builder: (context) {
-                      // Calculate the width of the icons row
-                      double iconWidth = 40;
+                      double iconWidth = 40.w;
                       int iconCount = 4;
                       double rowWidth = iconWidth * iconCount;
                       return Column(
@@ -166,16 +170,16 @@ class CustomDrawer extends ConsumerWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 S.of(context).contactUsLabel,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 28,
+                                  fontSize: 28.sp,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          SizedBox(height: 20.h), // Increased spacing for better separation
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -210,10 +214,10 @@ class CustomDrawer extends ConsumerWidget {
         );
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: AppColors.white),
         ),
         child: Row(
@@ -223,21 +227,21 @@ class CustomDrawer extends ConsumerWidget {
               'Ar',
               style: TextStyle(
                 color: isArabic ? AppColors.white : Colors.white60,
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: isArabic ? FontWeight.bold : FontWeight.normal,
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8),
-              height: 16,
-              width: 1,
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              height: 16.h,
+              width: 1.w,
               color: AppColors.white,
             ),
             Text(
               'En',
               style: TextStyle(
                 color: !isArabic ? AppColors.white : Colors.white60,
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: !isArabic ? FontWeight.bold : FontWeight.normal,
               ),
             ),
@@ -251,22 +255,22 @@ class CustomDrawer extends ConsumerWidget {
     return InkWell(
       onTap: () => onMenuItemTap(item.route),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Icon on left
             SvgPicture.asset(
               item.icon,
-              width: 24,
-              height: 24,
+              width: 24.w,
+              height: 24.h,
               colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
             ),
-            const SizedBox(width: 12),
+            SizedBox(width: 12.w),
             // Text after icon
             Text(
               item.getLocalizedTitle(context),
-              style: AppTextStyles.drawerMenuItem,
+              style: AppTextStyles.drawerMenuItem.copyWith(fontSize: 16.sp),
             ),
           ],
         ),
@@ -280,24 +284,24 @@ class CustomDrawer extends ConsumerWidget {
         // Handle social media tap
       },
       child: Container(
-        width: 40,
-        height: 40,
+        width: 40.w,
+        height: 40.h,
         decoration: BoxDecoration(
           color: Colors.white.withAlpha(38), // 0.15 * 255 ≈ 38
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withAlpha(26), // 0.1 * 255 ≈ 26
-              blurRadius: 8,
-              offset: const Offset(0, 4),
+              blurRadius: 8.r,
+              offset: Offset(0.w, 4.h),
             ),
           ],
         ),
         child: Center(
           child: SvgPicture.asset(
             icon,
-            width: 22,
-            height: 22,
+            width: 22.w,
+            height: 22.h,
             colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
         ),

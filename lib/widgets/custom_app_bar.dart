@@ -15,92 +15,126 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   @override
-  Size get preferredSize => const Size.fromHeight(80.0);
+  Size get preferredSize {
+    final mq = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+    // Responsive height: base 80px proportional to screen + status bar
+    final baseHeight = mq.size.height * 0.08;
+    return Size.fromHeight(baseHeight + mq.padding.top);
+  }
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     final isRtl = Directionality.of(context) == TextDirection.rtl;
-    // In RTL: [menu, notification, cart, promo, search]
-    // In LTR: [menu, notification, cart, promo, search]
-    final List<Widget> ltrChildren = [
+    // Responsive dimensions
+    final iconArea = mq.size.width * 0.1; // 10% of width
+    final iconSize = iconArea * 0.5;      // 50% of area
+    final gap = mq.size.width * 0.01;     // 1% of width
+
+    Widget badge(String count) {
+      final double size = iconArea * 0.35;
+      return Positioned(
+        top: -size * 0.2,
+        right: -size * 0.2,
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: size * 0.2,
+            vertical: size * 0.1,
+          ),
+          decoration: BoxDecoration(
+            color: AppColors.error,
+            borderRadius: BorderRadius.circular(size * 0.3),
+          ),
+          constraints: BoxConstraints(
+            minWidth: size,
+            minHeight: size * 0.6,
+          ),
+          child: Center(
+            child: Text(
+              count,
+              style: AppTextStyles.badge.copyWith(fontSize: size * 0.5),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      );
+    }
+
+    List<Widget> ltrChildren = [
       // Menu icon (left)
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: onMenuTap,
           behavior: HitTestBehavior.translucent,
           child: SvgPicture.asset(
             AppAssets.drawerMenu,
-            width: 20,
-            height: 20,
+            width: iconSize,
+            height: iconSize,
             colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
             semanticsLabel: S.of(context).menuLabel,
           ),
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
+      SizedBox(width: gap),
       // Notification icon with badge
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.notificationCenter);
-              },
+              onTap: () => Navigator.of(context).pushNamed(AppRoutes.notificationCenter),
               child: SvgPicture.asset(
                 AppAssets.notification,
-                width: 20,
-                height: 20,
+                width: iconSize,
+                height: iconSize,
                 colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
                 semanticsLabel: S.of(context).notificationsLabel,
               ),
             ),
-            _buildBadge('5'),
+            badge('5'),
           ],
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
+      SizedBox(width: gap),
       // Cart icon with badge
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.cart);
-              },
+              onTap: () => Navigator.of(context).pushNamed(AppRoutes.cart),
               child: SvgPicture.asset(
                 AppAssets.cart,
-                width: 20,
-                height: 20,
+                width: iconSize,
+                height: iconSize,
                 colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
                 semanticsLabel: S.of(context).cartLabel,
               ),
             ),
-            _buildBadge('99+'),
+            badge('99+'),
           ],
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
+      SizedBox(width: gap),
       // --- Get Offer / Promotion Button ---
       /*
       ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.4,
+          maxWidth: mq.size.width * 0.4,
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Container(
-            height: 32,
+            height: iconArea * 0.8,
             decoration: const BoxDecoration(
               color: AppColors.primary,
             ),
@@ -123,102 +157,96 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       const Spacer(),
       // Search icon (right)
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.search);
-          },
+          onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
           child: SvgPicture.asset(
             AppAssets.search,
-            width: 20,
-            height: 20,
+            width: iconSize,
+            height: iconSize,
             colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
             semanticsLabel: S.of(context).searchHint,
           ),
         ),
       ),
     ];
-    final List<Widget> rtlChildren = [
-      // Menu icon (left)
+
+    List<Widget> rtlChildren = [
+      // Menu icon (right)
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: GestureDetector(
           onTap: onMenuTap,
           behavior: HitTestBehavior.translucent,
           child: SvgPicture.asset(
             AppAssets.drawerMenu,
-            width: 20,
-            height: 20,
+            width: iconSize,
+            height: iconSize,
             colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
             semanticsLabel: S.of(context).menuLabel,
           ),
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
+      SizedBox(width: gap),
       // Notification icon with badge
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.notificationCenter);
-              },
+              onTap: () => Navigator.of(context).pushNamed(AppRoutes.notificationCenter),
               child: SvgPicture.asset(
                 AppAssets.notification,
-                width: 20,
-                height: 20,
+                width: iconSize,
+                height: iconSize,
                 colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
                 semanticsLabel: S.of(context).notificationsLabel,
               ),
             ),
-            _buildBadge('5'),
+            badge('5'),
           ],
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
+      SizedBox(width: gap),
       // Cart icon with badge
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.cart);
-              },
+              onTap: () => Navigator.of(context).pushNamed(AppRoutes.cart),
               child: SvgPicture.asset(
                 AppAssets.cart,
-                width: 20,
-                height: 20,
+                width: iconSize,
+                height: iconSize,
                 colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
                 semanticsLabel: S.of(context).cartLabel,
               ),
             ),
-            _buildBadge('99+'),
+            badge('99+'),
           ],
         ),
       ),
-      const SizedBox(width: 4), // Reduced space
-      // --- Get Offer / Promotion Button ---
+      SizedBox(width: gap),
       /*
       ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.4,
+          maxWidth: mq.size.width * 0.4,
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Container(
-            height: 32,
+            height: iconArea * 0.8,
             decoration: const BoxDecoration(
               color: AppColors.primary,
             ),
@@ -237,64 +265,38 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      */ // Promotion button is hidden for now
+      */
       const Spacer(),
-      // Search icon (right)
+      // Search icon (left)
       Container(
-        width: 40, // Increased touch area
-        height: 40,
+        width: iconArea,
+        height: iconArea,
         alignment: Alignment.center,
         child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.search);
-          },
+          onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
           child: SvgPicture.asset(
             AppAssets.search,
-            width: 20,
-            height: 20,
+            width: iconSize,
+            height: iconSize,
             colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
             semanticsLabel: S.of(context).searchHint,
           ),
         ),
       ),
     ];
+
     return Container(
       color: AppColors.white,
-      height: 80.0,
+      height: preferredSize.height,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
-        ).copyWith(top: 28),
+        padding: EdgeInsets.symmetric(
+          horizontal: mq.size.width * 0.04,
+          vertical: mq.size.height * 0.01,
+        ).copyWith(top: mq.padding.top + mq.size.height * 0.01),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: isRtl ? rtlChildren : ltrChildren,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildBadge(String count) {
-    return Positioned(
-      top: -4,
-      right: -4,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 1),
-        decoration: BoxDecoration(
-          color: AppColors.error,
-          borderRadius: BorderRadius.circular(6),
-        ),
-        constraints: const BoxConstraints(
-          minWidth: 14,
-          minHeight: 10,
-        ),
-        child: Center(
-          child: Text(
-            count,
-            style: AppTextStyles.badge,
-            textAlign: TextAlign.center,
-          ),
         ),
       ),
     );

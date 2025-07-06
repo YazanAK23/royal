@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
@@ -48,14 +49,14 @@ class NewsDetailsPage extends StatelessWidget {
         },
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         child: Column(
           children: [
             Row(
               children: [
                 const Spacer(),
                 IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFF00B4D8)),
+                  icon: Icon(Icons.arrow_back_ios_new, color: const Color(0xFF00B4D8), size: 24.sp),
                   onPressed: () {
                     Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.news, (route) => false);
                   },
@@ -63,14 +64,14 @@ class NewsDetailsPage extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 12),
+              padding: EdgeInsets.only(bottom: 12.h),
               child: Center(
                 child: Text(
                   S.of(context).newsTitle,
-                  style: const TextStyle(
-                    color: Color(0xFF00B4D8),
+                  style: TextStyle(
+                    color: const Color(0xFF00B4D8),
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -78,61 +79,61 @@ class NewsDetailsPage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              textDirection: Directionality.of(context), // Let Flutter handle direction automatically
+              textDirection: Directionality.of(context),
               children: [
                 TextButton.icon(
                   onPressed: onPrev,
-                  icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFF00B4D8), size: 18),
-                  label: Text(s.previousNews, style: const TextStyle(color: Color(0xFF00B4D8))),
+                  icon: Icon(Icons.arrow_back_ios_new, color: const Color(0xFF00B4D8), size: 18.sp),
+                  label: Text(s.previousNews, style: TextStyle(color: const Color(0xFF00B4D8), fontSize: 14.sp)),
                 ),
                 TextButton.icon(
                   onPressed: onNext,
-                  label: Text(s.nextNews, style: const TextStyle(color: Color(0xFF00B4D8))),
-                  icon: const Icon(Icons.arrow_forward_ios, color: Color(0xFF00B4D8), size: 18),
+                  label: Text(s.nextNews, style: TextStyle(color: const Color(0xFF00B4D8), fontSize: 14.sp)),
+                  icon: Icon(Icons.arrow_forward_ios, color: const Color(0xFF00B4D8), size: 18.sp),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12.r),
               child: Image.asset(
                 image,
-                height: 180,
+                height: 180.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Align(
               alignment: AlignmentDirectional.centerEnd,
               child: Text(
                 title,
-                style: const TextStyle(
-                  color: Color(0xFF00B4D8),
+                style: TextStyle(
+                  color: const Color(0xFF00B4D8),
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             Align(
               alignment: AlignmentDirectional.centerEnd,
               child: Text(
                 subtitle,
-                style: const TextStyle(
-                  color: Color(0xFF222222),
-                  fontSize: 14,
+                style: TextStyle(
+                  color: const Color(0xFF222222),
+                  fontSize: 14.sp,
                 ),
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Expanded(
               child: SingleChildScrollView(
                 child: Text(
                   content,
-                  style: const TextStyle(
-                    color: Color(0xFF222222),
-                    fontSize: 14,
+                  style: TextStyle(
+                    color: const Color(0xFF222222),
+                    fontSize: 14.sp,
                   ),
                 ),
               ),

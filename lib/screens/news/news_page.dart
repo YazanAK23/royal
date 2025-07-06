@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/screens/news/news_details_page.dart';
@@ -46,7 +47,7 @@ class NewsPage extends StatelessWidget {
         ),
         drawer: CustomDrawer(
           onMenuItemTap: (route) {
-            Navigator.of(context).pop(); // Close drawer first
+            Navigator.of(context).pop();
             WidgetsBinding.instance.addPostFrameCallback((_) {
               if (ModalRoute.of(context)?.settings.name != route) {
                 Navigator.of(context).pushReplacementNamed(route);
@@ -55,34 +56,34 @@ class NewsPage extends StatelessWidget {
           },
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: EdgeInsets.symmetric(vertical: 16.h),
           child: Column(
             children: [
               Align(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFF00B4D8)),
+                  icon: Icon(Icons.arrow_back_ios_new, color: const Color(0xFF00B4D8), size: 24.sp),
                   onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 12),
+                padding: EdgeInsets.only(bottom: 12.h),
                 child: Center(
                   child: Text(
                     s.newsTitle,
-                    style: const TextStyle(
-                      color: Color(0xFF00B4D8),
+                    style: TextStyle(
+                      color: const Color(0xFF00B4D8),
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ),
               ),
               Expanded(
                 child: ListView.separated(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   itemCount: newsItems.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 16),
+                  separatorBuilder: (_, __) => SizedBox(height: 16.h),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -151,7 +152,7 @@ class NewsPage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomBottomNavBar(
-          currentIndex: -1, // No tab selected for NewsPage
+          currentIndex: -1,
           onTap: (index) {
             if (index == 0) {
               Navigator.of(context).pushReplacementNamed('/home');
@@ -186,26 +187,26 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
       elevation: 2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
             child: Image.asset(
               item.image,
-              height: 140,
+              height: 140.h,
               fit: BoxFit.cover,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12.w),
             child: Text(
               item.title,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Color(0xFF222222),
+              style: TextStyle(
+                fontSize: 15.sp,
+                color: const Color(0xFF222222),
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

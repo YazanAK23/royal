@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/royal_scaffold.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/routes/app_routes.dart';
@@ -67,8 +68,9 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
       },
       body: Column(
         children: [
+          SizedBox(height: 24.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 12.0.h),
             child: Align(
               alignment: Directionality.of(context) == TextDirection.rtl
                   ? Alignment.centerRight
@@ -81,7 +83,7 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
           ),
           // Category selector row matching the design
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 8.0.h),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -90,11 +92,11 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
                 children: [
                   // Left chevron
                   IconButton(
-                    icon: const Icon(Icons.chevron_left, size: 36, color: Color(0xFF17375E)),
+                    icon: Icon(Icons.chevron_left, size: 36.w, color: const Color(0xFF17375E)),
                     onPressed: _goLeft,
-                    splashRadius: 24,
+                    splashRadius: 24.r,
                   ),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8.w),
                   // Categories
                   ...List.generate(categories.length, (i) => _CategoryIcon(
                     label: categories[i].labelBuilder(context),
@@ -102,25 +104,25 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
                     selected: selectedIndex == i,
                     onTap: () => _selectCategory(i),
                   )),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8.w),
                   // Right chevron
                   IconButton(
-                    icon: const Icon(Icons.chevron_right, size: 36, color: Color(0xFF17375E)),
+                    icon: Icon(Icons.chevron_right, size: 36.w, color: const Color(0xFF17375E)),
                     onPressed: _goRight,
-                    splashRadius: 24,
+                    splashRadius: 24.r,
                   ),
                 ],
               ),
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Expanded(
             child: GridView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
+                mainAxisSpacing: 16.w,
+                crossAxisSpacing: 16.w,
                 childAspectRatio: 0.7,
               ),
               itemCount: 12,
@@ -153,13 +155,13 @@ class _CategoryIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        padding: EdgeInsets.symmetric(horizontal: 18.0.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: selected ? 96 : 84, // Increased size
-              height: selected ? 96 : 84,
+              width: selected ? 96.w : 84.w, // Increased size
+              height: selected ? 96.h : 84.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: selected
@@ -168,8 +170,8 @@ class _CategoryIcon extends StatelessWidget {
               ),
               child: Center(
                 child: Container(
-                  width: selected ? 80 : 70, // Increased inner circle
-                  height: selected ? 80 : 70,
+                  width: selected ? 80.w : 70.w, // Increased inner circle
+                  height: selected ? 80.h : 70.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: selected
@@ -179,8 +181,8 @@ class _CategoryIcon extends StatelessWidget {
                   child: Center(
                     child: SvgPicture.asset(
                       asset,
-                      width: selected ? 56 : 46, // Increased icon size
-                      height: selected ? 56 : 46,
+                      width: selected ? 56.w : 46.w, // Increased icon size
+                      height: selected ? 56.h : 46.h,
                       colorFilter: ColorFilter.mode(
                         selected ? Colors.white : const Color(0xFF222222),
                         BlendMode.srcIn,
@@ -190,13 +192,13 @@ class _CategoryIcon extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 16), // Slightly more spacing
+            SizedBox(height: 16.h), // Slightly more spacing
             Text(
               label,
               style: TextStyle(
                 fontWeight: selected ? FontWeight.bold : FontWeight.normal,
                 color: selected ? AppColors.downloadsSelectedCategory : const Color(0xFF222222),
-                fontSize: selected ? 18 : 16, // Slightly larger font
+                fontSize: selected ? 18.sp : 16.sp, // Slightly larger font
               ),
             ),
           ],
@@ -213,13 +215,13 @@ class _DownloadItem extends StatelessWidget {
       barrierDismissible: true,
       builder: (context) {
         return Dialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
           backgroundColor: Colors.white,
           child: Stack(
             clipBehavior: Clip.none,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 28.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -229,12 +231,12 @@ class _DownloadItem extends StatelessWidget {
                       children: [
                         SvgPicture.asset(
                           'assets/icons/previw_icon.svg',
-                          width: 56,
-                          height: 56,
+                          width: 56.w,
+                          height: 56.h,
                           colorFilter: const ColorFilter.mode(Color(0xFF17375E), BlendMode.srcIn),
                         ),
-                        const SizedBox(height: 8),
-                        Text(S.of(context).downloadsPreview, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                        SizedBox(height: 8.h),
+                        Text(S.of(context).downloadsPreview, style: TextStyle(fontSize: 16.sp, color: Colors.black)),
                       ],
                     ),
                     // Download
@@ -243,11 +245,11 @@ class _DownloadItem extends StatelessWidget {
                       children: [
                         SvgPicture.asset(
                           'assets/icons/pdf_icons.svg',
-                          width: 56,
-                          height: 56,
+                          width: 56.w,
+                          height: 56.h,
                         ),
-                        const SizedBox(height: 8),
-                        Text(S.of(context).downloadsDownload, style: const TextStyle(fontSize: 16, color: Colors.black)),
+                        SizedBox(height: 8.h),
+                        Text(S.of(context).downloadsDownload, style: TextStyle(fontSize: 16.sp, color: Colors.black)),
                       ],
                     ),
                   ],
@@ -255,26 +257,26 @@ class _DownloadItem extends StatelessWidget {
               ),
               // Close button (top right, floating and styled, smaller)
               Positioned(
-                top: -18, // Adjusted for smaller size
-                right: -18, // Adjusted for smaller size
+                top: -18.h, // Adjusted for smaller size
+                right: -18.w, // Adjusted for smaller size
                 child: GestureDetector(
                   onTap: () => Navigator.of(context).pop(),
                   child: Container(
-                    width: 36,
-                    height: 36,
+                    width: 36.w,
+                    height: 36.h,
                     decoration: BoxDecoration(
                       color: const Color(0xFF0faeef), // Solid blue
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withAlpha(20), // 0.08 * 255 ≈ 20
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
+                          blurRadius: 8.r,
+                          offset: Offset(0, 2.h),
                         ),
                       ],
                     ),
-                    child: const Center(
-                      child: Icon(Icons.close, color: Colors.white, size: 24),
+                    child: Center(
+                      child: Icon(Icons.close, color: Colors.white, size: 24.sp),
                     ),
                   ),
                 ),
@@ -293,39 +295,39 @@ class _DownloadItem extends StatelessWidget {
       child: Card(
         elevation: 2,
         color: Colors.white, // Set card background to #ffffff
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         child: Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: EdgeInsets.all(3.0.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 flex: 0,
                 child: Container(
-                  
-                  height: 74, // Increased image height
-                  width: 110,  // Increased image width
+                  height: 74.h, // Increased image height
+                  width: 110.w,  // Increased image width
                   decoration: BoxDecoration(
                     color: const Color(0xFF0faeef), // Set background color around the image
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.r),
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.r),
                     child: Image.asset(
                       'assets/images/catalog.png',
                       fit: BoxFit.cover,
-                      width: 125, // Match container width
-                      height: 125, // Match container height
+                      width: 125.w, // Match container width
+                      height: 125.h, // Match container height
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Text(
                 S.of(context).downloadsCatalogName,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: const Color(0xFF656565), // Changed to #656565
                   fontWeight: FontWeight.bold,
+                  fontSize: 16.sp,
                 ),
                 textAlign: TextAlign.center,
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 
@@ -21,8 +22,8 @@ class WhyJoinRoyalPage extends StatelessWidget {
                   children: [
                     Text(
                       s.whyJoinRoyalTitle,
-                      style: const TextStyle(
-                        fontSize: 20,
+                      style: TextStyle(
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),
@@ -31,8 +32,8 @@ class WhyJoinRoyalPage extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       s.whyJoinRoyalContent,
-                      style: const TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(
+                        fontSize: 16.sp,
                         color: Colors.black,
                         height: 1.7,
                       ),
@@ -59,7 +60,7 @@ class WhyJoinRoyalPage extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         s.joinButton,
-                        style: const TextStyle(fontSize: 18, color: Colors.white),
+                        style: TextStyle(fontSize: 18.sp, color: Colors.white),
                       ),
                     ),
                   ),
@@ -70,8 +71,8 @@ class WhyJoinRoyalPage extends StatelessWidget {
                     },
                     child: Text(
                       s.notNowButton,
-                      style: const TextStyle(
-                        fontSize: 15,
+                      style: TextStyle(
+                        fontSize: 15.sp,
                         color: Colors.grey,
                       ),
                       textAlign: TextAlign.center,

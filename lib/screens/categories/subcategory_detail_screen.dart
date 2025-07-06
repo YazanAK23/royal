@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
@@ -86,19 +87,22 @@ class _SubcategoryDetailScreenState extends State<SubcategoryDetailScreen> {
           ),
         ),
       ),
-      body: CategoryItemList(
-        title: title,
-        items: items,
-        onItemTap: (item) {
-          final isEndLevel = _isProductLevel(item.title, context);
-          final route = isEndLevel
-              ? AppRoutes.productDetail // Go to ProductDetailScreen
-              : AppRoutes.subcategoryDetail;
-          Navigator.of(context).pushNamed(
-            route,
-            arguments: {'title': item.title, 'icon': item.icon},
-          );
-        },
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding24.w),
+        child: CategoryItemList(
+          title: title,
+          items: items,
+          onItemTap: (item) {
+            final isEndLevel = _isProductLevel(item.title, context);
+            final route = isEndLevel
+                ? AppRoutes.productDetail // Go to ProductDetailScreen
+                : AppRoutes.subcategoryDetail;
+            Navigator.of(context).pushNamed(
+              route,
+              arguments: {'title': item.title, 'icon': item.icon},
+            );
+          },
+        ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: 0,

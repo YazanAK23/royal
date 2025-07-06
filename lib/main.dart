@@ -6,10 +6,18 @@ import 'package:royal/screens/home/home_screen.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_routes.dart';
 import 'core/providers/locale_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => const ProviderScope(child: MyApp()),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {

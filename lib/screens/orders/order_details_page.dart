@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../../widgets/custom_app_bar.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
@@ -16,35 +17,34 @@ class OrderDetailsPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xFFF9F9F9),
         appBar: CustomAppBar(
-            onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
-
+          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
         ),
         body: Column(
           children: [
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               textDirection: TextDirection.ltr,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new, color: Colors.blue),
+                  icon: Icon(Icons.arrow_back_ios_new, color: Colors.blue, size: 24.sp),
                   onPressed: () => Navigator.of(context).pushReplacementNamed(AppRoutes.orders),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             Text(
               s.itemOrderTitle,
-              style: const TextStyle(fontSize: 22, color: Colors.blue, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22.sp, color: Colors.blue, fontWeight: FontWeight.bold),
             ),
             Text(
               s.itemOrderNumber,
-              style: const TextStyle(fontSize: 16, color: Colors.blue),
+              style: TextStyle(fontSize: 16.sp, color: Colors.blue),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 itemCount: 5,
                 itemBuilder: (context, index) => ItemCard(
                   imagePath: 'assets/images/kitchen_sink.png',
@@ -61,24 +61,24 @@ class OrderDetailsPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              padding: EdgeInsets.symmetric(vertical: 16.h),
               child: SizedBox(
-                width: 220,
-                height: 48,
+                width: 220.w,
+                height: 48.h,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF2ECC40),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                     ),
                   ),
                   onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(s.itemSave, style: const TextStyle(fontSize: 20, color: Colors.white)),
-                      const SizedBox(width: 8),
-                      const Icon(Icons.check, color: Colors.white),
+                      Text(s.itemSave, style: TextStyle(fontSize: 20.sp, color: Colors.white)),
+                      SizedBox(width: 8.w),
+                      Icon(Icons.check, color: Colors.white, size: 24.sp),
                     ],
                   ),
                 ),
@@ -87,7 +87,7 @@ class OrderDetailsPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: CustomBottomNavBar(
-          currentIndex: -1, // No item selected for Order Details page
+          currentIndex: -1,
           onTap: (index) {
             if (index == 0) {
               Navigator.of(context).pushReplacementNamed('/home');

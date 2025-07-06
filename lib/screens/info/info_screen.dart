@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_bottom_nav_bar.dart';
 
@@ -17,10 +18,12 @@ class _InfoScreenState extends State<InfoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
+
     return Scaffold(
       // Custom AppBar with background image and icons
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(220),
+        preferredSize: Size.fromHeight(220.h),
         child: Stack(
           children: [
             // Background image (cover all width, no border radius)
@@ -33,47 +36,43 @@ class _InfoScreenState extends State<InfoScreen> {
             ),
             // Top icons (back, search)
             Positioned(
-              top: 32,  
-              left: 16,
+              top: 32.h,
+              left: 16.w,
               child: Row(
                 children: [
                   _AppBarIcon(
                     icon: Icons.arrow_back_ios_new,
                     onTap: () => Navigator.of(context).pop(),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16.w),
                   _AppBarIcon(
                     icon: Icons.search,
-                    onTap: () =>  Navigator.of(context).pushNamed(AppRoutes.search),
-
+                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.search),
                   ),
                 ],
               ),
             ),
             // Right icons (cart, notification, menu)
             Positioned(
-              top: 32,
-              right: 16,
+              top: 32.h,
+              right: 16.w,
               child: Row(
                 children: [
                   _AppBarSvgIcon(
                     asset: 'assets/icons/cart.svg',
                     badge: true,
-                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.cart), // Use AppRoutes for consistency
-
+                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.cart),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16.w),
                   _AppBarSvgIcon(
                     asset: 'assets/icons/notification_icon.svg',
                     badge: true,
-                    onTap: () =>  Navigator.of(context).pushNamed(AppRoutes.notificationCenter),
-
+                    onTap: () => Navigator.of(context).pushNamed(AppRoutes.notificationCenter),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16.w),
                   _AppBarIcon(
                     icon: Icons.menu,
                     onTap: () => Navigator.of(context).pushNamed(AppRoutes.customDrawer),
-
                   ),
                 ],
               ),
@@ -82,17 +81,14 @@ class _InfoScreenState extends State<InfoScreen> {
             Positioned(
               left: 0,
               right: 0,
-              bottom: 24,
+              bottom: 24.h,
               child: Center(
                 child: Text(
                   S.of(context).contactUsLabel,
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayMedium
-                      ?.copyWith(
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 28,
+                        fontSize: 28.sp,
                       ),
                 ),
               ),
@@ -103,31 +99,31 @@ class _InfoScreenState extends State<InfoScreen> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.only(bottom: 0), // Remove extra bottom padding
+            padding: EdgeInsets.only(bottom: 0.h),
             child: Column(
               children: [
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 // Subtitle (centered, two lines, dark blue, large)
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  padding: EdgeInsets.symmetric(vertical: 16.h),
                   child: Column(
                     children: [
                       Text(
                         S.of(context).royalTitle,
-                        style: const TextStyle(
-                          color: Color(0xFF153A5B),
+                        style: TextStyle(
+                          color: const Color(0xFF153A5B),
                           fontWeight: FontWeight.bold,
-                          fontSize: 32,
+                          fontSize: 32.sp,
                           fontFamily: 'Cairo',
                         ),
                         textAlign: TextAlign.center,
                       ),
                       Text(
                         S.of(context).royalSlogan,
-                        style: const TextStyle(
-                          color: Color(0xFF153A5B),
+                        style: TextStyle(
+                          color: const Color(0xFF153A5B),
                           fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                          fontSize: 28.sp,
                           fontFamily: 'Cairo',
                         ),
                         textAlign: TextAlign.center,
@@ -137,11 +133,11 @@ class _InfoScreenState extends State<InfoScreen> {
                 ),
                 // Top 3 cards (FAQ, Support, Main Office) redesigned and responsive
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: LayoutBuilder(
                     builder: (context, constraints) {
-                      double cardWidth = (constraints.maxWidth - 32) / 3;
-                      cardWidth = cardWidth.clamp(90, 130); // min 90, max 130
+                      double cardWidth = (constraints.maxWidth - 32.w) / 3;
+                      cardWidth = cardWidth.clamp(90.w, 130.w); // min 90, max 130
                       final isArabic = Localizations.localeOf(context).languageCode == 'ar';
                       final cards = isArabic
                           ? [
@@ -200,33 +196,33 @@ class _InfoScreenState extends State<InfoScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: 16),
-                // Conditionally render content based on selectedCardIndex
+                SizedBox(height: 16.h),
+                // Responsive content rendering based on selectedCardIndex
                 if (selectedCardIndex == 1)
                   // Support content (match provided image)
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 0.h),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: const Color(0xFFF8F8F8),
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(28.r),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 8.w),
                       child: Column(
                         children: [
                           // Section title above the icon, not overlapped
                           Text(
                             S.of(context).hereToHelpTitle,
-                            style: const TextStyle(
-                              color: Color(0xFF153A5B),
+                            style: TextStyle(
+                              color: const Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               fontFamily: 'Cairo',
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 50),
+                          SizedBox(height: 50.h),
                           // First card: phone/email
                           _SupportCard(
                             svgIcon: 'assets/icons/support_icon.svg', // headset icon
@@ -234,7 +230,7 @@ class _InfoScreenState extends State<InfoScreen> {
                             title: S.of(context).supportPhone,
                             subtitle: S.of(context).supportEmail,
                           ),
-                          const SizedBox(height: 50),
+                          SizedBox(height: 50.h),
                           // Second card: address
                           _SupportCard(
                             svgIcon: 'assets/icons/mail_icon.svg', // mail icon
@@ -242,16 +238,16 @@ class _InfoScreenState extends State<InfoScreen> {
                             title: S.of(context).supportPOBox,
                             subtitle: S.of(context).supportJerusalem,
                           ),
-                          const SizedBox(height: 24),
+                          SizedBox(height: 24.h),
                           // Dots indicator (optional, for consistency)
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: List.generate(3, (index) {
                               return AnimatedContainer(
                                 duration: const Duration(milliseconds: 200),
-                                margin: const EdgeInsets.symmetric(horizontal: 4),
-                                width: selectedCardIndex == index ? 12 : 8,
-                                height: selectedCardIndex == index ? 12 : 8,
+                                margin: EdgeInsets.symmetric(horizontal: 4.w),
+                                width: selectedCardIndex == index ? 12.w : 8.w,
+                                height: selectedCardIndex == index ? 12.h : 8.h,
                                 decoration: BoxDecoration(
                                   color: selectedCardIndex == index ? const Color(0xFF1CA9E5) : const Color(0xFFD6EAF8),
                                   shape: BoxShape.circle,
@@ -259,7 +255,7 @@ class _InfoScreenState extends State<InfoScreen> {
                               );
                             }),
                           ),
-                          const SizedBox(height: 12),
+                          SizedBox(height: 12.h),
                         ],
                       ),
                     ),
@@ -267,38 +263,38 @@ class _InfoScreenState extends State<InfoScreen> {
                 else if (selectedCardIndex == 2)
                   // FAQ content (newly added)
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 0.h),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: const Color(0xFFF8F8F8),
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(28.r),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 8.w),
                       child: Column(
                         children: [
                           Text(
                             S.of(context).faqNeedHelpTitle,
-                            style: const TextStyle(
-                              color: Color(0xFF153A5B),
+                            style: TextStyle(
+                              color: const Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               fontFamily: 'Cairo',
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 8),
+                          SizedBox(height: 8.h),
                           Text(
                             S.of(context).faqBrowseSubtitle,
-                            style: const TextStyle(
-                              color: Color(0xFF153A5B),
+                            style: TextStyle(
+                              color: const Color(0xFF153A5B),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 20.sp,
                               fontFamily: 'Cairo',
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 24),
+                          SizedBox(height: 24.h),
                           _FaqList(),
                         ],
                       ),
@@ -315,37 +311,37 @@ class _InfoScreenState extends State<InfoScreen> {
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 24, bottom: 0),
+                              padding: EdgeInsets.only(top: 24.h, bottom: 0.h),
                               child: Text(
                                 S.of(context).contactRoyalLabel,
-                                style: const TextStyle(
-                                  color: Color(0xFF153A5B),
+                                style: TextStyle(
+                                  color: const Color(0xFF153A5B),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 26,
+                                  fontSize: 26.sp,
                                   fontFamily: 'Cairo',
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
-                            const SizedBox(height: 36),
+                            SizedBox(height: 36.h),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
                               child: _ContactCardRedesigned(),
                             ),
-                            const SizedBox(height: 32),
+                            SizedBox(height: 32.h),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
                               child: _AddressCardRedesigned(),
                             ),
-                            const SizedBox(height: 20),
+                            SizedBox(height: 20.h),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(3, (index) {
                                 return AnimatedContainer(
                                   duration: const Duration(milliseconds: 200),
-                                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                                  width: selectedCardIndex == index ? 12 : 8,
-                                  height: selectedCardIndex == index ? 12 : 8,
+                                  margin: EdgeInsets.symmetric(horizontal: 4.w),
+                                  width: selectedCardIndex == index ? 12.w : 8.w,
+                                  height: selectedCardIndex == index ? 12.h : 8.h,
                                   decoration: BoxDecoration(
                                     color: selectedCardIndex == index ? const Color(0xFF1CA9E5) : const Color(0xFFD6EAF8),
                                     shape: BoxShape.circle,
@@ -353,70 +349,69 @@ class _InfoScreenState extends State<InfoScreen> {
                                 );
                               }),
                             ),
-                            const SizedBox(height: 12),
+                            SizedBox(height: 12.h),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                     ],
                   ),
-                // Social Media Row and Beyond Creativity section (always visible)
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 Text(
                   S.of(context).contactUsLabelMini,
-                  style: const TextStyle(
-                    color: Color(0xFF1CA9E5),
+                  style: TextStyle(
+                    color: const Color(0xFF1CA9E5),
                     fontWeight: FontWeight.bold,
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     fontFamily: 'Cairo',
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 4),
-                const Directionality(
+                SizedBox(height: 4.h),
+                Directionality(
                   textDirection: TextDirection.rtl,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _SocialIcon(
                         icon: 'assets/icons/facebook_icon.svg',
-                        bgColor: Color(0xFF153A5B),
+                        bgColor: const Color(0xFF153A5B),
                         border: false,
-                        size: 32,
-                        iconSize: 18,
+                        size: 32.w,
+                        iconSize: 18.w,
                       ),
-                      SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       _SocialIcon(
                         icon: 'assets/icons/instagram_icon.svg',
-                        bgColor: Color(0xFF153A5B),
+                        bgColor: const Color(0xFF153A5B),
                         border: false,
-                        size: 32,
-                        iconSize: 18,
+                        size: 32.w,
+                        iconSize: 18.w,
                       ),
-                      SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       _SocialIcon(
                         icon: 'assets/icons/youtube_icon.svg',
-                        bgColor: Color(0xFF153A5B),
+                        bgColor: const Color(0xFF153A5B),
                         border: false,
-                        size: 32,
-                        iconSize: 18,
+                        size: 32.w,
+                        iconSize: 18.w,
                       ),
-                      SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       _SocialIcon(
                         icon: 'assets/icons/whatsapp_icon.svg',
-                        bgColor: Color(0xFF153A5B),
+                        bgColor: const Color(0xFF153A5B),
                         border: false,
-                        size: 32,
-                        iconSize: 18,
+                        size: 32.w,
+                        iconSize: 18.w,
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Container(
                   width: double.infinity,
-                  height: 120,
-                  margin: const EdgeInsets.only(bottom: 0),
+                  height: 120.h,
+                  margin: EdgeInsets.only(bottom: 0.h),
                   padding: EdgeInsets.zero,
                   child: Stack(
                     fit: StackFit.expand,
@@ -431,35 +426,21 @@ class _InfoScreenState extends State<InfoScreen> {
                           Text(
                             S.of(context).beyondCreativity,
                             style: TextStyle(
-                              color: Colors.white,
+                              fontSize: 17.sp,
                               fontWeight: FontWeight.bold,
-                              fontSize: 28,
+                              color: const Color(0xFF153A5B),
                               fontFamily: 'Cairo',
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 8,
-                                  color: Colors.black.withAlpha(51), // 0.2 * 255 ≈ 51
-                                  offset: const Offset(0, 2),
-                                ),
-                              ],
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 4),
+                          SizedBox(height: 4.h),
                           Text(
-                            S.of(context).beyondCreativityDesc,
+                            S.of(context).beyondCreativitySubtitle,
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF153A5B),
                               fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w400,
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 6,
-                                  color: Colors.black.withAlpha(38), // 0.15 * 255 ≈ 38
-                                  offset: const Offset(0, 1),
-                                ),
-                              ],
                             ),
                             textAlign: TextAlign.center,
                           ),

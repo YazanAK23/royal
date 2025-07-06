@@ -629,5 +629,9 @@
     "workingHours": "Working Hours",
     "workingHoursDetails": "Details about working hours",
     "contactInfo": "Contact Information",
-    "contactDetails": "Details about contact information"
+    "contactDetails": "Details about contact information",
+    "beyondCreativitySubtitle": "Beyond Creativity",
+    "@beyondCreativitySubtitle": {
+        "description": "Subtitle for beyond creativity section"
+    }
 }

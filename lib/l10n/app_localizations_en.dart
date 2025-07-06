@@ -675,4 +675,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contactDetails => 'Details about contact information';
+
+  @override
+  String get beyondCreativitySubtitle => 'Beyond Creativity';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationCard extends StatelessWidget {
   final String title;
@@ -22,20 +23,20 @@ class NotificationCard extends StatelessWidget {
     // No need to check or use isRtl; just build the widget tree and Flutter will handle direction automatically.
     final Widget mediaWidget = icon != null
         ? Container(
-            width: 48,
-            height: 48,
+            width: 48.w,
+            height: 48.h,
             decoration: BoxDecoration(
               color: Colors.blue[50],
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12.r),
             ),
             child: Center(
-              child: Image.asset(icon!, width: 32, height: 32),
+              child: Image.asset(icon!, width: 32.w, height: 32.h),
             ),
           )
         : image != null
             ? ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(image!, width: 48, height: 48, fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(12.r),
+                child: Image.asset(image!, width: 48.w, height: 48.h, fit: BoxFit.cover),
               )
             : const SizedBox.shrink();
 
@@ -48,41 +49,41 @@ class NotificationCard extends StatelessWidget {
             style: TextStyle(
               color: Colors.blue[700],
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 16.sp,
             ),
           ),
-          const SizedBox(height: 2),
+          SizedBox(height: 2.h),
           Text(
             message,
-            style: const TextStyle(fontSize: 14, color: Colors.black87),
+            style: TextStyle(fontSize: 14.sp, color: Colors.black87),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Text(
             date,
-            style: const TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(fontSize: 12.sp, color: Colors.grey),
           ),
         ],
       ),
     );
 
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 2),
-      padding: const EdgeInsets.all(12),
+      margin: EdgeInsets.symmetric(vertical: 2.h),
+      padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: Colors.grey.shade200),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withAlpha(13), // 0.05 * 255 ≈ 13
-            blurRadius: 4,
-            offset: const Offset(0, 2),
+            blurRadius: 4.r,
+            offset: Offset(0, 2.h),
           ),
         ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [mediaWidget, const SizedBox(width: 12), textColumn],
+        children: [mediaWidget, SizedBox(width: 12.w), textColumn],
       ),
     );
   }

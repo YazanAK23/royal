@@ -2148,6 +2148,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Beyond Creativity`
+  String get beyondCreativitySubtitle {
+    return Intl.message(
+      'Beyond Creativity',
+      name: 'beyondCreativitySubtitle',
+      desc: 'Subtitle for beyond creativity section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

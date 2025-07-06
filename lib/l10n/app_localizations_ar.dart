@@ -675,4 +675,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get contactDetails => 'تفاصيل معلومات الاتصال';
+
+  @override
+  String get beyondCreativitySubtitle => 'ما وراء الإبداع';
 }

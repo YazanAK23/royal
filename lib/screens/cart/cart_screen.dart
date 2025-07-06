@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/widgets/custom_app_bar.dart';
 import 'package:royal/widgets/custom_bottom_nav_bar.dart';
@@ -32,37 +33,37 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       backgroundColor: AppColors.cartBackground,
       appBar: CustomAppBar(
-          onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
+        onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
       ),
       body: SafeArea(
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: AppDimensions.cartTitlePaddingTop),
+              padding: EdgeInsets.only(top: AppDimensions.cartTitlePaddingTop.h),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Text(
                   s.cartLabel,
-                  style: AppTextStyles.cartTitle,
+                  style: AppTextStyles.cartTitle.copyWith(fontSize: 20.sp),
                 ),
               ),
             ),
             Positioned(
-              top: AppDimensions.cartBackButtonPaddingTop,
-              left: AppDimensions.cartBackButtonPaddingLeft,
+              top: AppDimensions.cartBackButtonPaddingTop.h,
+              left: AppDimensions.cartBackButtonPaddingLeft.w,
               child: IconButton(
-                icon: const Icon(Icons.arrow_back_ios, color: AppColors.cartBackButton),
+                icon: Icon(Icons.arrow_back_ios, size: 20.sp, color: AppColors.cartBackButton),
                 onPressed: () => Navigator.of(context).pop(),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: AppDimensions.cartContentPaddingTop),
+              padding: EdgeInsets.only(top: AppDimensions.cartContentPaddingTop.h),
               child: Column(
                 children: [
-                  const SizedBox(height: AppDimensions.cartSpacingSmall),
+                  SizedBox(height: AppDimensions.cartSpacingSmall.h),
                   Expanded(
                     child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.cartButtonPaddingHorizontal),
+                      padding: EdgeInsets.symmetric(horizontal: AppDimensions.cartButtonPaddingHorizontal.w),
                       itemCount: _cartItems.length,
                       itemBuilder: (context, index) {
                         final item = _cartItems[index];
@@ -98,21 +99,24 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppDimensions.cartButtonPaddingHorizontal, vertical: AppDimensions.cartButtonPaddingVertical),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppDimensions.cartButtonPaddingHorizontal.w,
+                      vertical: AppDimensions.cartButtonPaddingVertical.h,
+                    ),
                     child: SizedBox(
                       width: double.infinity,
-                      height: AppDimensions.cartButtonHeight,
+                      height: AppDimensions.cartButtonHeight.h,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.cartButtonBackground,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(AppDimensions.cartButtonBorderRadius),
+                            borderRadius: BorderRadius.circular(AppDimensions.cartButtonBorderRadius.r),
                           ),
                         ),
                         onPressed: () {},
                         child: Text(
                           s.completeOrderButton,
-                          style: AppTextStyles.cartButtonText,
+                          style: AppTextStyles.cartButtonText.copyWith(fontSize: 16.sp),
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 
 class ProfileEditScreen extends StatelessWidget {
@@ -15,17 +16,17 @@ class ProfileEditScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            padding: EdgeInsets.symmetric(horizontal: 32.w),
             child: Column(
               children: [
                 const SizedBox(height: 56),
                 Stack(
                   alignment: isRTL ? Alignment.bottomLeft : Alignment.bottomRight,
                   children: [
-                    const CircleAvatar(
-                      radius: 64,
-                      backgroundColor: Color(0xFFE0E0E0),
-                      child: Icon(Icons.person, size: 90, color: Colors.grey),
+                     CircleAvatar(
+                      radius: 64.r,
+                      backgroundColor: const Color(0xFFE0E0E0),
+                      child: Icon(Icons.person, size: 90.sp, color: Colors.grey),
                     ),
                     Positioned(
                       bottom: 10,
@@ -37,7 +38,7 @@ class ProfileEditScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.white, width: 2),
                         ),
-                        padding: const EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5.r),
                         child: const Icon(Icons.edit, color: Colors.white, size: 22),
                       ),
                     ),
@@ -113,13 +114,13 @@ class ProfileEditScreen extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF00AEEF),
-                          padding: const EdgeInsets.symmetric(vertical: 18),
+                          padding: EdgeInsets.symmetric(vertical: 18.h),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         onPressed: () {},
-                        child: Text(s.save, style: const TextStyle(color: Colors.white, fontSize: 16)),
+                        child: Text(s.save, style: TextStyle(color: Colors.white, fontSize: 16.sp)),
                       ),
                     ),
                     const SizedBox(width: 24),
@@ -128,10 +129,10 @@ class ProfileEditScreen extends StatelessWidget {
                         style: OutlinedButton.styleFrom(
                           backgroundColor: const Color(0xFFF6F7F9),
                           side: BorderSide.none,
-                          padding: const EdgeInsets.symmetric(vertical: 18),
+                          padding: EdgeInsets.symmetric(vertical: 18.h),
                         ),
                         onPressed: () {},
-                        child: Text(s.cancel, style: const TextStyle(color: Colors.black, fontSize: 16)),
+                        child: Text(s.cancel, style: TextStyle(color: Colors.black, fontSize: 16.sp)),
                       ),
                     ),
                   ],
@@ -169,7 +170,7 @@ class _ProfileEditField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 14.sp, color: Colors.black, fontWeight: FontWeight.w500),
             textAlign: isRTL ? TextAlign.right : TextAlign.left,
           ),
           const SizedBox(height: 6),
@@ -185,9 +186,9 @@ class _ProfileEditField extends StatelessWidget {
                 borderSide: BorderSide.none,
               ),
               suffixIcon: suffixIcon,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+              contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
             ),
-            style: const TextStyle(fontSize: 16, color: Colors.black),
+            style: TextStyle(fontSize: 16.sp, color: Colors.black),
             textAlign: isRTL ? TextAlign.right : TextAlign.left,
           ),
         ],

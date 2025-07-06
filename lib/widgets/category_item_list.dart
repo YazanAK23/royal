@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem {
   final String title;
@@ -25,40 +26,40 @@ class CategoryItemList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 24),
+        SizedBox(height: 24.h),
         // Back button
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Spacer(),
               IconButton(
-                icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF009FE3), size: 28),
+                icon: Icon(Icons.arrow_back_ios, color: const Color(0xFF009FE3), size: 28.sp),
                 onPressed: onBack ?? () => Navigator.pop(context),
                 splashRadius: 22,
               ),
             ],
           ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         // Right-aligned Category Title
         Padding(
-          padding: const EdgeInsets.only(right: 32, left: 24),
+          padding: EdgeInsets.only(right: 32.w, left: 24.w),
           child: Align(
             alignment: Alignment.centerRight,
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 22,
+              style: TextStyle(
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF009FE3),
+                color: const Color(0xFF009FE3),
               ),
               textAlign: TextAlign.right,
             ),
           ),
         ),
-        const SizedBox(height: 28),
+        SizedBox(height: 28.h),
         // Category Items List
         Expanded(
           child: ListView.separated(
@@ -70,17 +71,17 @@ class CategoryItemList extends StatelessWidget {
               return GestureDetector(
                 onTap: () => onItemTap?.call(item),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Container(
-                    height: 70,
+                    height: 70.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16.r),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withAlpha(8), // 0.03 * 255 ≈ 8
-                          blurRadius: 2,
-                          offset: const Offset(0, 1),
+                          blurRadius: 2.r,
+                          offset: Offset(0, 1.h),
                         ),
                       ],
                     ),
@@ -91,16 +92,16 @@ class CategoryItemList extends StatelessWidget {
                           children: [
                             // Image or placeholder (right)
                             Container(
-                              width: 54,
-                              height: 54,
-                              margin: const EdgeInsets.only(right: 12, left: 8),
+                              width: 54.w,
+                              height: 54.h,
+                              margin: EdgeInsets.only(right: 12.w, left: 8.w),
                               decoration: BoxDecoration(
                                 color: Colors.grey[100],
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.r),
                               ),
                               child: item.icon != null
                                   ? Padding(
-                                      padding: const EdgeInsets.all(6.0),
+                                      padding: EdgeInsets.all(6.r),
                                       child: item.icon!.endsWith('.svg')
                                           ? SvgPicture.asset(
                                               item.icon!,
@@ -116,31 +117,31 @@ class CategoryItemList extends StatelessWidget {
                             // Title (expanded, right-aligned)
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 8),
+                                padding: EdgeInsets.only(right: 8.w),
                                 child: Text(
                                   item.title,
-                                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                                  style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w500),
                                   textAlign: TextAlign.right,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 8),
+                            SizedBox(width: 8.w),
                             // Arrow (left)
-                            const Icon(Icons.arrow_forward_ios, color: Color(0xFF009FE3), size: 22),
-                            const SizedBox(width: 8),
+                            Icon(Icons.arrow_forward_ios, color: const Color(0xFF009FE3), size: 22.sp),
+                            SizedBox(width: 8.w),
                           ],
                         ),
                         // Divider at the bottom
                         if (index != items.length - 1)
-                          const Positioned(
-                            left: 12,
-                            right: 12,
+                          Positioned(
+                            left: 12.w,
+                            right: 12.w,
                             bottom: 0,
                             child: Divider(
-                              height: 1,
-                              thickness: 1,
-                              color: Color(0x00e8e8e8),
+                              height: 1.h,
+                              thickness: 1.h,
+                              color: const Color(0x00e8e8e8),
                             ),
                           ),
                       ],

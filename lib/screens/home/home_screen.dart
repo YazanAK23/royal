@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/constants/app_assets.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
@@ -45,44 +46,44 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppDimensions.padding24,
-              vertical: AppDimensions.padding16,
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.padding24.w,
+              vertical: AppDimensions.padding16.h,
             ),
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back),
+                  icon: Icon(Icons.arrow_back, size: 24.sp),
                   onPressed: _onBackFromCategory,
                 ),
                 Expanded(
                   child: Text(
                     S.of(context).sanitaryLabel,
-                    style: AppTextStyles.greetingPrimary,
+                    style: AppTextStyles.greetingPrimary.copyWith(fontSize: 18.sp),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(width: AppDimensions.spacing24),
+                SizedBox(width: AppDimensions.spacing24.w),
               ],
             ),
           ),
           Expanded(
             child: ListView.separated(
               itemCount: items.length,
-              separatorBuilder: (_, __) => const Divider(height: 1),
+              separatorBuilder: (_, __) => Divider(height: 1.h),
               itemBuilder: (context, i) => ListTile(
-                leading: const Icon(Icons.arrow_back_ios, color: AppColors.iconActive),
+                leading: Icon(Icons.arrow_back_ios, color: AppColors.iconActive, size: 20.sp),
                 title: Text(
                   items[i]['title']!,
-                  style: AppTextStyles.categoryTitle,
+                  style: AppTextStyles.categoryTitle.copyWith(fontSize: 16.sp),
                 ),
                 trailing: items[i]['icon'] != null
                     ? Container(
-                        width: AppDimensions.iconSize,
-                        height: AppDimensions.iconSize,
+                        width: AppDimensions.iconSize.w,
+                        height: AppDimensions.iconSize.h,
                         decoration: BoxDecoration(
                           color: AppColors.iconActive.withAlpha(26),
-                          borderRadius: BorderRadius.circular(AppDimensions.borderRadius10),
+                          borderRadius: BorderRadius.circular(AppDimensions.borderRadius10.r),
                         ),
                         child: SvgPicture.asset(
                           items[i]['icon']!,
@@ -90,11 +91,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         ),
                       )
                     : Container(
-                        width: AppDimensions.iconSize,
-                        height: AppDimensions.iconSize,
+                        width: AppDimensions.iconSize.w,
+                        height: AppDimensions.iconSize.h,
                         decoration: BoxDecoration(
                           color: AppColors.iconActive.withAlpha(26),
-                          borderRadius: BorderRadius.circular(AppDimensions.borderRadius10),
+                          borderRadius: BorderRadius.circular(AppDimensions.borderRadius10.r),
                         ),
                       ),
                 onTap: () {},
@@ -114,24 +115,24 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppDimensions.padding24,
-            vertical: AppDimensions.padding16,
+          padding: EdgeInsets.symmetric(
+            horizontal: AppDimensions.padding24.w,
+            vertical: AppDimensions.padding16.h,
           ),
           child: Row(
             children: [
               IconButton(
-                icon: const Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_back, size: 24.sp),
                 onPressed: _onBackFromCategory,
               ),
               Expanded(
                 child: Text(
                   titles[index],
-                  style: AppTextStyles.greetingPrimary,
+                  style: AppTextStyles.greetingPrimary.copyWith(fontSize: 18.sp),
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(width: AppDimensions.spacing24),
+              SizedBox(width: AppDimensions.spacing24.w),
             ],
           ),
         ),
@@ -139,7 +140,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: Center(
             child: Text(
               S.of(context).noContentYet,
-              style: AppTextStyles.categoryTitle,
+              style: AppTextStyles.categoryTitle.copyWith(fontSize: 16.sp),
             ),
           ),
         ),
@@ -166,38 +167,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       },
       body: Column(
         children: [
-          const SizedBox(height: AppDimensions.spacing24),
+          SizedBox(height: AppDimensions.spacing24.h),
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.only(left: AppDimensions.padding24),
+            padding: EdgeInsets.only(left: AppDimensions.padding24.w),
             alignment: Alignment.centerLeft,
             child: SvgPicture.asset(
               AppAssets.companyLogo,
-              height: AppDimensions.companyLogoHeight,
+              height: AppDimensions.companyLogoHeight.h,
               fit: BoxFit.contain,
             ),
           ),
-          const SizedBox(height: AppDimensions.spacing36),
+          SizedBox(height: AppDimensions.spacing36.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppDimensions.padding24),
+            padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
                   _getGreeting(),
-                  style: AppTextStyles.greetingPrimary,
+                  style: AppTextStyles.greetingPrimary.copyWith(fontSize: 20.sp),
                   textAlign: TextAlign.start,
                 ),
-                const SizedBox(height: AppDimensions.spacing4),
+                SizedBox(height: AppDimensions.spacing4.h),
                 Text(
                   S.of(context).nameLabel,
-                  style: AppTextStyles.greetingSecondary,
+                  style: AppTextStyles.greetingSecondary.copyWith(fontSize: 16.sp),
                   textAlign: TextAlign.start,
                 ),
               ],
             ),
           ),
-          const SizedBox(height: AppDimensions.spacing36),
+          SizedBox(height: AppDimensions.spacing36.h),
           Expanded(
             child: _selectedCategoryIndex == null
                 ? Builder(
@@ -306,9 +307,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             ];
                       return GridView.count(
                         crossAxisCount: 2,
-                        padding: const EdgeInsets.symmetric(horizontal: AppDimensions.padding20),
-                        mainAxisSpacing: AppDimensions.gridSpacing,
-                        crossAxisSpacing: AppDimensions.gridSpacing,
+                        padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding20.w),
+                        mainAxisSpacing: AppDimensions.gridSpacing.h,
+                        crossAxisSpacing: AppDimensions.gridSpacing.w,
                         childAspectRatio: 1,
                         children: categories,
                       );

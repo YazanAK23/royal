@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/widgets/product_card.dart';
 import '../../../widgets/royal_scaffold.dart';
@@ -70,71 +71,74 @@ class _FavoritePageState extends State<FavoritePage> {
             Navigator.of(context).pushReplacementNamed(AppRoutes.info);
           }
         },
-        body: Column(
-          children: [
-            const SizedBox(height: 12),
-            Center(
-              child: Text(
-                s.favoritesLabel, // Use your localized favorite label
-                style: AppTextStyles.favoriteTitle,
-              ),
-            ),
-            const SizedBox(height: 16),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(categories.length, (index) {
-                  final isSelected = index == selectedCategory;
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const SizedBox(height: 8),
-                        TextButton(
-                          onPressed: () {
-                            setState(() => selectedCategory = index);
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: isSelected ? AppColors.favoriteSelectedCategory : Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              side: BorderSide(
-                                color: isSelected ? AppColors.favoriteSelectedCategory : Colors.grey.shade300,
-                                width: 1.5,
-                              ),
-                            ),
-                            padding: const EdgeInsets.symmetric(horizontal: AppDimensions.favoriteCategoryPaddingHorizontal, vertical: AppDimensions.favoriteCategoryPaddingVertical),
-                          ),
-                          child: Text(
-                            categories[index],
-                            style: isSelected ? AppTextStyles.favoriteCategorySelected : AppTextStyles.favoriteCategoryUnselected,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                      ],
-                    ),
-                  );
-                }),
-              ),
-            ),
-            const SizedBox(height: 12),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.95,
-                  children: products.map((product) => ProductCard(
-                    imagePath: product['image']!,
-                    title: product['title']!,
-                  )).toList(),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          child: Column(
+            children: [
+              SizedBox(height: 24.h),
+              Center(
+                child: Text(
+                  s.favoritesLabel, // Use your localized favorite label
+                  style: AppTextStyles.favoriteTitle.copyWith(fontSize: 20.sp),
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 16.h),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(categories.length, (index) {
+                    final isSelected = index == selectedCategory;
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: 8.h),
+                          TextButton(
+                            onPressed: () {
+                              setState(() => selectedCategory = index);
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor: isSelected ? AppColors.favoriteSelectedCategory : Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                                side: BorderSide(
+                                  color: isSelected ? AppColors.favoriteSelectedCategory : Colors.grey.shade300,
+                                  width: 1.5,
+                                ),
+                              ),
+                              padding: EdgeInsets.symmetric(horizontal: AppDimensions.favoriteCategoryPaddingHorizontal.w, vertical: AppDimensions.favoriteCategoryPaddingVertical.h),
+                            ),
+                            child: Text(
+                              categories[index],
+                              style: isSelected ? AppTextStyles.favoriteCategorySelected.copyWith(fontSize: 16.sp) : AppTextStyles.favoriteCategoryUnselected.copyWith(fontSize: 16.sp),
+                            ),
+                          ),
+                          SizedBox(height: 4.h),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 0.95,
+                    children: products.map((product) => ProductCard(
+                      imagePath: product['image']!,
+                      title: product['title']!,
+                    )).toList(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

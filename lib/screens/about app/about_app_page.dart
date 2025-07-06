@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/core/constants/app_colors.dart';
@@ -20,59 +21,59 @@ class AboutAppPage extends StatelessWidget {
           backgroundColor: AppColors.appBarBackground,
           elevation: AppDimensions.appBarElevation,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: AppColors.primary, size: 28),
+            icon: Icon(Icons.arrow_back_ios, size: 24.sp, color: AppColors.primary),
             onPressed: () {
               Navigator.of(context).pushReplacementNamed(AppRoutes.customDrawer);
             },
           ),
           title: Text(
             S.of(context).appInfoLabel,
-            style: AppTextStyles.appBarTitle,
+            style: AppTextStyles.appBarTitle.copyWith(fontSize: 18.sp),
           ),
           centerTitle: true,
           actions: const [],
         ),
         body: Column(
           children: [
-            const SizedBox(height: AppDimensions.menuItemSpacing),
+            SizedBox(height: AppDimensions.menuItemSpacing.h),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
                 color: AppColors.menuItemBackground,
-                borderRadius: BorderRadius.circular(AppDimensions.menuItemBorderRadius),
+                borderRadius: BorderRadius.circular(AppDimensions.menuItemBorderRadius.r),
               ),
-              padding: const EdgeInsets.symmetric(vertical: AppDimensions.menuItemPaddingVertical),
-              margin: const EdgeInsets.symmetric(horizontal: 0),
+              padding: EdgeInsets.symmetric(vertical: AppDimensions.menuItemPaddingVertical.h),
+              margin: EdgeInsets.symmetric(horizontal: 0.w),
               child: Column(
                 children: [
                   _buildMenuItem(S.of(context).aboutRoyalLabel),
-                  const Divider(height: 0, color: AppColors.menuItemDivider),
+                  Divider(height: 0.h, color: AppColors.menuItemDivider),
                   _buildMenuItem(S.of(context).jobsLabel),
-                  const Divider(height: 0, color: AppColors.menuItemDivider),
+                  Divider(height: 0.h, color: AppColors.menuItemDivider),
                   _buildMenuItem(S.of(context).privacyPolicyLabel),
                 ],
               ),
             ),
-            const SizedBox(height: AppDimensions.versionSpacing),
+            SizedBox(height: AppDimensions.versionSpacing.h),
             Column(
               children: [
                 Text(
                   S.of(context).versionLabel("2.1"),
-                  style: AppTextStyles.versionText,
+                  style: AppTextStyles.versionText.copyWith(fontSize: 16.sp),
                 ),
-                const SizedBox(height: AppDimensions.madeInSpacing),
+                SizedBox(height: AppDimensions.madeInSpacing.h),
                 Text(
                   S.of(context).madeInPalestine,
-                  style: AppTextStyles.madeInText,
+                  style: AppTextStyles.madeInText.copyWith(fontSize: 14.sp),
                 ),
-                const SizedBox(height: AppDimensions.madeInSpacing),
+                SizedBox(height: AppDimensions.madeInSpacing.h),
                 Text(
                   S.of(context).royalCo2022,
-                  style: AppTextStyles.madeInText,
+                  style: AppTextStyles.madeInText.copyWith(fontSize: 14.sp),
                 ),
               ],
             ),
-            const SizedBox(height: AppDimensions.bottomSpacing),
+            SizedBox(height: AppDimensions.bottomSpacing.h),
           ],
         ),
       ),
@@ -81,15 +82,15 @@ class AboutAppPage extends StatelessWidget {
 
   Widget _buildMenuItem(String title) {
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+      contentPadding: EdgeInsets.symmetric(horizontal: 12.w),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 18, color: Colors.grey),
+        style: TextStyle(fontSize: 16.sp, color: Colors.grey),
       ),
-      trailing: const Icon(
+      trailing: Icon(
         Icons.arrow_forward_ios,
         color: Colors.grey,
-        size: 16,
+        size: 14.sp,
       ),
       onTap: () {},
     );

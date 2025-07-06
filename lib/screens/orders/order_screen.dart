@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../core/routes/app_routes.dart';
 import '../../widgets/custom_app_bar.dart';
@@ -75,60 +76,59 @@ class _OrderScreenState extends State<OrderScreen> {
     final s = S.of(context);
     if (status == s.statusReady) {
       return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: const Color(0xFF4CAF50),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(s.statusReady, style: const TextStyle(color: Colors.white, fontSize: 15)),
-            const SizedBox(width: 4),
-            const Icon(Icons.check_circle, color: Colors.white, size: 18),
+            Text(s.statusReady, style: TextStyle(color: Colors.white, fontSize: 15.sp)),
+            SizedBox(width: 4.w),
+            Icon(Icons.check_circle, color: Colors.white, size: 18.sp),
           ],
         ),
       );
     } else if (status == s.statusCancelled) {
       return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: const Color(0xFFF44336),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(s.statusCancelled, style: const TextStyle(color: Colors.white, fontSize: 15)),
-            const SizedBox(width: 4),
-            const Icon(Icons.cancel, color: Colors.white, size: 18),
+            Text(s.statusCancelled, style: TextStyle(color: Colors.white, fontSize: 15.sp)),
+            SizedBox(width: 4.w),
+            Icon(Icons.cancel, color: Colors.white, size: 18.sp),
           ],
         ),
       );
     } else if (status == s.statusPreparing) {
       return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: const Color(0xFF233A63),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(s.statusPreparing, style: const TextStyle(color: Colors.white, fontSize: 15)),
-            const SizedBox(width: 4),
-            const Icon(Icons.settings, color: Colors.white, size: 18),
+            Text(s.statusPreparing, style: TextStyle(color: Colors.white, fontSize: 15.sp)),
+            SizedBox(width: 4.w),
+            Icon(Icons.settings, color: Colors.white, size: 18.sp),
           ],
         ),
       );
     }
-    return const SizedBox();
+    return SizedBox(height: 0.h);
   }
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    // Detect text direction from locale
     final isRTL = Directionality.of(context) == TextDirection.rtl || Localizations.localeOf(context).languageCode == 'ar';
     return WillPopScope(
       onWillPop: () async {
@@ -143,17 +143,17 @@ class _OrderScreenState extends State<OrderScreen> {
           ),
           body: Column(
             children: [
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
               // Title
               Text(
                 s.ordersLabel,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.sp),
                 textAlign: isRTL ? TextAlign.right : TextAlign.left,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
               // Tab bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Row(
                   textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                   children: [
@@ -164,15 +164,15 @@ class _OrderScreenState extends State<OrderScreen> {
                           backgroundColor: _selectedTab == 1 ? const Color(0xFF03A9F4) : Colors.grey[200],
                           foregroundColor: _selectedTab == 1 ? Colors.white : Colors.black,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
                           elevation: 0,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          padding: EdgeInsets.symmetric(vertical: 12.h),
                         ),
-                        child: Text(s.ordersCurrent, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        child: Text(s.ordersCurrent, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp)),
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8.w),
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () => setState(() => _selectedTab = 0),
@@ -180,21 +180,21 @@ class _OrderScreenState extends State<OrderScreen> {
                           backgroundColor: _selectedTab == 0 ? const Color(0xFF03A9F4) : Colors.grey[200],
                           foregroundColor: _selectedTab == 0 ? Colors.white : Colors.black,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
                           elevation: 0,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          padding: EdgeInsets.symmetric(vertical: 12.h),
                         ),
-                        child: Text(s.ordersArchive, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        child: Text(s.ordersArchive, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp)),
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Expanded(
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 0.h),
                   itemCount: _orders.length,
                   itemBuilder: (context, index) {
                     final order = _orders[index];
@@ -204,34 +204,34 @@ class _OrderScreenState extends State<OrderScreen> {
                         Navigator.pushNamed(context, AppRoutes.orderDetails);
                       },
                       child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                         decoration: BoxDecoration(
                           color: const Color(0xFFF7F8FA),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(20.r),
                         ),
                         child: Column(
                           crossAxisAlignment: isRTL ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                           children: [
                             Container(
-                              decoration: const BoxDecoration(
-                                color: Color(0xFF03A9F4),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF03A9F4),
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
+                                  topLeft: Radius.circular(20.r),
+                                  topRight: Radius.circular(20.r),
                                 ),
                               ),
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                 children: [
-                                  Text(order['date'], style: const TextStyle(color: Colors.white, fontSize: 15)),
-                                  Text(order['number'], style: const TextStyle(color: Colors.white, fontSize: 15)),
+                                  Text(order['date'], style: TextStyle(color: Colors.white, fontSize: 15.sp)),
+                                  Text(order['number'], style: TextStyle(color: Colors.white, fontSize: 15.sp)),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                               child: Row(
                                 textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                 children: [
@@ -262,10 +262,10 @@ class _OrderScreenState extends State<OrderScreen> {
                                                       mainAxisSize: MainAxisSize.min,
                                                       children: [
                                                         if (count != null) ...[
-                                                          Text(count, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                                                          const SizedBox(width: 6),
+                                                          Text(count, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp)),
+                                                          SizedBox(width: 6.w),
                                                         ],
-                                                        Text(name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                                        Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp)),
                                                       ],
                                                     );
                                                   },
@@ -273,15 +273,15 @@ class _OrderScreenState extends State<OrderScreen> {
                                               ],
                                             ),
                                           ),
-                                          const SizedBox(height: 8),
+                                          SizedBox(height: 8.h),
                                           Align(
                                             alignment: Alignment.centerRight,
                                             child: _buildStatusChip(status),
                                           ),
                                         ] else ...[
                                           // For LTR, keep as before
-                                          Text(order['items'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                                          const SizedBox(height: 8),
+                                          Text(order['items'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp)),
+                                          SizedBox(height: 8.h),
                                           _buildStatusChip(status),
                                         ],
                                       ],
@@ -292,20 +292,20 @@ class _OrderScreenState extends State<OrderScreen> {
                                       textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                                       children: [
                                         CircleAvatar(
-                                          radius: 18,
+                                          radius: 18.r,
                                           backgroundColor: const Color(0xFF03A9F4),
                                           child: IconButton(
-                                            icon: const Icon(Icons.edit, color: Colors.white, size: 18),
+                                            icon: Icon(Icons.edit, color: Colors.white, size: 18.sp),
                                             onPressed: () {},
                                             tooltip: s.orderEdit,
                                           ),
                                         ),
-                                        const SizedBox(width: 8),
+                                        SizedBox(width: 8.w),
                                         CircleAvatar(
-                                          radius: 18,
+                                          radius: 18.r,
                                           backgroundColor: const Color(0xFF03A9F4),
                                           child: IconButton(
-                                            icon: const Icon(Icons.delete, color: Colors.white, size: 18),
+                                            icon: Icon(Icons.delete, color: Colors.white, size: 18.sp),
                                             onPressed: () {},
                                             tooltip: s.orderDelete,
                                           ),

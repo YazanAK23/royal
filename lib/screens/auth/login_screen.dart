@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../core/constants/app_colors.dart';
 import '../../widgets/auth/login_form.dart';
 
@@ -17,7 +19,7 @@ class LoginScreen extends StatelessWidget {
                   MediaQuery.of(context).padding.top -
                   MediaQuery.of(context).padding.bottom,
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: const LoginForm(),
           ),
         ),

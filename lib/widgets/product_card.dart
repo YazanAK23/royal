@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductCard extends StatelessWidget {
   final String imagePath;
@@ -19,12 +20,12 @@ class ProductCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withAlpha(10), // 0.04 * 255 ≈ 10
-              blurRadius: 8,
-              offset: const Offset(0, 2),
+              blurRadius: 8.r,
+              offset: Offset(0, 2.h),
             ),
           ],
         ),
@@ -33,29 +34,29 @@ class ProductCard extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.w),
                 child: Image.asset(
                   imagePath,
                   fit: BoxFit.contain,
-                  height: 80,
+                  height: 80.h,
                 ),
               ),
             ),
             Container(
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xFF00AEEF),
+              decoration: BoxDecoration(
+                color: const Color(0xFF00AEEF),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(16),
-                  bottomRight: Radius.circular(16),
+                  bottomLeft: Radius.circular(16.r),
+                  bottomRight: Radius.circular(16.r),
                 ),
               ),
-              padding: const EdgeInsets.symmetric(vertical: 8),
+              padding: EdgeInsets.symmetric(vertical: 8.h),
               child: Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,

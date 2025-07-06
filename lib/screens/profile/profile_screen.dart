@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../widgets/royal_scaffold.dart';
 import 'package:royal/core/routes/app_routes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -32,41 +33,41 @@ class ProfileScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
-                  children: const [
+                  children: [
                     CircleAvatar(
-                      radius: 60,
-                      backgroundColor: Color(0xFFE0E0E0),
-                      child: Icon(Icons.person, size: 80, color: Colors.grey),
+                      radius: 60.r,
+                      backgroundColor: const Color(0xFFE0E0E0),
+                      child: Icon(Icons.person, size: 80.sp, color: Colors.grey),
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 Text(
                   s.profileWelcome,
-                  style: const TextStyle(
-                    fontSize: 28,
-                    color: Color(0xFF00AEEF),
+                  style: TextStyle(
+                    fontSize: 28.sp,
+                    color: const Color(0xFF00AEEF),
                     fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 Text(
                   s.profileName,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    color: Color(0xFF00AEEF),
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    color: const Color(0xFF00AEEF),
                     fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -75,19 +76,19 @@ class ProfileScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 12.h),
                       ),
                       onPressed: () {
                         AppRoutes.navigateTo(context, AppRoutes.profileEdit);
                       },
                       child: Text(
                         s.profileEdit,
-                        style: const TextStyle(fontSize: 18, color: Colors.white),
+                        style: TextStyle(fontSize: 18.sp, color: Colors.white),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 _ProfileMenuItem(
                   icon: Icons.assignment,
                   label: s.profileOrders,
@@ -128,22 +129,22 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   isRTL: isRTL,
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 Center(
                   child: SizedBox(
-                    width: 150,
+                    width: 150.w,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFFF5A5A),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 12.h),
                       ),
                       onPressed: () {},
                       child: Text(
                         s.profileLogout,
-                        style: const TextStyle(fontSize: 18, color: Colors.white),
+                        style: TextStyle(fontSize: 18.sp, color: Colors.white),
                       ),
                     ),
                   ),
@@ -167,11 +168,11 @@ class _ProfileMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 6.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
       child: Container(
         decoration: BoxDecoration(
           color: const Color(0xFFF6F7F9),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
         ),
         child: Directionality(
           textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
@@ -179,7 +180,7 @@ class _ProfileMenuItem extends StatelessWidget {
             leading: Icon(icon, color: Colors.grey[700]),
             title: Text(
               label,
-              style: const TextStyle(fontSize: 16, color: Colors.black),
+              style: TextStyle(fontSize: 16.sp, color: Colors.black),
               textAlign: isRTL ? TextAlign.right : TextAlign.left,
             ),
             onTap: onTap,

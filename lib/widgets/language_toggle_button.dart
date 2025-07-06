@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:royal/generated/l10n.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/providers/locale_provider.dart';
 
 class LanguageToggleButton extends ConsumerWidget {
@@ -18,9 +19,9 @@ class LanguageToggleButton extends ConsumerWidget {
         locale.languageCode == 'en'
             ? S.of(context).languageArabic
             : S.of(context).languageEnglish,
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 16.sp,
         ),
       ),
     );

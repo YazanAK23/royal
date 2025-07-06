@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../widgets/custom_app_bar.dart';
@@ -45,72 +46,75 @@ class _BrowsingHistoryPageState extends State<BrowsingHistoryPage> {
         appBar: CustomAppBar(
           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
         ),
-        body: Column(
-          children: [
-            const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: AppDimensions.browsingHistorySpacingSmall),
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: AppColors.browsingHistoryIcon, size: AppDimensions.browsingHistoryIconSize),
-                  onPressed: () {
-                    if (_source == 'drawer') {
-                      AppRoutes.navigateTo(context, AppRoutes.customDrawer);
-                    } else {
-                      Navigator.of(context).maybePop();
-                    }
-                  },
-                  tooltip: s.browsingArchiveLabel,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          child: Column(
+            children: [
+              const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: AppDimensions.browsingHistorySpacingSmall),
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back_ios, color: AppColors.browsingHistoryIcon, size: AppDimensions.browsingHistoryIconSize),
+                    onPressed: () {
+                      if (_source == 'drawer') {
+                        AppRoutes.navigateTo(context, AppRoutes.customDrawer);
+                      } else {
+                        Navigator.of(context).maybePop();
+                      }
+                    },
+                    tooltip: s.browsingArchiveLabel,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
-            Center(
-              child: Text(
-                s.browsingArchiveLabel,
-                style: AppTextStyles.browsingHistoryTitle,
-              ),
-            ),
-            const SizedBox(height: AppDimensions.browsingHistorySpacingMedium),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: AppDimensions.browsingHistoryPaddingHorizontal, vertical: AppDimensions.browsingHistoryPaddingVertical),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
-                  mainAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
-                  childAspectRatio: AppDimensions.browsingHistoryGridAspectRatio,
-                  children: [
-                    ProductCard(
-                      imagePath: 'assets/images/tank7.png',
-                      title: s.waterTanks,
-                    ),
-                    ProductCard(
-                      imagePath: 'assets/images/tank7.png',
-                      title: s.waterTanks ,
-                    ),
-                    ProductCard(
-                      imagePath: 'assets/images/tank6.png',
-                      title: s.waterTanks,
-                    ),
-                    ProductCard(
-                      imagePath: 'assets/images/tank4.png',
-                      title: s.waterTanks ,
-                    ),
-                    ProductCard(
-                      imagePath: 'assets/images/tank3.png',
-                      title: s.waterTanks ,
-                    ),
-                    ProductCard(
-                      imagePath: 'assets/images/tank5.png',
-                      title: s.waterTanks,
-                    ),
-                  ],
+              const SizedBox(height: AppDimensions.browsingHistorySpacingSmall),
+              Center(
+                child: Text(
+                  s.browsingArchiveLabel,
+                  style: AppTextStyles.browsingHistoryTitle.copyWith(fontSize: 18.sp),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: AppDimensions.browsingHistorySpacingMedium),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: AppDimensions.browsingHistoryPaddingHorizontal, vertical: AppDimensions.browsingHistoryPaddingVertical),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
+                    mainAxisSpacing: AppDimensions.browsingHistoryGridSpacing,
+                    childAspectRatio: AppDimensions.browsingHistoryGridAspectRatio,
+                    children: [
+                      ProductCard(
+                        imagePath: 'assets/images/tank7.png',
+                        title: s.waterTanks,
+                      ),
+                      ProductCard(
+                        imagePath: 'assets/images/tank7.png',
+                        title: s.waterTanks ,
+                      ),
+                      ProductCard(
+                        imagePath: 'assets/images/tank6.png',
+                        title: s.waterTanks,
+                      ),
+                      ProductCard(
+                        imagePath: 'assets/images/tank4.png',
+                        title: s.waterTanks ,
+                      ),
+                      ProductCard(
+                        imagePath: 'assets/images/tank3.png',
+                        title: s.waterTanks ,
+                      ),
+                      ProductCard(
+                        imagePath: 'assets/images/tank5.png',
+                        title: s.waterTanks,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: CustomBottomNavBar(
           currentIndex: -1, // No item selected for Browsing History page

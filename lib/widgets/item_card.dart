@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 
 class ItemCard extends StatelessWidget {
@@ -31,11 +32,11 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(12),
+      margin: EdgeInsets.only(bottom: 16.h),
+      padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: Colors.blue.shade100),
       ),
       child: Row(
@@ -43,15 +44,15 @@ class ItemCard extends StatelessWidget {
         children: [
           // Product image
           ClipRRect(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
             child: Image.asset(
               imagePath,
-              width: 80,
-              height: 60,
+              width: 80.w,
+              height: 60.h,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12.w),
           // Main content
           Expanded(
             child: Column(
@@ -59,53 +60,53 @@ class ItemCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16.sp, color: Colors.blue, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   code,
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Row(
                   children: [
                     _CircleButton(icon: Icons.add, onTap: onAdd),
-                    const SizedBox(width: 8),
-                    Text('$quantity', style: const TextStyle(fontSize: 16)),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8.w),
+                    Text('$quantity', style: TextStyle(fontSize: 16.sp)),
+                    SizedBox(width: 8.w),
                     _CircleButton(icon: Icons.remove, onTap: onRemove),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12.w),
                     DropdownButton<String>(
                       value: unit,
                       items: [
                         DropdownMenuItem(
                           value: s.itemKitchenSinkUnitCTN,
-                          child: Text(s.itemKitchenSinkUnitCTN),
+                          child: Text(s.itemKitchenSinkUnitCTN, style: TextStyle(fontSize: 12.sp)),
                         ),
                         DropdownMenuItem(
                           value: s.itemKitchenSinkUnitPACK,
-                          child: Text(s.itemKitchenSinkUnitPACK),
+                          child: Text(s.itemKitchenSinkUnitPACK, style: TextStyle(fontSize: 12.sp)),
                         ),
                       ],
                       onChanged: onUnitChanged,
                     ),
                   ],
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4.h),
                 Text(
                   unitDetails,
-                  style: const TextStyle(fontSize: 10, color: Colors.grey),
+                  style: TextStyle(fontSize: 10.sp, color: Colors.grey),
                 ),
               ],
             ),
           ),
           // Delete button
           IconButton(
-            icon: const Icon(Icons.delete, color: Colors.white),
+            icon: Icon(Icons.delete, color: Colors.white, size: 24.sp),
             onPressed: onDelete,
             style: IconButton.styleFrom(
               backgroundColor: Colors.blue,
               shape: const CircleBorder(),
-              padding: const EdgeInsets.all(8),
+              padding: EdgeInsets.all(8.w),
             ),
           ),
         ],
@@ -124,15 +125,15 @@ class _CircleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(20.r),
       child: Container(
-        width: 32,
-        height: 32,
+        width: 32.w,
+        height: 32.h,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.grey.shade200,
         ),
-        child: Icon(icon, size: 18),
+        child: Icon(icon, size: 18.sp),
       ),
     );
   }

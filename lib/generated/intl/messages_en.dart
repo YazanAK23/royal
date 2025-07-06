@@ -49,6 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "beyondCreativityDesc": MessageLookupByLibrary.simpleMessage(
       "Stylish, Elegant, Innovation",
     ),
+    "beyondCreativitySubtitle": MessageLookupByLibrary.simpleMessage(
+      "Beyond Creativity",
+    ),
     "browsingArchiveLabel": MessageLookupByLibrary.simpleMessage(
       "Browsing Archive",
     ),

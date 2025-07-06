@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_dimensions.dart';
 import 'custom_app_bar.dart';
@@ -38,7 +40,7 @@ class RoyalScaffold extends StatelessWidget {
             ))
           : null,
       appBar: appBar ?? PreferredSize(
-        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: Size.fromHeight(AppDimensions.appBarHeight.h),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => Scaffold.of(context).openEndDrawer(),

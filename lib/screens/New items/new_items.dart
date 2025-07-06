@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/widgets/product_card.dart';
@@ -64,9 +65,9 @@ class _NewItemsPageState extends State<NewItemsPage> {
             Align(
               alignment: AlignmentDirectional.centerStart,
               child: Padding(
-                padding: const EdgeInsetsDirectional.only(start: 8.0),
+                padding: EdgeInsetsDirectional.only(start: 8.0.w),
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF00AEEF)),
+                  icon: Icon(Icons.arrow_back_ios, color: const Color(0xFF00AEEF), size: 24.sp),
                   onPressed: () {
                     if (_source == 'drawer') {
                       AppRoutes.navigateTo(context, AppRoutes.customDrawer);
@@ -78,18 +79,18 @@ class _NewItemsPageState extends State<NewItemsPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Center(
               child: Text(
                 s.newItemsLabel,
-                style: const TextStyle(
-                  color: Color(0xFF00AEEF),
-                  fontSize: 22,
+                style: TextStyle(
+                  color: const Color(0xFF00AEEF),
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -99,14 +100,14 @@ class _NewItemsPageState extends State<NewItemsPage> {
                   // Show red dot above 2nd and 3rd category (index 1 and 2)
                   final showRedDot = index == 1 || index == 2;
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    padding: EdgeInsets.symmetric(horizontal: 6.0.w),
                     child: Stack(
                       alignment: AlignmentDirectional.topCenter,
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const SizedBox(height: 8), // Space for red dot
+                            SizedBox(height: 8.h), // Space for red dot
                             TextButton(
                               onPressed: () {
                                 setState(() => selectedCategory = index);
@@ -114,32 +115,32 @@ class _NewItemsPageState extends State<NewItemsPage> {
                               style: TextButton.styleFrom(
                                 backgroundColor: isSelected ? const Color(0xFF00AEEF) : Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.r),
                                   side: BorderSide(
                                     color: isSelected ? const Color(0xFF00AEEF) : Colors.grey.shade300,
-                                    width: 1.5,
+                                    width: 1.5.w,
                                   ),
                                 ),
-                                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+                                padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
                               ),
                               child: Text(
                                 categories[index],
                                 style: TextStyle(
                                   color: isSelected ? Colors.white : Colors.grey[700],
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 15,
+                                  fontSize: 15.sp,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 4),
+                            SizedBox(height: 4.h),
                           ],
                         ),
                         if (showRedDot)
                           Positioned(
-                            top: 0,
+                            top: 0.h,
                             child: Container(
-                              width: 10,
-                              height: 10,
+                              width: 10.w,
+                              height: 10.h,
                               decoration: const BoxDecoration(
                                 color: Colors.red,
                                 shape: BoxShape.circle,
@@ -152,14 +153,14 @@ class _NewItemsPageState extends State<NewItemsPage> {
                 }),
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 8.0.h),
                 child: GridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16.w,
+                  mainAxisSpacing: 16.h,
                   childAspectRatio: 0.95,
                   children: products.map((product) => ProductCard(
                     imagePath: product['image']!,

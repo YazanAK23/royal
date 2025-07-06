@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/widgets/custom_app_bar.dart';
 import 'package:royal/widgets/custom_bottom_nav_bar.dart';
 import 'package:royal/widgets/custom_drawer.dart';
@@ -32,7 +33,7 @@ class SubProductDetailsScreen extends StatelessWidget {
         },
       ),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(AppDimensions.appBarHeight),
+        preferredSize: Size.fromHeight(AppDimensions.appBarHeight.h),
         child: Builder(
           builder: (context) => CustomAppBar(
             onMenuTap: () => Scaffold.of(context).openEndDrawer(),
@@ -47,19 +48,10 @@ class SubProductDetailsScreen extends StatelessWidget {
               Container(
                 width: double.infinity,
                 color: AppColors.breadcrumbBackground,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimensions.breadcrumbPaddingHorizontal,
-                  vertical: AppDimensions.breadcrumbPaddingVertical,
-                ),
-                child: const Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Sanitary Ware / ... / 200 Liters Water Tank',
-                        style: AppTextStyles.breadcrumbText,
-                      ),
-                    ),
-                  ],
+                padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding24.w),
+                child: Text(
+                  'Breadcrumb Title',
+                  style: AppTextStyles.appBarTitle.copyWith(fontSize: 16.sp),
                 ),
               ),
               // Title and navigation with background color

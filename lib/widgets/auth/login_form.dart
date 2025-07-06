@@ -1,5 +1,6 @@
 // login_form.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/generated/l10n.dart';
 import '../../core/routes/app_routes.dart';
 
@@ -27,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     final l10n = S.of(context);
-    
+
     return Form(
       key: _formKey,
       child: Column(
@@ -38,51 +39,43 @@ class _LoginFormState extends State<LoginForm> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 48),
+              SizedBox(height: 48.h),
               // Welcome text
               Text(
                 l10n.welcomeLabel,
-                style: const TextStyle(
-                  fontSize: 32,
+                style: TextStyle(
+                  fontSize: 32.sp,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF00A9E7),
+                  color: const Color(0xFF00A9E7),
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 48),
+              SizedBox(height: 48.h),
               
               // Email/ID field label
               Text(
                 l10n.emailIdLabel,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.right,
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               TextFormField(
                 controller: _emailController,
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.right,
                 decoration: InputDecoration(
                   hintText: l10n.emailIdHint,
-                  hintStyle: TextStyle(color: Colors.grey[400]),
+                  hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14.sp),
                   filled: true,
                   fillColor: const Color(0xFFF5F5F5),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide.none,
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -91,18 +84,18 @@ class _LoginFormState extends State<LoginForm> {
                   return null;
                 },
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
               
               // Password field label
               Text(
                 l10n.passwordLabel,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.right,
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               TextFormField(
                 controller: _passwordController,
                 obscureText: _obscurePassword,
@@ -110,26 +103,19 @@ class _LoginFormState extends State<LoginForm> {
                 textAlign: TextAlign.right,
                 decoration: InputDecoration(
                   hintText: l10n.passwordHint,
-                  hintStyle: TextStyle(color: Colors.grey[400]),
+                  hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14.sp),
                   filled: true,
                   fillColor: const Color(0xFFF5F5F5),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide.none,
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscurePassword ? Icons.visibility_off : Icons.visibility,
                       color: Colors.grey[400],
+                      size: 20.sp,
                     ),
                     onPressed: () {
                       setState(() {
@@ -145,7 +131,7 @@ class _LoginFormState extends State<LoginForm> {
                   return null;
                 },
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // Remember me checkbox
               Row(
@@ -153,9 +139,7 @@ class _LoginFormState extends State<LoginForm> {
                 children: [
                   Text(
                     l10n.rememberMe,
-                    style: const TextStyle(
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(fontSize: 14.sp),
                   ),
                   Checkbox(
                     value: _rememberMe,
@@ -177,21 +161,21 @@ class _LoginFormState extends State<LoginForm> {
                       onPressed: () {},
                       style: TextButton.styleFrom(
                         backgroundColor: const Color(0xFFF5F5F5),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        padding: EdgeInsets.symmetric(vertical: 16.h),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
                       child: Text(
                         l10n.registerNow,
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style: TextStyle(
+                          fontSize: 16.sp,
                           color: Colors.black87,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16.w),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
@@ -201,15 +185,15 @@ class _LoginFormState extends State<LoginForm> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF00A9E7),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        padding: EdgeInsets.symmetric(vertical: 16.h),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
                       child: Text(
                         l10n.loginButton,
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style: TextStyle(
+                          fontSize: 16.sp,
                           color: Colors.white,
                         ),
                       ),
@@ -217,7 +201,7 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
               
               // Forgot password
               Center(
@@ -225,8 +209,8 @@ class _LoginFormState extends State<LoginForm> {
                   onPressed: () {},
                   child: Text(
                     l10n.forgotPassword,
-                    style: const TextStyle(
-                      fontSize: 14,
+                    style: TextStyle(
+                      fontSize: 14.sp,
                       color: Colors.black87,
                     ),
                   ),
@@ -248,15 +232,15 @@ class _LoginFormState extends State<LoginForm> {
                     children: [
                       Text(
                         l10n.continueAsGuest,
-                        style: const TextStyle(
-                          fontSize: 14,
+                        style: TextStyle(
+                          fontSize: 14.sp,
                           color: Colors.black87,
                         ),
                       ),
-                      const Icon(
+                      Icon(
                         Icons.chevron_right,
                         color: Colors.black87,
-                        size: 20,
+                        size: 20.sp,
                       ),
                     ],
                   ),
@@ -268,8 +252,8 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 child: Text(
                   l10n.whyRoyal,
-                  style: const TextStyle(
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontSize: 14.sp,
                     color: Colors.black87,
                   ),
                 ),

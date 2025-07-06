@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:royal/core/routes/app_routes.dart';
 import 'package:royal/generated/l10n.dart';
 import 'package:royal/widgets/custom_app_bar.dart';
@@ -13,24 +14,23 @@ class NotificationCenterPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
           onMenuTap: () => AppRoutes.navigateTo(context, AppRoutes.customDrawer),
-
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 12.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             Text(
               S.of(context).notificationCenterTitle,
-              style: const TextStyle(
-                fontSize: 20,
+              style: TextStyle(
+                fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.blue,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             // Directionality is now handled by Flutter's localization system (MaterialApp/CupertinoApp)
             // No need to wrap with Directionality here; text direction will follow the app's locale automatically.
             Expanded(
@@ -42,14 +42,14 @@ class NotificationCenterPage extends StatelessWidget {
                     date: '11/01/2022 03:00 PM',
                     icon: 'assets/images/Notifications1.png',
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
                   NotificationCard(
                     title: S.of(context).notificationUpdate,
                     message: S.of(context).notificationUpdateMsg,
                     date: '11/01/2022 03:00 PM',
                     image: 'assets/images/Notifications2.png',
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
                   NotificationCard(
                     title: S.of(context).notificationEvent,
                     message: S.of(context).notificationEventMsg,
@@ -74,13 +74,13 @@ class NotificationCenterPage extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed(AppRoutes.favorite);
               break;
             case 2:
-              Navigator.of(context).pushReplacementNamed(AppRoutes.account);
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
               break;
             case 3:
               Navigator.of(context).pushReplacementNamed(AppRoutes.history);
               break;
             case 4:
-              Navigator.of(context).pushReplacementNamed(AppRoutes.information);
+              Navigator.of(context).pushReplacementNamed(AppRoutes.info);
               break;
           }
         },

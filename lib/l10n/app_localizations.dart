@@ -1426,6 +1426,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Details about contact information'**
   String get contactDetails;
+
+  /// Subtitle for beyond creativity section
+  ///
+  /// In en, this message translates to:
+  /// **'Beyond Creativity'**
+  String get beyondCreativitySubtitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
